@@ -1,0 +1,38 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments and local tooling
+.venv/
+venv/
+env/
+.agents/
+.idea/
+.vscode/
+
+# Local configuration and secrets
+.env
+.env.*
+*.secret
+secrets.*
+
+# Runtime logs
+*.log
+streamlit*.out
+streamlit*.err
+
+# Local databases and generated binary data
+*.sqlite
+*.sqlite3
+*.db
+
+# Temporary, source-material, and private working files
+暫放/
+private/
+PRIVATE/
+not_for_github/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
