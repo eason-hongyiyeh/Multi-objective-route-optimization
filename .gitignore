@@ -32,6 +32,7 @@ streamlit*.err
 private/
 PRIVATE/
 not_for_github/
+README.private.md
 
 # OS/editor noise
 .DS_Store
