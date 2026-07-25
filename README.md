@@ -32,3 +32,5 @@ streamlit run bus_query_app.py
 ## 資料來源
 
 專案使用公車路線與站點資料，部分 POI 資訊透過 OpenStreetMap／Overpass API 取得。
+
+> 這個儲存庫會隨著學習進度持續新增與更新。
