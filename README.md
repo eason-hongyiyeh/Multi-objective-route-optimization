@@ -1,36 +1,47 @@
 # 高雄公車與 POI 推薦系統
 
-這是一個結合高雄公車路線、站點與周邊 POI（興趣點）資料的查詢系統。使用者可以查詢公車路線、直達或轉乘方式、站點附近地點，並依照指定商品或地點取得移動路線建議。
+這是一個結合高雄公車路線、站牌、周邊地點與商品資料的查詢系統。
+專案分成 CSV 與 SQL 兩個版本，兩者都可以使用 Streamlit 在網頁上操作。
+
+## 資料夾說明
+
+| 資料夾 | 用途 |
+| --- | --- |
+| `.agents/` | Codex／開發代理工具使用的專案設定資料，不屬於系統的業務程式。 |
+| `csv_version/` | CSV 版本。包含 Streamlit 網頁、查詢程式、CSV 產生工具、路線原始資料，以及系統實際讀取的 CSV 資料。 |
+| `sql_version/` | SQL 版本。包含 Streamlit 網頁、SQL 查詢程式、SQLite 資料庫、建表語法、CSV 匯入工具及 SQL 查詢範例。 |
+| `暫放/` | 尚未正式使用或留存參考的舊程式、舊資料庫、圖片、試算表與歷史資料。 |
+| `.local-git-excludes/` | 隱藏資料。 |
+| `.git/` | Git 版本控制資料，由 Git 自動管理，請勿手動修改。 |
+
+## CSV 版本
+
+CSV 版本會直接讀取 `csv_version/generated_csv_260607/` 裡的資料。
+
+```powershell
+streamlit run csv_version/bus_query_app.py
+```
+
+詳細內容請參考 `csv_version/README.md`。
+
+## SQL 版本
+
+SQL 版本會讀取 `sql_version/shopping_bus.db` SQLite 資料庫。
+
+```powershell
+streamlit run sql_version/bus_query_app_sql.py
+```
+
+詳細內容請參考 `sql_version/README.md`。
 
 ## 主要功能
 
-- 查詢公車站點與路線
+- 查詢公車站牌與路線
 - 查詢兩站之間的直達及轉乘方式
-- 查詢站點附近的 POI
-- 結合商品、地點與公車路線提供行程建議
-- 使用 Streamlit 提供網頁操作介面
-
-## 專案檔案
-
-| 檔案或資料夾 | 說明 |
-| --- | --- |
-| `bus_query_app.py` | Streamlit 網頁介面 |
-| `bus_queries.py` | 站點、路線、轉乘與 POI 的核心查詢邏輯 |
-| `generate_convenience_store_data.py` | 取得並整理便利商店等 POI 資料 |
-| `routes.csv` | 公車路線原始資料 |
-| `routes_with_coordinates.csv` | 含座標資訊的公車路線資料 |
-| `generated_csv_260607/` | 查詢系統使用的站點、路線、POI 與商品 CSV 資料 |
-
-## 執行方式
-
-安裝所需的 Python 套件後執行：
-
-```powershell
-streamlit run bus_query_app.py
-```
+- 查詢站牌附近的 POI
+- 根據商品或地點提供公車行程建議
+- 透過 Streamlit 網頁操作
 
 ## 資料來源
 
-專案使用公車路線與站點資料，部分 POI 資訊透過 OpenStreetMap／Overpass API 取得。
-
-> 這個儲存庫會隨著學習進度持續新增與更新。
+專案使用公車路線與站牌資料；部分 POI 資訊透過 OpenStreetMap／Overpass API 取得。
