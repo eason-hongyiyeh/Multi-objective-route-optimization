@@ -1,8 +1,12 @@
 # SQLite 資料庫版本
 
-這個資料夾是專題目前使用的 SQL 儲存層。`bus_queries_sql.py` 執行時會直接讀取
-`shopping_bus.db`，不會讀取 CSV。`../csv_version/generated_csv_260607/` 內的 6 個 CSV
-只保留作為首次建庫或日後重新匯入的來源。
+SQL 版的介面與演算法已獨立，執行時不需要 `csv_version` 的程式或 CSV 資料。
+`bus_query_app_sql.py` 負責完整網頁介面；`bus_queries_sql.py` 直接讀取 SQLite，並包含路線演算法：
+
+- `get_route_stop_sequence()`：整理路線站序。
+- `find_direct_buses()`：查詢直達公車。
+- `find_bus_journey()`：計算路徑，優先減少轉乘，再比較行車時間及站數。
+- `find_best_shopping_route()`、`find_best_shopping_trip()`：選擇購物行程。
 
 ## 啟動 SQL 網頁版
 
@@ -18,27 +22,16 @@ SQL 網頁版會直接查詢本資料夾的 `shopping_bus.db`。原本的 CSV �
 streamlit run csv_version/bus_query_app.py
 ```
 
-## 建立或更新資料庫
+## 維護資料庫
 
-在專案根目錄執行：
-
-```powershell
-python sql_version/import_csv_to_sqlite.py
-```
-
-每次執行都會清空資料表後重新匯入，因此 CSV 更新後再執行一次即可同步。
-也可以指定其他來源及輸出路徑：
-
-```powershell
-python sql_version/import_csv_to_sqlite.py --csv-dir csv_version/generated_csv_260607 --db sql_version/shopping_bus.db
-```
+使用 SQL 的 `INSERT INTO`、`UPDATE` 與 `DELETE` 維護資料，並備份 `shopping_bus.db`。
+`schema.sql` 可建立空資料庫結構，但不包含資料；修改該檔不會自動更新現有資料庫。
 
 ## 檔案說明
 
 - `schema.sql`：資料表、外鍵、檢查條件及索引。
-- `import_csv_to_sqlite.py`：使用 Python 內建 `sqlite3` 匯入 CSV，不需安裝套件。
-- `bus_queries_sql.py`：SQL 版資料存取與查詢入口。
-- `bus_query_app_sql.py`：SQL 版 Streamlit 網頁入口。
+- `bus_queries_sql.py`：SQLite 資料讀取、路線演算法與購物行程查詢。
+- `bus_query_app_sql.py`：獨立的 Streamlit 網頁介面。
 - `example_queries.sql`：常用的 SQL JOIN 查詢範例。
 - `shopping_bus.db`：產生的 SQLite 資料庫檔。
 
