@@ -6,14 +6,14 @@
 
 以下指令適用於 Windows PowerShell，請在專案根目錄 `Multi-objective-route-optimization` 執行，不是在 `sql_version` 資料夾內執行。
 
-首次使用時，建立虛擬環境並依照專案根目錄的 `requirements.txt` 安裝套件：
+本專案需要 Streamlit 1.63.0。首次使用時，建立虛擬環境並安裝套件（相依套件會自動一併安裝）：
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install streamlit==1.63.0
 ```
 
-每台電腦都需要各自準備環境。SQLite 是 Python 內建模組，不需要另外安裝。
+每台電腦都需要各自準備環境。如果已經有 `.venv`，可省略建立虛擬環境的指令。SQLite 是 Python 內建模組，不需要另外安裝。
 
 ## 準備資料庫
 
