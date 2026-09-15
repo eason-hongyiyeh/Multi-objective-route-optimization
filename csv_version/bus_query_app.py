@@ -23,13 +23,13 @@ def render_bus_journey(journey, heading: str) -> None:
     st.markdown(f"**{heading}**")
     st.caption(
         f"轉乘 {journey.transfer_count} 次｜乘車約 "
-        f"{journey.travel_time_min} 分鐘｜共 {journey.stop_count} 站"
+        f"{journey.travel_time_min:.2f} 分鐘｜共 {journey.stop_count} 站"
     )
     for index, leg in enumerate(journey.legs, start=1):
         st.write(
             f"{index}. 搭乘 {leg.route_name}："
             f"{leg.start_stop.stop_name} → {leg.end_stop.stop_name}"
-            f"（{leg.stop_count} 站，約 {leg.travel_time_min} 分鐘）"
+            f"（{leg.stop_count} 站，約 {leg.travel_time_min:.2f} 分鐘）"
         )
         st.caption(" → ".join(stop.stop_name for stop in leg.stops))
         if index < len(journey.legs):
@@ -38,6 +38,12 @@ def render_bus_journey(journey, heading: str) -> None:
 
 st.set_page_config(page_title="公車站牌查詢", layout="wide")
 st.title("公車資料查詢")
+st.warning(
+    "資料查核中：便利商店依現有站牌座標及 OSM 地圖篩選，可能有漏店；"
+    "步行數字為道路導航估計；公車時間以直線站距、最高 50 km/h 及等加減速估算，"
+    "未含道路繞行、等紅燈與上下客時間。缺值路段不納入計算；查不到方案不代表現實沒有公車。"
+    "商品僅為常見品項假設，店內庫存、價格與評分未確認。"
+)
 
 tab_complete, tab_stops, tab_route, tab_direct, tab_product = st.tabs(
     ["完整行程", "所有站牌", "路線站序", "公車路徑", "商品搜尋"]
@@ -80,7 +86,7 @@ with tab_complete:
         for product in find_product_pois(place_query):
             label = (
                 f"購買「{product.item_name}」｜{product.poi_name}｜"
-                f"{product.price} 元"
+                f"{str(product.price) + ' 元' if product.price is not None else '價格待確認'}"
             )
             visit_options[label] = product
         for place in find_places(place_query):
@@ -120,7 +126,7 @@ with tab_complete:
             f"{selected_visit_label}｜鄰近站：{visit_stop.stop_name}｜"
             f"步行約 {visit_stop.walking_time_min} 分鐘｜公車轉乘合計 "
             f"{complete_trip.total_transfer_count} 次｜全程約 "
-            f"{complete_trip.total_time_min} 分鐘"
+            f"{complete_trip.total_time_min:.2f} 分鐘"
         )
 
         if complete_trip.starts_at_shopping_stop:
@@ -157,7 +163,7 @@ with tab_complete:
             )
             render_bus_journey(basic_journey, "起點 → 終點")
         else:
-            st.error("目前的公車資料中沒有可到達終點的路徑。")
+            st.info("目前沒有時間資料完整的公車方案；請先補齊路線及站間時間。")
 
 with tab_stops:
     stops = list_all_stops()
@@ -215,18 +221,18 @@ with tab_direct:
     elif not direct_buses:
         journey = find_bus_journey(start_stop_id, end_stop_id)
         if journey is None:
-            st.info("目前沒有查到可到達的公車路徑。")
+            st.info("目前沒有時間資料完整的公車方案；不代表現實沒有公車。")
         else:
             st.warning(
                 f"沒有直達公車，以下方案需轉乘 {journey.transfer_count} 次，"
-                f"乘車約 {journey.travel_time_min} 分鐘，共 {journey.stop_count} 站。"
+                f"乘車約 {journey.travel_time_min:.2f} 分鐘，共 {journey.stop_count} 站。"
             )
             for index, leg in enumerate(journey.legs, start=1):
                 st.subheader(f"第 {index} 段：搭乘 {leg.route_name}")
                 st.write(
                     f"從「{leg.start_stop.stop_name}」上車，"
                     f"到「{leg.end_stop.stop_name}」下車"
-                    f"（{leg.stop_count} 站，約 {leg.travel_time_min} 分鐘）"
+                    f"（{leg.stop_count} 站，約 {leg.travel_time_min:.2f} 分鐘）"
                 )
                 st.caption(" → ".join(stop.stop_name for stop in leg.stops))
                 if index < len(journey.legs):
@@ -240,7 +246,7 @@ with tab_direct:
                     "起點站序": bus.start_sequence,
                     "終點站序": bus.end_sequence,
                     "經過站數": bus.stop_count,
-                    "預估時間": bus.travel_time_min,
+                    "預估時間": round(bus.travel_time_min, 2),
                     "行經站牌": " -> ".join(stop.stop_name for stop in bus.stops),
                 }
                 for bus in direct_buses
@@ -287,11 +293,11 @@ with tab_product:
                         "商品或服務": result.item_name,
                         "POI": result.poi_name,
                         "類型": result.poi_type,
-                        "評分": result.rating,
-                        "參考價格": result.price,
-                        "預估停留時間": result.service_time_min,
+                        "評分": result.rating if result.rating is not None else "未提供",
+                        "參考價格": result.price if result.price is not None else "待確認",
+                        "預估停留時間": result.service_time_min if result.service_time_min is not None else "未量測",
                         "鄰近站牌": "、".join(
-                            f"{stop.stop_name}（步行 {stop.walking_time_min} 分鐘）"
+                            f"{stop.stop_name}（{str(stop.walking_time_min) + ' 分鐘，導航估計' if stop.walking_time_min is not None else '步行時間待補'}）"
                             for stop in result.nearby_stops
                         )
                         or "尚無站牌資料",
@@ -313,14 +319,14 @@ with tab_product:
                 )
                 with st.expander(f"{result.poi_name}｜{result.item_name}", expanded=True):
                     if trip is None:
-                        st.info("目前沒有可完成起點、採買站與終點的公車路徑。")
+                        st.info("目前無法計算完整行程：可能缺少公車或步行時間，請先補齊資料。")
                         continue
 
                     shopping_stop = trip.shopping_stop
                     st.caption(
                         f"採買站：{shopping_stop.stop_name}｜步行到 POI 約 "
                         f"{shopping_stop.walking_time_min} 分鐘｜全程約 "
-                        f"{trip.total_time_min} 分鐘"
+                        f"{trip.total_time_min:.2f} 分鐘"
                     )
 
                     st.markdown("**去程：起點 → 採買站**")
@@ -334,7 +340,7 @@ with tab_product:
                         inbound = trip.inbound_journey
                         st.caption(
                             f"轉乘 {inbound.transfer_count} 次｜乘車約 "
-                            f"{inbound.travel_time_min} 分鐘"
+                            f"{inbound.travel_time_min:.2f} 分鐘"
                         )
                         for index, leg in enumerate(inbound.legs, start=1):
                             st.write(
@@ -351,7 +357,7 @@ with tab_product:
                         outbound = trip.outbound_journey
                         st.caption(
                             f"轉乘 {outbound.transfer_count} 次｜乘車約 "
-                            f"{outbound.travel_time_min} 分鐘"
+                            f"{outbound.travel_time_min:.2f} 分鐘"
                         )
                         for index, leg in enumerate(outbound.legs, start=1):
                             st.write(

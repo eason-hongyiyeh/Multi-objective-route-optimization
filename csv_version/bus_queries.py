@@ -29,7 +29,7 @@ class DirectBus:
     start_sequence: int
     end_sequence: int
     stop_count: int
-    travel_time_min: int
+    travel_time_min: float
     stops: list[RouteStop]
 
 
@@ -39,14 +39,14 @@ class TransferLeg:
     start_stop: RouteStop
     end_stop: RouteStop
     stop_count: int
-    travel_time_min: int
+    travel_time_min: float
     stops: list[RouteStop]
 
 
 @dataclass(frozen=True)
 class BusJourney:
     transfer_count: int
-    travel_time_min: int
+    travel_time_min: float
     stop_count: int
     legs: list[TransferLeg]
 
@@ -55,7 +55,7 @@ class BusJourney:
 class NearbyStop:
     stop_id: str
     stop_name: str
-    walking_time_min: int
+    walking_time_min: int | None
 
 
 @dataclass(frozen=True)
@@ -63,10 +63,10 @@ class ProductPOI:
     poi_id: str
     poi_name: str
     poi_type: str
-    rating: float
+    rating: float | None
     item_name: str
-    price: int
-    service_time_min: int
+    price: int | None
+    service_time_min: int | None
     nearby_stops: list[NearbyStop]
 
 
@@ -75,7 +75,7 @@ class PlacePOI:
     poi_id: str
     poi_name: str
     poi_type: str
-    rating: float
+    rating: float | None
     nearby_stops: list[NearbyStop]
 
 
@@ -86,7 +86,7 @@ class ShoppingRoute:
     already_at_destination: bool
 
     @property
-    def total_time_min(self) -> int:
+    def total_time_min(self) -> float:
         bus_time = self.journey.travel_time_min if self.journey else 0
         return bus_time + self.destination_stop.walking_time_min
 
@@ -100,7 +100,7 @@ class ShoppingTrip:
     ends_at_shopping_stop: bool
 
     @property
-    def total_time_min(self) -> int:
+    def total_time_min(self) -> float:
         inbound_time = self.inbound_journey.travel_time_min if self.inbound_journey else 0
         outbound_time = self.outbound_journey.travel_time_min if self.outbound_journey else 0
         return inbound_time + self.shopping_stop.walking_time_min + outbound_time
@@ -119,6 +119,14 @@ class ShoppingTrip:
 def _read_csv(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as file:
         return list(csv.DictReader(file))
+
+
+def _optional_number(value: str, convert=int):
+    return convert(value) if value.strip() else None
+
+
+def _unknown_last(value):
+    return value if value is not None else float("inf")
 
 
 def load_stops(data_dir: Path = DATA_DIR) -> dict[str, Stop]:
@@ -218,6 +226,10 @@ def find_direct_buses(start_query: str, end_query: str, data_dir: Path = DATA_DI
             continue
 
         segment = sequence[start_index : end_index + 1]
+        route_times = edge_times_by_route.get(route_name, {})
+        pairs = [(segment[i].stop_id, segment[i + 1].stop_id) for i in range(len(segment) - 1)]
+        if any(pair not in route_times for pair in pairs):
+            continue
         travel_time = sum(
             edge_times_by_route.get(route_name, {}).get(
                 (segment[index].stop_id, segment[index + 1].stop_id),
@@ -250,28 +262,26 @@ def find_bus_journey(
         return None
 
     stops = load_stops(data_dir)
-    outgoing: dict[str, list[tuple[str, str, int]]] = {}
+    outgoing: dict[str, list[tuple[str, str, float]]] = {}
     for row in _read_csv(data_dir / "route_edges.csv"):
+        if not row["travel_time_min"].strip():
+            continue
         from_stop_id = row["from_stop_id"].strip()
         to_stop_id = row["to_stop_id"].strip()
         route_name = row["route_name"].strip()
-        travel_time = int(row["travel_time_min"])
+        travel_time = float(row["travel_time_min"])
         outgoing.setdefault(from_stop_id, []).append(
             (route_name, to_stop_id, travel_time)
         )
-        # The CSV stores one ordered stop sequence per route. Model the same
-        # route in the opposite direction so trips can leave terminal areas.
-        outgoing.setdefault(to_stop_id, []).append(
-            (route_name, from_stop_id, travel_time)
-        )
+        # A directed edge is not evidence for a reverse bus service or its time.
 
     # Cost is ordered by transfers first, then travel time and number of stops.
-    distances: dict[tuple[str, str], tuple[int, int, int]] = {}
+    distances: dict[tuple[str, str], tuple[int, float, int]] = {}
     previous: dict[
         tuple[str, str],
-        tuple[tuple[str, str] | None, tuple[str, str, str, int]],
+        tuple[tuple[str, str] | None, tuple[str, str, str, float]],
     ] = {}
-    queue: list[tuple[int, int, int, str, str]] = []
+    queue: list[tuple[int, float, int, str, str]] = []
 
     for route_name, to_stop_id, travel_time in outgoing.get(start_stop_id, []):
         state = (to_stop_id, route_name)
@@ -316,7 +326,7 @@ def find_bus_journey(
     if destination_state is None:
         return None
 
-    edges: list[tuple[str, str, str, int]] = []
+    edges: list[tuple[str, str, str, float]] = []
     state: tuple[str, str] | None = destination_state
     while state is not None:
         state, edge = previous[state]
@@ -349,7 +359,7 @@ def find_bus_journey(
 def _build_transfer_leg(
     route_name: str,
     stop_ids: list[str],
-    travel_time_min: int,
+    travel_time_min: float,
     stops: dict[str, Stop],
 ) -> TransferLeg:
     route_stops = [
@@ -392,7 +402,7 @@ def find_product_pois(query: str, data_dir: Path = DATA_DIR) -> list[ProductPOI]
             NearbyStop(
                 stop_id=stop_id,
                 stop_name=stops[stop_id].stop_name if stop_id in stops else stop_id,
-                walking_time_min=int(row["walking_time_min"]),
+                walking_time_min=_optional_number(row["walking_time_min"]),
             )
         )
 
@@ -412,18 +422,18 @@ def find_product_pois(query: str, data_dir: Path = DATA_DIR) -> list[ProductPOI]
                 poi_id=poi_id,
                 poi_name=poi["poi_name"].strip(),
                 poi_type=poi["poi_type"].strip(),
-                rating=float(poi["rating"]),
+                rating=_optional_number(poi["rating"], float),
                 item_name=item_name,
-                price=int(row["price"]),
-                service_time_min=int(row["service_time_min"]),
+                price=_optional_number(row["price"]),
+                service_time_min=_optional_number(row["service_time_min"]),
                 nearby_stops=sorted(
                     nearby_stops.get(poi_id, []),
-                    key=lambda stop: stop.walking_time_min,
+                    key=lambda stop: _unknown_last(stop.walking_time_min),
                 ),
             )
         )
 
-    return sorted(results, key=lambda result: (-result.rating, result.price, result.poi_name))
+    return sorted(results, key=lambda result: (-(result.rating or 0), _unknown_last(result.price), result.poi_name))
 
 
 def find_places(query: str, data_dir: Path = DATA_DIR) -> list[PlacePOI]:
@@ -440,7 +450,7 @@ def find_places(query: str, data_dir: Path = DATA_DIR) -> list[PlacePOI]:
             NearbyStop(
                 stop_id=stop_id,
                 stop_name=stops[stop_id].stop_name if stop_id in stops else stop_id,
-                walking_time_min=int(row["walking_time_min"]),
+                walking_time_min=_optional_number(row["walking_time_min"]),
             )
         )
 
@@ -458,15 +468,15 @@ def find_places(query: str, data_dir: Path = DATA_DIR) -> list[PlacePOI]:
                 poi_id=poi_id,
                 poi_name=poi_name,
                 poi_type=poi_type,
-                rating=float(row["rating"]),
+                rating=_optional_number(row["rating"], float),
                 nearby_stops=sorted(
                     nearby_stops[poi_id],
-                    key=lambda stop: stop.walking_time_min,
+                    key=lambda stop: _unknown_last(stop.walking_time_min),
                 ),
             )
         )
 
-    return sorted(results, key=lambda result: (-result.rating, result.poi_name))
+    return sorted(results, key=lambda result: (-(result.rating or 0), result.poi_name))
 
 
 def find_best_shopping_route(
@@ -480,6 +490,8 @@ def find_best_shopping_route(
 
     candidates = []
     for nearby_stop in product_poi.nearby_stops:
+        if nearby_stop.walking_time_min is None:
+            continue
         if nearby_stop.stop_id == start_stop_id:
             candidates.append(
                 ShoppingRoute(
@@ -526,6 +538,8 @@ def find_best_shopping_trip(
 
     candidates = []
     for nearby_stop in product_poi.nearby_stops:
+        if nearby_stop.walking_time_min is None:
+            continue
         starts_at_shopping_stop = nearby_stop.stop_id == start_stop_id
         ends_at_shopping_stop = nearby_stop.stop_id == end_stop_id
         inbound_journey = (
@@ -567,11 +581,13 @@ def find_best_shopping_trip(
     )
 
 
-def _route_edge_times(data_dir: Path = DATA_DIR) -> dict[str, dict[tuple[str, str], int]]:
-    times: dict[str, dict[tuple[str, str], int]] = {}
+def _route_edge_times(data_dir: Path = DATA_DIR) -> dict[str, dict[tuple[str, str], float]]:
+    times: dict[str, dict[tuple[str, str], float]] = {}
     for row in _read_csv(data_dir / "route_edges.csv"):
+        if not row["travel_time_min"].strip():
+            continue
         route_name = row["route_name"].strip()
         from_stop_id = row["from_stop_id"].strip()
         to_stop_id = row["to_stop_id"].strip()
-        times.setdefault(route_name, {})[(from_stop_id, to_stop_id)] = int(row["travel_time_min"])
+        times.setdefault(route_name, {})[(from_stop_id, to_stop_id)] = float(row["travel_time_min"])
     return times
