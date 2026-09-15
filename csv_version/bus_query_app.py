@@ -17,6 +17,7 @@ from bus_queries import (
     list_all_stops,
     list_routes,
 )
+from bus_map import render_map
 
 
 def render_bus_journey(journey, heading: str) -> None:
@@ -45,9 +46,12 @@ st.warning(
     "商品僅為常見品項假設，店內庫存、價格與評分未確認。"
 )
 
-tab_complete, tab_stops, tab_route, tab_direct, tab_product = st.tabs(
-    ["完整行程", "所有站牌", "路線站序", "公車路徑", "商品搜尋"]
+tab_map, tab_complete, tab_stops, tab_route, tab_direct, tab_product = st.tabs(
+    ["站牌與商店地圖", "完整行程", "所有站牌", "路線站序", "公車路徑", "商品搜尋"]
 )
+
+with tab_map:
+    render_map()
 
 with tab_complete:
     stops = list_all_stops()

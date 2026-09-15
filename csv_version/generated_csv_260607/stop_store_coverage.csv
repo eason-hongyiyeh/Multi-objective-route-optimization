@@ -30,7 +30,7 @@ S028,聖功醫院,1,legacy_coordinates_unverified,osm_snapshot_only
 S029,道明中學,0,legacy_coordinates_unverified,osm_snapshot_only
 S030,察哈爾二街(捷運後驛站),1,legacy_coordinates_unverified,osm_snapshot_only
 S031,察哈爾街口,0,legacy_coordinates_unverified,osm_snapshot_only
-S032,福德市場,0,legacy_coordinates_unverified,osm_snapshot_only
+S032,福德市場,1,user_provided_not_officially_verified,osm_snapshot_only
 S033,臺鐵三塊厝站(自立路),0,legacy_coordinates_unverified,osm_snapshot_only
 S034,遼寧街口(自立路),0,legacy_coordinates_unverified,osm_snapshot_only
 S035,錦田路口(七賢一路),2,legacy_coordinates_unverified,osm_snapshot_only

@@ -36,6 +36,17 @@ def write_csv(path, fields, rows):
         writer.writerows(rows)
 
 
+def stop_coordinate_status(stop, data_dir=DATA_DIR):
+    path = data_dir / "sources" / "stop_coordinate_corrections.json"
+    corrections = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    for correction in reversed(corrections):
+        if (correction["stop_id"] == stop["stop_id"]
+                and float(correction["lat"]) == float(stop["lat"])
+                and float(correction["lon"]) == float(stop["lon"])):
+            return correction["coordinate_status"]
+    return "legacy_coordinates_unverified"
+
+
 def haversine_meters(lat1, lon1, lat2, lon2):
     p1, p2 = math.radians(lat1), math.radians(lat2)
     a = (math.sin((p2 - p1) / 2) ** 2
@@ -191,7 +202,7 @@ def main():
     write_csv(DATA_DIR / "poi_items.csv", ["item_id", "item_name"], [dict(item_id=k, item_name=v) for k, v in ITEMS.items()])
     write_csv(DATA_DIR / "poi_item_mapping.csv", ["poi_id", "item_id", "price", "service_time_min", "availability_status"], sorted(inventory, key=lambda r: (r["poi_id"], r["item_id"])))
     write_csv(DATA_DIR / "stop_poi_mapping.csv", ["stop_id", "poi_id", "walking_time_min", "straight_distance_m", "route_distance_m", "route_duration_s", "start_snap_m", "end_snap_m", "time_status", "source", "fetched_at"], sorted(links, key=lambda r: (r["stop_id"], r["poi_id"])))
-    coverage = [dict(stop_id=s["stop_id"], stop_name=s["stop_name"], store_count=sum(r["stop_id"] == s["stop_id"] for r in links), coordinate_status="legacy_coordinates_unverified", completeness="osm_snapshot_only") for s in stops]
+    coverage = [dict(stop_id=s["stop_id"], stop_name=s["stop_name"], store_count=sum(r["stop_id"] == s["stop_id"] for r in links), coordinate_status=stop_coordinate_status(s), completeness="osm_snapshot_only") for s in stops]
     write_csv(DATA_DIR / "stop_store_coverage.csv", ["stop_id", "stop_name", "store_count", "coordinate_status", "completeness"], coverage)
     save_json(SOURCE_DIR / "excluded_osm_features.json", excluded)
     print(f"Selected {len(pois)} stores; {len(links)} stop/store links; {sum(r['store_count'] == 0 for r in coverage)} stops without a mapped store within 100 m.")

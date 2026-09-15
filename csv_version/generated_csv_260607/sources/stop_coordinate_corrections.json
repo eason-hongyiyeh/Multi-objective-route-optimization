@@ -1,0 +1,13 @@
+[
+  {
+    "stop_id": "S032",
+    "stop_name": "福德市場",
+    "previous_lat": "22.6294",
+    "previous_lon": "120.3262",
+    "lat": "22.63283038491209",
+    "lon": "120.3273854173119",
+    "source": "使用者於對話中提供的更正座標",
+    "updated_on": "2026-09-15",
+    "coordinate_status": "user_provided_not_officially_verified"
+  }
+]
