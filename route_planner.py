@@ -14,6 +14,7 @@ from astar import astar
 from bfs import bfs
 from floyd_warshall import floyd_warshall
 from k_shortest_paths import k_shortest_paths
+from brute_force import brute_force
 
 
 DATA_DIR = Path(__file__).resolve().parent / 'taipei_mrt'
@@ -23,6 +24,7 @@ ALGORITHMS = {
     'bfs': ('BFS（最少邊數，不保證最短時間）', bfs),
     'floyd-warshall': ('Floyd–Warshall', floyd_warshall),
     'k-shortest': ('K-shortest paths（Yen）', k_shortest_paths),
+    'brute-force': ('Brute force（DFS 窮舉＋剪枝）', brute_force),
 }
 
 
@@ -284,8 +286,10 @@ def display(planner, journey):
 
 
 def display_comparison(planner, reports):
-    baseline = next((report['results'][0].cost for report in reports
-                     if report['name'] == 'dijkstra' and report['results']), None)
+    baseline_report = next((report for name in ('brute-force', 'dijkstra') for report in reports
+                            if report['name'] == name and report['results']), None)
+    baseline = baseline_report['results'][0].cost if baseline_report else None
+    baseline_label = baseline_report['label'] if baseline_report else '對照組'
     for report in reports:
         print(f"\n=== {report['label']} ===")
         print(f"計算耗時：{report['elapsed'] * 1000:.3f} ms")
@@ -298,7 +302,7 @@ def display_comparison(planner, reports):
             if report['name'] == 'k-shortest':
                 print(f'第 {index} 條路線')
             display(planner, journey)
-    print('比較摘要（旅程時間／票價／換車次數／與 Dijkstra 時間差）')
+    print(f'比較摘要（旅程時間／票價／換車次數／與 {baseline_label} 時間差）')
     for report in reports:
         if report['error']:
             print(f"{report['label']}：未執行完成")
@@ -307,9 +311,10 @@ def display_comparison(planner, reports):
             difference = f'{result.cost[0] - baseline[0]:+d} 秒' if baseline is not None else '未比較'
             print(f"{report['label']}{suffix}：{duration(journey.total_seconds)}／"
                   f"NT$ {journey.fare_twd}／{journey.transfer_count} 次／{difference}")
-            if baseline is not None and report['name'] not in {'dijkstra', 'bfs'} and index == 1:
-                print('  時間、換車次數及行駛路段數與 Dijkstra 一致。' if result.cost == baseline
-                      else '  注意：最短成本與 Dijkstra 不一致，需檢查。')
+            if (baseline is not None and report['name'] not in {baseline_report['name'], 'bfs'}
+                    and index == 1):
+                print(f'  時間、換車次數及行駛路段數與 {baseline_label} 一致。' if result.cost == baseline
+                      else f'  注意：最短成本與 {baseline_label} 不一致，需檢查。')
 
 
 def positive_int(value):
