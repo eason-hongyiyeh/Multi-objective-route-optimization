@@ -25,6 +25,8 @@
 | `route_edges.csv` | 相鄰車站的連接關係與行駛時間。 |
 | `transfer_walking.csv` | 轉乘與支線換車的連接關係及所需時間。 |
 | `fares.csv` | 起站到終站的整趟票價。 |
+| `station_departures.csv` | 官方各站預定發車時刻，區分平日與假日，包含新北投、小碧潭支線；文湖線沒有固定時刻表。 |
+| `first_last_trains.csv` | 官方各站各方向的首末班車時間；原始資料的疑義以 `source_issue` 標記。 |
 | `README.md` | 捷運資料的欄位、來源與使用說明。 |
 
 ## 夜市資料（`night_markets/`）

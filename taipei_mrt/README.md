@@ -77,3 +77,38 @@
 | `from_stop_id` | 進站站碼，關聯 `stops.stop_id`。 |
 | `to_stop_id` | 出站站碼，關聯 `stops.stop_id`。 |
 | `fare_twd` | 官方「優惠票價[金額]」欄位，新臺幣元；一般旅客本次乘車票價。 |
+
+## 6. station_departures.csv：官方各站預定發車時刻
+
+共 **90,758 筆**，涵蓋板南線、松山新店線、中和新蘆線、淡水信義線的 98 個站碼，包含新北投及小碧潭支線。文湖線沒有固定班次時刻表。
+
+每列代表某站在指定服務日、營運區間及目的方向的一次預定發車。
+
+| 欄位 | 說明 |
+| --- | --- |
+| `route_id` | 官方營運區間代碼，區分全程車、區間車與支線。 |
+| `stop_id` | 發車站碼，關聯 `stops.csv`。 |
+| `destination_stop_id` | 目的站碼，關聯 `stops.csv`。 |
+| `service_type` | `weekday`：平日；`weekend_holiday`：週末及國定假日；`saturday`：週六；`sunday_holiday`：週日及國定假日。 |
+| `departure_time` | 預定發車時間，`HH:MM`，臺灣時間；不是實際到站紀錄。 |
+| `departure_day_offset` | 0：營運當天；1：次日凌晨。例如 `00:12` 搭配 1，代表前一營運日延續至次日 00:12 的班次。 |
+| `source_issue` | 空白代表未觸發原先檢查；`origin_equals_destination` 表示原始出發站與目的站相同，需先核對。 |
+
+平日時刻表有 60 筆 `R-2` 的 `R05 → R05`（大安往大安）資料，保留原值並標記疑義，請勿直接用來判斷搭乘方向。
+
+## 7. first_last_trains.csv：官方首末班車時間
+
+共 **245 筆**，涵蓋 122 個站碼，包含文湖線。原始服務日皆為每日適用，因此不再重複儲存 `daily` 欄位。
+
+| 欄位 | 說明 |
+| --- | --- |
+| `stop_id` | 發車站碼，關聯 `stops.csv`。 |
+| `destination_stop_id` | 目的站碼，關聯 `stops.csv`。 |
+| `first_departure_time` | 首班車時間，`HH:MM`，臺灣時間。 |
+| `last_departure_time` | 末班車時間，`HH:MM`，臺灣時間。 |
+| `last_departure_day_offset` | 0：營運當天；1：次日凌晨。 |
+| `source_issue` | 與上一表相同，有疑義的資料需先核對。 |
+
+兩筆原始資料有疑義：`G03 → G03` 的 06:03～23:57，以及 `G03A → G03A` 的 06:11～次日 00:09。保留原值並標記，請勿直接用來判斷搭乘方向。
+
+兩張時刻表均為 2026-09-22 取得的官方資料快照。更新日期、來源編號、重複站名等附加欄位已移除，站名可由 `stops.csv` 查詢。特殊假日或異常營運可能調整班次，不能只依星期套用。現有 `route_planner.py` 尚未讀取這兩張表。
