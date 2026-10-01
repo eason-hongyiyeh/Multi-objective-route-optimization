@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台北捷運地圖</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <style>
+    * { box-sizing: border-box; }
+    :root { color-scheme: light; font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; color: #203348; }
+    body { margin: 0; background: #eef2f3; }
+    .layout { display: grid; grid-template-columns: 320px 1fr; height: 100vh; height: 100dvh; }
+    aside { background: #fff; padding: 30px 24px 20px; border-right: 1px solid #dce3e7; overflow-y: auto; z-index: 1000; }
+    .eyebrow { font-size: 11px; letter-spacing: 3px; font-weight: 700; color: #638078; }
+    h1 { font-size: 27px; margin: 10px 0; letter-spacing: 1px; }
+    .intro { font-size: 13px; color: #637581; line-height: 1.8; margin: 0 0 22px; }
+    .stats { display: flex; gap: 24px; padding: 16px 0; border-top: 1px solid #e8edef; border-bottom: 1px solid #e8edef; margin-bottom: 22px; }
+    .stat strong { display: block; font-size: 25px; }
+    .stat span { color: #73818b; font-size: 12px; }
+    label, .section-title { display: block; font-weight: 650; font-size: 13px; margin: 0 0 9px; }
+    input[type=search] { width: 100%; padding: 12px; border: 1px solid #cfd9df; border-radius: 8px; font: inherit; font-size: 14px; }
+    input:focus-visible, button:focus-visible { outline: 3px solid #a4c4ec; outline-offset: 2px; }
+    #search-results { margin: 6px 0 18px; max-height: 190px; overflow-y: auto; }
+    #search-results button { display: block; text-align: left; width: 100%; background: #f2f6f7; border: 0; margin: 4px 0; padding: 10px; border-radius: 6px; color: #203348; cursor: pointer; }
+    .line-toggle { display: flex; align-items: center; gap: 10px; width: 100%; padding: 11px 0; border: 0; background: none; color: #203348; cursor: pointer; font: inherit; font-size: 14px; }
+    .line-toggle[aria-pressed=false] { opacity: .4; }
+    .line-code { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 25px; border-radius: 5px; color: white; font-size: 12px; font-weight: 700; background: var(--line-color); }
+    .line-count { margin-left: auto; color: #788591; font-size: 12px; }
+    .options { margin: 18px 0; font-weight: 400; display: flex; gap: 8px; align-items: center; }
+    .reset { border: 1px solid #cad7db; background: #fff; border-radius: 8px; padding: 11px; width: 100%; font: inherit; font-size: 13px; cursor: pointer; color: #203348; }
+    .reset:hover { background: #f1f6f6; }
+    .note { font-size: 12px; line-height: 1.8; color: #788591; margin: 20px 0 0; }
+    #map { width: 100%; height: 100%; background: #e7eeee; }
+    .map-area { position: relative; min-height: 0; }
+    #notice { position: absolute; z-index: 1100; top: 18px; left: 50%; transform: translateX(-50%); max-width: 90%; background: #fff; box-shadow: 0 3px 18px #233f4526; border-radius: 8px; padding: 12px 18px; font-size: 13px; }
+    [hidden] { display: none !important; }
+    .station-label { border: 0; box-shadow: none; background: #ffffffdd; font-family: inherit; font-size: 11px; padding: 1px 4px; }
+    .station-label::before { display: none; }
+    .popup-title { margin: 2px 0 8px; font-size: 17px; font-weight: 700; }
+    .popup-line { margin: 6px 0; display: flex; align-items: center; gap: 8px; }
+    .popup-coordinates { font-size: 11px; color: #788591; margin-top: 10px; }
+    #search-empty { padding: 8px 0; font-size: 13px; color: #788591; }
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; grid-template-rows: auto minmax(300px, 1fr); }
+      aside { max-height: 40dvh; padding: 16px; border-right: 0; border-bottom: 1px solid #dce3e7; }
+      h1 { font-size: 22px; margin: 6px 0; }
+      .intro { margin-bottom: 10px; }
+      .stats { display: none; }
+      #line-controls { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+      .line-toggle { width: auto; font-size: 12px; padding: 5px 0; }
+      .line-count, .section-title { display: none; }
+      .options { display: inline-flex; margin: 10px 12px 0 0; }
+      .reset { width: auto; padding: 6px 10px; }
+      .note { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="eyebrow">TAIPEI METRO · NETWORK</div>
+    <h1>台北捷運地圖</h1>
+    <p class="intro">沿著城市，探索每一站。<br>點選車站查看站碼與所屬路線。</p>
+    <div class="stats"><div class="stat"><strong id="station-count">—</strong><span>座車站</span></div><div class="stat"><strong id="line-count">—</strong><span>條主線</span></div><div class="stat"><strong id="code-count">—</strong><span>個站碼</span></div></div>
+    <label for="search">尋找車站</label>
+    <input type="search" id="search" placeholder="站名或站碼，例如：台北車站、R10" autocomplete="off">
+    <div id="search-results" aria-live="polite"></div>
+    <p class="section-title">顯示路線</p>
+    <div id="line-controls"></div>
+    <label class="options"><input type="checkbox" id="labels" checked>放大時顯示站名</label>
+    <button class="reset" id="reset" type="button">顯示完整路網</button>
+    <p class="note">含新北投、小碧潭支線。黑色外圈代表轉乘站。<br>連線依相鄰站繪製，非實際軌道形狀。</p>
+  </aside>
+  <main class="map-area" aria-label="捷運車站地圖">
+    <div id="map"></div>
+    <div id="notice" role="status">正在載入捷運地圖…</div>
+  </main>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+"use strict";
+const notice = document.getElementById('notice');
+const showNotice = text => { notice.textContent = text; notice.hidden = false; };
+const node = (tag, text, className) => {
+  const item = document.createElement(tag);
+  if (text !== undefined) item.textContent = text;
+  if (className) item.className = className;
+  return item;
+};
+const normalize = text => text.normalize('NFKC').replace(/\s/g, '').replaceAll('臺', '台').toUpperCase();
+
+async function start() {
+  if (!window.L) throw new Error('地圖元件載入失敗，請確認網路連線後重新整理。');
+  if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，再使用終端機顯示的網址開啟地圖。');
+  const response = await fetch('/network.json');
+  if (!response.ok) throw new Error('車站資料載入失敗，請重新啟動地圖程式。');
+  const data = await response.json();
+  const lines = new Map(data.lines.map(line => [line.id, line]));
+  const enabled = new Set(lines.keys());
+  const lineButtons = new Map();
+  const segments = new Map(data.lines.map(line => [line.id, L.layerGroup()]));
+  const markers = [];
+  const bounds = L.latLngBounds(data.stations.map(s => [s.lat, s.lon]));
+  const map = L.map('map', {zoomControl: false}).fitBounds(bounds, {padding: [30, 30]});
+  L.control.zoom({position: 'topright'}).addTo(map);
+  L.control.scale({imperial: false, position: 'bottomleft'}).addTo(map);
+  const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  tiles.on('tileerror', () => showNotice('部分街道底圖無法載入，捷運站與路線仍可查看。'));
+  for (const edge of data.edges) {
+    const a = data.stops[edge.source], b = data.stops[edge.target];
+    const line = lines.get(edge.line);
+    L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {color: line.color, weight: 5, opacity: .85})
+      .bindPopup(node('span', `${line.name}｜${a.name} ↔ ${b.name}`)).addTo(segments.get(edge.line));
+  }
+  for (const group of segments.values()) group.addTo(map);
+  for (const station of data.stations) {
+    const popup = node('div');
+    popup.append(node('div', station.name, 'popup-title'));
+    for (const code of station.codes) {
+      const line = lines.get(data.stops[code].line);
+      const row = node('div', undefined, 'popup-line');
+      const badge = node('span', code, 'line-code');
+      badge.style.setProperty('--line-color', line.color);
+      row.append(badge, node('span', line.name));
+      popup.append(row);
+    }
+    popup.append(node('div', `${station.lat.toFixed(6)}, ${station.lon.toFixed(6)}`, 'popup-coordinates'));
+    const marker = L.circleMarker([station.lat, station.lon], {
+      radius: station.lines.length > 1 ? 6 : 4.5, weight: 2,
+      color: station.lines.length > 1 ? '#233747' : lines.get(station.lines[0]).color,
+      fillColor: '#fff', fillOpacity: 1
+    }).bindPopup(popup).addTo(map);
+    markers.push({station, marker});
+  }
+  const fit = () => map.fitBounds(bounds, {padding: [30, 30]});
+  const labels = document.getElementById('labels');
+  function updateLabels() {
+    for (const {station, marker} of markers) {
+      const visible = map.hasLayer(marker) && labels.checked && map.getZoom() >= 13;
+      if (visible && !marker.getTooltip()) marker.bindTooltip(node('span', station.name), {permanent: true, direction: 'right', offset: [7, 0], className: 'station-label'});
+      if (!visible && marker.getTooltip()) marker.unbindTooltip();
+    }
+  }
+  function updateVisibility() {
+    for (const [id, group] of segments) {
+      if (enabled.has(id)) group.addTo(map); else map.removeLayer(group);
+      lineButtons.get(id)?.setAttribute('aria-pressed', String(enabled.has(id)));
+    }
+    for (const {station, marker} of markers) {
+      if (station.lines.some(id => enabled.has(id))) marker.addTo(map); else map.removeLayer(marker);
+    }
+    updateLabels();
+  }
+  for (const line of data.lines) {
+    const button = node('button', undefined, 'line-toggle');
+    button.type = 'button'; button.dataset.line = line.id; button.setAttribute('aria-pressed', 'true');
+    const badge = node('span', line.id, 'line-code');
+    badge.style.setProperty('--line-color', line.color);
+    button.append(badge, node('span', line.name), node('span', `${data.stations.filter(s => s.lines.includes(line.id)).length} 站`, 'line-count'));
+    button.addEventListener('click', () => { if (enabled.has(line.id)) enabled.delete(line.id); else enabled.add(line.id); updateVisibility(); });
+    lineButtons.set(line.id, button);
+    document.getElementById('line-controls').append(button);
+  }
+  const search = document.getElementById('search');
+  const results = document.getElementById('search-results');
+  function selectStation(item) {
+    item.station.lines.forEach(id => enabled.add(id));
+    updateVisibility();
+    map.setView([item.station.lat, item.station.lon], 15);
+    item.marker.openPopup();
+    search.value = item.station.name;
+    results.replaceChildren();
+  }
+  search.addEventListener('input', () => {
+    results.replaceChildren();
+    const query = normalize(search.value);
+    if (!query) return;
+    const exact = markers.filter(({station}) => normalize(station.name) === query || station.codes.includes(query));
+    const matches = exact.length ? exact : markers.filter(({station}) => normalize(station.name).includes(query) || station.codes.some(code => code.includes(query)));
+    for (const item of matches.slice(0, 12)) {
+      const button = node('button', `${item.station.name}　${item.station.codes.join(' / ')}`);
+      button.type = 'button'; button.addEventListener('click', () => selectStation(item)); results.append(button);
+    }
+    if (!matches.length) { const empty = node('div', '找不到車站，請試試其他站名或站碼。'); empty.id = 'search-empty'; results.append(empty); }
+  });
+  search.addEventListener('keydown', event => { if (event.key === 'Enter') results.querySelector('button')?.click(); });
+  document.getElementById('reset').addEventListener('click', () => {
+    lines.forEach(line => enabled.add(line.id)); updateVisibility(); map.closePopup(); fit(); search.value = ''; results.replaceChildren();
+  });
+  labels.addEventListener('change', updateLabels);
+  map.on('zoomend', updateLabels);
+  document.getElementById('station-count').textContent = data.stations.length;
+  document.getElementById('line-count').textContent = data.lines.length;
+  document.getElementById('code-count').textContent = Object.keys(data.stops).length;
+  fit(); updateLabels(); notice.hidden = true;
+  document.body.dataset.ready = 'true';
+}
+start().catch(error => showNotice(error.message));
+</script>
+</body>
+</html>
