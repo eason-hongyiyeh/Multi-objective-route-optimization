@@ -60,16 +60,18 @@
   <aside>
     <div class="eyebrow">TAIPEI METRO · NETWORK</div>
     <h1>台北捷運地圖</h1>
-    <p class="intro">沿著城市，探索每一站。<br>點選車站查看站碼與所屬路線。</p>
-    <div class="stats"><div class="stat"><strong id="station-count">—</strong><span>座車站</span></div><div class="stat"><strong id="line-count">—</strong><span>條主線</span></div><div class="stat"><strong id="code-count">—</strong><span>個站碼</span></div></div>
+    <p class="intro">查看軌道路徑、車站與出入口。<br>點選地圖上的標記查看詳細資訊。</p>
+    <div class="stats"><div class="stat"><strong id="station-count">—</strong><span>座車站</span></div><div class="stat"><strong id="track-count">—</strong><span>筆軌道／設施</span></div><div class="stat"><strong id="exit-count">—</strong><span>個出入口</span></div></div>
     <label for="search">尋找車站</label>
     <input type="search" id="search" placeholder="站名或站碼，例如：台北車站、R10" autocomplete="off">
     <div id="search-results" aria-live="polite"></div>
     <p class="section-title">顯示路線</p>
     <div id="line-controls"></div>
+    <label class="options"><input type="checkbox" id="exits" checked>顯示出入口（紫色圓點）</label>
     <label class="options"><input type="checkbox" id="labels" checked>放大時顯示站名</label>
     <button class="reset" id="reset" type="button">顯示完整路網</button>
-    <p class="note">含新北投、小碧潭支線。黑色外圈代表轉乘站。<br>連線依相鄰站繪製，非實際軌道形狀。</p>
+    <p class="note">軌道與出入口依匯入圖資繪製，黑色外圈代表轉乘站。圖資包含機廠、側線及未營運路段，不代表即時營運狀態。</p>
+    <p class="note" id="data-summary"></p>
   </aside>
   <main class="map-area" aria-label="捷運車站地圖">
     <div id="map"></div>
@@ -92,29 +94,89 @@ const normalize = text => text.normalize('NFKC').replace(/\s/g, '').replaceAll('
 async function start() {
   if (!window.L) throw new Error('地圖元件載入失敗，請確認網路連線後重新整理。');
   if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，再使用終端機顯示的網址開啟地圖。');
-  const response = await fetch('/network.json');
-  if (!response.ok) throw new Error('車站資料載入失敗，請重新啟動地圖程式。');
-  const data = await response.json();
+  const [data, tracks, exits] = await Promise.all(['/network.json', '/data/mrt_tracks.geojson', '/data/mrt_exits.geojson'].map(async url => {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('地圖資料載入失敗，請重新啟動 mrt_map.py。');
+    return response.json();
+  }));
   const lines = new Map(data.lines.map(line => [line.id, line]));
+  const extraLines = [
+    {id: 'Y', name: '環狀線', color: '#c49e00'},
+    {id: 'LB', name: '三鶯線圖資', color: '#298fc0'},
+    {id: 'A', name: '機場捷運', color: '#82479b'},
+    {id: 'other', name: '其他軌道／設施', color: '#71818c'}
+  ];
+  const known = new Map([...data.lines, ...extraLines].map(line => [line.id, line]));
+  function trackLine(feature) {
+    const p = feature.properties || {};
+    if (known.has(p.ref)) return p.ref;
+    const name = p['name:zh-Hant'] || p['name:zh'] || p.name || '';
+    const aliases = [['文湖', 'BR'], ['淡水信義', 'R'], ['信義線東延', 'R'], ['新北投', 'R'],
+      ['松山新店', 'G'], ['小碧潭', 'G'], ['中和新蘆', 'O'], ['板南', 'BL'],
+      ['環狀', 'Y'], ['三鶯', 'LB'], ['機場捷運', 'A']];
+    return aliases.find(([keyword]) => name.includes(keyword))?.[1] || 'other';
+  }
+  for (const feature of tracks.features) {
+    const id = trackLine(feature);
+    if (!lines.has(id)) lines.set(id, known.get(id));
+  }
   const enabled = new Set(lines.keys());
   const lineButtons = new Map();
-  const segments = new Map(data.lines.map(line => [line.id, L.layerGroup()]));
+  const segments = new Map([...lines.keys()].map(id => [id, L.layerGroup()]));
+  const trackCounts = new Map([...lines.keys()].map(id => [id, 0]));
   const markers = [];
   const bounds = L.latLngBounds(data.stations.map(s => [s.lat, s.lon]));
   const map = L.map('map', {zoomControl: false}).fitBounds(bounds, {padding: [30, 30]});
+  map.createPane('tracks'); map.getPane('tracks').style.zIndex = 410;
+  map.createPane('stations'); map.getPane('stations').style.zIndex = 430;
+  map.createPane('exits'); map.getPane('exits').style.zIndex = 440;
   L.control.zoom({position: 'topright'}).addTo(map);
   L.control.scale({imperial: false, position: 'bottomleft'}).addTo(map);
   const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
   tiles.on('tileerror', () => showNotice('部分街道底圖無法載入，捷運站與路線仍可查看。'));
-  for (const edge of data.edges) {
-    const a = data.stops[edge.source], b = data.stops[edge.target];
-    const line = lines.get(edge.line);
-    L.polyline([[a.lat, a.lon], [b.lat, b.lon]], {color: line.color, weight: 5, opacity: .85})
-      .bindPopup(node('span', `${line.name}｜${a.name} ↔ ${b.name}`)).addTo(segments.get(edge.line));
+  function featurePopup(feature, fallback, fields) {
+    const p = feature.properties || {};
+    const popup = node('div');
+    popup.append(node('div', p['name:zh-Hant'] || p['name:zh'] || p.name || fallback, 'popup-title'));
+    for (const [key, label] of fields) {
+      if (p[key] !== undefined) popup.append(node('div', `${label}：${p[key]}`, 'popup-line'));
+    }
+    if (feature.id || p['@id']) popup.append(node('div', `圖資編號：${feature.id || p['@id']}`, 'popup-coordinates'));
+    return popup;
+  }
+  for (const feature of tracks.features) {
+    const id = trackLine(feature), line = lines.get(id), p = feature.properties || {};
+    const facility = ['Polygon', 'MultiPolygon'].includes(feature.geometry.type);
+    const auxiliary = !!p.service || !!p.construction;
+    const layer = L.geoJSON(feature, {
+      pane: 'tracks', style: {className: 'track-feature', color: line.color, weight: facility ? 2 : auxiliary ? 2 : 4,
+        opacity: auxiliary ? .6 : .85, dashArray: auxiliary ? '5 5' : null, fillOpacity: .15},
+      onEachFeature: (f, item) => item.bindPopup(featurePopup(f, line.name,
+        [['ref', '路線代碼'], ['network', '路網'], ['operator', '營運單位'], ['service', '軌道用途'], ['construction', '施工標記']]))
+    });
+    layer.addTo(segments.get(id));
+    trackCounts.set(id, trackCounts.get(id) + 1);
+    bounds.extend(layer.getBounds());
   }
   for (const group of segments.values()) group.addTo(map);
+  const exitLayer = L.geoJSON(exits, {
+    pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
+      pane: 'exits', className: 'exit-marker', radius: 3.5, color: '#fff', weight: 1, fillColor: '#7c3db0', fillOpacity: .9
+    }),
+    onEachFeature: (feature, layer) => {
+      const p = feature.properties || {};
+      const popup = featurePopup(feature, p.ref ? `出入口 ${p.ref}` : '捷運出入口',
+        [['ref', '出口編號'], ['wheelchair', '輪椅通行（來源標記）'], ['access', '通行限制'], ['description', '說明']]);
+      const [lon, lat] = feature.geometry.coordinates;
+      popup.append(node('div', `${lat.toFixed(6)}, ${lon.toFixed(6)}`, 'popup-coordinates'));
+      layer.bindPopup(popup);
+    }
+  }).addTo(map);
+  if (exitLayer.getLayers().length) bounds.extend(exitLayer.getBounds());
+  const exitsToggle = document.getElementById('exits');
+  exitsToggle.addEventListener('change', () => { if (exitsToggle.checked) exitLayer.addTo(map); else map.removeLayer(exitLayer); });
   for (const station of data.stations) {
     const popup = node('div');
     popup.append(node('div', station.name, 'popup-title'));
@@ -128,6 +190,7 @@ async function start() {
     }
     popup.append(node('div', `${station.lat.toFixed(6)}, ${station.lon.toFixed(6)}`, 'popup-coordinates'));
     const marker = L.circleMarker([station.lat, station.lon], {
+      pane: 'stations', className: 'station-marker',
       radius: station.lines.length > 1 ? 6 : 4.5, weight: 2,
       color: station.lines.length > 1 ? '#233747' : lines.get(station.lines[0]).color,
       fillColor: '#fff', fillOpacity: 1
@@ -153,12 +216,12 @@ async function start() {
     }
     updateLabels();
   }
-  for (const line of data.lines) {
+  for (const line of lines.values()) {
     const button = node('button', undefined, 'line-toggle');
     button.type = 'button'; button.dataset.line = line.id; button.setAttribute('aria-pressed', 'true');
     const badge = node('span', line.id, 'line-code');
     badge.style.setProperty('--line-color', line.color);
-    button.append(badge, node('span', line.name), node('span', `${data.stations.filter(s => s.lines.includes(line.id)).length} 站`, 'line-count'));
+    button.append(badge, node('span', line.name), node('span', `${trackCounts.get(line.id)} 筆`, 'line-count'));
     button.addEventListener('click', () => { if (enabled.has(line.id)) enabled.delete(line.id); else enabled.add(line.id); updateVisibility(); });
     lineButtons.set(line.id, button);
     document.getElementById('line-controls').append(button);
@@ -187,13 +250,16 @@ async function start() {
   });
   search.addEventListener('keydown', event => { if (event.key === 'Enter') results.querySelector('button')?.click(); });
   document.getElementById('reset').addEventListener('click', () => {
-    lines.forEach(line => enabled.add(line.id)); updateVisibility(); map.closePopup(); fit(); search.value = ''; results.replaceChildren();
+    lines.forEach(line => enabled.add(line.id)); updateVisibility(); exitsToggle.checked = true; exitLayer.addTo(map);
+    map.closePopup(); fit(); search.value = ''; results.replaceChildren();
   });
   labels.addEventListener('change', updateLabels);
   map.on('zoomend', updateLabels);
   document.getElementById('station-count').textContent = data.stations.length;
-  document.getElementById('line-count').textContent = data.lines.length;
-  document.getElementById('code-count').textContent = Object.keys(data.stops).length;
+  document.getElementById('track-count').textContent = tracks.features.length;
+  document.getElementById('exit-count').textContent = exits.features.length;
+  const skipped = tracks.display_summary.total - tracks.features.length + exits.display_summary.total - exits.features.length;
+  document.getElementById('data-summary').textContent = `已載入 ${tracks.features.length} 筆軌道／設施、${exits.features.length} 個出入口。${skipped ? `另有 ${skipped} 筆無可用幾何座標，未顯示。` : ''}出入口獨立顯示，不隨路線切換。`;
   fit(); updateLabels(); notice.hidden = true;
   document.body.dataset.ready = 'true';
 }

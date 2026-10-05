@@ -1,4 +1,4 @@
-"""讀取現有捷運 CSV，啟動只供本機使用的互動地圖。"""
+"""讀取 data/ 的軌道、出入口 GeoJSON，搭配車站 CSV 顯示本機地圖。"""
 import argparse
 import csv
 from functools import partial
@@ -38,25 +38,67 @@ def load_network(data_dir=ROOT / 'taipei_mrt'):
         station['codes'].append(code)
         if line not in station['lines']:
             station['lines'].append(line)
-    edges, seen = [], set()
-    for row in read_csv(data_dir / 'route_edges.csv'):
-        source, target = row['from_stop_id'], row['to_stop_id']
-        if source not in stops or target not in stops:
-            raise ValueError(f'路段引用不存在的車站：{source} → {target}')
-        if stops[source]['line'] != stops[target]['line']:
-            raise ValueError(f'路段跨越不同路線：{source} → {target}')
-        pair = tuple(sorted((source, target)))
-        if pair not in seen:
-            seen.add(pair)
-            edges.append({'source': source, 'target': target, 'line': stops[source]['line']})
     if not stops:
         raise ValueError('沒有可顯示的車站。')
-    return {'lines': list(lines.values()), 'stops': stops, 'stations': list(stations.values()), 'edges': edges}
+    return {'lines': list(lines.values()), 'stops': stops, 'stations': list(stations.values())}
+
+
+def valid_geometry(geometry):
+    """GeoJSON 順序為經度、緯度；只驗證，不改寫來源座標。"""
+    def point(value):
+        return (isinstance(value, list) and len(value) >= 2
+                and all(isinstance(v, (int, float)) and math.isfinite(v) for v in value[:2])
+                and -180 <= value[0] <= 180 and -90 <= value[1] <= 90)
+
+    def line(value):
+        return isinstance(value, list) and len(value) >= 2 and all(point(p) for p in value)
+
+    def polygon(value):
+        return (isinstance(value, list) and bool(value)
+                and all(line(ring) and len(ring) >= 4 and ring[0] == ring[-1] for ring in value))
+
+    if not isinstance(geometry, dict):
+        return False
+    coordinates = geometry.get('coordinates')
+    kind = geometry.get('type')
+    checks = {'Point': point, 'LineString': line, 'Polygon': polygon}
+    if kind in checks:
+        return checks[kind](coordinates)
+    multi = {'MultiLineString': line, 'MultiPolygon': polygon}
+    return (kind in multi and isinstance(coordinates, list) and bool(coordinates)
+            and all(multi[kind](part) for part in coordinates))
+
+
+def load_geojson(path, allowed_types):
+    with Path(path).open(encoding='utf-8-sig') as handle:
+        source = json.load(handle)
+    if source.get('type') != 'FeatureCollection' or not isinstance(source.get('features'), list):
+        raise ValueError(f'{Path(path).name} 不是 GeoJSON FeatureCollection。')
+    kept = []
+    counts = {'total': len(source['features']), 'missing_geometry': 0, 'unsupported_geometry': 0,
+              'invalid_geometry': 0, 'displayed': 0}
+    for feature in source['features']:
+        if not isinstance(feature, dict) or feature.get('type') != 'Feature':
+            counts['invalid_geometry'] += 1
+            continue
+        geometry = feature.get('geometry')
+        if geometry is None:
+            counts['missing_geometry'] += 1
+        elif not isinstance(geometry, dict):
+            counts['invalid_geometry'] += 1
+        elif geometry.get('type') not in allowed_types:
+            counts['unsupported_geometry'] += 1
+        elif not valid_geometry(geometry):
+            counts['invalid_geometry'] += 1
+        else:
+            kept.append(feature)
+    counts['displayed'] = len(kept)
+    return {**source, 'features': kept, 'display_summary': counts}
 
 
 class MapHandler(BaseHTTPRequestHandler):
-    def __init__(self, *args, network, **kwargs):
-        self.network = network
+    def __init__(self, *args, resources, **kwargs):
+        self.resources = resources
         super().__init__(*args, **kwargs)
 
     def do_GET(self):
@@ -64,8 +106,8 @@ class MapHandler(BaseHTTPRequestHandler):
         if path in ('/', '/map.html'):
             content = (ROOT / 'map.html').read_bytes()
             mime = 'text/html; charset=utf-8'
-        elif path == '/network.json':
-            content = self.network
+        elif path in self.resources:
+            content = self.resources[path]
             mime = 'application/json; charset=utf-8'
         else:
             self.send_error(404)
@@ -82,8 +124,13 @@ class MapHandler(BaseHTTPRequestHandler):
 
 
 def make_server(port=8765):
-    network = json.dumps(load_network(), ensure_ascii=False, allow_nan=False).encode('utf-8')
-    return ThreadingHTTPServer(('127.0.0.1', port), partial(MapHandler, network=network))
+    resources = {'/network.json': load_network(),
+                 '/data/mrt_tracks.geojson': load_geojson(ROOT / 'data/mrt_tracks.geojson',
+                     {'LineString', 'MultiLineString', 'Polygon', 'MultiPolygon'}),
+                 '/data/mrt_exits.geojson': load_geojson(ROOT / 'data/mrt_exits.geojson', {'Point'})}
+    encoded = {url: json.dumps(data, ensure_ascii=False, allow_nan=False).encode('utf-8')
+               for url, data in resources.items()}
+    return ThreadingHTTPServer(('127.0.0.1', port), partial(MapHandler, resources=encoded))
 
 
 def main(argv=None):
