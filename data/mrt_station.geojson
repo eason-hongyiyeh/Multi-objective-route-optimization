@@ -831,25 +831,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/1533860068",
-        "public_transport": "station",
-        "railway": "station",
-        "station": "subway",
-        "subway": "yes",
-        "@geometry": "center"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4198105,
-          24.9600409
-        ]
-      },
-      "id": "way/1533860068"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/1681745146",
         "addr:city": "臺北市",
         "addr:country": "TW",

@@ -12,15 +12,17 @@ import webbrowser
 
 ROOT = Path(__file__).resolve().parent
 TITLES = {
-    'mrt_tracks.geojson': '捷運軌道與設施',
+    'mrt_tracks.geojson': '捷運路線與路線節點',
     'mrt_station.geojson': '捷運車站與站名',
-    'airportmrt.geojson': '機場捷運軌道',
+    'airportmrt.geojson': '機場捷運路線、軌道與停靠點',
+    'nightmarket.geojson': '夜市與周邊設施',
 }
 COLORS = ('#247a9a', '#8851b0', '#008675', '#b27a1d', '#d1495b')
 LAYER_COLORS = {
     'mrt_station.geojson': '#273f4f',
     'airportmrt.geojson': '#8851b0',
     'mrt_tracks.geojson': '#b27a1d',
+    'nightmarket.geojson': '#B42365',
 }
 
 

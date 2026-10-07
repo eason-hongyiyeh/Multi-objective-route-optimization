@@ -3,37 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>捷運資料地圖</title>
+  <title>捷運與夜市地圖</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
     :root { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; color: #173b45; background: #f4f7f6; }
     * { box-sizing: border-box; }
-    body { margin: 0; display: grid; grid-template-columns: 330px minmax(0, 1fr); height: 100dvh; }
-    aside { padding: 28px 22px; overflow-y: auto; border-right: 1px solid #dbe5e1; }
-    .eyebrow { color: #477367; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
-    h1 { margin: 12px 0 8px; font-size: 26px; letter-spacing: 1px; }
-    .intro, .note { font-size: 13px; color: #5f777c; line-height: 1.7; }
-    .stats { display: flex; gap: 8px; margin: 24px 0; }
-    .stat { flex: 1; padding: 12px 5px; background: #e7efeb; border-radius: 8px; text-align: center; }
-    .stat strong { display: block; font-size: 22px; }
-    .stat small { display: block; font-size: 10px; margin-top: 4px; }
-    h2, .search-label { display: block; font-size: 13px; font-weight: 700; margin: 22px 0 10px; }
-    input[type=search] { width: 100%; border: 1px solid #bfd0ca; border-radius: 7px; padding: 12px; font: inherit; font-size: 14px; background: white; }
-    input:focus-visible, button:focus-visible { outline: 3px solid #77b6aa; outline-offset: 2px; }
-    button { font: inherit; cursor: pointer; }
-    #results { display: grid; gap: 4px; margin-top: 8px; max-height: 220px; overflow: auto; }
-    .result { border: 1px solid #dbe5e1; background: white; padding: 10px; text-align: left; border-radius: 5px; }
-    .result:hover, .locate:hover { background: #e3f0e9; }
-    .result small { display: block; color: #657b80; margin-top: 4px; font-size: 11px; }
-    .layer { padding: 13px 0; border-bottom: 1px solid #dbe5e1; }
-    .layer-heading { display: flex; gap: 6px; align-items: center; }
-    .layer label { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; cursor: pointer; font-size: 13px; font-weight: 600; }
-    input[type=checkbox] { accent-color: #236a58; width: 16px; height: 16px; flex-shrink: 0; }
-    .swatch { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .layer-meta { font-size: 11px; line-height: 1.7; color: #5f777c; margin: 7px 0 0 26px; overflow-wrap: anywhere; }
-    .locate { font-size: 11px; padding: 5px 8px; border: 1px solid #ccdad4; border-radius: 5px; color: #235e50; background: white; }
-    button:disabled { cursor: default; opacity: .45; }
-    #reset { width: 100%; padding: 11px; border: 0; border-radius: 6px; background: #235e50; color: white; margin-top: 22px; font-size: 13px; }
+    body { margin: 0; display: grid; grid-template-columns: 290px minmax(0, 1fr); height: 100dvh; }
+    aside { padding: 26px 18px; overflow-y: auto; border-right: 1px solid #dbe5e1; }
+    h1 { margin: 0 0 24px; font-size: 22px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border-bottom: 1px solid #dbe5e1; height: 48px; }
+    thead th { color: #5f777c; font-weight: 500; height: 34px; }
+    th { text-align: left; font-weight: 600; }
+    td, thead th:not(:first-child) { text-align: center; width: 48px; }
+    .line-name { display: flex; align-items: center; gap: 8px; }
+    .swatch { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .all-row { background: #e7efeb; }
+    .all-row th { padding-left: 8px; }
+    input[type=checkbox] { accent-color: #236a58; width: 18px; height: 18px; cursor: pointer; margin: 0; vertical-align: middle; }
+    input:disabled { cursor: default; opacity: .3; }
+    input:focus-visible { outline: 3px solid #77b6aa; outline-offset: 4px; }
     main { position: relative; min-width: 0; min-height: 0; }
     #map { width: 100%; height: 100%; background: #dde7e2; }
     #notice { position: absolute; z-index: 1000; top: 16px; left: 16px; right: 65px; padding: 12px 16px; border-radius: 7px; background: white; box-shadow: 0 2px 12px #173b4520; font-size: 13px; }
@@ -44,37 +33,23 @@
     .line-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
     .line-badge { padding: 4px 8px; border: 1px solid #dbe5e1; border-left: 5px solid var(--line-color); border-radius: 4px; font-size: 12px; color: #173b45; background: #f4f7f6; }
     .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
-    .label-control { display: flex; align-items: center; gap: 7px; margin-top: 16px; font-size: 13px; }
-    details { margin-top: 12px; }
-    summary { cursor: pointer; color: #236a58; }
+    details { margin-top: 12px; } summary { cursor: pointer; color: #236a58; }
     .properties { max-height: 220px; overflow: auto; }
     @media (max-width: 700px) {
-      body { grid-template-columns: 1fr; grid-template-rows: 42dvh minmax(300px, 1fr); }
-      aside { padding: 18px; border-right: 0; border-bottom: 1px solid #dbe5e1; }
-      h1 { font-size: 23px; } .stats { margin: 15px 0; } .intro { margin-bottom: 0; }
+      body { grid-template-columns: 1fr; grid-template-rows: 36dvh minmax(300px, 1fr); }
+      aside { padding: 16px 18px; border-right: 0; border-bottom: 1px solid #dbe5e1; }
+      h1 { margin-bottom: 12px; font-size: 20px; }
+      th, td { height: 42px; }
     }
   </style>
 </head>
 <body>
-  <aside>
-    <div class="eyebrow">TRANSIT / DATA EXPLORER</div>
-    <h1>捷運資料地圖</h1>
-    <p class="intro">查看捷運與機場捷運的車站、軌道及設施。點選車站查看站名、站碼與路線。</p>
-    <div class="stats">
-      <div class="stat"><strong id="file-count">—</strong><small>份資料</small></div>
-      <div class="stat"><strong id="feature-count">—</strong><small>筆可顯示</small></div>
-      <div class="stat"><strong id="skipped-count">—</strong><small>筆缺少有效座標</small></div>
-    </div>
-    <label class="search-label" for="search">搜尋地圖資料</label>
-    <input id="search" type="search" placeholder="站名或站碼，例如 西湖、BR16" autocomplete="off">
-    <div id="results" aria-live="polite"></div>
-    <h2>顯示圖層</h2>
-    <div id="layer-controls"></div>
-    <label class="label-control"><input id="station-labels" type="checkbox" checked>放大地圖時顯示站名</label>
-    <p class="note">白心圓點是車站，邊框依路線配色；多條路線的車站使用深色邊框。</p>
-    <button id="reset" type="button">顯示全部資料範圍</button>
-    <p class="note" id="summary"></p>
-    <p class="note">圖資可能包含機廠、側線與施工路段，不代表即時營運狀態。部分資料範圍重疊，可切換圖層查看。</p>
+  <aside aria-label="地圖顯示選項">
+    <h1>捷運與夜市地圖</h1>
+    <table aria-label="各路線的站點與路線顯示開關">
+      <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
+      <tbody id="visibility-controls"></tbody>
+    </table>
   </aside>
   <main aria-label="互動捷運地圖">
     <div id="map"></div>
@@ -89,20 +64,106 @@
       if (className) element.className = className;
       return element;
     };
-    const normalize = text => String(text).normalize('NFKC').replace(/\s/g, '').replace(/臺/g, '台').toUpperCase();
-    const routeColors = { BR: '#a66c2c', R: '#d92c40', G: '#00865b', O: '#e99a10', BL: '#0075be',
-      Y: '#c1a400', LB: '#4b8fc2', A: '#8851b0' };
+    // 依提供的路網圖統一顯示配色；來源 colour 保留在原始資料中。
+    const routeColors = { BR: '#C3833B', R: '#EF1738', G: '#008659', O: '#FFB81C', BL: '#0070BD',
+      Y: '#FFDB00', LB: '#70B9D0', A: '#C5BDDF', R22A: '#F3A6AE', G03A: '#D7DF21' };
+    const unknownColor = '#687078', transferColor = '#333333';
     const routeNames = { BR: '文湖線', R: '淡水信義線', G: '松山新店線', O: '中和新蘆線', BL: '板南線',
-      Y: '環狀線', LB: '三鶯線', A: '機場捷運' };
+      Y: '環狀線', LB: '三鶯線', A: '機場捷運', R22A: '新北投支線', G03A: '小碧潭支線' };
+    const stationById = new Map();
+    const marketCategories = new WeakMap();
+    const marketNames = { night_markets: '夜市／美食區', market_facilities: '夜市周邊設施' };
+    const marketColors = { night_markets: '#B42365', market_facilities: '#64748B' };
+    function classifyMarket(feature) {
+      const p = feature.properties || {};
+      const name = p['name:zh-Hant'] || p['name:zh'] || p.name || '';
+      const related = p.public_transport || p.bus === 'yes' || p.highway === 'bus_stop'
+        || p.entrance || p.railway === 'subway_entrance' || /入口|夜市口$/.test(name);
+      const market = ['marketplace', 'food_court'].includes(p.amenity)
+        || (!p.amenity && !p.highway && !p.office && p.building !== 'office'
+          && (['retail', 'commercial'].includes(p.landuse) || p.tourism === 'attraction'));
+      return !related && market ? 'night_markets' : 'market_facilities';
+    }
+    const sourceId = feature => feature.id || feature.properties?.['@id'];
+    const linkedStation = feature => stationById.get(sourceId(feature));
+    function routeId(tags) {
+      if (tags.ref === '捷運紅線 (新北投支線)') return 'R22A';
+      if (tags.ref === 'G' && String(tags.name || '').includes('小碧潭')) return 'G03A';
+      return tags.ref;
+    }
     const isStation = feature => feature.geometry.type === 'Point'
       && (feature.properties?.public_transport === 'station' || feature.properties?.railway === 'station');
+    const isRoute = feature => feature.properties?.type === 'route' && feature.properties?.route === 'subway';
+    const routeMemberships = feature => (Array.isArray(feature.properties?.['@relations'])
+      ? feature.properties['@relations'] : []).filter(r => r?.reltags?.type === 'route' && r.reltags.route === 'subway');
+    const isStop = feature => feature.geometry.type === 'Point' && !isStation(feature)
+      && routeMemberships(feature).some(r => ['stop', 'stop_entry_only', 'stop_exit_only'].includes(r.role));
+    function routeColor(feature) {
+      return routeColors[routeId(feature.properties || {})] || unknownColor;
+    }
+    function pointColor(feature) {
+      const lines = stationInfo(feature).lines;
+      return lines.length === 1 ? routeColors[lines[0].id] : lines.length > 1 ? transferColor : unknownColor;
+    }
     const stationCodes = feature => String(feature.properties?.ref || '').toUpperCase()
       .split(/[;,\s/]+/).filter(code => /^(BR|BL|LB|R|G|O|Y|A)\d+[A-Z]?$/.test(code));
     function stationDetails(feature) {
       const p = feature.properties || {}, codes = stationCodes(feature);
-      const ids = [...new Set(codes.map(code => code.match(/^[A-Z]+/)[0]))];
+      const ids = [...new Set(codes.map(code => ['R22A', 'G03A'].includes(code) ? code : code.match(/^[A-Z]+/)[0]))];
       return { name: p['name:zh-Hant'] || p['name:zh'] || p.name,
         codes, lines: ids.map(id => ({ id, name: routeNames[id] })) };
+    }
+    // 僅裁切顯示用的首尾座標；原始 GeoJSON、途中站與線形保持不變。
+    function trimRouteGeometry(feature, stationFeatures) {
+      if (!isRoute(feature)) return feature.geometry;
+      const geometry = feature.geometry;
+      if (!['LineString', 'MultiLineString'].includes(geometry.type)) return geometry;
+      const id = routeId(feature.properties);
+      const candidates = stationFeatures.filter(station => stationCodes(station).some(code => {
+        if (id === 'R22A') return ['R22', 'R22A'].includes(code);
+        if (id === 'G03A') return ['G03', 'G03A'].includes(code);
+        return code.match(/^[A-Z]+/)?.[0] === id && !/[A-Z]$/.test(code);
+      }));
+      if (!candidates.length) return geometry;
+      const distance = (a, b) => Math.hypot((a[0] - b[0]) * 100900, (a[1] - b[1]) * 111200);
+      function trimPart(points) {
+        if (distance(points[0], points[points.length - 1]) < 5) return points;
+        const cumulative = [0];
+        for (let i = 1; i < points.length; i++) cumulative.push(cumulative[i - 1] + distance(points[i - 1], points[i]));
+        const total = cumulative[cumulative.length - 1];
+        function anchor(atStart) {
+          const endpoint = atStart ? points[0] : points[points.length - 1];
+          const station = candidates.reduce((best, item) => distance(endpoint, item.geometry.coordinates)
+            < distance(endpoint, best.geometry.coordinates) ? item : best);
+          const target = station.geometry.coordinates;
+          // 遠離車站的端點與過大偏移不猜測；避免裁掉不相關路段。
+          if (distance(endpoint, target) > 1000) return null;
+          let best = null;
+          for (let i = 0; i < points.length - 1; i++) {
+            const a = points[i], b = points[i + 1];
+            const dx = (b[0] - a[0]) * 100900, dy = (b[1] - a[1]) * 111200;
+            const squared = dx * dx + dy * dy;
+            const t = squared ? Math.max(0, Math.min(1,
+              ((target[0] - a[0]) * 100900 * dx + (target[1] - a[1]) * 111200 * dy) / squared)) : 0;
+            const point = a.map((v, axis) => v + t * ((b[axis] ?? v) - v));
+            const error = distance(point, target), along = cumulative[i] + t * Math.sqrt(squared);
+            if (!best || error < best.error) best = { point, error, along, station };
+          }
+          const removed = atStart ? best.along : total - best.along;
+          return best.error <= 150 && removed > 5 && removed <= 1000 ? best : null;
+        }
+        const start = anchor(true), end = anchor(false);
+        if (!start && !end) return points;
+        if (start && end && start.station === end.station) return points;
+        const from = start?.along ?? 0, to = end?.along ?? total;
+        if (to - from < total / 2) return points;
+        return [start?.point || points[0],
+          ...points.filter((_point, index) => cumulative[index] > from && cumulative[index] < to),
+          end?.point || points[points.length - 1]];
+      }
+      const coordinates = geometry.type === 'LineString' ? trimPart(geometry.coordinates)
+        : geometry.coordinates.map(trimPart);
+      return { ...geometry, coordinates };
     }
     const featureName = (feature, info) => {
       const p = feature.properties || {};
@@ -112,6 +173,14 @@
       }
       const name = p['name:zh-Hant'] || p['name:zh'] || p.name;
       if (name) return name;
+      const linked = linkedStation(feature);
+      if (linked?.name) return `${linked.name} · ${isStop(feature) ? '停靠點' : '路線節點'}`;
+      if (isStop(feature)) {
+        const ids = [...new Set(routeMemberships(feature).map(r => routeId(r.reltags)))];
+        const label = ids.map(id => routeNames[id]).filter(Boolean).join('／') || '捷運';
+        return `${label}停靠點（站名未提供）`;
+      }
+      if (feature.geometry.type === 'Point' && routeMemberships(feature).length) return '路線節點（用途未提供）';
       if (routeNames[p.ref]) return `${routeNames[p.ref]}軌道`;
       if (['LineString', 'MultiLineString'].includes(feature.geometry.type)) return '未命名軌道路段';
       if (['Polygon', 'MultiPolygon'].includes(feature.geometry.type)) return '未命名設施範圍';
@@ -121,30 +190,69 @@
       : typeof value === 'object' ? JSON.stringify(value) : String(value);
     function stationInfo(feature) {
       if (isStation(feature)) return stationDetails(feature);
-      const p = feature.properties || {}, lineName = routeNames[p.ref];
-      return { lines: lineName ? [{ id: p.ref, name: lineName }] : [] };
+      const p = feature.properties || {};
+      const ids = [...new Set([routeId(p), ...routeMemberships(feature).map(r => routeId(r.reltags))])];
+      const linked = linkedStation(feature);
+      return { name: linked?.name, codes: linked?.codes || [],
+        lines: ids.filter(id => routeNames[id]).map(id => ({ id, name: routeNames[id] })) };
+    }
+    function displayLineIds(feature) {
+      if (marketCategories.has(feature)) return [marketCategories.get(feature)];
+      const ids = stationInfo(feature).lines.map(line => line.id);
+      if (isStation(feature)) {
+        const codes = stationCodes(feature);
+        if (codes.includes('R22')) ids.push('R22A');
+        if (codes.includes('G03')) ids.push('G03A');
+      }
+      return ids.length ? [...new Set(ids)] : ['other'];
     }
     function popup(feature, info, station) {
       const p = feature.properties || {}, box = node('div');
       box.append(node('div', featureName(feature, info), 'popup-title'), node('div', info.id, 'popup-source'));
+      if (sourceId(feature)) box.append(node('div', `來源物件：${sourceId(feature)}`, 'popup-row'));
       if (station.name) box.append(node('div', `車站：${station.name}`, 'popup-row'));
-      if (station.lines.length) {
+      const marketCategory = marketCategories.get(feature);
+      if (marketCategory) {
+        box.append(node('div', `分類：${marketNames[marketCategory]}（依來源標籤）`, 'popup-row'));
+      } else if (station.lines.length) {
         box.append(node('div', '所屬路線（依現有資料）', 'popup-row'));
         const badges = node('div', undefined, 'line-badges');
         for (const line of station.lines) {
           const badge = node('span', `${line.id} ${line.name}`, 'line-badge');
-          badge.style.setProperty('--line-color', routeColors[line.id] || '#526579');
+          badge.style.setProperty('--line-color', routeColors[line.id] || unknownColor);
           badges.append(badge);
         }
         box.append(badges);
       } else {
-        box.append(node('div', '路線未確認（缺少可對照的站名或路線資料）', 'popup-row'));
+        box.append(node('div', '未分類：來源缺少可辨識的站碼或所屬路線。', 'popup-row'));
+        if (isStation(feature) && !station.name) box.append(node('div', '來源也未提供站名，保留原始資料供核對。', 'popup-row'));
+      }
+      if (p['@geometry'] === 'center') {
+        box.append(node('div', '座標為原始物件匯出的範圍中心。', 'popup-row'));
       }
       const fields = { ref: isStation(feature) ? '車站代碼' : '來源代碼',
+        from: '路線起點', to: '路線終點', direction: '方向（來源標記）',
         operator: '營運單位（來源標記）', 'addr:full': '地址', wheelchair: '輪椅通行（來源標記）',
-        access: '通行限制', network: '路網', service: '軌道用途', construction: '施工標記', UpdateTime: '資料更新時間' };
+        access: '通行限制', network: '路網', service: '軌道用途', construction: '施工標記', UpdateTime: '資料更新時間',
+        opening_hours: '營業時間（來源標記）', description: '說明', phone: '電話', branch: '分區',
+        amenity: '設施類型（來源標記）', highway: '道路／站點類型（來源標記）' };
       for (const [key, label] of Object.entries(fields)) {
         if (p[key] !== undefined && p[key] !== null) box.append(node('div', `${label}：${displayValue(p[key])}`, 'popup-row'));
+      }
+      if (!isStation(feature) && linkedStation(feature)?.name) {
+        box.append(node('div', `車站代碼：${station.codes.join('、')}（依相同來源節點 ID 對照）`, 'popup-row'));
+      } else if (isStop(feature)) box.append(node('div', '這是路線停靠位置；來源未提供此點的站名或站碼。', 'popup-row'));
+      const memberships = routeMemberships(feature);
+      if (memberships.length) {
+        box.append(node('div', '所屬方向路線', 'popup-row'));
+        for (const relation of memberships) {
+          const tags = relation.reltags;
+          const name = tags['name:zh-Hant'] || tags['name:zh'] || tags.name || `路線 ${relation.rel}`;
+          box.append(node('div', name, 'popup-row'));
+          const roles = { stop: '停靠點', stop_entry_only: '僅上車停靠點', stop_exit_only: '僅下車停靠點' };
+          box.append(node('div', `節點／成員用途：${roles[relation.role] || relation.role || '來源未提供'}`, 'popup-row'));
+          if (tags.from || tags.to) box.append(node('div', `${tags.from || '未提供起點'} → ${tags.to || '未提供終點'}`, 'popup-row'));
+        }
       }
       if (feature.geometry.type === 'Point') {
         const [lon, lat] = feature.geometry.coordinates;
@@ -169,6 +277,8 @@
       L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
       map.createPane('points').style.zIndex = 450;
       map.createPane('stations').style.zIndex = 470;
+      map.createPane('markets').style.zIndex = 480;
+      map.createPane('routes').style.zIndex = 410;
       let tileFailed = false;
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -182,108 +292,127 @@
         try { return { info, data: await fetchJSON(info.url) }; }
         catch (error) { return { info: { ...info, error: `載入失敗：${error.message}` } }; }
       }));
-      const entries = [], holders = [], stationMarkers = [], allBounds = L.latLngBounds();
+      const stationFeatures = loaded.flatMap(({ data }) => (data?.features || []).filter(isStation));
+      for (const { info, data } of loaded) {
+        if (info.id.split('/').pop().toLowerCase() === 'nightmarket.geojson') {
+          for (const feature of data?.features || []) marketCategories.set(feature, classifyMarket(feature));
+        }
+      }
+      stationById.clear();
+      for (const { data } of loaded) {
+        for (const feature of data?.features || []) {
+          if (isStation(feature) && sourceId(feature)) stationById.set(sourceId(feature), stationDetails(feature));
+        }
+      }
+      const entries = [], stationMarkers = [], allBounds = L.latLngBounds();
+      const controls = new Map(), masterControls = {};
       function syncLabels() {
-        const visible = $('station-labels').checked && map.getZoom() >= 14;
         for (const marker of stationMarkers) {
-          if (visible && map.hasLayer(marker)) marker.openTooltip();
+          if (map.getZoom() >= 14 && map.hasLayer(marker)) marker.openTooltip();
           else marker.closeTooltip();
         }
       }
       map.on('zoomend', syncLabels);
-      $('station-labels').addEventListener('change', syncLabels);
-      function enable(holder) {
-        holder.check.checked = true;
-        if (!map.hasLayer(holder.group)) holder.group.addTo(map);
-      }
-      function fitAll() { if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30] }); }
       for (const { info, data } of loaded) {
-        const card = node('div', undefined, 'layer'), heading = node('div', undefined, 'layer-heading');
-        const label = node('label'), check = node('input'), swatch = node('span', undefined, 'swatch');
-        check.type = 'checkbox'; check.checked = !info.error && info.displayed > 0;
-        check.disabled = !check.checked; swatch.style.background = info.color;
-        label.append(check, swatch, node('span', info.name));
-        const locate = node('button', '定位', 'locate'); locate.type = 'button'; locate.disabled = check.disabled;
-        locate.setAttribute('aria-label', `定位${info.name}`);
-        heading.append(label, locate);
-        card.append(heading, node('div', info.id, 'layer-meta'), node('div', info.error
-          ? `無法顯示：${info.error}` : `顯示 ${info.displayed} / ${info.total} 筆`, 'layer-meta'));
-        $('layer-controls').append(card);
-        if (!data || !info.displayed) continue;
-        const holder = { check, group: null };
-        holder.group = L.geoJSON(data, {
+        if (!data) continue;
+        const group = L.geoJSON(data, {
           style: feature => {
             if (['Point', 'MultiPoint'].includes(feature.geometry.type)) return {};
+            if (marketCategories.has(feature)) return { color: marketColors[marketCategories.get(feature)],
+              weight: 3, opacity: 1, fillOpacity: .2, className: 'market-shape' };
+            if (isRoute(feature)) return { pane: 'routes', color: routeColor(feature), weight: 7,
+              opacity: 1, className: 'data-shape route-shape' };
             const p = feature.properties || {};
-            return { color: routeColors[p.ref] || info.color, weight: p.service ? 2 : 4,
-              opacity: .85, fillOpacity: .17, dashArray: p.service ? '5 5' : null, className: 'data-shape' };
+            return { color: routeColor(feature), weight: p.service ? 2 : 4,
+              opacity: 1, fillOpacity: .17, dashArray: p.service ? '5 5' : null, className: 'data-shape' };
           },
           pointToLayer: (feature, latlng) => {
+            const category = marketCategories.get(feature);
+            if (category) return L.circleMarker(latlng, { pane: 'markets',
+              radius: category === 'night_markets' ? 8 : 5, color: '#fff', weight: 2,
+              fillColor: marketColors[category], fillOpacity: 1,
+              className: category === 'night_markets' ? 'night-market-point' : 'market-facility-point' });
             if (isStation(feature)) {
-              const { lines } = stationDetails(feature);
               return L.circleMarker(latlng, { pane: 'stations', radius: 8, weight: 3,
-                color: lines.length === 1 ? routeColors[lines[0].id] : '#273f4f',
+                color: pointColor(feature),
                 fillColor: '#fff', fillOpacity: 1, className: 'station-point' });
             }
-            return L.circleMarker(latlng, {
-              pane: 'points', radius: 6,
-              color: '#fff', weight: 1.5, fillColor: info.color, fillOpacity: 1, className: 'data-point' });
+            return L.circleMarker(latlng, { pane: 'points', radius: isStop(feature) ? 4 : 6,
+              color: '#fff', weight: 1.5, fillColor: pointColor(feature), fillOpacity: 1,
+              className: isStop(feature) ? 'data-point stop-point' : 'data-point' });
           },
           onEachFeature: (feature, layer) => {
-            const station = stationInfo(feature);
-            layer.bindPopup(popup(feature, info, station), { maxWidth: 330 });
-            const p = feature.properties || {}, name = featureName(feature, info);
-            if (isStation(feature)) {
-              layer.bindTooltip(node('span', [name, p.ref].filter(Boolean).join(' · ')),
+            if (isRoute(feature) && layer.setLatLngs) {
+              const geometry = trimRouteGeometry(feature, stationFeatures);
+              layer.setLatLngs(L.GeoJSON.coordsToLatLngs(geometry.coordinates, geometry.type === 'MultiLineString' ? 1 : 0));
+            }
+            layer.bindPopup(popup(feature, info, stationInfo(feature)), { maxWidth: 330 });
+            if (isStation(feature) || marketCategories.get(feature) === 'night_markets') {
+              layer.bindTooltip(node('span', [featureName(feature, info), feature.properties.ref].filter(Boolean).join(' · ')),
                 { permanent: true, direction: 'right', offset: [10, 0], className: 'station-label' });
               stationMarkers.push(layer);
             }
-            const keys = [name, feature.id, p['@id'], p.ref, p['name:en'], p.alt_name, station.name,
-              ...(isStation(feature) ? station.codes : []),
-              ...station.lines.map(line => line.name)].filter(v => v != null).map(normalize);
-            entries.push({ name, keys, layer, holder, info });
+            entries.push({ layer, ids: displayLineIds(feature),
+              kind: ['Point', 'MultiPoint'].includes(feature.geometry.type) ? 'points' : 'routes' });
           }
-        }).addTo(map);
-        holder.group.on('add', syncLabels);
-        allBounds.extend(holder.group.getBounds()); holders.push(holder);
-        check.addEventListener('change', () => check.checked ? holder.group.addTo(map) : map.removeLayer(holder.group));
-        locate.addEventListener('click', () => { enable(holder); map.fitBounds(holder.group.getBounds(), { padding: [30, 30], maxZoom: 16 }); });
+        });
+        if (group.getBounds().isValid()) allBounds.extend(group.getBounds());
       }
-      function select(entry) {
-        enable(entry.holder);
-        if (entry.layer.getLatLng) map.setView(entry.layer.getLatLng(), 17);
-        else map.fitBounds(entry.layer.getBounds(), { padding: [30, 30], maxZoom: 17 });
-        entry.layer.openPopup(); $('results').replaceChildren(); $('search').value = entry.name;
-      }
-      $('search').addEventListener('input', () => {
-        $('results').replaceChildren();
-        const query = normalize($('search').value);
-        if (!query) return;
-        const matches = entries.filter(e => e.keys.some(key => key.includes(query)));
-        matches.sort((a, b) => Number(b.keys.includes(query)) - Number(a.keys.includes(query)));
-        for (const entry of matches.slice(0, 20)) {
-          const button = node('button', entry.name, 'result'); button.type = 'button';
-          button.append(node('small', entry.info.name));
-          button.addEventListener('click', () => select(entry)); $('results').append(button);
+      function syncVisibility() {
+        for (const entry of entries) {
+          const visible = entry.ids.some(id => controls.get(id)?.[entry.kind]?.checked);
+          if (visible && !map.hasLayer(entry.layer)) entry.layer.addTo(map);
+          else if (!visible && map.hasLayer(entry.layer)) map.removeLayer(entry.layer);
         }
-        if (!matches.length) $('results').append(node('div', '找不到符合的資料。', 'note'));
-        if (matches.length > 20) $('results').append(node('div', `共 ${matches.length} 筆，顯示前 20 筆；可輸入更完整的名稱。`, 'note'));
-      });
-      $('search').addEventListener('keydown', event => {
-        if (event.key === 'Enter') $('results').querySelector('button')?.click();
-      });
-      $('reset').addEventListener('click', () => {
-        holders.forEach(enable); map.closePopup(); fitAll(); $('search').value = ''; $('results').replaceChildren();
-      });
-      $('file-count').textContent = layers.length;
-      $('feature-count').textContent = entries.length;
-      $('skipped-count').textContent = layers.reduce((sum, item) => sum + item.missing_geometry + item.invalid_geometry, 0);
-      const failures = loaded.filter(item => item.info.error).length;
-      $('summary').textContent = `每份資料各自顯示，筆數包含不同檔案內的重疊資料。${failures ? `有 ${failures} 份資料無法載入，詳見圖層說明。` : ''}`;
-      fitAll();
+        for (const kind of ['points', 'routes']) {
+          const boxes = [...controls.values()].map(row => row[kind]).filter(box => !box.disabled);
+          const checked = boxes.filter(box => box.checked).length;
+          masterControls[kind].checked = boxes.length > 0 && checked === boxes.length;
+          masterControls[kind].indeterminate = checked > 0 && checked < boxes.length;
+          masterControls[kind].disabled = !boxes.length;
+        }
+        syncLabels();
+      }
+      function addRow(id, name, master = false) {
+        const row = node('tr'), heading = node('th'), title = node('span', undefined, 'line-name');
+        heading.scope = 'row';
+        if (master) row.className = 'all-row';
+        else {
+          const swatch = node('span', undefined, 'swatch');
+          swatch.style.background = routeColors[id] || marketColors[id] || unknownColor; title.append(swatch);
+        }
+        title.append(node('span', name)); heading.append(title); row.append(heading);
+        const boxes = {};
+        for (const [kind, label] of [['points', '站點'], ['routes', '路線']]) {
+          const cell = node('td'), box = node('input'); box.type = 'checkbox';
+          box.dataset.line = id; box.dataset.kind = kind;
+          box.setAttribute('aria-label', `${name}：顯示${label}`);
+          box.disabled = !master && !entries.some(entry => entry.kind === kind && entry.ids.includes(id));
+          box.checked = !box.disabled && id !== 'market_facilities'; boxes[kind] = box; cell.append(box); row.append(cell);
+          box.addEventListener('change', () => {
+            if (master) for (const control of controls.values()) if (!control[kind].disabled) control[kind].checked = box.checked;
+            syncVisibility();
+          });
+        }
+        $('visibility-controls').append(row);
+        if (master) Object.assign(masterControls, boxes);
+        else controls.set(id, boxes);
+      }
+      addRow('all', '全部', true);
+      const present = new Set(entries.flatMap(entry => entry.ids));
+      for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'night_markets', 'market_facilities', 'other']) {
+        if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || '未分類');
+      }
+      syncVisibility();
+      if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30], animate: false });
       syncLabels();
-      if (!entries.length) { $('notice').hidden = false; $('notice').textContent = '沒有可顯示的資料。請確認 data 資料夾內的 GeoJSON 檔案，然後重新啟動程式。'; }
-      else if (!tileFailed) $('notice').hidden = true;
+      const failures = loaded.filter(item => item.info.error);
+      if (failures.length) {
+        $('notice').hidden = false;
+        $('notice').textContent = failures.map(item => `${item.info.name}：${item.info.error}`).join('；');
+      } else if (!entries.length) {
+        $('notice').hidden = false; $('notice').textContent = '沒有可顯示的資料，請確認 data 資料夾後重新啟動程式。';
+      } else if (!tileFailed) $('notice').hidden = true;
       document.body.dataset.ready = 'true';
     }
     start().catch(error => { $('notice').hidden = false; $('notice').textContent = `地圖載入失敗：${error.message}`; });

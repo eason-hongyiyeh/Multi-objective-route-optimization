@@ -1,0 +1,2141 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-10-07T08:14:09Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/10220395",
+        "amenity": "marketplace",
+        "name": "林口夜市",
+        "opening_hours": "Wd, Su",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3871902,
+          25.0804584
+        ]
+      },
+      "id": "relation/10220395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/12773846",
+        "amenity": "marketplace",
+        "name": "新莊廟街夜市",
+        "name:en": "Xinzhuang Temple Street Night Market",
+        "name:zh": "新莊廟街夜市",
+        "type": "site",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4512106,
+          25.0333781
+        ]
+      },
+      "id": "relation/12773846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/13253387",
+        "bus": "yes",
+        "name": "三興國小(臨江街觀光夜市)",
+        "name:en": "Sanxing Elementary School(Linjiang St. Night Market)",
+        "name:nan": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Hant": "三興國小(臨江街觀光夜市)",
+        "name:nan-Latn-pehoeji": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Latn-tailo": "Sam-hing Kok-sió(Lîm-kang-kue Kuan-kong Iā-tshī)",
+        "name:zh": "三興國小(臨江街觀光夜市)",
+        "name:zh-Hans": "三兴国小(临江街观光夜市)",
+        "name:zh-Hant": "三興國小(臨江街觀光夜市)",
+        "network": "臺北市公車",
+        "public_transport": "stop_area",
+        "type": "public_transport",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5568424,
+          25.0284624
+        ]
+      },
+      "id": "relation/13253387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "relation/17332141",
+        "landuse": "retail",
+        "name": "蘆洲早夜市",
+        "type": "multipolygon",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4717756,
+          25.0830088
+        ]
+      },
+      "id": "relation/17332141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/188179149",
+        "amenity": "marketplace",
+        "highway": "pedestrian",
+        "name": "興仁夜市(B)",
+        "opening_date": "unknown",
+        "opening_hours": "17:00-24:00",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2829565,
+          24.9326474
+        ]
+      },
+      "id": "way/188179149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/188179187",
+        "amenity": "marketplace",
+        "highway": "pedestrian",
+        "name": "興仁花園夜市 美食A區",
+        "opening_date": "unknown",
+        "opening_hours": "17:00-24:00",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2829725,
+          24.9312015
+        ]
+      },
+      "id": "way/188179187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/233876913",
+        "alt_name": "興南觀光夜市",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "興南夜市",
+        "name:en": "Xingnan Night Market",
+        "name:zh": "興南夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5115469,
+          24.9884061
+        ]
+      },
+      "id": "way/233876913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/254453771",
+        "amenity": "food_court",
+        "name": "遼寧街夜市",
+        "outdoor": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5421611,
+          25.0495502
+        ]
+      },
+      "id": "way/254453771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/317584691",
+        "alt_name": "南雅夜市;板橋觀光夜市",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "南雅觀光夜市",
+        "name:en": "Nanya Night Market",
+        "name:zh": "南雅觀光夜市",
+        "opening_hours": "Mo-Su 15:00-01:00",
+        "wikidata": "Q16267468",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4547333,
+          25.0070708
+        ]
+      },
+      "id": "way/317584691"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/367362476",
+        "landuse": "retail",
+        "name": "早市, 夜市(逢周六)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4687991,
+          24.9987469
+        ]
+      },
+      "id": "way/367362476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375486258",
+        "landuse": "retail",
+        "name": "士林夜市",
+        "name:en": "Shilin Tourist Night Market",
+        "name:ja": "士林夜市",
+        "name:zh": "士林夜市",
+        "tourism": "attraction",
+        "wikidata": "Q697118",
+        "wikipedia": "zh:士林夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5249906,
+          25.0882464
+        ]
+      },
+      "id": "way/375486258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375486272",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "華西街観光夜市",
+        "name:en": "Huaxi Night Market",
+        "name:ja": "華西街観光夜市",
+        "name:zh": "華西街夜市",
+        "tourism": "attraction",
+        "wikidata": "Q5363313",
+        "wikipedia": "zh:華西街夜市",
+        "wikipedia:zh": "華西街夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4984162,
+          25.038376
+        ]
+      },
+      "id": "way/375486272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375486277",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "西昌街夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5005716,
+          25.0378487
+        ]
+      },
+      "id": "way/375486277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/388224261",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "樂華夜市",
+        "name:en": "Lehua Night Market",
+        "name:ko": "러화 야시장",
+        "name:zh": "樂華夜市",
+        "note": "靠近永平路180巷、中山路一段部份屬居民反對部份，但目前依照現狀繪製",
+        "tourism": "attraction",
+        "wikidata": "Q11120852",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5120468,
+          25.0085166
+        ]
+      },
+      "id": "way/388224261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/396410886",
+        "building": "office",
+        "building:levels": "2",
+        "name": "寧夏夜市自治會",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5152208,
+          25.0544972
+        ]
+      },
+      "id": "way/396410886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/396410905",
+        "alt_name": "寧夏環保夜市",
+        "amenity": "marketplace",
+        "full_name": "寧夏路夜市",
+        "landuse": "retail",
+        "name": "寧夏夜市",
+        "name:en": "Ningxia Night Market",
+        "name:zh": "寧夏夜市",
+        "opening_hours": "Mo-Su 17:30-01:00",
+        "tourism": "attraction",
+        "website": "https://nx-yes.tw/",
+        "wikidata": "Q16926585",
+        "wikipedia": "zh:寧夏路夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5151334,
+          25.0555973
+        ]
+      },
+      "id": "way/396410905"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/457483394",
+        "alt_name": "通化夜市",
+        "alt_name:en": "Tonghua Night market",
+        "alt_name:zh": "通化夜市",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "臨江街觀光夜市",
+        "name:en": "Linjiang Street Night Market",
+        "name:ko": "린장제 관광야시장",
+        "name:zh": "臨江街觀光夜市",
+        "tourism": "attraction",
+        "wikidata": "Q6727208",
+        "wikipedia": "zh:臨江街觀光夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5553933,
+          25.0298876
+        ]
+      },
+      "id": "way/457483394"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/458084083",
+        "addr:city": "新北市",
+        "addr:country": "TW",
+        "addr:district": "樹林區",
+        "addr:full": "238新北市樹林區保安街二段70號",
+        "addr:housenumber": "70",
+        "addr:postcode": "238",
+        "addr:street": "保安街二段",
+        "amenity": "marketplace",
+        "area": "yes",
+        "landuse": "retail",
+        "name": "樹林興仁花園夜市",
+        "operator": "興仁花園夜市",
+        "phone": "+886 908-111-333",
+        "website": "http://www.singren168.com/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91-%E6%A8%B9%E6%9E%97%E5%A4%9C%E5%B8%82.html",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4161297,
+          25.0027169
+        ]
+      },
+      "id": "way/458084083"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/516455044",
+        "amenity": "marketplace",
+        "name": "饒河街觀光夜市",
+        "name:en": "Raohe Night Market",
+        "name:ja": "饒河街観光夜市",
+        "name:ko": "라오허제야시장",
+        "name:zh": "饒河街觀光夜市",
+        "short_name": "饒河夜市",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5750698,
+          25.0506837
+        ]
+      },
+      "id": "way/516455044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/520781824",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "廣州街夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.497552,
+          25.0367548
+        ]
+      },
+      "id": "way/520781824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/546054452",
+        "landuse": "retail",
+        "name": "桃園觀光夜市",
+        "name:en": "Taoyuan night market",
+        "name:id": "Pasar Malam Turis Taoyuan",
+        "name:ja": "桃園観光夜市",
+        "name:ko": "타오위엔 관광야시장",
+        "name:th": "ตลาดกลางคืนเถาหยวน",
+        "name:vi": "Chợ đêm du lịch Đào Viên",
+        "name:zh": "桃園觀光夜市",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3072971,
+          25.0032067
+        ]
+      },
+      "id": "way/546054452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/563892390",
+        "amenity": "parking",
+        "name": "興仁夜市停車場",
+        "parking": "surface",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4182618,
+          25.0033237
+        ]
+      },
+      "id": "way/563892390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/593801638",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "南機場夜市",
+        "name:en": "Nanjichang Night Market",
+        "name:ko": "난지창야시장",
+        "name:zh": "南機場夜市",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5060228,
+          25.0285116
+        ]
+      },
+      "id": "way/593801638"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/667671689",
+        "amenity": "parking",
+        "name": "八德興仁花園夜市專屬停車場",
+        "parking": "surface",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.2837051,
+          24.9321377
+        ]
+      },
+      "id": "way/667671689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/679004546",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "公館夜市",
+        "name:en": "Gongguan Night Market",
+        "name:nan": "Kong-koán Iā-chhī-á",
+        "name:nan-Hant": "公館夜市仔",
+        "name:nan-Latn-pehoeji": "Kong-koán Iā-chhī-á",
+        "name:nan-Latn-tailo": "Kong-kuán Iā-tshī-á",
+        "name:zh": "公館夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.535115,
+          25.013235
+        ]
+      },
+      "id": "way/679004546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/730666401",
+        "amenity": "marketplace",
+        "description": "每周二跟五",
+        "landuse": "retail",
+        "name": "夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6235541,
+          25.0050146
+        ]
+      },
+      "id": "way/730666401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/736385631",
+        "amenity": "marketplace",
+        "landuse": "retail",
+        "name": "三和夜市",
+        "name:en": "Sanhe Night Market",
+        "name:ko": "싼허야시장",
+        "name:zh": "三和夜市",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5004641,
+          25.0658368
+        ]
+      },
+      "id": "way/736385631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/775603768",
+        "addr:housename": "台北車站",
+        "amenity": "food_court",
+        "indoor": "area",
+        "level": "1",
+        "manager": "微風台北車站",
+        "name": "台灣夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5165036,
+          25.0475781
+        ]
+      },
+      "id": "way/775603768"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/781490557",
+        "amenity": "marketplace",
+        "branch": "B區",
+        "landuse": "retail",
+        "name": "沙崙夜市",
+        "name:en": "Shalun Night Market",
+        "name:zh": "沙崙夜市",
+        "name:zh-Hant": "沙崙夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.424555,
+          25.1849976
+        ]
+      },
+      "id": "way/781490557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1062490477",
+        "addr:city": "桃園市",
+        "addr:country": "TW",
+        "addr:district": "桃園區",
+        "addr:full": "桃園市桃園區正康三街8號",
+        "addr:housenumber": "8",
+        "addr:street": "正康三街",
+        "building": "public",
+        "information": "office",
+        "name": "桃園觀光夜市旅客服務中心",
+        "tourism": "information",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3086667,
+          25.0043703
+        ]
+      },
+      "id": "way/1062490477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1271731730",
+        "amenity": "marketplace",
+        "branch": "A區",
+        "landuse": "retail",
+        "name": "沙崙夜市",
+        "name:en": "Shalun Night Market",
+        "name:zh": "沙崙夜市",
+        "name:zh-Hant": "沙崙夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4241439,
+          25.1852312
+        ]
+      },
+      "id": "way/1271731730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1301435279",
+        "amenity": "marketplace",
+        "name": "樟樹灣夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6395082,
+          25.0650718
+        ]
+      },
+      "id": "way/1301435279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1301435280",
+        "highway": "service",
+        "name": "樟樹灣夜市",
+        "oneway": "yes",
+        "surface": "paving_stones",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6396323,
+          25.0650368
+        ]
+      },
+      "id": "way/1301435280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1313165663",
+        "addr:city": "新北市",
+        "addr:country": "TW",
+        "addr:district": "新莊區",
+        "addr:full": "新北市新莊區福基里012鄰五工路2之2號",
+        "addr:hamlet": "福基里",
+        "addr:housenumber": "2之2",
+        "addr:neighbourhood": "012",
+        "addr:street": "五工路",
+        "amenity": "marketplace",
+        "name": "新莊思源夜市",
+        "name:en": "Xinzhuang Siyuan Night Market",
+        "name:zh": "新莊思源夜市",
+        "opening_hours": "Fr-Su 16:00-24:00",
+        "website": "https://www.facebook.com/people/%E6%96%B0%E8%8E%8A%E6%80%9D%E6%BA%90%E5%A4%9C%E5%B8%82-%E5%85%A8%E6%96%B0%E9%96%8B%E5%B9%95/61561217901828/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4590766,
+          25.0611507
+        ]
+      },
+      "id": "way/1313165663"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1336425254",
+        "landuse": "commercial",
+        "name": "鶯歌龍鳳夜市",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3328146,
+          24.9732232
+        ]
+      },
+      "id": "way/1336425254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2302317265",
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "description": "基隆路二段123號對面",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "三興國小(臨江街觀光夜市)",
+        "name:en": "Sanxing Elementary School(Linjiang St. Night Market)",
+        "name:nan": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Hant": "三興國小(臨江街觀光夜市)",
+        "name:nan-Latn-pehoeji": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Latn-tailo": "Sam-hing Kok-sió(Lîm-kang-kue Kuan-kong Iā-tshī)",
+        "name:zh": "三興國小(臨江街觀光夜市)",
+        "name:zh-Hans": "三兴国小(临江街观光夜市)",
+        "name:zh-Hant": "三興國小(臨江街觀光夜市)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "ref": "1000295",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.556594,
+          25.0282827
+        ]
+      },
+      "id": "node/2302317265"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2302317274",
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "description": "基隆路二段123號同向",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "三興國小(臨江街觀光夜市)",
+        "name:en": "Sanxing Elementary School(Linjiang St. Night Market)",
+        "name:nan": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Hant": "三興國小(臨江街觀光夜市)",
+        "name:nan-Latn-pehoeji": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Latn-tailo": "Sam-hing Kok-sió(Lîm-kang-kue Kuan-kong Iā-tshī)",
+        "name:zh": "三興國小(臨江街觀光夜市)",
+        "name:zh-Hans": "三兴国小(临江街观光夜市)",
+        "name:zh-Hant": "三興國小(臨江街觀光夜市)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "ref": "2035",
+        "shelter": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5570908,
+          25.0286244
+        ]
+      },
+      "id": "node/2302317274"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2517658921",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "樂華夜市",
+        "name:en": "Lehua Shopping Circle",
+        "public_transport": "platform",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5139164,
+          25.008445
+        ]
+      },
+      "id": "node/2517658921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2517658926",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "樂華夜市",
+        "name:en": "Lehua Shopping Circle",
+        "public_transport": "platform",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5141796,
+          25.0085604
+        ]
+      },
+      "id": "node/2517658926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2517659489",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "饒河街觀光夜市 (塔悠)",
+        "name:en": "Raohe St. Night Market (Tayou)",
+        "name:zh": "饒河街觀光夜市 (塔悠)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5714536,
+          25.0504348
+        ]
+      },
+      "id": "node/2517659489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2517659492",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "饒河街觀光夜市 (塔悠)",
+        "name:en": "Raohe St. Night Market (Tayou)",
+        "name:zh": "饒河街觀光夜市 (塔悠)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:wikipedia": "zh:臺北市市區公車",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5719387,
+          25.0504393
+        ]
+      },
+      "id": "node/2517659492"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2528089324",
+        "bus": "yes",
+        "description": "八德路四段499號同向(向西)",
+        "highway": "bus_stop",
+        "name": "饒河街觀光夜市(八德)",
+        "name:en": "Raohe St. Night Market (Bade)",
+        "name:zh": "饒河街觀光夜市(八德)",
+        "name:zh-Hans": "饶河街观光夜市(八德)",
+        "name:zh-Hant": "饒河街觀光夜市(八德)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "ref": "1602"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5714495,
+          25.0499488
+        ]
+      },
+      "id": "node/2528089324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2528089325",
+        "bus": "yes",
+        "description": "八德路四段489號對面",
+        "highway": "bus_stop",
+        "name": "饒河街觀光夜市(八德)",
+        "name:en": "Raohe St. Night Market (Bade)",
+        "name:zh": "饒河街觀光夜市(八德)",
+        "name:zh-Hans": "饶河街观光夜市(八德)",
+        "name:zh-Hant": "饒河街觀光夜市(八德)",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "ref": "1600"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5714538,
+          25.0498027
+        ]
+      },
+      "id": "node/2528089325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2700751797",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "延三觀光夜市",
+        "name:en": "Yanping Night Market",
+        "name:zh": "延三觀光夜市",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5110576,
+          25.0644425
+        ]
+      },
+      "id": "node/2700751797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2700753009",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "延三觀光夜市",
+        "name:en": "Yanping Night Market",
+        "name:zh": "延三觀光夜市",
+        "network": "臺北市市區公車",
+        "network:en": "Taipei Joint Bus System",
+        "network:nan": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "臺北市市區公車",
+        "network:nan-Latn-pehoeji": "Tâi-pak-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Tâi-pak-tshiī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q5972821",
+        "network:zh": "臺北市市區公車",
+        "public_transport": "platform",
+        "shelter": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5112182,
+          25.0635752
+        ]
+      },
+      "id": "node/2700753009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2785901698",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "板橋夜市",
+        "name:en": "Banqiao Night Market",
+        "name:zh": "板橋夜市",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4562209,
+          25.0051046
+        ]
+      },
+      "id": "node/2785901698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2936870967",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "板橋夜市",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4560729,
+          25.006608
+        ]
+      },
+      "id": "node/2936870967"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2936870968",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "板橋夜市",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4562507,
+          25.0066463
+        ]
+      },
+      "id": "node/2936870968"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3019852750",
+        "level": "0",
+        "name": "出口1 (饒河街觀光夜市)",
+        "name:en": "Exit 1 (Raohe St. Night Market)",
+        "name:zh": "出口1 (饒河街觀光夜市)",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5771381,
+          25.0501588
+        ]
+      },
+      "id": "node/3019852750"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3176609597",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "觀光夜市",
+        "network": "桃園市市區公車",
+        "network:en": "Taoyuan City Bus",
+        "network:nan": "Thô-hn̂g-chhī Chhī-khu Kong-chhia",
+        "network:nan-Hant": "桃園市市區公車",
+        "network:nan-Latn-pehoeji": "Thô-hn̂g-chhī Chhī-khu Kong-chhia",
+        "network:nan-Latn-tailo": "Thô-hn̂g-tshī Tshī-khu Kong-tshia",
+        "network:wikidata": "Q11112021",
+        "network:zh": "桃園市市區公車",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.30632,
+          25.0022293
+        ]
+      },
+      "id": "node/3176609597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3176609598",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "觀光夜市",
+        "network": "桃園市市區公車",
+        "network:wikidata": "Q11112021",
+        "network:zh": "桃園市市區公車",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3061759,
+          25.0023268
+        ]
+      },
+      "id": "node/3176609598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3419805452",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "板橋夜市",
+        "name:en": "Banqiao Night Market",
+        "name:zh": "板橋夜市",
+        "public_transport": "platform"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.456844,
+          25.0055661
+        ]
+      },
+      "id": "node/3419805452"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4339392956",
+        "amenity": "food_court",
+        "name": "三和夜市入口"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4997607,
+          25.0680927
+        ]
+      },
+      "id": "node/4339392956"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4367461190",
+        "entrance": "yes",
+        "name": "興南夜市口",
+        "name:en": "Entrance of Xinnan night market",
+        "name:zh": "興南夜市口"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5127494,
+          24.9892345
+        ]
+      },
+      "id": "node/4367461190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4483314296",
+        "amenity": "restaurant",
+        "name": "士林夜市美食街",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5245167,
+          25.0880733
+        ]
+      },
+      "id": "node/4483314296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5402946668",
+        "alt_name": "YouBike1.0_桃園觀光夜市旅客服務中心",
+        "alt_name:en": "YouBike1.0_Taoyuan Tourist Night Market Service Center",
+        "alt_name:zh": "YouBike1.0_桃園觀光夜市旅客服務中心",
+        "alt_name:zh-Bopo": "YouBike1.0_ㄊㄠˊㄩㄢˊㄍㄨㄢㄍㄨㄤㄧㄝˋㄕˋㄌㄩˇㄎㄜˋㄈㄨˊㄨˋㄓㄨㄥㄒㄧㄣ",
+        "alt_name:zh-Hans": "YouBike1.0_桃园观光夜市旅客服务中心",
+        "alt_name:zh-Hant": "YouBike1.0_桃園觀光夜市旅客服務中心",
+        "alt_name:zh-Latn-pinyin": "YouBike1.0_táoyuánguānguāngyèshìlǚkèfúwùzhōngxīn",
+        "amenity": "bicycle_rental",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike",
+        "brand:wikidata": "Q20687952",
+        "brand:wikipedia": "en:YouBike",
+        "brand:zh": "微笑單車",
+        "capacity": "26",
+        "description": "正康三街8號旁停車場",
+        "description:en": "No.8, Zhengkang 3rd St.",
+        "description:zh": "正康三街8號旁停車場",
+        "description:zh-Hans": "正康三街8号旁停车场",
+        "description:zh-Hant": "正康三街8號旁停車場",
+        "fee": "yes",
+        "name": "桃園觀光夜市旅客服務中心",
+        "name:en": "Taoyuan Tourist Night Market Service Center",
+        "name:nan": "Thô-hn̂g Koan-kong Iā-chhī Lí-kheh Ho̍k-bū Tiong-sim",
+        "name:nan-Hant": "桃園觀光夜市旅客服務中心",
+        "name:nan-Latn-pehoeji": "Thô-hn̂g Koan-kong Iā-chhī Lí-kheh Ho̍k-bū Tiong-sim",
+        "name:nan-Latn-tailo": "Thô-hn̂g Kuan-kong Iā-tshī Lí-kheh Ho̍k-bū Tiong-sim",
+        "name:zh": "桃園觀光夜市旅客服務中心",
+        "name:zh-Bopo": "ㄊㄠˊㄩㄢˊㄍㄨㄢㄍㄨㄤㄧㄝˋㄕˋㄌㄩˇㄎㄜˋㄈㄨˊㄨˋㄓㄨㄥㄒㄧㄣ",
+        "name:zh-Hans": "桃园观光夜市旅客服务中心",
+        "name:zh-Hant": "桃園觀光夜市旅客服務中心",
+        "name:zh-Latn-pinyin": "táoyuánguānguāngyèshìlǚkèfúwùzhōngxīn",
+        "nat_ref": "TAO2171",
+        "network": "YouBike 2.0",
+        "network:en": "Taoyuan Public Bike",
+        "network:wikidata": "Q20687952",
+        "network:wikipedia": "zh:桃園市公共自行車租賃系統",
+        "network:zh": "桃園市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "Giant",
+        "operator:en": "YOUBIKE CO., LTD.",
+        "operator:type": "private",
+        "operator:wikidata": "Q703557",
+        "payment:cards": "yes",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "2171",
+        "rental": "city_bike",
+        "source": "PTX",
+        "source:date": "2023-12-13T10:54:03+08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.308517,
+          25.004089
+        ]
+      },
+      "id": "node/5402946668"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7014033279",
+        "addr:street": "延平北路三段",
+        "amenity": "restaurant",
+        "name": "大橋頭延三夜市蒸餃"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5111601,
+          25.0643684
+        ]
+      },
+      "id": "node/7014033279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7175344776",
+        "amenity": "restaurant",
+        "name": "饒河夜市餡餅世家"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5732685,
+          25.0502692
+        ]
+      },
+      "id": "node/7175344776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7759803934",
+        "addr:city": "臺北市",
+        "addr:country": "TW",
+        "addr:district": "大安區",
+        "addr:full": "106臺北市大安區師大路39巷11號",
+        "addr:housenumber": "11",
+        "addr:postcode": "106",
+        "addr:street": "師大路39巷",
+        "amenity": "restaurant",
+        "name": "師大夜市生炒花枝羹"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5290391,
+          25.0246792
+        ]
+      },
+      "id": "node/7759803934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7765188456",
+        "amenity": "restaurant",
+        "name": "西昌街夜市蝦仁羹"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5007572,
+          25.0381336
+        ]
+      },
+      "id": "node/7765188456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7820702279",
+        "amenity": "restaurant",
+        "name": "台北橋三和夜市蝦仁羹"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.500974,
+          25.0645871
+        ]
+      },
+      "id": "node/7820702279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8365952045",
+        "amenity": "marketplace",
+        "name": "樹林夜市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4272363,
+          24.9923688
+        ]
+      },
+      "id": "node/8365952045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8680052861",
+        "amenity": "restaurant",
+        "name": "興德屏東夜市豆花"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4318347,
+          25.0336942
+        ]
+      },
+      "id": "node/8680052861"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8755153190",
+        "alt_name": "YouBike2.0_臨江街夜市(通化街101巷口)",
+        "alt_name:en": "YouBike2.0_Linjiang St night market (Ln. 101, Tonghua St)",
+        "alt_name:nan": "YouBIke2.0_Lîm-kang-koe Iā-chhī-á(Thong-hòa-koe 101-hāng-á-kháu)",
+        "alt_name:nan-Hant": "YouBike2.0_臨江街夜市(通化街101巷仔口)",
+        "alt_name:nan-Latn-pehoeji": "YouBIke2.0_Lîm-kang-koe Iā-chhī-á(Thong-hòa-koe 101-hāng-á-kháu) Lîm-kang-koe Iā-chhī-á(Thong-hòa-koe 101-hāng-á-kháu)",
+        "alt_name:nan-Latn-tailo": "YouBIke2.0_Lîm-kang-kue Iā-tshī-á(Thong-huà-kue 101-hāng-á-kháu)",
+        "alt_name:zh": "YouBike2.0_臨江街夜市(通化街101巷口)",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄌㄧㄣˊㄐㄧㄤㄐㄧㄝㄧㄝˋㄕˋ(ㄊㄨㄥㄏㄨㄚˋㄐㄧㄝ101ㄒㄧㄤˋㄎㄡˇ)",
+        "alt_name:zh-Hans": "YouBike2.0_临江街夜市(通化街101巷口)",
+        "alt_name:zh-Hant": "YouBike2.0_臨江街夜市(通化街101巷口)",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_línjiāngjiēyèshì(tōnghuàjiē101xiàngkǒu)",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:wikipedia": "en:YouBike",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "30",
+        "description": "通化街111號",
+        "description:en": "No. 101, Tonghua St.",
+        "description:nan": "Thong-hòa-koe 111-hō",
+        "description:nan-Hant": "通化街111號",
+        "description:nan-Latn-pehoeji": "Thong-hòa-koe 111-hō",
+        "description:nan-Latn-tailo": "Thong-huà-kue 111-hō",
+        "description:zh": "通化街111號",
+        "description:zh-Hans": "通化街111号",
+        "description:zh-Hant": "通化街111號",
+        "fee": "yes",
+        "name": "臨江街夜市(通化街101巷口)",
+        "name:en": "Linjiang St night market (Ln. 101, Tonghua St)",
+        "name:nan": "Lîm-kang-koe Iā-chhī-á(Thong-hòa-koe 101-hāng-á-kháu)",
+        "name:nan-Hant": "臨江街夜市(通化街101巷仔口)",
+        "name:nan-Latn-pehoeji": "Lîm-kang-koe Iā-chhī-á(Thong-hòa-koe 101-hāng-á-kháu)",
+        "name:nan-Latn-tailo": "Lîm-kang-kue Iā-tshī-á(Thong-huà-kue 101-hāng-á-kháu)",
+        "name:zh": "臨江街夜市(通化街101巷口)",
+        "name:zh-Bopo": "ㄌㄧㄣˊㄐㄧㄤㄐㄧㄝㄧㄝˋㄕˋ(ㄊㄨㄥㄏㄨㄚˋㄐㄧㄝ101ㄒㄧㄤˋㄎㄡˇ)",
+        "name:zh-Hans": "临江街夜市(通化街101巷口)",
+        "name:zh-Hant": "臨江街夜市(通化街101巷口)",
+        "name:zh-Latn-pinyin": "línjiāngjiēyèshì(tōnghuàjiē101xiàngkǒu)",
+        "nat_ref": "TPE500101125",
+        "network": "YouBike 2.0",
+        "network:en": "Taipei City Public Bike",
+        "network:wikidata": "Q20687952",
+        "network:zh": "臺北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "Giant",
+        "operator:en": "YOUBIKE CO.",
+        "operator:type": "private",
+        "operator:wikidata": "Q703557",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500101125",
+        "rental": "city_bike",
+        "source": "臺北市政府",
+        "start_date": "2021-05-21 10:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55406,
+          25.02952
+        ]
+      },
+      "id": "node/8755153190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8889601934",
+        "alt_name": "YouBike2.0_臨江街夜市(基隆路)",
+        "alt_name:en": "YouBike2.0_Linjiang St night market (Keelung Rd)",
+        "alt_name:zh": "YouBike2.0_臨江街夜市(基隆路)",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄌㄧㄣˊㄐㄧㄤㄐㄧㄝㄧㄝˋㄕˋ(ㄐㄧㄌㄨㄥˊㄌㄨˋ)",
+        "alt_name:zh-Hans": "YouBike2.0_临江街夜市(基隆路)",
+        "alt_name:zh-Hant": "YouBike2.0_臨江街夜市(基隆路)",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_línjiāngjiēyèshì(jīlónglù)",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:wikipedia": "en:YouBike",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "29",
+        "description": "基隆路二段108號",
+        "description:en": "No. 108, Sec. 2, Keelung Rd.",
+        "description:zh": "基隆路二段108號",
+        "description:zh-Hans": "基隆路二段108号",
+        "description:zh-Hant": "基隆路二段108號",
+        "fee": "yes",
+        "name": "臨江街夜市(基隆路)",
+        "name:en": "Linjiang St night market (Keelung Rd)",
+        "name:zh": "臨江街夜市(基隆路)",
+        "name:zh-Bopo": "ㄌㄧㄣˊㄐㄧㄤㄐㄧㄝㄧㄝˋㄕˋ(ㄐㄧㄌㄨㄥˊㄌㄨˋ)",
+        "name:zh-Hans": "临江街夜市(基隆路)",
+        "name:zh-Hant": "臨江街夜市(基隆路)",
+        "name:zh-Latn-pinyin": "línjiāngjiēyèshì(jīlónglù)",
+        "nat_ref": "TPE500101126",
+        "network": "YouBike 2.0",
+        "network:en": "Taipei City Public Bike",
+        "network:wikidata": "Q20687952",
+        "network:zh": "臺北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "Giant",
+        "operator:en": "YOUBIKE CO.",
+        "operator:type": "private",
+        "operator:wikidata": "Q703557",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500101126",
+        "rental": "city_bike",
+        "source": "YouBike;臺北市政府",
+        "source:date": "2021-07-02 16:22:20",
+        "start_date": "2021-05-25 10:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55721,
+          25.02931
+        ]
+      },
+      "id": "node/8889601934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9020127851",
+        "alt_name": "YouBike2.0_南機場夜市(中華路二段)",
+        "alt_name:en": "YouBike2.0_Nanjichang Night Market (Sec. 2, Zhonghua Rd)",
+        "alt_name:zh": "YouBike2.0_南機場夜市(中華路二段)",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄋㄢˊㄐㄧㄔㄤˇㄧㄝˋㄕˋ(ㄓㄨㄥㄏㄨㄚˊㄌㄨˋㄦˋㄉㄨㄢˋ)",
+        "alt_name:zh-Hans": "YouBike2.0_南机场夜市(中华路二段)",
+        "alt_name:zh-Hant": "YouBike2.0_南機場夜市(中華路二段)",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_nánjīchǎngyèshì(zhōnghuálùèrduàn)",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:wikipedia": "en:YouBike",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "41",
+        "description": "中華路二段305巷至307巷",
+        "description:en": "Ln. 305-307, Sec. 2, Zhonghua Rd",
+        "description:zh": "中華路二段305巷至307巷",
+        "description:zh-Hans": "中华路二段305巷至307巷",
+        "description:zh-Hant": "中華路二段305巷至307巷",
+        "fee": "yes",
+        "name": "南機場夜市(中華路二段)",
+        "name:en": "Nanjichang Night Market (Sec. 2, Zhonghua Rd)",
+        "name:zh": "南機場夜市(中華路二段)",
+        "name:zh-Bopo": "ㄋㄢˊㄐㄧㄔㄤˇㄧㄝˋㄕˋ(ㄓㄨㄥㄏㄨㄚˊㄌㄨˋㄦˋㄉㄨㄢˋ)",
+        "name:zh-Hans": "南机场夜市(中华路二段)",
+        "name:zh-Hant": "南機場夜市(中華路二段)",
+        "name:zh-Latn-pinyin": "nánjīchǎngyèshì(zhōnghuálùèrduàn)",
+        "nat_ref": "TPE500106029",
+        "network": "臺北市公共自行車租賃系統",
+        "network:en": "Taipei City Public Bike",
+        "network:wikidata": "Q20687952",
+        "network:zh": "臺北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "微笑單車股份有限公司",
+        "operator:en": "YOUBIKE CO.",
+        "operator:type": "government",
+        "operator:wikidata": "Q703557",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500106029",
+        "rental": "city_bike",
+        "source": "PTX",
+        "source:date": "2021-08-17 16:07:21",
+        "start_date": "2021-08-13 10:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.50518,
+          25.02886
+        ]
+      },
+      "id": "node/9020127851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9115802354",
+        "bus": "yes",
+        "description": "基隆路二段123號同向",
+        "name": "三興國小(臨江街觀光夜市)",
+        "name:en": "Sanxing Elementary School(Linjiang St. Night Market)",
+        "name:nan": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Hant": "三興國小(臨江街觀光夜市)",
+        "name:nan-Latn-pehoeji": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Latn-tailo": "Sam-hing Kok-sió(Lîm-kang-kue Kuan-kong Iā-tshī)",
+        "name:zh": "三興國小(臨江街觀光夜市)",
+        "name:zh-Hans": "三兴国小(临江街观光夜市)",
+        "name:zh-Hant": "三興國小(臨江街觀光夜市)",
+        "network": "臺北市公車",
+        "public_transport": "stop_position",
+        "ref": "2035"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5570406,
+          25.0286668
+        ]
+      },
+      "id": "node/9115802354"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9115802355",
+        "bus": "yes",
+        "description": "基隆路二段123號對面",
+        "name": "三興國小(臨江街觀光夜市)",
+        "name:en": "Sanxing Elementary School(Linjiang St. Night Market)",
+        "name:nan": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Hant": "三興國小(臨江街觀光夜市)",
+        "name:nan-Latn-pehoeji": "Sam-heng Kok-sió(Lîm-kang-koe Koan-kong Iā-chhī)",
+        "name:nan-Latn-tailo": "Sam-hing Kok-sió(Lîm-kang-kue Kuan-kong Iā-tshī)",
+        "name:zh": "三興國小(臨江街觀光夜市)",
+        "name:zh-Hans": "三兴国小(临江街观光夜市)",
+        "name:zh-Hant": "三興國小(臨江街觀光夜市)",
+        "network": "臺北市公車",
+        "public_transport": "stop_position",
+        "ref": "1000295"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5566829,
+          25.028258
+        ]
+      },
+      "id": "node/9115802355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9230253921",
+        "alt_name": "YouBike2.0_湳雅觀光夜市(津渡橋)",
+        "alt_name:en": "YouBike2.0_Nanya Night Market (Jindu Bridge)",
+        "alt_name:zh": "YouBike2.0_湳雅觀光夜市(津渡橋)",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄋㄢˇㄧㄚˇㄍㄨㄢㄍㄨㄤㄧㄝˋㄕˋ(ㄐㄧㄣㄉㄨˋㄑㄧㄠˊ)",
+        "alt_name:zh-Hans": "YouBike2.0_湳雅观光夜市(津渡桥)",
+        "alt_name:zh-Hant": "YouBike2.0_湳雅觀光夜市(津渡橋)",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_nǎnyǎguānguāngyèshì(jīndùqiáo)",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "capacity": "50",
+        "description": "南雅西路一段63巷4號前",
+        "description:en": "No. 4, Ln. 63, Sec. 1, Nanya W. Rd.",
+        "description:zh": "南雅西路一段63巷4號前",
+        "description:zh-Hans": "南雅西路一段63巷4号前",
+        "description:zh-Hant": "南雅西路一段63巷4號前",
+        "fee": "yes",
+        "is_in": "板橋區",
+        "name": "湳雅觀光夜市(津渡橋)",
+        "name:en": "Nanya Night Market (Jindu Bridge)",
+        "name:zh": "湳雅觀光夜市(津渡橋)",
+        "name:zh-Bopo": "ㄋㄢˇㄧㄚˇㄍㄨㄢㄍㄨㄤㄧㄝˋㄕˋ(ㄐㄧㄣㄉㄨˋㄑㄧㄠˊ)",
+        "name:zh-Hans": "湳雅观光夜市(津渡桥)",
+        "name:zh-Hant": "湳雅觀光夜市(津渡橋)",
+        "name:zh-Latn-pinyin": "nǎnyǎguānguāngyèshì(jīndùqiáo)",
+        "nat_ref": "NWT500218012",
+        "network": "YouBike 微笑單車",
+        "network:en": "YouBike",
+        "network:zh": "微笑單車",
+        "opening_hours": "24/7",
+        "operator:wikidata": "Q703557",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500218012",
+        "rental": "city_bike",
+        "source": "YouBike",
+        "source:date": "2021-11-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.45231,
+          25.0079
+        ]
+      },
+      "id": "node/9230253921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9276520217",
+        "name": "汐止夜市",
+        "name:en": "Xizhi Night Market",
+        "name:zh": "汐止夜市",
+        "name:zh-Hans": "汐止夜市",
+        "name:zh-Hant": "汐止夜市",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6562364,
+          25.065313
+        ]
+      },
+      "id": "node/9276520217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9625808994",
+        "amenity": "parcel_locker",
+        "brand": "i郵箱",
+        "brand:en": "iBox",
+        "brand:nan": "i-iû-siuⁿ",
+        "brand:nan-Hant": "i郵箱",
+        "brand:nan-Latn-pehoeji": "i-iû-siuⁿ",
+        "brand:nan-Latn-tailo": "i-iû-siunn",
+        "brand:wikidata": "Q4375439",
+        "brand:zh": "i郵箱",
+        "brand:zh-Hans": "i邮箱",
+        "brand:zh-Hant": "i郵箱",
+        "capacity": "30",
+        "description": "10300臺北市大同區寧夏路35號，蓬萊國小停車場1號出口左側",
+        "description:payment": "郵政金融卡/悠遊卡/一卡通/愛金卡",
+        "name": "臺北寧夏夜市i郵箱",
+        "note": "四代櫃(智慧郵筒)",
+        "opening_hours": "24/7",
+        "operator": "中華郵政",
+        "operator:en": "Chunghwa Post",
+        "operator:nan": "Tiong-hôa Iû-chèng",
+        "operator:nan-Hant": "中華郵政",
+        "operator:nan-Latn-pehoeji": "Tiong-hôa Iû-chèng",
+        "operator:nan-Latn-tailo": "Tiong-huâ Iû-tsìng",
+        "operator:wikidata": "Q709259",
+        "operator:wikipedia": "zh:中華郵政",
+        "operator:zh": "中華郵政",
+        "operator:zh-Hans": "中华邮政",
+        "operator:zh-Hant": "中華郵政",
+        "parcel_mail_in": "yes",
+        "parcel_pickup": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_icash": "yes",
+        "payment:ep_ipass": "yes",
+        "refrigerated": "no",
+        "source": "中華郵政",
+        "source:date": "2021-10-05 16:58",
+        "source:url": "https://data.gov.tw/dataset/52779"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5154213,
+          25.0561524
+        ]
+      },
+      "id": "node/9625808994"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9849235453",
+        "name": "汐止觀光夜市",
+        "name:zh": "汐止觀光夜市",
+        "name:zh-Hans": "汐止观光夜市",
+        "name:zh-Hant": "汐止觀光夜市",
+        "operator": "汐止觀光夜市",
+        "tourism": "attraction"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6573258,
+          25.0657353
+        ]
+      },
+      "id": "node/9849235453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11449094959",
+        "alt_name": "YouBike2.0_湳雅夜市停車場",
+        "alt_name:en": "YouBike2.0_Nanya Night Market Parking Lot",
+        "alt_name:zh": "YouBike2.0_湳雅夜市停車場",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄋㄢˇㄧㄚˇㄧㄝˋㄕˋㄊㄧㄥˊㄔㄜㄔㄤˇ",
+        "alt_name:zh-Hans": "YouBike2.0_湳雅夜市停车场",
+        "alt_name:zh-Hant": "YouBike2.0_湳雅夜市停車場",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_nǎnyǎyèshìtíngchēchǎng",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "10",
+        "description": "南雅西路一段76號(對面)",
+        "description:en": "No. 76, Sec. 1, Nanya W. Rd.(Opposite)",
+        "description:zh": "南雅西路一段76號(對面)",
+        "description:zh-Hans": "南雅西路一段76号(对面)",
+        "description:zh-Hant": "南雅西路一段76號(對面)",
+        "fee": "yes",
+        "name": "湳雅夜市停車場",
+        "name:en": "Nanya Night Market Parking Lot",
+        "name:zh": "湳雅夜市停車場",
+        "name:zh-Bopo": "ㄋㄢˇㄧㄚˇㄧㄝˋㄕˋㄊㄧㄥˊㄔㄜㄔㄤˇ",
+        "name:zh-Hans": "湳雅夜市停车场",
+        "name:zh-Hant": "湳雅夜市停車場",
+        "name:zh-Latn-pinyin": "nǎnyǎyèshìtíngchēchǎng",
+        "nat_ref": "NWT500218163",
+        "network": "新北市公共自行車租賃系統",
+        "network:en": "New Taipei City Public Bike",
+        "network:wikidata": "Q15905142",
+        "network:zh": "新北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "微笑單車股份有限公司",
+        "operator:en": "YOUBIKE CO.",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:american_express": "yes",
+        "payment:cards": "yes",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500218163",
+        "rental": "city_bike",
+        "source": "TDX",
+        "source:date": "2023-12-13T10:34:03+08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.45345,
+          25.00557
+        ]
+      },
+      "id": "node/11449094959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11449095021",
+        "alt_name": "YouBike2.0_林口夜市(中山路)",
+        "alt_name:en": "YouBike2.0_Linkou Nightmarket (Zhongshan)",
+        "alt_name:zh": "YouBike2.0_林口夜市(中山路)",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄌㄧㄣˊㄎㄡˇㄧㄝˋㄕˋ(ㄓㄨㄥㄕㄢㄌㄨˋ)",
+        "alt_name:zh-Hans": "YouBike2.0_林口夜市(中山路)",
+        "alt_name:zh-Hant": "YouBike2.0_林口夜市(中山路)",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_línkǒuyèshì(zhōngshānlù)",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "11",
+        "description": "中山路151號",
+        "description:en": "No. 151, Zhongshan Rd.",
+        "description:zh": "中山路151號",
+        "description:zh-Hans": "中山路151号",
+        "description:zh-Hant": "中山路151號",
+        "fee": "yes",
+        "name": "林口夜市(中山路)",
+        "name:en": "Linkou Nightmarket (Zhongshan)",
+        "name:zh": "林口夜市(中山路)",
+        "name:zh-Bopo": "ㄌㄧㄣˊㄎㄡˇㄧㄝˋㄕˋ(ㄓㄨㄥㄕㄢㄌㄨˋ)",
+        "name:zh-Hans": "林口夜市(中山路)",
+        "name:zh-Hant": "林口夜市(中山路)",
+        "name:zh-Latn-pinyin": "línkǒuyèshì(zhōngshānlù)",
+        "nat_ref": "NWT500216050",
+        "network": "新北市公共自行車租賃系統",
+        "network:en": "New Taipei City Public Bike",
+        "network:wikidata": "Q15905142",
+        "network:zh": "新北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "微笑單車股份有限公司",
+        "operator:en": "YOUBIKE CO.",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:american_express": "yes",
+        "payment:cards": "yes",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500216050",
+        "rental": "city_bike",
+        "source": "TDX",
+        "source:date": "2023-12-13T10:34:03+08:00",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.38689,
+          25.07914
+        ]
+      },
+      "id": "node/11449095021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12092325283",
+        "amenity": "marketplace",
+        "name": "弘道街夜市 (星期二、五晚上)",
+        "name:zh": "弘道街夜市 (星期二、五晚上)",
+        "name:zh-Hans": "弘道街夜市 (星期二、五晚上)",
+        "name:zh-Hant": "弘道街夜市 (星期二、五晚上)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6168016,
+          25.0486168
+        ]
+      },
+      "id": "node/12092325283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12146204001",
+        "amenity": "marketplace",
+        "name": "廣州街觀光夜市",
+        "name:en": "Guangzhou Street Night Market",
+        "opening_hours": "Mo-Su 16:00-00:00",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4976095,
+          25.036763
+        ]
+      },
+      "id": "node/12146204001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12531604654",
+        "amenity": "food_court",
+        "name": "桃園夜市美食廣場"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3072667,
+          25.004119
+        ]
+      },
+      "id": "node/12531604654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13601809675",
+        "alt_name": "YouBike2.0_龍鳳夜市",
+        "alt_name:en": "YouBike2.0_LongFeng Night Market",
+        "alt_name:zh": "YouBike2.0_龍鳳夜市",
+        "alt_name:zh-Bopo": "YouBike2.0_ㄌㄨㄥˊㄈㄥˋㄧㄝˋㄕˋ",
+        "alt_name:zh-Hans": "YouBike2.0_龙凤夜市",
+        "alt_name:zh-Hant": "YouBike2.0_龍鳳夜市",
+        "alt_name:zh-Latn-pinyin": "YouBike2.0_lóngfèngyèshì",
+        "amenity": "bicycle_rental",
+        "authentication:app": "yes",
+        "authentication:contactless": "yes",
+        "authentication:membership_card": "yes",
+        "bicycle_rental": "docking_station",
+        "brand": "YouBike 2.0",
+        "brand:en": "YouBike 2.0",
+        "brand:wikidata": "Q20687952",
+        "brand:wikipedia": "en:YouBike",
+        "brand:zh": "微笑單車2.0",
+        "capacity": "30",
+        "description": "鳳三路/龍三路(東南側)",
+        "description:en": "Feng 3rd Rd. & Long 3rd Rd. (Southeast)",
+        "description:zh": "鳳三路/龍三路(東南側)",
+        "description:zh-Hans": "凤三路/龙三路(东南侧)",
+        "description:zh-Hant": "鳳三路/龍三路(東南側)",
+        "fee": "yes",
+        "name": "龍鳳夜市",
+        "name:en": "LongFeng Night Market",
+        "name:zh": "龍鳳夜市",
+        "name:zh-Bopo": "ㄌㄨㄥˊㄈㄥˋㄧㄝˋㄕˋ",
+        "name:zh-Hans": "龙凤夜市",
+        "name:zh-Hant": "龍鳳夜市",
+        "name:zh-Latn-pinyin": "lóngfèngyèshì",
+        "nat_ref": "NWT500234052",
+        "network": "YouBike 2.0",
+        "network:en": "Taipei City Public Bike",
+        "network:wikidata": "Q20687952",
+        "network:zh": "臺北市公共自行車租賃系統",
+        "opening_hours": "24/7",
+        "operator": "Giant",
+        "operator:en": "YOUBIKE CO.",
+        "operator:type": "private",
+        "operator:wikidata": "Q703557",
+        "operator:zh": "微笑單車股份有限公司",
+        "payment:credit_cards": "yes",
+        "payment:ep_easycard": "yes",
+        "payment:ep_easywallet": "yes",
+        "payment:ep_ipass": "yes",
+        "payment:jcb": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "ref": "500234052",
+        "rental": "city_bike",
+        "source": "TDX",
+        "source:date": "2026-02-26T08:53:01+08:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.33331,
+          24.97329
+        ]
+      },
+      "id": "node/13601809675"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/14219667618",
+        "information": "guidepost",
+        "name": "往劍潭捷運站、士林夜市",
+        "tourism": "information"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5254971,
+          25.0790224
+        ]
+      },
+      "id": "node/14219667618"
+    }
+  ]
+}
