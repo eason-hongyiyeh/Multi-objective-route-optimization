@@ -3,267 +3,290 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>台北捷運地圖</title>
+  <title>捷運資料地圖</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
+    :root { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; color: #173b45; background: #f4f7f6; }
     * { box-sizing: border-box; }
-    :root { color-scheme: light; font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; color: #203348; }
-    body { margin: 0; background: #eef2f3; }
-    .layout { display: grid; grid-template-columns: 320px 1fr; height: 100vh; height: 100dvh; }
-    aside { background: #fff; padding: 30px 24px 20px; border-right: 1px solid #dce3e7; overflow-y: auto; z-index: 1000; }
-    .eyebrow { font-size: 11px; letter-spacing: 3px; font-weight: 700; color: #638078; }
-    h1 { font-size: 27px; margin: 10px 0; letter-spacing: 1px; }
-    .intro { font-size: 13px; color: #637581; line-height: 1.8; margin: 0 0 22px; }
-    .stats { display: flex; gap: 24px; padding: 16px 0; border-top: 1px solid #e8edef; border-bottom: 1px solid #e8edef; margin-bottom: 22px; }
-    .stat strong { display: block; font-size: 25px; }
-    .stat span { color: #73818b; font-size: 12px; }
-    label, .section-title { display: block; font-weight: 650; font-size: 13px; margin: 0 0 9px; }
-    input[type=search] { width: 100%; padding: 12px; border: 1px solid #cfd9df; border-radius: 8px; font: inherit; font-size: 14px; }
-    input:focus-visible, button:focus-visible { outline: 3px solid #a4c4ec; outline-offset: 2px; }
-    #search-results { margin: 6px 0 18px; max-height: 190px; overflow-y: auto; }
-    #search-results button { display: block; text-align: left; width: 100%; background: #f2f6f7; border: 0; margin: 4px 0; padding: 10px; border-radius: 6px; color: #203348; cursor: pointer; }
-    .line-toggle { display: flex; align-items: center; gap: 10px; width: 100%; padding: 11px 0; border: 0; background: none; color: #203348; cursor: pointer; font: inherit; font-size: 14px; }
-    .line-toggle[aria-pressed=false] { opacity: .4; }
-    .line-code { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 25px; border-radius: 5px; color: white; font-size: 12px; font-weight: 700; background: var(--line-color); }
-    .line-count { margin-left: auto; color: #788591; font-size: 12px; }
-    .options { margin: 18px 0; font-weight: 400; display: flex; gap: 8px; align-items: center; }
-    .reset { border: 1px solid #cad7db; background: #fff; border-radius: 8px; padding: 11px; width: 100%; font: inherit; font-size: 13px; cursor: pointer; color: #203348; }
-    .reset:hover { background: #f1f6f6; }
-    .note { font-size: 12px; line-height: 1.8; color: #788591; margin: 20px 0 0; }
-    #map { width: 100%; height: 100%; background: #e7eeee; }
-    .map-area { position: relative; min-height: 0; }
-    #notice { position: absolute; z-index: 1100; top: 18px; left: 50%; transform: translateX(-50%); max-width: 90%; background: #fff; box-shadow: 0 3px 18px #233f4526; border-radius: 8px; padding: 12px 18px; font-size: 13px; }
-    [hidden] { display: none !important; }
-    .station-label { border: 0; box-shadow: none; background: #ffffffdd; font-family: inherit; font-size: 11px; padding: 1px 4px; }
-    .station-label::before { display: none; }
-    .popup-title { margin: 2px 0 8px; font-size: 17px; font-weight: 700; }
-    .popup-line { margin: 6px 0; display: flex; align-items: center; gap: 8px; }
-    .popup-coordinates { font-size: 11px; color: #788591; margin-top: 10px; }
-    #search-empty { padding: 8px 0; font-size: 13px; color: #788591; }
+    body { margin: 0; display: grid; grid-template-columns: 330px minmax(0, 1fr); height: 100dvh; }
+    aside { padding: 28px 22px; overflow-y: auto; border-right: 1px solid #dbe5e1; }
+    .eyebrow { color: #477367; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+    h1 { margin: 12px 0 8px; font-size: 26px; letter-spacing: 1px; }
+    .intro, .note { font-size: 13px; color: #5f777c; line-height: 1.7; }
+    .stats { display: flex; gap: 8px; margin: 24px 0; }
+    .stat { flex: 1; padding: 12px 5px; background: #e7efeb; border-radius: 8px; text-align: center; }
+    .stat strong { display: block; font-size: 22px; }
+    .stat small { display: block; font-size: 10px; margin-top: 4px; }
+    h2, .search-label { display: block; font-size: 13px; font-weight: 700; margin: 22px 0 10px; }
+    input[type=search] { width: 100%; border: 1px solid #bfd0ca; border-radius: 7px; padding: 12px; font: inherit; font-size: 14px; background: white; }
+    input:focus-visible, button:focus-visible { outline: 3px solid #77b6aa; outline-offset: 2px; }
+    button { font: inherit; cursor: pointer; }
+    #results { display: grid; gap: 4px; margin-top: 8px; max-height: 220px; overflow: auto; }
+    .result { border: 1px solid #dbe5e1; background: white; padding: 10px; text-align: left; border-radius: 5px; }
+    .result:hover, .locate:hover { background: #e3f0e9; }
+    .result small { display: block; color: #657b80; margin-top: 4px; font-size: 11px; }
+    .layer { padding: 13px 0; border-bottom: 1px solid #dbe5e1; }
+    .layer-heading { display: flex; gap: 6px; align-items: center; }
+    .layer label { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; cursor: pointer; font-size: 13px; font-weight: 600; }
+    input[type=checkbox] { accent-color: #236a58; width: 16px; height: 16px; flex-shrink: 0; }
+    .swatch { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .layer-meta { font-size: 11px; line-height: 1.7; color: #5f777c; margin: 7px 0 0 26px; overflow-wrap: anywhere; }
+    .locate { font-size: 11px; padding: 5px 8px; border: 1px solid #ccdad4; border-radius: 5px; color: #235e50; background: white; }
+    button:disabled { cursor: default; opacity: .45; }
+    #reset { width: 100%; padding: 11px; border: 0; border-radius: 6px; background: #235e50; color: white; margin-top: 22px; font-size: 13px; }
+    main { position: relative; min-width: 0; min-height: 0; }
+    #map { width: 100%; height: 100%; background: #dde7e2; }
+    #notice { position: absolute; z-index: 1000; top: 16px; left: 16px; right: 65px; padding: 12px 16px; border-radius: 7px; background: white; box-shadow: 0 2px 12px #173b4520; font-size: 13px; }
+    #notice[hidden] { display: none; }
+    .popup-title { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+    .popup-source { color: #697d82; font-size: 11px; overflow-wrap: anywhere; margin-bottom: 10px; }
+    .popup-row { font-size: 12px; margin: 5px 0; overflow-wrap: anywhere; }
+    .line-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .line-badge { padding: 4px 8px; border: 1px solid #dbe5e1; border-left: 5px solid var(--line-color); border-radius: 4px; font-size: 12px; color: #173b45; background: #f4f7f6; }
+    .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
+    .label-control { display: flex; align-items: center; gap: 7px; margin-top: 16px; font-size: 13px; }
+    details { margin-top: 12px; }
+    summary { cursor: pointer; color: #236a58; }
+    .properties { max-height: 220px; overflow: auto; }
     @media (max-width: 700px) {
-      .layout { grid-template-columns: 1fr; grid-template-rows: auto minmax(300px, 1fr); }
-      aside { max-height: 40dvh; padding: 16px; border-right: 0; border-bottom: 1px solid #dce3e7; }
-      h1 { font-size: 22px; margin: 6px 0; }
-      .intro { margin-bottom: 10px; }
-      .stats { display: none; }
-      #line-controls { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-      .line-toggle { width: auto; font-size: 12px; padding: 5px 0; }
-      .line-count, .section-title { display: none; }
-      .options { display: inline-flex; margin: 10px 12px 0 0; }
-      .reset { width: auto; padding: 6px 10px; }
-      .note { margin-top: 10px; }
+      body { grid-template-columns: 1fr; grid-template-rows: 42dvh minmax(300px, 1fr); }
+      aside { padding: 18px; border-right: 0; border-bottom: 1px solid #dbe5e1; }
+      h1 { font-size: 23px; } .stats { margin: 15px 0; } .intro { margin-bottom: 0; }
     }
   </style>
 </head>
 <body>
-<div class="layout">
   <aside>
-    <div class="eyebrow">TAIPEI METRO · NETWORK</div>
-    <h1>台北捷運地圖</h1>
-    <p class="intro">查看軌道路徑、車站與出入口。<br>點選地圖上的標記查看詳細資訊。</p>
-    <div class="stats"><div class="stat"><strong id="station-count">—</strong><span>座車站</span></div><div class="stat"><strong id="track-count">—</strong><span>筆軌道／設施</span></div><div class="stat"><strong id="exit-count">—</strong><span>個出入口</span></div></div>
-    <label for="search">尋找車站</label>
-    <input type="search" id="search" placeholder="站名或站碼，例如：台北車站、R10" autocomplete="off">
-    <div id="search-results" aria-live="polite"></div>
-    <p class="section-title">顯示路線</p>
-    <div id="line-controls"></div>
-    <label class="options"><input type="checkbox" id="exits" checked>顯示出入口（紫色圓點）</label>
-    <label class="options"><input type="checkbox" id="labels" checked>放大時顯示站名</label>
-    <button class="reset" id="reset" type="button">顯示完整路網</button>
-    <p class="note">軌道與出入口依匯入圖資繪製，黑色外圈代表轉乘站。圖資包含機廠、側線及未營運路段，不代表即時營運狀態。</p>
-    <p class="note" id="data-summary"></p>
+    <div class="eyebrow">TRANSIT / DATA EXPLORER</div>
+    <h1>捷運資料地圖</h1>
+    <p class="intro">查看捷運與機場捷運的車站、軌道及設施。點選車站查看站名、站碼與路線。</p>
+    <div class="stats">
+      <div class="stat"><strong id="file-count">—</strong><small>份資料</small></div>
+      <div class="stat"><strong id="feature-count">—</strong><small>筆可顯示</small></div>
+      <div class="stat"><strong id="skipped-count">—</strong><small>筆缺少有效座標</small></div>
+    </div>
+    <label class="search-label" for="search">搜尋地圖資料</label>
+    <input id="search" type="search" placeholder="站名或站碼，例如 西湖、BR16" autocomplete="off">
+    <div id="results" aria-live="polite"></div>
+    <h2>顯示圖層</h2>
+    <div id="layer-controls"></div>
+    <label class="label-control"><input id="station-labels" type="checkbox" checked>放大地圖時顯示站名</label>
+    <p class="note">白心圓點是車站，邊框依路線配色；多條路線的車站使用深色邊框。</p>
+    <button id="reset" type="button">顯示全部資料範圍</button>
+    <p class="note" id="summary"></p>
+    <p class="note">圖資可能包含機廠、側線與施工路段，不代表即時營運狀態。部分資料範圍重疊，可切換圖層查看。</p>
   </aside>
-  <main class="map-area" aria-label="捷運車站地圖">
+  <main aria-label="互動捷運地圖">
     <div id="map"></div>
-    <div id="notice" role="status">正在載入捷運地圖…</div>
+    <div id="notice" role="status">正在載入地圖資料…</div>
   </main>
-</div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-"use strict";
-const notice = document.getElementById('notice');
-const showNotice = text => { notice.textContent = text; notice.hidden = false; };
-const node = (tag, text, className) => {
-  const item = document.createElement(tag);
-  if (text !== undefined) item.textContent = text;
-  if (className) item.className = className;
-  return item;
-};
-const normalize = text => text.normalize('NFKC').replace(/\s/g, '').replaceAll('臺', '台').toUpperCase();
-
-async function start() {
-  if (!window.L) throw new Error('地圖元件載入失敗，請確認網路連線後重新整理。');
-  if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，再使用終端機顯示的網址開啟地圖。');
-  const [data, tracks, exits] = await Promise.all(['/network.json', '/data/mrt_tracks.geojson', '/data/mrt_exits.geojson'].map(async url => {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('地圖資料載入失敗，請重新啟動 mrt_map.py。');
-    return response.json();
-  }));
-  const lines = new Map(data.lines.map(line => [line.id, line]));
-  const extraLines = [
-    {id: 'Y', name: '環狀線', color: '#c49e00'},
-    {id: 'LB', name: '三鶯線圖資', color: '#298fc0'},
-    {id: 'A', name: '機場捷運', color: '#82479b'},
-    {id: 'other', name: '其他軌道／設施', color: '#71818c'}
-  ];
-  const known = new Map([...data.lines, ...extraLines].map(line => [line.id, line]));
-  function trackLine(feature) {
-    const p = feature.properties || {};
-    if (known.has(p.ref)) return p.ref;
-    const name = p['name:zh-Hant'] || p['name:zh'] || p.name || '';
-    const aliases = [['文湖', 'BR'], ['淡水信義', 'R'], ['信義線東延', 'R'], ['新北投', 'R'],
-      ['松山新店', 'G'], ['小碧潭', 'G'], ['中和新蘆', 'O'], ['板南', 'BL'],
-      ['環狀', 'Y'], ['三鶯', 'LB'], ['機場捷運', 'A']];
-    return aliases.find(([keyword]) => name.includes(keyword))?.[1] || 'other';
-  }
-  for (const feature of tracks.features) {
-    const id = trackLine(feature);
-    if (!lines.has(id)) lines.set(id, known.get(id));
-  }
-  const enabled = new Set(lines.keys());
-  const lineButtons = new Map();
-  const segments = new Map([...lines.keys()].map(id => [id, L.layerGroup()]));
-  const trackCounts = new Map([...lines.keys()].map(id => [id, 0]));
-  const markers = [];
-  const bounds = L.latLngBounds(data.stations.map(s => [s.lat, s.lon]));
-  const map = L.map('map', {zoomControl: false}).fitBounds(bounds, {padding: [30, 30]});
-  map.createPane('tracks'); map.getPane('tracks').style.zIndex = 410;
-  map.createPane('stations'); map.getPane('stations').style.zIndex = 430;
-  map.createPane('exits'); map.getPane('exits').style.zIndex = 440;
-  L.control.zoom({position: 'topright'}).addTo(map);
-  L.control.scale({imperial: false, position: 'bottomleft'}).addTo(map);
-  const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-  tiles.on('tileerror', () => showNotice('部分街道底圖無法載入，捷運站與路線仍可查看。'));
-  function featurePopup(feature, fallback, fields) {
-    const p = feature.properties || {};
-    const popup = node('div');
-    popup.append(node('div', p['name:zh-Hant'] || p['name:zh'] || p.name || fallback, 'popup-title'));
-    for (const [key, label] of fields) {
-      if (p[key] !== undefined) popup.append(node('div', `${label}：${p[key]}`, 'popup-line'));
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    const $ = id => document.getElementById(id);
+    const node = (tag, text, className) => {
+      const element = document.createElement(tag);
+      if (text !== undefined) element.textContent = text;
+      if (className) element.className = className;
+      return element;
+    };
+    const normalize = text => String(text).normalize('NFKC').replace(/\s/g, '').replace(/臺/g, '台').toUpperCase();
+    const routeColors = { BR: '#a66c2c', R: '#d92c40', G: '#00865b', O: '#e99a10', BL: '#0075be',
+      Y: '#c1a400', LB: '#4b8fc2', A: '#8851b0' };
+    const routeNames = { BR: '文湖線', R: '淡水信義線', G: '松山新店線', O: '中和新蘆線', BL: '板南線',
+      Y: '環狀線', LB: '三鶯線', A: '機場捷運' };
+    const isStation = feature => feature.geometry.type === 'Point'
+      && (feature.properties?.public_transport === 'station' || feature.properties?.railway === 'station');
+    const stationCodes = feature => String(feature.properties?.ref || '').toUpperCase()
+      .split(/[;,\s/]+/).filter(code => /^(BR|BL|LB|R|G|O|Y|A)\d+[A-Z]?$/.test(code));
+    function stationDetails(feature) {
+      const p = feature.properties || {}, codes = stationCodes(feature);
+      const ids = [...new Set(codes.map(code => code.match(/^[A-Z]+/)[0]))];
+      return { name: p['name:zh-Hant'] || p['name:zh'] || p.name,
+        codes, lines: ids.map(id => ({ id, name: routeNames[id] })) };
     }
-    if (feature.id || p['@id']) popup.append(node('div', `圖資編號：${feature.id || p['@id']}`, 'popup-coordinates'));
-    return popup;
-  }
-  for (const feature of tracks.features) {
-    const id = trackLine(feature), line = lines.get(id), p = feature.properties || {};
-    const facility = ['Polygon', 'MultiPolygon'].includes(feature.geometry.type);
-    const auxiliary = !!p.service || !!p.construction;
-    const layer = L.geoJSON(feature, {
-      pane: 'tracks', style: {className: 'track-feature', color: line.color, weight: facility ? 2 : auxiliary ? 2 : 4,
-        opacity: auxiliary ? .6 : .85, dashArray: auxiliary ? '5 5' : null, fillOpacity: .15},
-      onEachFeature: (f, item) => item.bindPopup(featurePopup(f, line.name,
-        [['ref', '路線代碼'], ['network', '路網'], ['operator', '營運單位'], ['service', '軌道用途'], ['construction', '施工標記']]))
-    });
-    layer.addTo(segments.get(id));
-    trackCounts.set(id, trackCounts.get(id) + 1);
-    bounds.extend(layer.getBounds());
-  }
-  for (const group of segments.values()) group.addTo(map);
-  const exitLayer = L.geoJSON(exits, {
-    pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
-      pane: 'exits', className: 'exit-marker', radius: 3.5, color: '#fff', weight: 1, fillColor: '#7c3db0', fillOpacity: .9
-    }),
-    onEachFeature: (feature, layer) => {
+    const featureName = (feature, info) => {
       const p = feature.properties || {};
-      const popup = featurePopup(feature, p.ref ? `出入口 ${p.ref}` : '捷運出入口',
-        [['ref', '出口編號'], ['wheelchair', '輪椅通行（來源標記）'], ['access', '通行限制'], ['description', '說明']]);
-      const [lon, lat] = feature.geometry.coordinates;
-      popup.append(node('div', `${lat.toFixed(6)}, ${lon.toFixed(6)}`, 'popup-coordinates'));
-      layer.bindPopup(popup);
+      if (isStation(feature)) {
+        const station = stationDetails(feature), name = station.name || '未提供站名的捷運站';
+        return station.lines.some(line => line.id === 'A') ? `${name}（機場捷運）` : name;
+      }
+      const name = p['name:zh-Hant'] || p['name:zh'] || p.name;
+      if (name) return name;
+      if (routeNames[p.ref]) return `${routeNames[p.ref]}軌道`;
+      if (['LineString', 'MultiLineString'].includes(feature.geometry.type)) return '未命名軌道路段';
+      if (['Polygon', 'MultiPolygon'].includes(feature.geometry.type)) return '未命名設施範圍';
+      return '未提供名稱的地圖資料';
+    };
+    const displayValue = value => typeof value === 'boolean' ? (value ? '有' : '無')
+      : typeof value === 'object' ? JSON.stringify(value) : String(value);
+    function stationInfo(feature) {
+      if (isStation(feature)) return stationDetails(feature);
+      const p = feature.properties || {}, lineName = routeNames[p.ref];
+      return { lines: lineName ? [{ id: p.ref, name: lineName }] : [] };
     }
-  }).addTo(map);
-  if (exitLayer.getLayers().length) bounds.extend(exitLayer.getBounds());
-  const exitsToggle = document.getElementById('exits');
-  exitsToggle.addEventListener('change', () => { if (exitsToggle.checked) exitLayer.addTo(map); else map.removeLayer(exitLayer); });
-  for (const station of data.stations) {
-    const popup = node('div');
-    popup.append(node('div', station.name, 'popup-title'));
-    for (const code of station.codes) {
-      const line = lines.get(data.stops[code].line);
-      const row = node('div', undefined, 'popup-line');
-      const badge = node('span', code, 'line-code');
-      badge.style.setProperty('--line-color', line.color);
-      row.append(badge, node('span', line.name));
-      popup.append(row);
+    function popup(feature, info, station) {
+      const p = feature.properties || {}, box = node('div');
+      box.append(node('div', featureName(feature, info), 'popup-title'), node('div', info.id, 'popup-source'));
+      if (station.name) box.append(node('div', `車站：${station.name}`, 'popup-row'));
+      if (station.lines.length) {
+        box.append(node('div', '所屬路線（依現有資料）', 'popup-row'));
+        const badges = node('div', undefined, 'line-badges');
+        for (const line of station.lines) {
+          const badge = node('span', `${line.id} ${line.name}`, 'line-badge');
+          badge.style.setProperty('--line-color', routeColors[line.id] || '#526579');
+          badges.append(badge);
+        }
+        box.append(badges);
+      } else {
+        box.append(node('div', '路線未確認（缺少可對照的站名或路線資料）', 'popup-row'));
+      }
+      const fields = { ref: isStation(feature) ? '車站代碼' : '來源代碼',
+        operator: '營運單位（來源標記）', 'addr:full': '地址', wheelchair: '輪椅通行（來源標記）',
+        access: '通行限制', network: '路網', service: '軌道用途', construction: '施工標記', UpdateTime: '資料更新時間' };
+      for (const [key, label] of Object.entries(fields)) {
+        if (p[key] !== undefined && p[key] !== null) box.append(node('div', `${label}：${displayValue(p[key])}`, 'popup-row'));
+      }
+      if (feature.geometry.type === 'Point') {
+        const [lon, lat] = feature.geometry.coordinates;
+        box.append(node('div', `經緯度：${lat.toFixed(6)}, ${lon.toFixed(6)}`, 'popup-row'));
+      }
+      const details = node('details'), props = node('div', undefined, 'properties');
+      details.append(node('summary', '查看全部來源欄位'));
+      for (const [key, value] of Object.entries(p)) props.append(node('div', `${key}：${displayValue(value)}`, 'popup-row'));
+      details.append(props); box.append(details);
+      return box;
     }
-    popup.append(node('div', `${station.lat.toFixed(6)}, ${station.lon.toFixed(6)}`, 'popup-coordinates'));
-    const marker = L.circleMarker([station.lat, station.lon], {
-      pane: 'stations', className: 'station-marker',
-      radius: station.lines.length > 1 ? 6 : 4.5, weight: 2,
-      color: station.lines.length > 1 ? '#233747' : lines.get(station.lines[0]).color,
-      fillColor: '#fff', fillOpacity: 1
-    }).bindPopup(popup).addTo(map);
-    markers.push({station, marker});
-  }
-  const fit = () => map.fitBounds(bounds, {padding: [30, 30]});
-  const labels = document.getElementById('labels');
-  function updateLabels() {
-    for (const {station, marker} of markers) {
-      const visible = map.hasLayer(marker) && labels.checked && map.getZoom() >= 13;
-      if (visible && !marker.getTooltip()) marker.bindTooltip(node('span', station.name), {permanent: true, direction: 'right', offset: [7, 0], className: 'station-label'});
-      if (!visible && marker.getTooltip()) marker.unbindTooltip();
+    async function fetchJSON(url) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
     }
-  }
-  function updateVisibility() {
-    for (const [id, group] of segments) {
-      if (enabled.has(id)) group.addTo(map); else map.removeLayer(group);
-      lineButtons.get(id)?.setAttribute('aria-pressed', String(enabled.has(id)));
+    async function start() {
+      if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，透過終端機顯示的網址開啟地圖。');
+      if (!window.L) throw new Error('無法載入地圖元件，請確認網路連線後重新整理。');
+      const map = L.map('map', { zoomControl: false }).setView([25.04, 121.4], 10);
+      L.control.zoom({ position: 'topright' }).addTo(map);
+      L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
+      map.createPane('points').style.zIndex = 450;
+      map.createPane('stations').style.zIndex = 470;
+      let tileFailed = false;
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).on('tileerror', () => {
+        tileFailed = true; $('notice').hidden = false;
+        $('notice').textContent = '街道底圖載入失敗，請檢查網路連線；資料圖層仍可查看。';
+      }).addTo(map);
+      const { layers } = await fetchJSON('/layers.json');
+      const loaded = await Promise.all(layers.map(async info => {
+        if (info.error) return { info };
+        try { return { info, data: await fetchJSON(info.url) }; }
+        catch (error) { return { info: { ...info, error: `載入失敗：${error.message}` } }; }
+      }));
+      const entries = [], holders = [], stationMarkers = [], allBounds = L.latLngBounds();
+      function syncLabels() {
+        const visible = $('station-labels').checked && map.getZoom() >= 14;
+        for (const marker of stationMarkers) {
+          if (visible && map.hasLayer(marker)) marker.openTooltip();
+          else marker.closeTooltip();
+        }
+      }
+      map.on('zoomend', syncLabels);
+      $('station-labels').addEventListener('change', syncLabels);
+      function enable(holder) {
+        holder.check.checked = true;
+        if (!map.hasLayer(holder.group)) holder.group.addTo(map);
+      }
+      function fitAll() { if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30] }); }
+      for (const { info, data } of loaded) {
+        const card = node('div', undefined, 'layer'), heading = node('div', undefined, 'layer-heading');
+        const label = node('label'), check = node('input'), swatch = node('span', undefined, 'swatch');
+        check.type = 'checkbox'; check.checked = !info.error && info.displayed > 0;
+        check.disabled = !check.checked; swatch.style.background = info.color;
+        label.append(check, swatch, node('span', info.name));
+        const locate = node('button', '定位', 'locate'); locate.type = 'button'; locate.disabled = check.disabled;
+        locate.setAttribute('aria-label', `定位${info.name}`);
+        heading.append(label, locate);
+        card.append(heading, node('div', info.id, 'layer-meta'), node('div', info.error
+          ? `無法顯示：${info.error}` : `顯示 ${info.displayed} / ${info.total} 筆`, 'layer-meta'));
+        $('layer-controls').append(card);
+        if (!data || !info.displayed) continue;
+        const holder = { check, group: null };
+        holder.group = L.geoJSON(data, {
+          style: feature => {
+            if (['Point', 'MultiPoint'].includes(feature.geometry.type)) return {};
+            const p = feature.properties || {};
+            return { color: routeColors[p.ref] || info.color, weight: p.service ? 2 : 4,
+              opacity: .85, fillOpacity: .17, dashArray: p.service ? '5 5' : null, className: 'data-shape' };
+          },
+          pointToLayer: (feature, latlng) => {
+            if (isStation(feature)) {
+              const { lines } = stationDetails(feature);
+              return L.circleMarker(latlng, { pane: 'stations', radius: 8, weight: 3,
+                color: lines.length === 1 ? routeColors[lines[0].id] : '#273f4f',
+                fillColor: '#fff', fillOpacity: 1, className: 'station-point' });
+            }
+            return L.circleMarker(latlng, {
+              pane: 'points', radius: 6,
+              color: '#fff', weight: 1.5, fillColor: info.color, fillOpacity: 1, className: 'data-point' });
+          },
+          onEachFeature: (feature, layer) => {
+            const station = stationInfo(feature);
+            layer.bindPopup(popup(feature, info, station), { maxWidth: 330 });
+            const p = feature.properties || {}, name = featureName(feature, info);
+            if (isStation(feature)) {
+              layer.bindTooltip(node('span', [name, p.ref].filter(Boolean).join(' · ')),
+                { permanent: true, direction: 'right', offset: [10, 0], className: 'station-label' });
+              stationMarkers.push(layer);
+            }
+            const keys = [name, feature.id, p['@id'], p.ref, p['name:en'], p.alt_name, station.name,
+              ...(isStation(feature) ? station.codes : []),
+              ...station.lines.map(line => line.name)].filter(v => v != null).map(normalize);
+            entries.push({ name, keys, layer, holder, info });
+          }
+        }).addTo(map);
+        holder.group.on('add', syncLabels);
+        allBounds.extend(holder.group.getBounds()); holders.push(holder);
+        check.addEventListener('change', () => check.checked ? holder.group.addTo(map) : map.removeLayer(holder.group));
+        locate.addEventListener('click', () => { enable(holder); map.fitBounds(holder.group.getBounds(), { padding: [30, 30], maxZoom: 16 }); });
+      }
+      function select(entry) {
+        enable(entry.holder);
+        if (entry.layer.getLatLng) map.setView(entry.layer.getLatLng(), 17);
+        else map.fitBounds(entry.layer.getBounds(), { padding: [30, 30], maxZoom: 17 });
+        entry.layer.openPopup(); $('results').replaceChildren(); $('search').value = entry.name;
+      }
+      $('search').addEventListener('input', () => {
+        $('results').replaceChildren();
+        const query = normalize($('search').value);
+        if (!query) return;
+        const matches = entries.filter(e => e.keys.some(key => key.includes(query)));
+        matches.sort((a, b) => Number(b.keys.includes(query)) - Number(a.keys.includes(query)));
+        for (const entry of matches.slice(0, 20)) {
+          const button = node('button', entry.name, 'result'); button.type = 'button';
+          button.append(node('small', entry.info.name));
+          button.addEventListener('click', () => select(entry)); $('results').append(button);
+        }
+        if (!matches.length) $('results').append(node('div', '找不到符合的資料。', 'note'));
+        if (matches.length > 20) $('results').append(node('div', `共 ${matches.length} 筆，顯示前 20 筆；可輸入更完整的名稱。`, 'note'));
+      });
+      $('search').addEventListener('keydown', event => {
+        if (event.key === 'Enter') $('results').querySelector('button')?.click();
+      });
+      $('reset').addEventListener('click', () => {
+        holders.forEach(enable); map.closePopup(); fitAll(); $('search').value = ''; $('results').replaceChildren();
+      });
+      $('file-count').textContent = layers.length;
+      $('feature-count').textContent = entries.length;
+      $('skipped-count').textContent = layers.reduce((sum, item) => sum + item.missing_geometry + item.invalid_geometry, 0);
+      const failures = loaded.filter(item => item.info.error).length;
+      $('summary').textContent = `每份資料各自顯示，筆數包含不同檔案內的重疊資料。${failures ? `有 ${failures} 份資料無法載入，詳見圖層說明。` : ''}`;
+      fitAll();
+      syncLabels();
+      if (!entries.length) { $('notice').hidden = false; $('notice').textContent = '沒有可顯示的資料。請確認 data 資料夾內的 GeoJSON 檔案，然後重新啟動程式。'; }
+      else if (!tileFailed) $('notice').hidden = true;
+      document.body.dataset.ready = 'true';
     }
-    for (const {station, marker} of markers) {
-      if (station.lines.some(id => enabled.has(id))) marker.addTo(map); else map.removeLayer(marker);
-    }
-    updateLabels();
-  }
-  for (const line of lines.values()) {
-    const button = node('button', undefined, 'line-toggle');
-    button.type = 'button'; button.dataset.line = line.id; button.setAttribute('aria-pressed', 'true');
-    const badge = node('span', line.id, 'line-code');
-    badge.style.setProperty('--line-color', line.color);
-    button.append(badge, node('span', line.name), node('span', `${trackCounts.get(line.id)} 筆`, 'line-count'));
-    button.addEventListener('click', () => { if (enabled.has(line.id)) enabled.delete(line.id); else enabled.add(line.id); updateVisibility(); });
-    lineButtons.set(line.id, button);
-    document.getElementById('line-controls').append(button);
-  }
-  const search = document.getElementById('search');
-  const results = document.getElementById('search-results');
-  function selectStation(item) {
-    item.station.lines.forEach(id => enabled.add(id));
-    updateVisibility();
-    map.setView([item.station.lat, item.station.lon], 15);
-    item.marker.openPopup();
-    search.value = item.station.name;
-    results.replaceChildren();
-  }
-  search.addEventListener('input', () => {
-    results.replaceChildren();
-    const query = normalize(search.value);
-    if (!query) return;
-    const exact = markers.filter(({station}) => normalize(station.name) === query || station.codes.includes(query));
-    const matches = exact.length ? exact : markers.filter(({station}) => normalize(station.name).includes(query) || station.codes.some(code => code.includes(query)));
-    for (const item of matches.slice(0, 12)) {
-      const button = node('button', `${item.station.name}　${item.station.codes.join(' / ')}`);
-      button.type = 'button'; button.addEventListener('click', () => selectStation(item)); results.append(button);
-    }
-    if (!matches.length) { const empty = node('div', '找不到車站，請試試其他站名或站碼。'); empty.id = 'search-empty'; results.append(empty); }
-  });
-  search.addEventListener('keydown', event => { if (event.key === 'Enter') results.querySelector('button')?.click(); });
-  document.getElementById('reset').addEventListener('click', () => {
-    lines.forEach(line => enabled.add(line.id)); updateVisibility(); exitsToggle.checked = true; exitLayer.addTo(map);
-    map.closePopup(); fit(); search.value = ''; results.replaceChildren();
-  });
-  labels.addEventListener('change', updateLabels);
-  map.on('zoomend', updateLabels);
-  document.getElementById('station-count').textContent = data.stations.length;
-  document.getElementById('track-count').textContent = tracks.features.length;
-  document.getElementById('exit-count').textContent = exits.features.length;
-  const skipped = tracks.display_summary.total - tracks.features.length + exits.display_summary.total - exits.features.length;
-  document.getElementById('data-summary').textContent = `已載入 ${tracks.features.length} 筆軌道／設施、${exits.features.length} 個出入口。${skipped ? `另有 ${skipped} 筆無可用幾何座標，未顯示。` : ''}出入口獨立顯示，不隨路線切換。`;
-  fit(); updateLabels(); notice.hidden = true;
-  document.body.dataset.ready = 'true';
-}
-start().catch(error => showNotice(error.message));
-</script>
+    start().catch(error => { $('notice').hidden = false; $('notice').textContent = `地圖載入失敗：${error.message}`; });
+  </script>
 </body>
 </html>
