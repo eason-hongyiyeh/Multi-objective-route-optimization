@@ -1,6 +1,7 @@
 """讀取 data/ 的 GeoJSON，啟動本機互動地圖；只使用 Python 標準函式庫。"""
 import argparse
 from collections import Counter
+import csv
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
@@ -8,6 +9,7 @@ import math
 from pathlib import Path
 from urllib.parse import quote
 import webbrowser
+from calculate_market_walks import fingerprint, MAX_WALK_SECONDS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -15,7 +17,9 @@ TITLES = {
     'mrt_tracks.geojson': '捷運路線與路線節點',
     'mrt_station.geojson': '捷運車站與站名',
     'airportmrt.geojson': '機場捷運路線、軌道與停靠點',
-    'nightmarket.geojson': '夜市與周邊設施',
+    'nightmarket.geojson': '夜市',
+    'mrt_exits.geojson': '捷運出入口',
+    'airport_mrt_exits.geojson': '機場捷運出入口',
 }
 COLORS = ('#247a9a', '#8851b0', '#008675', '#b27a1d', '#d1495b')
 LAYER_COLORS = {
@@ -23,7 +27,58 @@ LAYER_COLORS = {
     'airportmrt.geojson': '#8851b0',
     'mrt_tracks.geojson': '#b27a1d',
     'nightmarket.geojson': '#B42365',
+    'mrt_exits.geojson': '#0075BE',
+    'airport_mrt_exits.geojson': '#8851B0',
 }
+# 衍生出口檔保留供資料作業使用，避免與原始出口在一般地圖重複繪製。
+DERIVED_EXIT_FILES = {'mrt_exits_clean.geojson', 'airport_mrt_exits_clean.geojson',
+                      'mrt_exits_with_station.geojson'}
+
+
+def load_exit_reviews(data_dir, resources):
+    """以 CSV 的車站 ID 連結來源座標，只提供檢查畫面，不重算或改寫配對。"""
+    result = {'reviews': [], 'errors': [], 'total': 0}
+    required = {'出口編號', '配對車站', '距離', '經度', '緯度', '配對狀態',
+                '出口來源ID', '出口原名', '配對站碼', '配對車站ID'}
+    try:
+        stations = json.loads(resources['/data/mrt_station.geojson'])['features']
+        by_id = {str(f.get('id') or (f.get('properties') or {}).get('@id')): f
+                 for f in stations if f['geometry']['type'] == 'Point'}
+        with (Path(data_dir) / 'exit_station_review.csv').open(encoding='utf-8-sig', newline='') as handle:
+            reader = csv.DictReader(handle)
+            if not required.issubset(reader.fieldnames or []):
+                raise ValueError('CSV 缺少欄位：' + '、'.join(sorted(required - set(reader.fieldnames or []))))
+            for row in reader:
+                if (row.get('配對狀態') or '').strip() != 'review':
+                    continue
+                result['total'] += 1
+                try:
+                    station_id = (row.get('配對車站ID') or '').strip()
+                    exit_id = (row.get('出口來源ID') or '').strip()
+                    if not exit_id:
+                        raise ValueError('缺少出口來源 ID')
+                    if not station_id or station_id not in by_id:
+                        raise ValueError(f'找不到配對車站 ID：{station_id or "未提供"}')
+                    coordinates = [float(row['經度']), float(row['緯度'])]
+                    if not valid_geometry({'type': 'Point', 'coordinates': coordinates}):
+                        raise ValueError('出口經緯度無效')
+                    distance = float(row['距離'])
+                    if not math.isfinite(distance) or distance < 0:
+                        raise ValueError('距離須為有效的非負公尺數')
+                    result['reviews'].append({
+                        'number': result['total'], 'exit_ref': row['出口編號'] or '',
+                        'exit_name': row['出口原名'] or '', 'exit_id': exit_id,
+                        'station_name': row['配對車站'] or '', 'station_ref': row['配對站碼'] or '',
+                        'station_id': station_id, 'distance_m': distance,
+                        'exit_coordinates': coordinates,
+                        'station_coordinates': by_id[station_id]['geometry']['coordinates'][:2],
+                    })
+                except (ValueError, TypeError, KeyError) as error:
+                    result['errors'].append(f'CSV 第 {reader.line_num} 行：{error}')
+    except (OSError, UnicodeError, ValueError, KeyError, csv.Error) as error:
+        result['reviews'] = []
+        result['errors'].append(f'出口配對檢查資料無法載入：{error}')
+    return result
 
 
 def valid_geometry(geometry):
@@ -108,8 +163,30 @@ def build_resources(data_dir=ROOT / 'data'):
             info.update(counts, error=None)
         except (OSError, UnicodeError, ValueError, RecursionError) as error:
             info.update(error=str(error), total=0, displayed=0, missing_geometry=0, invalid_geometry=0)
-        layers.append(info)
+        if path.name.lower() not in DERIVED_EXIT_FILES:
+            layers.append(info)
     resources['/layers.json'] = json.dumps({'layers': layers}, ensure_ascii=False).encode('utf-8')
+    resources['/exit-station-review.json'] = json.dumps(
+        load_exit_reviews(data_dir, resources), ensure_ascii=False, allow_nan=False).encode('utf-8')
+    walks = {'results': [], 'status': '步行資料尚未建立。'}
+    walking_path = ROOT / 'walking' / 'market_stations.json'
+    if walking_path.exists():
+        try:
+            document = json.loads(walking_path.read_text(encoding='utf-8'))
+            markets = json.loads(resources['/data/nightmarket.geojson'])['features']
+            stations = json.loads(resources['/data/mrt_station.geojson'])['features']
+            stations = [f for f in stations if f['geometry']['type'] == 'Point'
+                        and (f['properties'].get('public_transport') == 'station'
+                             or f['properties'].get('railway') == 'station')]
+            if (document['input_fingerprint'] == fingerprint(markets + stations)
+                    and document.get('max_duration_s') == MAX_WALK_SECONDS):
+                walks = {**document, 'results': [row for row in document['results']
+                         if 0 <= row['duration_s'] <= MAX_WALK_SECONDS], 'status': ''}
+            else:
+                walks['status'] = '夜市、捷運站資料或步行條件已更新，請重新計算步行路徑。'
+        except (OSError, ValueError, KeyError, TypeError):
+            walks['status'] = '步行資料無法讀取，請重新計算。'
+    resources['/night-market-walks.json'] = json.dumps(walks, ensure_ascii=False).encode('utf-8')
     return resources
 
 

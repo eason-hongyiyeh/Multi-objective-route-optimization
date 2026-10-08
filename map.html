@@ -11,6 +11,14 @@
     body { margin: 0; display: grid; grid-template-columns: 290px minmax(0, 1fr); height: 100dvh; }
     aside { padding: 26px 18px; overflow-y: auto; border-right: 1px solid #dbe5e1; }
     h1 { margin: 0 0 24px; font-size: 22px; }
+    .review-controls { padding: 14px 12px; margin-bottom: 20px; border: 1px solid #dbe5e1; border-radius: 7px; background: white; font-size: 13px; }
+    .review-toggle { display: flex; align-items: center; gap: 9px; font-weight: 600; cursor: pointer; }
+    .review-hint { font-size: 12px; line-height: 1.7; margin: 9px 0 0; }
+    .review-red { color: #dc2626; } .review-blue { color: #2563eb; }
+    #review-error { color: #9b2525; overflow-wrap: anywhere; }
+    .review-distance { border-color: #b45309; color: #713b0d; font-weight: 600; }
+    .review-index { background: transparent; border: 0; box-shadow: none; color: white; font-weight: 700; padding: 0; }
+    .review-index::before { display: none; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th, td { border-bottom: 1px solid #dbe5e1; height: 48px; }
     thead th { color: #5f777c; font-weight: 500; height: 34px; }
@@ -30,6 +38,7 @@
     .popup-title { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
     .popup-source { color: #697d82; font-size: 11px; overflow-wrap: anywhere; margin-bottom: 10px; }
     .popup-row { font-size: 12px; margin: 5px 0; overflow-wrap: anywhere; }
+    .walk-button { border: 1px solid #B42365; border-radius: 4px; padding: 6px 9px; margin: 6px 6px 4px 0; background: white; color: #95144f; cursor: pointer; }
     .line-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
     .line-badge { padding: 4px 8px; border: 1px solid #dbe5e1; border-left: 5px solid var(--line-color); border-radius: 4px; font-size: 12px; color: #173b45; background: #f4f7f6; }
     .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
@@ -46,6 +55,12 @@
 <body>
   <aside aria-label="地圖顯示選項">
     <h1>捷運與夜市地圖</h1>
+    <section class="review-controls" aria-label="出口配對檢查">
+      <label class="review-toggle"><input id="review-toggle" type="checkbox" disabled>出口配對檢查</label>
+      <p id="review-status" class="review-hint" role="status">正在載入檢查資料…</p>
+      <p id="review-legend" class="review-hint" hidden><span class="review-red">● 紅色：出口</span>　<span class="review-blue">● 藍色：配對車站</span><br>點紅色編號查看資料；虛線為直線配對距離，不是步行路徑。</p>
+      <p id="review-error" class="review-hint" role="status" hidden></p>
+    </section>
     <table aria-label="各路線的站點與路線顯示開關">
       <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
       <tbody id="visibility-controls"></tbody>
@@ -71,20 +86,18 @@
     const routeNames = { BR: '文湖線', R: '淡水信義線', G: '松山新店線', O: '中和新蘆線', BL: '板南線',
       Y: '環狀線', LB: '三鶯線', A: '機場捷運', R22A: '新北投支線', G03A: '小碧潭支線' };
     const stationById = new Map();
-    const marketCategories = new WeakMap();
-    const marketNames = { night_markets: '夜市／美食區', market_facilities: '夜市周邊設施' };
-    const marketColors = { night_markets: '#B42365', market_facilities: '#64748B' };
-    function classifyMarket(feature) {
-      const p = feature.properties || {};
-      const name = p['name:zh-Hant'] || p['name:zh'] || p.name || '';
-      const related = p.public_transport || p.bus === 'yes' || p.highway === 'bus_stop'
-        || p.entrance || p.railway === 'subway_entrance' || /入口|夜市口$/.test(name);
-      const market = ['marketplace', 'food_court'].includes(p.amenity)
-        || (!p.amenity && !p.highway && !p.office && p.building !== 'office'
-          && (['retail', 'commercial'].includes(p.landuse) || p.tourism === 'attraction'));
-      return !related && market ? 'night_markets' : 'market_facilities';
-    }
-    const sourceId = feature => feature.id || feature.properties?.['@id'];
+    const nightMarkets = new WeakSet();
+    const exitGroups = new WeakMap();
+    const exitNames = { mrt_exits: '捷運出入口', airport_exits: '機場捷運出入口' };
+    const exitColors = { mrt_exits: '#0075BE', airport_exits: '#8851B0' };
+    const exitGroup = feature => exitGroups.get(feature)
+      || (feature.properties?.railway === 'subway_entrance' ? 'mrt_exits' : null);
+    const walkingById = new Map();
+    const calculatedWalkingOrigins = new Set();
+    let walkingStatus = '';
+    const marketNames = { night_markets: '夜市' };
+    const marketColors = { night_markets: '#B42365' };
+    const sourceId = feature => feature.id || feature.properties?.['@id'] || feature.properties?.ExitID;
     const linkedStation = feature => stationById.get(sourceId(feature));
     function routeId(tags) {
       if (tags.ref === '捷運紅線 (新北投支線)') return 'R22A';
@@ -167,6 +180,14 @@
     }
     const featureName = (feature, info) => {
       const p = feature.properties || {};
+      if (exitGroup(feature) === 'airport_exits') {
+        const exitName = String(p.ExitName_zh || p.ExitID || '出入口（編號未提供）').replace(/^出口/, '出入口');
+        return `${p.StationName_zh || p.StationID || '站名未提供'} · 機場捷運${exitName}`;
+      }
+      if (exitGroup(feature)) {
+        const name = p['name:zh-Hant'] || p['name:zh'] || p.name;
+        return name ? `捷運出入口 · ${name}` : `捷運出入口 ${p.ref || '（編號未提供）'}`;
+      }
       if (isStation(feature)) {
         const station = stationDetails(feature), name = station.name || '未提供站名的捷運站';
         return station.lines.some(line => line.id === 'A') ? `${name}（機場捷運）` : name;
@@ -191,13 +212,16 @@
     function stationInfo(feature) {
       if (isStation(feature)) return stationDetails(feature);
       const p = feature.properties || {};
+      if (exitGroup(feature) === 'airport_exits') return { name: p.StationName_zh,
+        codes: p.StationID ? [p.StationID] : [], lines: [{ id: 'A', name: routeNames.A }] };
       const ids = [...new Set([routeId(p), ...routeMemberships(feature).map(r => routeId(r.reltags))])];
       const linked = linkedStation(feature);
       return { name: linked?.name, codes: linked?.codes || [],
         lines: ids.filter(id => routeNames[id]).map(id => ({ id, name: routeNames[id] })) };
     }
     function displayLineIds(feature) {
-      if (marketCategories.has(feature)) return [marketCategories.get(feature)];
+      if (nightMarkets.has(feature)) return ['night_markets'];
+      if (exitGroup(feature)) return [exitGroup(feature)];
       const ids = stationInfo(feature).lines.map(line => line.id);
       if (isStation(feature)) {
         const codes = stationCodes(feature);
@@ -206,14 +230,36 @@
       }
       return ids.length ? [...new Set(ids)] : ['other'];
     }
-    function popup(feature, info, station) {
+    function popup(feature, info, station, showWalking) {
       const p = feature.properties || {}, box = node('div');
       box.append(node('div', featureName(feature, info), 'popup-title'), node('div', info.id, 'popup-source'));
       if (sourceId(feature)) box.append(node('div', `來源物件：${sourceId(feature)}`, 'popup-row'));
       if (station.name) box.append(node('div', `車站：${station.name}`, 'popup-row'));
-      const marketCategory = marketCategories.get(feature);
-      if (marketCategory) {
-        box.append(node('div', `分類：${marketNames[marketCategory]}（依來源標籤）`, 'popup-row'));
+      if (nightMarkets.has(feature)) {
+        box.append(node('div', '分類：夜市', 'popup-row'));
+        const walk = walkingById.get(sourceId(feature));
+        if (walk) {
+          const seconds = Math.round(walk.duration_s);
+          box.append(node('div', `20 分鐘內最近的捷運站：${walk.station_name}（${walk.station_code}）`, 'popup-row'),
+            node('div', `步行路徑：${walk.distance_m.toLocaleString()} 公尺`, 'popup-row'),
+            node('div', `步行時間：${Math.floor(seconds / 60)} 分 ${seconds % 60} 秒（每秒 1 公尺）`, 'popup-row'),
+            node('div', '依夜市與車站座標附近的可步行道路估算，不含等紅綠燈、點位偏移與站內步行。', 'popup-row'));
+          if (walk.note) box.append(node('div', walk.note, 'popup-row'));
+          if (showWalking) {
+            const show = node('button', '顯示步行路徑', 'walk-button'); show.type = 'button';
+            show.addEventListener('click', () => showWalking(walk));
+            const hide = node('button', '隱藏步行路徑', 'walk-button'); hide.type = 'button';
+            hide.addEventListener('click', () => showWalking(null));
+            box.append(show, hide);
+          }
+        } else box.append(node('div', walkingStatus || (calculatedWalkingOrigins.has(sourceId(feature))
+          ? '20 分鐘步行範圍內沒有捷運站。' : '此夜市尚無步行計算結果。'), 'popup-row'));
+      } else if (exitGroup(feature)) {
+        box.append(node('div', `分類：${exitNames[exitGroup(feature)]}`, 'popup-row'));
+        if (exitGroup(feature) === 'mrt_exits') {
+          box.append(node('div', '所屬車站：來源未提供車站對照；請核對原始名稱。', 'popup-row'));
+          if (!p.ref) box.append(node('div', '出口編號：ref 欄位未提供；原始名稱可能包含編號。', 'popup-row'));
+        } else box.append(node('div', '所屬路線：A 機場捷運', 'popup-row'));
       } else if (station.lines.length) {
         box.append(node('div', '所屬路線（依現有資料）', 'popup-row'));
         const badges = node('div', undefined, 'line-badges');
@@ -230,7 +276,9 @@
       if (p['@geometry'] === 'center') {
         box.append(node('div', '座標為原始物件匯出的範圍中心。', 'popup-row'));
       }
-      const fields = { ref: isStation(feature) ? '車站代碼' : '來源代碼',
+      const fields = { ref: exitGroup(feature) ? '出口編號' : isStation(feature) ? '車站代碼' : '來源代碼',
+        StationID: '車站代碼', ExitID: '出口代碼', ExitName_zh: '出口名稱',
+        LocationDescription: '位置說明', Stair: '樓梯', Escalator: '電扶梯（來源值）', Elevator: '電梯',
         from: '路線起點', to: '路線終點', direction: '方向（來源標記）',
         operator: '營運單位（來源標記）', 'addr:full': '地址', wheelchair: '輪椅通行（來源標記）',
         access: '通行限制', network: '路網', service: '軌道用途', construction: '施工標記', UpdateTime: '資料更新時間',
@@ -269,6 +317,74 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }
+    function reviewPopup(review) {
+      const box = node('div');
+      box.append(node('div', `出口配對檢查 · 第 ${review.number} 筆`, 'popup-title'));
+      for (const [label, value] of [
+        ['出口編號', review.exit_ref], ['出口原名', review.exit_name],
+        ['配對車站', review.station_name], ['配對站碼', review.station_ref],
+        ['距離', `${review.distance_m.toFixed(2)} m`], ['出口來源 ID', review.exit_id],
+        ['配對車站 ID', review.station_id],
+      ]) box.append(node('div', `${label}：${value || '未提供'}`, 'popup-row'));
+      box.append(node('div', 'review：待人工確認；連線表示直線距離。', 'popup-row'));
+      return box;
+    }
+    async function setupExitReview(map) {
+      try {
+        const data = await fetchJSON('/exit-station-review.json');
+        const group = L.featureGroup(), stationGroups = new Map();
+        for (const review of data.reviews) {
+          const exit = L.GeoJSON.coordsToLatLng(review.exit_coordinates);
+          const station = L.GeoJSON.coordsToLatLng(review.station_coordinates);
+          const labelOnRight = exit.lng >= station.lng;
+          L.polyline([exit, station], { pane: 'review-lines', color: '#b45309',
+            weight: 3, opacity: 1, dashArray: '7 5', className: 'review-connection' })
+            .bindTooltip(node('span', `${review.number} · ${review.distance_m.toFixed(2)} m`),
+              { permanent: true, direction: labelOnRight ? 'right' : 'left',
+                offset: [labelOnRight ? 10 : -10, 0], className: 'review-distance', opacity: 1 })
+            .bindPopup(reviewPopup(review), { maxWidth: 330, maxHeight: 320, keepInView: true }).addTo(group);
+          L.circleMarker(exit, { pane: 'review-points', radius: 11, color: '#fff', weight: 2,
+            fillColor: '#dc2626', fillOpacity: 1, className: 'review-exit' })
+            .bindTooltip(node('span', String(review.number)), { permanent: true,
+              direction: 'center', className: 'review-index', opacity: 1 })
+            .bindPopup(reviewPopup(review), { maxWidth: 330, maxHeight: 320, keepInView: true }).addTo(group);
+          if (!stationGroups.has(review.station_id)) stationGroups.set(review.station_id, []);
+          stationGroups.get(review.station_id).push(review);
+        }
+        for (const reviews of stationGroups.values()) {
+          const first = reviews[0], box = node('div');
+          box.append(node('div', `${first.station_name || '站名未提供'} · ${first.station_ref}`, 'popup-title'),
+            node('div', `配對車站 ID：${first.station_id}`, 'popup-row'));
+          for (const review of reviews) box.append(node('div',
+            `第 ${review.number} 筆：${review.exit_ref || '出口編號未提供'} · ${review.exit_name || '原名未提供'} · ${review.distance_m.toFixed(2)} m`, 'popup-row'));
+          L.circleMarker(L.GeoJSON.coordsToLatLng(first.station_coordinates), {
+            pane: 'review-points', radius: 9, color: '#fff', weight: 2,
+            fillColor: '#2563eb', fillOpacity: 1, className: 'review-station' })
+            .bindTooltip(node('span', `${first.station_name} · ${first.station_ref}`), { direction: 'top' })
+            .bindPopup(box, { maxWidth: 330, maxHeight: 320, keepInView: true }).addTo(group);
+        }
+        const checkbox = $('review-toggle');
+        checkbox.disabled = !data.reviews.length;
+        $('review-status').textContent = data.reviews.length
+          ? `${data.reviews.length} / ${data.total} 筆待確認；勾選後自動定位。` : '沒有可顯示的 review 資料。';
+        if (data.errors.length) {
+          $('review-error').hidden = false;
+          $('review-error').textContent = data.errors.join('；');
+        }
+        checkbox.addEventListener('change', () => {
+          $('review-legend').hidden = !checkbox.checked;
+          if (checkbox.checked) {
+            group.addTo(map);
+            map.fitBounds(group.getBounds(), { paddingTopLeft: [55, 100],
+              paddingBottomRight: [55, 55], maxZoom: 17, animate: false });
+          } else map.removeLayer(group);
+        });
+      } catch (error) {
+        $('review-status').textContent = '出口配對檢查無法載入。';
+        $('review-error').hidden = false;
+        $('review-error').textContent = error.message;
+      }
+    }
     async function start() {
       if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，透過終端機顯示的網址開啟地圖。');
       if (!window.L) throw new Error('無法載入地圖元件，請確認網路連線後重新整理。');
@@ -278,6 +394,20 @@
       map.createPane('points').style.zIndex = 450;
       map.createPane('stations').style.zIndex = 470;
       map.createPane('markets').style.zIndex = 480;
+      map.createPane('exits').style.zIndex = 490;
+      map.createPane('walking').style.zIndex = 460;
+      map.createPane('review-lines').style.zIndex = 520;
+      map.createPane('review-points').style.zIndex = 530;
+      let walkingLayer = null;
+      function showWalking(walk) {
+        if (walkingLayer) map.removeLayer(walkingLayer);
+        walkingLayer = null;
+        if (!walk) return;
+        walkingLayer = L.geoJSON(walk.geometry, { style: { pane: 'walking', color: '#B42365',
+          weight: 5, opacity: 1, dashArray: '8 6', className: 'walking-route' } }).addTo(map);
+        map.fitBounds(walkingLayer.getBounds(), { padding: [45, 45], maxZoom: 17 });
+      }
+      map.attributionControl.addAttribution('步行路徑：<a href="https://valhalla.github.io/valhalla/">Valhalla</a> / <a href="https://www.fossgis.de/">FOSSGIS</a> · <a href="https://www.openstreetmap.org/">修正地圖</a>');
       map.createPane('routes').style.zIndex = 410;
       let tileFailed = false;
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -287,6 +417,14 @@
         $('notice').textContent = '街道底圖載入失敗，請檢查網路連線；資料圖層仍可查看。';
       }).addTo(map);
       const { layers } = await fetchJSON('/layers.json');
+      try {
+        const walks = await fetchJSON('/night-market-walks.json');
+        walkingById.clear();
+        calculatedWalkingOrigins.clear();
+        for (const id of walks.calculated_market_ids || []) calculatedWalkingOrigins.add(id);
+        for (const walk of walks.results) walkingById.set(walk.market_id, walk);
+        walkingStatus = walks.status;
+      } catch (_) { walkingStatus = '步行資料無法載入。'; }
       const loaded = await Promise.all(layers.map(async info => {
         if (info.error) return { info };
         try { return { info, data: await fetchJSON(info.url) }; }
@@ -294,8 +432,11 @@
       }));
       const stationFeatures = loaded.flatMap(({ data }) => (data?.features || []).filter(isStation));
       for (const { info, data } of loaded) {
-        if (info.id.split('/').pop().toLowerCase() === 'nightmarket.geojson') {
-          for (const feature of data?.features || []) marketCategories.set(feature, classifyMarket(feature));
+        const filename = info.id.split('/').pop().toLowerCase();
+        const group = { 'mrt_exits.geojson': 'mrt_exits', 'airport_mrt_exits.geojson': 'airport_exits' }[filename];
+        if (group) for (const feature of data?.features || []) exitGroups.set(feature, group);
+        if (filename === 'nightmarket.geojson') {
+          for (const feature of data?.features || []) nightMarkets.add(feature);
         }
       }
       stationById.clear();
@@ -318,7 +459,7 @@
         const group = L.geoJSON(data, {
           style: feature => {
             if (['Point', 'MultiPoint'].includes(feature.geometry.type)) return {};
-            if (marketCategories.has(feature)) return { color: marketColors[marketCategories.get(feature)],
+            if (nightMarkets.has(feature)) return { color: marketColors.night_markets,
               weight: 3, opacity: 1, fillOpacity: .2, className: 'market-shape' };
             if (isRoute(feature)) return { pane: 'routes', color: routeColor(feature), weight: 7,
               opacity: 1, className: 'data-shape route-shape' };
@@ -327,11 +468,12 @@
               opacity: 1, fillOpacity: .17, dashArray: p.service ? '5 5' : null, className: 'data-shape' };
           },
           pointToLayer: (feature, latlng) => {
-            const category = marketCategories.get(feature);
-            if (category) return L.circleMarker(latlng, { pane: 'markets',
-              radius: category === 'night_markets' ? 8 : 5, color: '#fff', weight: 2,
-              fillColor: marketColors[category], fillOpacity: 1,
-              className: category === 'night_markets' ? 'night-market-point' : 'market-facility-point' });
+            if (exitGroup(feature)) return L.circleMarker(latlng, { pane: 'exits',
+              radius: 5, color: '#fff', weight: 1.5, fillColor: exitColors[exitGroup(feature)],
+              fillOpacity: 1, className: `exit-point ${exitGroup(feature)}-point` });
+            if (nightMarkets.has(feature)) return L.circleMarker(latlng, { pane: 'markets',
+              radius: 8, color: '#fff', weight: 2,
+              fillColor: marketColors.night_markets, fillOpacity: 1, className: 'night-market-point' });
             if (isStation(feature)) {
               return L.circleMarker(latlng, { pane: 'stations', radius: 8, weight: 3,
                 color: pointColor(feature),
@@ -346,8 +488,11 @@
               const geometry = trimRouteGeometry(feature, stationFeatures);
               layer.setLatLngs(L.GeoJSON.coordsToLatLngs(geometry.coordinates, geometry.type === 'MultiLineString' ? 1 : 0));
             }
-            layer.bindPopup(popup(feature, info, stationInfo(feature)), { maxWidth: 330 });
-            if (isStation(feature) || marketCategories.get(feature) === 'night_markets') {
+            layer.bindPopup(popup(feature, info, stationInfo(feature), showWalking),
+              { maxWidth: 330, maxHeight: 300, keepInView: true });
+            if (exitGroup(feature)) layer.bindTooltip(node('span', featureName(feature, info)),
+              { direction: 'top', offset: [0, -5] });
+            if (isStation(feature) || nightMarkets.has(feature)) {
               layer.bindTooltip(node('span', [featureName(feature, info), feature.properties.ref].filter(Boolean).join(' · ')),
                 { permanent: true, direction: 'right', offset: [10, 0], className: 'station-label' });
               stationMarkers.push(layer);
@@ -359,6 +504,7 @@
         if (group.getBounds().isValid()) allBounds.extend(group.getBounds());
       }
       function syncVisibility() {
+        if (!controls.get('night_markets')?.points.checked) showWalking(null);
         for (const entry of entries) {
           const visible = entry.ids.some(id => controls.get(id)?.[entry.kind]?.checked);
           if (visible && !map.hasLayer(entry.layer)) entry.layer.addTo(map);
@@ -379,7 +525,7 @@
         if (master) row.className = 'all-row';
         else {
           const swatch = node('span', undefined, 'swatch');
-          swatch.style.background = routeColors[id] || marketColors[id] || unknownColor; title.append(swatch);
+          swatch.style.background = routeColors[id] || marketColors[id] || exitColors[id] || unknownColor; title.append(swatch);
         }
         title.append(node('span', name)); heading.append(title); row.append(heading);
         const boxes = {};
@@ -388,7 +534,7 @@
           box.dataset.line = id; box.dataset.kind = kind;
           box.setAttribute('aria-label', `${name}：顯示${label}`);
           box.disabled = !master && !entries.some(entry => entry.kind === kind && entry.ids.includes(id));
-          box.checked = !box.disabled && id !== 'market_facilities'; boxes[kind] = box; cell.append(box); row.append(cell);
+          box.checked = !box.disabled; boxes[kind] = box; cell.append(box); row.append(cell);
           box.addEventListener('change', () => {
             if (master) for (const control of controls.values()) if (!control[kind].disabled) control[kind].checked = box.checked;
             syncVisibility();
@@ -400,19 +546,25 @@
       }
       addRow('all', '全部', true);
       const present = new Set(entries.flatMap(entry => entry.ids));
-      for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'night_markets', 'market_facilities', 'other']) {
-        if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || '未分類');
+      for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'mrt_exits', 'airport_exits', 'night_markets', 'other']) {
+        if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || exitNames[id] || '未分類');
       }
       syncVisibility();
       if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30], animate: false });
       syncLabels();
       const failures = loaded.filter(item => item.info.error);
+      const skipped = loaded.filter(({ info }) => info.missing_geometry || info.invalid_geometry);
       if (failures.length) {
         $('notice').hidden = false;
         $('notice').textContent = failures.map(item => `${item.info.name}：${item.info.error}`).join('；');
       } else if (!entries.length) {
         $('notice').hidden = false; $('notice').textContent = '沒有可顯示的資料，請確認 data 資料夾後重新啟動程式。';
+      } else if (skipped.length && !tileFailed) {
+        $('notice').hidden = false;
+        $('notice').textContent = skipped.map(({ info }) =>
+          `${info.name}：${info.missing_geometry} 筆缺少座標、${info.invalid_geometry} 筆資料無效，未顯示。`).join('；');
       } else if (!tileFailed) $('notice').hidden = true;
+      await setupExitReview(map);
       document.body.dataset.ready = 'true';
     }
     start().catch(error => { $('notice').hidden = false; $('notice').textContent = `地圖載入失敗：${error.message}`; });
