@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "description": "出口及車站參考資訊，只用於人工校正時導覽；reference_coordinates 不是人工確認位置。",
+  "entries": {
+    "node/4302077472": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/4302077472",
+      "reference_coordinates": [
+        121.6526564,
+        25.0640415
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/4302077472",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "汐科",
+      "station_ref": "970",
+      "station_id": "node/289281847",
+      "transit_system": "rail",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8038846",
+      "station_coordinates": [
+        121.6486238,
+        25.0628293
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/289281847"
+    },
+    "node/4399019831": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/4399019831",
+      "reference_coordinates": [
+        121.3851265,
+        25.0411551
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/4399019831",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "體育大學",
+      "station_ref": "A7",
+      "station_id": "node/4653352242",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487054",
+      "station_coordinates": [
+        121.3854083,
+        25.0413317
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653352242"
+    },
+    "node/4399019832": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/4399019832",
+      "reference_coordinates": [
+        121.3856723,
+        25.0412177
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/4399019832",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "體育大學",
+      "station_ref": "A7",
+      "station_id": "node/4653352242",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487054",
+      "station_coordinates": [
+        121.3854083,
+        25.0413317
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653352242"
+    },
+    "node/6181694198": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/6181694198",
+      "reference_coordinates": [
+        121.4222254,
+        25.0331881
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/6181694198",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "泰山貴和",
+      "station_ref": "A6",
+      "station_id": "node/4653351598",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487061",
+      "station_coordinates": [
+        121.4229634,
+        25.0333454
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653351598"
+    },
+    "node/8044395053": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8044395053",
+      "reference_coordinates": [
+        121.455859,
+        25.1768885
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8044395053",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "淡江大學",
+      "station_ref": "V04",
+      "station_id": "node/6155745377",
+      "transit_system": "light_rail",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/12822080",
+      "station_coordinates": [
+        121.4559765,
+        25.1770757
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/6155745377"
+    },
+    "node/8044395064": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8044395064",
+      "reference_coordinates": [
+        121.4523339,
+        25.180867
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8044395064",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "淡金北新",
+      "station_ref": "V05",
+      "station_id": "node/6155745378",
+      "transit_system": "light_rail",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/12822077",
+      "station_coordinates": [
+        121.452165,
+        25.1812144
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/6155745378"
+    },
+    "node/8044437776": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8044437776",
+      "reference_coordinates": [
+        121.4561252,
+        25.1625618
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8044437776",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "竿蓁林",
+      "station_ref": "V02",
+      "station_id": "node/6155745375",
+      "transit_system": "light_rail",
+      "station_match_status": "position_candidate",
+      "station_source": "missing_exit_coordinates.md",
+      "station_coordinates": [
+        121.456225,
+        25.1621824
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/6155745375"
+    },
+    "node/8044442692": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8044442692",
+      "reference_coordinates": [
+        121.4606018,
+        25.1692274
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8044442692",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "淡金鄧公",
+      "station_ref": "V03",
+      "station_id": "node/6155745376",
+      "transit_system": "light_rail",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/12822112",
+      "station_coordinates": [
+        121.4608263,
+        25.1693035
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/6155745376"
+    },
+    "node/8044442693": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8044442693",
+      "reference_coordinates": [
+        121.4605804,
+        25.1690053
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8044442693",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "淡金鄧公",
+      "station_ref": "V03",
+      "station_id": "node/6155745376",
+      "transit_system": "light_rail",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/12822112",
+      "station_coordinates": [
+        121.4608263,
+        25.1693035
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/6155745376"
+    },
+    "node/8664518337": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8664518337",
+      "reference_coordinates": [
+        121.4396828,
+        25.0528702
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8664518337",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "泰山",
+      "station_ref": "A5",
+      "station_id": "node/4653215488",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487059",
+      "station_coordinates": [
+        121.4395522,
+        25.0532646
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653215488"
+    },
+    "node/8664518338": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8664518338",
+      "reference_coordinates": [
+        121.4397431,
+        25.0526096
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8664518338",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "泰山",
+      "station_ref": "A5",
+      "station_id": "node/4653215488",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487059",
+      "station_coordinates": [
+        121.4395522,
+        25.0532646
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653215488"
+    },
+    "node/8664518339": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/8664518339",
+      "reference_coordinates": [
+        121.439774,
+        25.0529485
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/8664518339",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "泰山",
+      "station_ref": "A5",
+      "station_id": "node/4653215488",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487059",
+      "station_coordinates": [
+        121.4395522,
+        25.0532646
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653215488"
+    },
+    "node/9373325210": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/9373325210",
+      "reference_coordinates": [
+        121.4603162,
+        25.0500787
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/9373325210",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "幸福",
+      "station_ref": "Y19",
+      "station_id": "node/2410061384",
+      "transit_system": "metro",
+      "station_match_status": "position_candidate",
+      "station_source": "missing_exit_coordinates.md",
+      "station_coordinates": [
+        121.459967,
+        25.0499888
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/2410061384"
+    },
+    "node/9373325211": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/9373325211",
+      "reference_coordinates": [
+        121.4603242,
+        25.0497968
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/9373325211",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "幸福",
+      "station_ref": "Y19",
+      "station_id": "node/2410061384",
+      "transit_system": "metro",
+      "station_match_status": "position_candidate",
+      "station_source": "missing_exit_coordinates.md",
+      "station_coordinates": [
+        121.459967,
+        25.0499888
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/2410061384"
+    },
+    "node/9864977723": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/9864977723",
+      "reference_coordinates": [
+        121.4389776,
+        25.0530568
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/9864977723",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "泰山",
+      "station_ref": "A5",
+      "station_id": "node/4653215488",
+      "transit_system": "airport_mrt",
+      "station_match_status": "osm_relation",
+      "station_source": "https://www.openstreetmap.org/relation/8487059",
+      "station_coordinates": [
+        121.4395522,
+        25.0532646
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653215488"
+    },
+    "node/9952975582": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/9952975582",
+      "reference_coordinates": [
+        121.4460421,
+        25.0592762
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/9952975582",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "新莊副都心",
+      "station_ref": "A4",
+      "station_id": "node/4653351597",
+      "transit_system": "airport_mrt",
+      "station_match_status": "position_candidate",
+      "station_source": "missing_exit_coordinates.md",
+      "station_coordinates": [
+        121.4457893,
+        25.05921
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653351597"
+    },
+    "node/9952975595": {
+      "source_file": "mrt_exits.geojson",
+      "source_id": "node/9952975595",
+      "reference_coordinates": [
+        121.4464575,
+        25.0588799
+      ],
+      "reference_source": "https://www.openstreetmap.org/node/9952975595",
+      "reference_checked_on": "2026-10-19",
+      "station_name": "新莊副都心",
+      "station_ref": "A4",
+      "station_id": "node/4653351597",
+      "transit_system": "airport_mrt",
+      "station_match_status": "position_candidate",
+      "station_source": "missing_exit_coordinates.md",
+      "station_coordinates": [
+        121.4457893,
+        25.05921
+      ],
+      "station_coordinate_source": "https://www.openstreetmap.org/node/4653351597"
+    }
+  }
+}

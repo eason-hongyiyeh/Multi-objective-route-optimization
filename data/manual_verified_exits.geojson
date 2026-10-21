@@ -1,0 +1,65 @@
+{
+  "type": "FeatureCollection",
+  "schema_version": 1,
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/9952975595",
+      "properties": {
+        "@id": "node/9952975595",
+        "railway": "subway_entrance",
+        "ref": "2",
+        "source_id": "node/9952975595",
+        "source_file": "mrt_exits.geojson",
+        "original_properties": {
+          "@id": "node/9952975595",
+          "railway": "subway_entrance",
+          "ref": "2"
+        },
+        "original_geometry": null,
+        "source": "manual_review",
+        "exit_name": "",
+        "exit_number": "2",
+        "station_name": "新莊副都心",
+        "station_ref": "A4",
+        "transit_system": "airport_mrt",
+        "verification_status": "pending",
+        "verification_source": "",
+        "notes": "",
+        "position_method": "map_click",
+        "position_confirmed": false,
+        "in_service": false,
+        "reviewed_at": "2026-10-21T09:01:54+08:00",
+        "verified_at": null,
+        "draft_coordinates": [
+          121.4460468,
+          25.0592731
+        ],
+        "reference_context": {
+          "source_file": "mrt_exits.geojson",
+          "source_id": "node/9952975595",
+          "reference_coordinates": [
+            121.4464575,
+            25.0588799
+          ],
+          "reference_source": "https://www.openstreetmap.org/node/9952975595",
+          "reference_checked_on": "2026-10-19",
+          "station_name": "新莊副都心",
+          "station_ref": "A4",
+          "station_id": "node/4653351597",
+          "transit_system": "airport_mrt",
+          "station_match_status": "position_candidate",
+          "station_source": "missing_exit_coordinates.md",
+          "station_coordinates": [
+            121.4457893,
+            25.05921
+          ],
+          "station_coordinate_source": "https://www.openstreetmap.org/node/4653351597"
+        },
+        "routing_eligible": false
+      },
+      "geometry": null
+    }
+  ],
+  "updated_at": "2026-10-21T09:01:54+08:00"
+}

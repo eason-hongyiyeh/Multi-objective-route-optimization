@@ -8923,61 +8923,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/13604848309",
-      "properties": {
-        "@id": "node/13604848309",
-        "construction": "yes",
-        "name": "LG09站 C2出入口",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/13604848314",
-      "properties": {
-        "@id": "node/13604848314",
-        "construction": "yes",
-        "name": "LG09站 C1 出入口",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/13604848315",
-      "properties": {
-        "@id": "node/13604848315",
-        "construction": "yes",
-        "name": "LG10站 出入口A",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/13604848316",
-      "properties": {
-        "@id": "node/13604848316",
-        "construction": "yes",
-        "name": "LG10站 出入口B",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/13604848317",
-      "properties": {
-        "@id": "node/13604848317",
-        "construction": "yes",
-        "name": "LG10站 出入口C",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "node/13634295047",
       "properties": {
         "@id": "node/13634295047",

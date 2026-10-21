@@ -51,16 +51,18 @@
       th, td { height: 42px; }
     }
   </style>
+  <link rel="stylesheet" href="/manual_exits.css">
 </head>
 <body>
   <aside aria-label="地圖顯示選項">
     <h1>捷運與夜市地圖</h1>
-    <section class="review-controls" aria-label="出口配對檢查">
+    <section id="review-controls" class="review-controls" aria-label="出口配對檢查" hidden>
       <label class="review-toggle"><input id="review-toggle" type="checkbox" disabled>出口配對檢查</label>
       <p id="review-status" class="review-hint" role="status">正在載入檢查資料…</p>
       <p id="review-legend" class="review-hint" hidden><span class="review-red">● 紅色：出口</span>　<span class="review-blue">● 藍色：配對車站</span><br>點紅色編號查看資料；虛線為直線配對距離，不是步行路徑。</p>
       <p id="review-error" class="review-hint" role="status" hidden></p>
     </section>
+    <section id="manual-exit-controls" aria-label="缺漏出口人工校正"></section>
     <table aria-label="各路線的站點與路線顯示開關">
       <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
       <tbody id="visibility-controls"></tbody>
@@ -71,6 +73,7 @@
     <div id="notice" role="status">正在載入地圖資料…</div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/manual_exits.js"></script>
   <script>
     const $ = id => document.getElementById(id);
     const node = (tag, text, className) => {
@@ -237,6 +240,21 @@
       if (station.name) box.append(node('div', `車站：${station.name}`, 'popup-row'));
       if (nightMarkets.has(feature)) {
         box.append(node('div', '分類：夜市', 'popup-row'));
+        if (p.opening_hours_text) {
+          const status = { official: '政府網站資料', reported: '非官方報導，現況待確認',
+            needs_review: '待確認', not_found: '未查得可確認時段',
+            suspension_reported: '曾公告暫停營業，現況待確認' };
+          box.append(node('div', `營業時間：${p.opening_hours_text}`, 'popup-row'));
+          if (status[p.opening_hours_status]) box.append(node('div', status[p.opening_hours_status], 'popup-row'));
+          if (p.opening_hours_note) box.append(node('div', p.opening_hours_note, 'popup-row'));
+          for (const source of p.opening_hours_sources || []) {
+            if (!/^https?:\/\//i.test(source.url || '')) continue;
+            const row = node('div', '查詢來源：', 'popup-row'), link = node('a', source.title);
+            link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+            row.append(link); box.append(row);
+          }
+          if (p.opening_hours_checked_on) box.append(node('div', `查詢日期：${p.opening_hours_checked_on}`, 'popup-row'));
+        }
         const walk = walkingById.get(sourceId(feature));
         if (walk) {
           const seconds = Math.round(walk.duration_s);
@@ -285,6 +303,7 @@
         opening_hours: '營業時間（來源標記）', description: '說明', phone: '電話', branch: '分區',
         amenity: '設施類型（來源標記）', highway: '道路／站點類型（來源標記）' };
       for (const [key, label] of Object.entries(fields)) {
+        if (key === 'opening_hours' && nightMarkets.has(feature) && p.opening_hours_text) continue;
         if (p[key] !== undefined && p[key] !== null) box.append(node('div', `${label}：${displayValue(p[key])}`, 'popup-row'));
       }
       if (!isStation(feature) && linkedStation(feature)?.name) {
@@ -332,6 +351,8 @@
     async function setupExitReview(map) {
       try {
         const data = await fetchJSON('/exit-station-review.json');
+        $('review-controls').hidden = !data.reviews.length && !data.errors.length;
+        if (!data.reviews.length && !data.errors.length) return;
         const group = L.featureGroup(), stationGroups = new Map();
         for (const review of data.reviews) {
           const exit = L.GeoJSON.coordsToLatLng(review.exit_coordinates);
@@ -366,7 +387,7 @@
         const checkbox = $('review-toggle');
         checkbox.disabled = !data.reviews.length;
         $('review-status').textContent = data.reviews.length
-          ? `${data.reviews.length} / ${data.total} 筆待確認；勾選後自動定位。` : '沒有可顯示的 review 資料。';
+          ? `${data.reviews.length} / ${data.total} 筆待確認；勾選後自動定位。` : '';
         if (data.errors.length) {
           $('review-error').hidden = false;
           $('review-error').textContent = data.errors.join('；');
@@ -380,6 +401,7 @@
           } else map.removeLayer(group);
         });
       } catch (error) {
+        $('review-controls').hidden = false;
         $('review-status').textContent = '出口配對檢查無法載入。';
         $('review-error').hidden = false;
         $('review-error').textContent = error.message;
@@ -562,9 +584,12 @@
       } else if (skipped.length && !tileFailed) {
         $('notice').hidden = false;
         $('notice').textContent = skipped.map(({ info }) =>
-          `${info.name}：${info.missing_geometry} 筆缺少座標、${info.invalid_geometry} 筆資料無效，未顯示。`).join('；');
+          info.id === 'mrt_exits.geojson'
+            ? `${info.name}：原檔 ${info.missing_geometry} 筆未提供位置${info.invalid_geometry ? `、${info.invalid_geometry} 筆資料無效` : ''}；請在左側「缺漏出口人工校正」查看各筆問題與處理狀態。`
+            : `${info.name}：${info.missing_geometry} 筆缺少座標、${info.invalid_geometry} 筆資料無效，未顯示。`).join('；');
       } else if (!tileFailed) $('notice').hidden = true;
       await setupExitReview(map);
+      await setupManualExitEditor(map);
       document.body.dataset.ready = 'true';
     }
     start().catch(error => { $('notice').hidden = false; $('notice').textContent = `地圖載入失敗：${error.message}`; });

@@ -8,6 +8,7 @@ import time
 from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
+from manual_exits import eligible_for_routing
 
 ROOT = Path(__file__).resolve().parent
 INPUT = ROOT / 'data' / 'nightmarket.geojson'
@@ -22,13 +23,24 @@ def source_id(feature):
 
 
 def fingerprint(features):
-    content = [(source_id(f), f['geometry']['coordinates'], f['properties']) for f in features]
+    # 營業時間與查詢來源不影響步行路徑；位置、名稱與其他屬性仍需重新檢查。
+    content = [(source_id(f), f['geometry']['coordinates'],
+                {key: value for key, value in f['properties'].items()
+                 if key != 'opening_hours' and not key.startswith('opening_hours_')})
+               for f in features]
     return hashlib.sha256(json.dumps(content, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
 
 def feature_name(feature):
     p = feature['properties']
     return p.get('name:zh-Hant') or p.get('name:zh') or p.get('name') or source_id(feature)
+
+
+def routing_target_allowed(feature):
+    p = feature.get('properties') or {}
+    is_exit = (p.get('railway') == 'subway_entrance' or 'ExitID' in p
+               or 'verification_status' in p or 'draft_coordinates' in p)
+    return not is_exit or eligible_for_routing(feature)
 
 
 def distance(a, b):
@@ -67,6 +79,8 @@ class Router:
         self.requests = 0
 
     def route(self, origin, target):
+        if not routing_target_allowed(target):
+            raise ValueError('出口尚未人工確認、未開放或不屬捷運系統，不可計算步行路徑。')
         a, b = origin['geometry']['coordinates'], target['geometry']['coordinates']
         payload = {
             'locations': [{'lat':c[1], 'lon':c[0], 'search_cutoff':SNAP_LIMIT_M} for c in (a,b)],
@@ -114,6 +128,7 @@ class Router:
 
 
 def calculate(features, stations, router):
+    stations = [target for target in stations if routing_target_allowed(target)]
     results = []
     for index, origin in enumerate(features):
         a = origin['geometry']['coordinates']
