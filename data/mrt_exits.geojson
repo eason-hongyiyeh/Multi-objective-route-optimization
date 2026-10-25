@@ -8105,53 +8105,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/8044395053",
-      "properties": {
-        "@id": "node/8044395053",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/8044395064",
-      "properties": {
-        "@id": "node/8044395064",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/8044437776",
-      "properties": {
-        "@id": "node/8044437776",
-        "railway": "subway_entrance"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/8044442692",
-      "properties": {
-        "@id": "node/8044442692",
-        "railway": "subway_entrance",
-        "ref": "2"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/8044442693",
-      "properties": {
-        "@id": "node/8044442693",
-        "railway": "subway_entrance",
-        "ref": "1"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "node/8664518337",
       "properties": {
         "@id": "node/8664518337",
