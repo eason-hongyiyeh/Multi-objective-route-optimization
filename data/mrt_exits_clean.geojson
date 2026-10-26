@@ -11380,6 +11380,307 @@
           25.0382848
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4399019831",
+      "properties": {
+        "@id": "node/4399019831",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "wheelchair": "yes",
+        "station_name": "體育大學",
+        "station_ref": "A7",
+        "station_id": "node/4653352242",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/4399019831",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3851265,
+          25.0411551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4399019832",
+      "properties": {
+        "@id": "node/4399019832",
+        "railway": "subway_entrance",
+        "ref": "2",
+        "wheelchair": "no",
+        "station_name": "體育大學",
+        "station_ref": "A7",
+        "station_id": "node/4653352242",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/4399019832",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3856723,
+          25.0412177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6181694198",
+      "properties": {
+        "@id": "node/6181694198",
+        "name": "出口 1",
+        "name:en": "Exit 1",
+        "name:zh": "出口 1",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "station_name": "泰山貴和",
+        "station_ref": "A6",
+        "station_id": "node/4653351598",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/6181694198",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4222254,
+          25.0331881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8664518337",
+      "properties": {
+        "@id": "node/8664518337",
+        "name": "出口 1",
+        "name:en": "Exit 1",
+        "name:zh": "出口 1",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "wheelchair": "no",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518337",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4396828,
+          25.0528702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8664518338",
+      "properties": {
+        "@id": "node/8664518338",
+        "name": "出口 3",
+        "name:en": "Exit 3",
+        "name:zh": "出口 3",
+        "railway": "subway_entrance",
+        "ref": "3",
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518338",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4397431,
+          25.0526096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/8664518339",
+      "properties": {
+        "@id": "node/8664518339",
+        "name": "出口 2",
+        "name:en": "Exit 2",
+        "name:zh": "出口 2",
+        "railway": "subway_entrance",
+        "ref": "2",
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518339",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.439774,
+          25.0529485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9373325210",
+      "properties": {
+        "@id": "node/9373325210",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "station_name": "幸福",
+        "station_ref": "Y19",
+        "station_id": "node/2410061384",
+        "station_match_status": "confirmed",
+        "transit_system": "metro",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9373325210",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4603162,
+          25.0500787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9373325211",
+      "properties": {
+        "@id": "node/9373325211",
+        "railway": "subway_entrance",
+        "ref": "2",
+        "station_name": "幸福",
+        "station_ref": "Y19",
+        "station_id": "node/2410061384",
+        "station_match_status": "confirmed",
+        "transit_system": "metro",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9373325211",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4603242,
+          25.0497968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9864977723",
+      "properties": {
+        "@id": "node/9864977723",
+        "name": "出口 4",
+        "name:en": "Exit 4",
+        "name:zh": "出口 4",
+        "railway": "subway_entrance",
+        "ref": "4",
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9864977723",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4389776,
+          25.0530568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/9952975582",
+      "properties": {
+        "@id": "node/9952975582",
+        "railway": "subway_entrance",
+        "ref": "1",
+        "station_name": "新莊副都心",
+        "station_ref": "A4",
+        "station_id": "node/4653351597",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9952975582",
+        "source": "OSM",
+        "data_status": [
+          "ok"
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4460421,
+          25.0592762
+        ]
+      }
     }
   ]
 }

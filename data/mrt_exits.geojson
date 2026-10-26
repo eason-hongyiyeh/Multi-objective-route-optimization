@@ -6615,17 +6615,6 @@
     },
     {
       "type": "Feature",
-      "id": "node/4302077472",
-      "properties": {
-        "@id": "node/4302077472",
-        "name": "汐科火車站北入口",
-        "railway": "subway_entrance",
-        "wheelchair": "yes"
-      },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
       "id": "node/4311433973",
       "properties": {
         "@id": "node/4311433973",
@@ -6849,9 +6838,23 @@
         "@id": "node/4399019831",
         "railway": "subway_entrance",
         "ref": "1",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "station_name": "體育大學",
+        "station_ref": "A7",
+        "station_id": "node/4653352242",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/4399019831"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3851265,
+          25.0411551
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -6860,9 +6863,23 @@
         "@id": "node/4399019832",
         "railway": "subway_entrance",
         "ref": "2",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "station_name": "體育大學",
+        "station_ref": "A7",
+        "station_id": "node/4653352242",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/4399019832"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3856723,
+          25.0412177
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -7445,9 +7462,23 @@
         "name:en": "Exit 1",
         "name:zh": "出口 1",
         "railway": "subway_entrance",
-        "ref": "1"
+        "ref": "1",
+        "station_name": "泰山貴和",
+        "station_ref": "A6",
+        "station_id": "node/4653351598",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/6181694198"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4222254,
+          25.0331881
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8113,9 +8144,23 @@
         "name:zh": "出口 1",
         "railway": "subway_entrance",
         "ref": "1",
-        "wheelchair": "no"
+        "wheelchair": "no",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518337"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4396828,
+          25.0528702
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8127,9 +8172,23 @@
         "name:zh": "出口 3",
         "railway": "subway_entrance",
         "ref": "3",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518338"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4397431,
+          25.0526096
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8141,9 +8200,23 @@
         "name:zh": "出口 2",
         "railway": "subway_entrance",
         "ref": "2",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/8664518339"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.439774,
+          25.0529485
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8240,9 +8313,23 @@
       "properties": {
         "@id": "node/9373325210",
         "railway": "subway_entrance",
-        "ref": "1"
+        "ref": "1",
+        "station_name": "幸福",
+        "station_ref": "Y19",
+        "station_id": "node/2410061384",
+        "station_match_status": "confirmed",
+        "transit_system": "metro",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9373325210"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4603162,
+          25.0500787
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8250,9 +8337,23 @@
       "properties": {
         "@id": "node/9373325211",
         "railway": "subway_entrance",
-        "ref": "2"
+        "ref": "2",
+        "station_name": "幸福",
+        "station_ref": "Y19",
+        "station_id": "node/2410061384",
+        "station_match_status": "confirmed",
+        "transit_system": "metro",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9373325211"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4603242,
+          25.0497968
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8300,9 +8401,23 @@
         "name:zh": "出口 4",
         "railway": "subway_entrance",
         "ref": "4",
-        "wheelchair": "yes"
+        "wheelchair": "yes",
+        "station_name": "泰山",
+        "station_ref": "A5",
+        "station_id": "node/4653215488",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9864977723"
       },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4389776,
+          25.0530568
+        ]
+      }
     },
     {
       "type": "Feature",
@@ -8310,19 +8425,23 @@
       "properties": {
         "@id": "node/9952975582",
         "railway": "subway_entrance",
-        "ref": "1"
+        "ref": "1",
+        "station_name": "新莊副都心",
+        "station_ref": "A4",
+        "station_id": "node/4653351597",
+        "station_match_status": "confirmed",
+        "transit_system": "airport_mrt",
+        "coordinate_status": "confirmed",
+        "coordinate_verified_on": "2026-10-26",
+        "coordinate_source": "https://www.openstreetmap.org/node/9952975582"
       },
-      "geometry": null
-    },
-    {
-      "type": "Feature",
-      "id": "node/9952975595",
-      "properties": {
-        "@id": "node/9952975595",
-        "railway": "subway_entrance",
-        "ref": "2"
-      },
-      "geometry": null
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4460421,
+          25.0592762
+        ]
+      }
     },
     {
       "type": "Feature",

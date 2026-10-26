@@ -8,7 +8,6 @@ import time
 from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
-from manual_exits import eligible_for_routing
 
 ROOT = Path(__file__).resolve().parent
 INPUT = ROOT / 'data' / 'nightmarket.geojson'
@@ -38,9 +37,19 @@ def feature_name(feature):
 
 def routing_target_allowed(feature):
     p = feature.get('properties') or {}
+    geometry = feature.get('geometry') or {}
+    coordinates = geometry.get('coordinates')
+    if (geometry.get('type') != 'Point' or not isinstance(coordinates, list) or len(coordinates) != 2
+            or not all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) for v in coordinates)
+            or not (-180 <= coordinates[0] <= 180 and -90 <= coordinates[1] <= 90)):
+        return False
     is_exit = (p.get('railway') == 'subway_entrance' or 'ExitID' in p
-               or 'verification_status' in p or 'draft_coordinates' in p)
-    return not is_exit or eligible_for_routing(feature)
+               or 'coordinate_status' in p)
+    # 已完成核對的出口直接讀正式資料，不再依賴校正系統或另存的草稿。
+    return not is_exit or bool(p.get('coordinate_status') == 'confirmed'
+                              and p.get('station_name') and p.get('coordinate_source')
+                              and p.get('coordinate_verified_on')
+                              and p.get('transit_system') in ('metro', 'airport_mrt', 'light_rail'))
 
 
 def distance(a, b):
@@ -80,7 +89,7 @@ class Router:
 
     def route(self, origin, target):
         if not routing_target_allowed(target):
-            raise ValueError('出口尚未人工確認、未開放或不屬捷運系統，不可計算步行路徑。')
+            raise ValueError('終點座標無效，或出口尚無已確認的正式座標資料。')
         a, b = origin['geometry']['coordinates'], target['geometry']['coordinates']
         payload = {
             'locations': [{'lat':c[1], 'lon':c[0], 'search_cutoff':SNAP_LIMIT_M} for c in (a,b)],

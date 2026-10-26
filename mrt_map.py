@@ -1,17 +1,14 @@
 """讀取 data/ 的 GeoJSON，啟動本機互動地圖；只使用 Python 標準函式庫。"""
 import argparse
 from collections import Counter
-import csv
 from functools import partial
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import math
 from pathlib import Path
-import secrets
 from urllib.parse import quote
 import webbrowser
 from calculate_market_walks import fingerprint, MAX_WALK_SECONDS
-from manual_exits import ManualExitStore, ConflictError, MANUAL_FILE
 
 
 ROOT = Path(__file__).resolve().parent
@@ -34,56 +31,7 @@ LAYER_COLORS = {
 }
 # 衍生出口檔保留供資料作業使用，避免與原始出口在一般地圖重複繪製。
 DERIVED_EXIT_FILES = {'mrt_exits_clean.geojson', 'airport_mrt_exits_clean.geojson',
-                      'mrt_exits_with_station.geojson', MANUAL_FILE}
-
-
-def load_exit_reviews(data_dir, resources):
-    """以 CSV 的車站 ID 連結來源座標，只提供檢查畫面，不重算或改寫配對。"""
-    result = {'reviews': [], 'errors': [], 'total': 0}
-    review_path = Path(data_dir) / 'exit_station_review.csv'
-    if not review_path.exists():
-        return result
-    required = {'出口編號', '配對車站', '距離', '經度', '緯度', '配對狀態',
-                '出口來源ID', '出口原名', '配對站碼', '配對車站ID'}
-    try:
-        stations = json.loads(resources['/data/mrt_station.geojson'])['features']
-        by_id = {str(f.get('id') or (f.get('properties') or {}).get('@id')): f
-                 for f in stations if f['geometry']['type'] == 'Point'}
-        with review_path.open(encoding='utf-8-sig', newline='') as handle:
-            reader = csv.DictReader(handle)
-            if not required.issubset(reader.fieldnames or []):
-                raise ValueError('CSV 缺少欄位：' + '、'.join(sorted(required - set(reader.fieldnames or []))))
-            for row in reader:
-                if (row.get('配對狀態') or '').strip() != 'review':
-                    continue
-                result['total'] += 1
-                try:
-                    station_id = (row.get('配對車站ID') or '').strip()
-                    exit_id = (row.get('出口來源ID') or '').strip()
-                    if not exit_id:
-                        raise ValueError('缺少出口來源 ID')
-                    if not station_id or station_id not in by_id:
-                        raise ValueError(f'找不到配對車站 ID：{station_id or "未提供"}')
-                    coordinates = [float(row['經度']), float(row['緯度'])]
-                    if not valid_geometry({'type': 'Point', 'coordinates': coordinates}):
-                        raise ValueError('出口經緯度無效')
-                    distance = float(row['距離'])
-                    if not math.isfinite(distance) or distance < 0:
-                        raise ValueError('距離須為有效的非負公尺數')
-                    result['reviews'].append({
-                        'number': result['total'], 'exit_ref': row['出口編號'] or '',
-                        'exit_name': row['出口原名'] or '', 'exit_id': exit_id,
-                        'station_name': row['配對車站'] or '', 'station_ref': row['配對站碼'] or '',
-                        'station_id': station_id, 'distance_m': distance,
-                        'exit_coordinates': coordinates,
-                        'station_coordinates': by_id[station_id]['geometry']['coordinates'][:2],
-                    })
-                except (ValueError, TypeError, KeyError) as error:
-                    result['errors'].append(f'CSV 第 {reader.line_num} 行：{error}')
-    except (OSError, UnicodeError, ValueError, KeyError, csv.Error) as error:
-        result['reviews'] = []
-        result['errors'].append(f'出口配對檢查資料無法載入：{error}')
-    return result
+                      'mrt_exits_with_station.geojson'}
 
 
 def valid_geometry(geometry):
@@ -158,8 +106,6 @@ def build_resources(data_dir=ROOT / 'data'):
                    if p.is_file() and p.suffix.lower() == '.geojson'
                    and p.resolve().is_relative_to(data_dir))
     for index, path in enumerate(paths):
-        if path.name == MANUAL_FILE:
-            continue  # 人工紀錄含待確認草稿，改由專用端點載入及篩選。
         relative = path.relative_to(data_dir).as_posix()
         info = {'id': relative, 'name': TITLES.get(path.name, path.stem),
                 'url': '/data/' + quote(relative, safe='/'),
@@ -173,8 +119,6 @@ def build_resources(data_dir=ROOT / 'data'):
         if path.name.lower() not in DERIVED_EXIT_FILES:
             layers.append(info)
     resources['/layers.json'] = json.dumps({'layers': layers}, ensure_ascii=False).encode('utf-8')
-    resources['/exit-station-review.json'] = json.dumps(
-        load_exit_reviews(data_dir, resources), ensure_ascii=False, allow_nan=False).encode('utf-8')
     walks = {'results': [], 'status': '步行資料尚未建立。'}
     walking_path = ROOT / 'walking' / 'market_stations.json'
     if walking_path.exists():
@@ -198,33 +142,14 @@ def build_resources(data_dir=ROOT / 'data'):
 
 
 class MapHandler(BaseHTTPRequestHandler):
-    def __init__(self, *args, resources, manual_store, csrf_token, **kwargs):
+    def __init__(self, *args, resources, **kwargs):
         self.resources = resources
-        self.manual_store = manual_store
-        self.csrf_token = csrf_token
         super().__init__(*args, **kwargs)
-
-    def send_json(self, document, status=200):
-        self.send_content(json.dumps(document, ensure_ascii=False, allow_nan=False).encode('utf-8'),
-                          'application/json; charset=utf-8', status)
 
     def do_GET(self):
         path = self.path.split('?', 1)[0]
         if path in ('/', '/map.html'):
             content, mime = (ROOT / 'map.html').read_bytes(), 'text/html; charset=utf-8'
-        elif path in ('/manual_exits.js', '/manual_exits.css'):
-            content = (ROOT / path[1:]).read_bytes()
-            mime = ('text/javascript' if path.endswith('.js') else 'text/css') + '; charset=utf-8'
-        elif path in ('/manual-exits.json', '/routing-exits.json', '/data/' + MANUAL_FILE):
-            try:
-                if path == '/manual-exits.json':
-                    document = {**self.manual_store.snapshot(), 'csrf_token': self.csrf_token}
-                else:
-                    document = self.manual_store.collection(routing_only=path == '/routing-exits.json')
-                self.send_json(document)
-            except (OSError, ValueError, KeyError, TypeError) as error:
-                self.send_json({'error': f'人工校正資料讀取失敗：{error}'}, 500)
-            return
         elif path in self.resources:
             content, mime = self.resources[path], 'application/json; charset=utf-8'
         else:
@@ -241,32 +166,6 @@ class MapHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(content)
 
-    def do_POST(self):
-        if self.path != '/manual-exits.json':
-            self.send_error(404)
-            return
-        host = self.headers.get('Host', '')
-        allowed_hosts = {f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}'}
-        if (host not in allowed_hosts or self.headers.get('Origin') != 'http://' + host
-                or not secrets.compare_digest(self.headers.get('X-Manual-Edit-Token', ''), self.csrf_token)):
-            self.send_json({'error': '請從本機地圖頁面儲存，或重新整理頁面後再試。'}, 403)
-            return
-        try:
-            if self.headers.get_content_type() != 'application/json':
-                raise ValueError('儲存內容須使用 application/json。')
-            length = int(self.headers.get('Content-Length', '0'))
-            if not 0 < length <= 32768:
-                raise ValueError('儲存內容長度無效或過大。')
-            payload = json.loads(self.rfile.read(length).decode('utf-8'))
-            entry = self.manual_store.save(payload)
-            self.send_json({'entry': entry, 'output_file': 'data/' + MANUAL_FILE})
-        except ConflictError as error:
-            self.send_json({'error': str(error)}, 409)
-        except (ValueError, KeyError, TypeError, UnicodeError) as error:
-            self.send_json({'error': str(error)}, 400)
-        except OSError as error:
-            self.send_json({'error': f'檔案未儲存：{error}。請確認檔案未被鎖定及資料夾可寫入。'}, 500)
-
     def log_message(self, *_args):
         pass
 
@@ -274,8 +173,7 @@ class MapHandler(BaseHTTPRequestHandler):
 def make_server(port=8765, data_dir=ROOT / 'data'):
     resources = build_resources(data_dir)
     return ThreadingHTTPServer(('127.0.0.1', port),
-                              partial(MapHandler, resources=resources, manual_store=ManualExitStore(data_dir),
-                                      csrf_token=secrets.token_urlsafe(32)))
+                              partial(MapHandler, resources=resources))
 
 
 def main(argv=None):

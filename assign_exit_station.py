@@ -6,8 +6,8 @@
   data/exit_station_review.csv
 
 距離使用 Haversine 球面直線距離，並非步行路徑長度。
-station_name 一律為最近的候選車站原名；matched 也只是距離門檻配對，
-不等於官方確認歸屬。review / unmatched 必須人工確認。
+已確認 station_id 的出口保留原本歸屬；其餘 station_name 為最近候選車站原名。
+matched 只是距離門檻配對，不等於官方確認歸屬。review / unmatched 必須確認。
 保留原本 data_status，讓清理階段的缺漏與本次配對結果分別記錄。
 """
 
@@ -102,20 +102,28 @@ def assign_stations(station_document, exit_document):
     output = deepcopy(exit_document)
     review_rows, distances = [], []
     counts = Counter()
+    stations_by_id = {source_id(station): station for station in stations}
     for feature in output['features']:
         coordinates = feature['geometry']['coordinates']
-        # 檢查檔案中的每一站。距離完全相同時保留來源檔排序的第一站。
-        distance, station = min(
-            ((distance_m(coordinates, station['geometry']['coordinates']), station)
-             for station in stations), key=lambda item: item[0])
-        name, status = feature_name(station), match_status(distance)
         properties = feature['properties']
+        if properties.get('station_match_status') == 'confirmed':
+            station = stations_by_id.get(properties.get('station_id'))
+            if station is None:
+                raise ValueError(f'{source_id(feature)} 已確認的車站 ID 不在車站資料中。')
+            distance = distance_m(coordinates, station['geometry']['coordinates'])
+            name, status = properties.get('station_name') or feature_name(station), 'confirmed'
+        else:
+            # 檢查檔案中的每一站。距離完全相同時保留來源檔排序的第一站。
+            distance, station = min(
+                ((distance_m(coordinates, station['geometry']['coordinates']), station)
+                 for station in stations), key=lambda item: item[0])
+            name, status = feature_name(station), match_status(distance)
         add_property(properties, 'station_name', name)
         add_property(properties, 'station_distance_m', distance)
         add_property(properties, 'station_match_status', status)
         distances.append(distance)
         counts[status] += 1
-        if status != 'matched':
+        if status in ('review', 'unmatched'):
             review_rows.append({
                 '出口編號': properties.get('ref', ''), '配對車站': name,
                 '距離': distance, '經度': coordinates[0], '緯度': coordinates[1],
@@ -126,7 +134,7 @@ def assign_stations(station_document, exit_document):
             })
     # 先列最遠的出口；距離欄位同 GeoJSON，單位為公尺。
     review_rows.sort(key=lambda row: row['距離'], reverse=True)
-    stats = {'total': len(exits), **{key: counts[key] for key in ('matched', 'review', 'unmatched')},
+    stats = {'total': len(exits), **{key: counts[key] for key in ('confirmed', 'matched', 'review', 'unmatched')},
              'average_distance_m': math.fsum(distances) / len(distances) if distances else None,
              'max_distance_m': max(distances) if distances else None}
     return output, review_rows, stats
@@ -158,6 +166,7 @@ def main():
         return 1
 
     print(f'出口總數：{stats["total"]}')
+    print(f'保留已確認歸屬：{stats["confirmed"]}')
     for status in ('matched', 'review', 'unmatched'):
         print(f'{status}：{stats[status]}')
     for key, label in (('average_distance_m', '平均出口到車站距離'), ('max_distance_m', '最大距離')):
