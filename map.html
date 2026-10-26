@@ -8,8 +8,18 @@
   <style>
     :root { font-family: "Segoe UI", "Microsoft JhengHei", sans-serif; color: #173b45; background: #f4f7f6; }
     * { box-sizing: border-box; }
-    body { margin: 0; display: grid; grid-template-columns: 290px minmax(0, 1fr); height: 100dvh; }
-    aside { padding: 26px 18px; overflow-y: auto; border-right: 1px solid #dbe5e1; }
+    body { margin: 0; display: grid; grid-template-columns: var(--sidebar-width, 290px) 8px minmax(0, 1fr); height: 100dvh; overflow: hidden; }
+    body.sidebar-collapsed { grid-template-columns: minmax(0, 1fr); }
+    aside { padding: 26px 18px; min-width: 0; min-height: 0; overflow-y: auto; }
+    [hidden] { display: none !important; }
+    #sidebar-resizer { position: relative; background: #e1e9e5; cursor: col-resize; touch-action: none; }
+    #sidebar-resizer::after { content: ''; position: absolute; left: 3px; top: calc(50% - 22px); width: 2px; height: 44px; border-radius: 2px; background: #7e9a90; }
+    #sidebar-resizer:hover, #sidebar-resizer:focus-visible, .sidebar-resizing #sidebar-resizer { background: #a9ccc0; }
+    #sidebar-resizer:focus-visible { outline: 2px solid #236a58; outline-offset: -2px; }
+    body.sidebar-resizing { cursor: col-resize; user-select: none; }
+    .sidebar-resizing #map { pointer-events: none; }
+    #sidebar-toggle { position: absolute; z-index: 1000; top: 12px; left: 12px; padding: 8px 12px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 5px #173b4520; }
+    #sidebar-toggle:focus-visible { outline: 3px solid #77b6aa; outline-offset: 2px; }
     h1 { margin: 0 0 24px; font-size: 22px; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th, td { border-bottom: 1px solid #dbe5e1; height: 48px; }
@@ -25,35 +35,43 @@
     input:focus-visible { outline: 3px solid #77b6aa; outline-offset: 4px; }
     main { position: relative; min-width: 0; min-height: 0; }
     #map { width: 100%; height: 100%; background: #dde7e2; }
-    #notice { position: absolute; z-index: 1000; top: 16px; left: 16px; right: 65px; padding: 12px 16px; border-radius: 7px; background: white; box-shadow: 0 2px 12px #173b4520; font-size: 13px; }
+    #notice { position: absolute; z-index: 1000; top: 60px; left: 16px; right: 65px; padding: 12px 16px; border-radius: 7px; background: white; box-shadow: 0 2px 12px #173b4520; font-size: 13px; }
     #notice[hidden] { display: none; }
     .popup-title { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
     .popup-source { color: #697d82; font-size: 11px; overflow-wrap: anywhere; margin-bottom: 10px; }
     .popup-row { font-size: 12px; margin: 5px 0; overflow-wrap: anywhere; }
     .walk-button { border: 1px solid #B42365; border-radius: 4px; padding: 6px 9px; margin: 6px 6px 4px 0; background: white; color: #95144f; cursor: pointer; }
+    .walking-hint { color: #5f777c; font-size: 12px; line-height: 1.7; }
     .line-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
     .line-badge { padding: 4px 8px; border: 1px solid #dbe5e1; border-left: 5px solid var(--line-color); border-radius: 4px; font-size: 12px; color: #173b45; background: #f4f7f6; }
     .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
     details { margin-top: 12px; } summary { cursor: pointer; color: #236a58; }
     .properties { max-height: 220px; overflow: auto; }
     @media (max-width: 700px) {
-      body { grid-template-columns: 1fr; grid-template-rows: 36dvh minmax(300px, 1fr); }
-      aside { padding: 16px 18px; border-right: 0; border-bottom: 1px solid #dbe5e1; }
+      body { grid-template-columns: minmax(0, 1fr); grid-template-rows: var(--sidebar-height, 36dvh) 8px minmax(0, 1fr); }
+      body.sidebar-collapsed { grid-template-rows: minmax(0, 1fr); }
+      aside { padding: 16px 18px; }
+      #sidebar-resizer, body.sidebar-resizing { cursor: row-resize; }
+      #sidebar-resizer::after { left: calc(50% - 22px); top: 3px; width: 44px; height: 2px; }
       h1 { margin-bottom: 12px; font-size: 20px; }
       th, td { height: 42px; }
     }
   </style>
 </head>
 <body>
-  <aside aria-label="地圖顯示選項">
+  <aside id="sidebar" aria-label="地圖顯示選項">
     <h1>捷運與夜市地圖</h1>
     <table aria-label="各路線的站點與路線顯示開關">
       <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
       <tbody id="visibility-controls"></tbody>
     </table>
+    <p id="walking-hint" class="walking-hint" role="status"></p>
   </aside>
+  <div id="sidebar-resizer" role="separator" tabindex="0" aria-label="調整列表大小"
+    aria-controls="sidebar" aria-orientation="vertical" title="拖曳調整列表大小，連按兩下恢復預設"></div>
   <main aria-label="互動捷運地圖">
     <div id="map"></div>
+    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true">收合列表</button>
     <div id="notice" role="status">正在載入地圖資料…</div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -83,6 +101,7 @@
     let walkingStatus = '';
     const marketNames = { night_markets: '夜市' };
     const marketColors = { night_markets: '#B42365' };
+    const walkingColor = '#B42365';
     const sourceId = feature => feature.id || feature.properties?.['@id'] || feature.properties?.ExitID;
     const linkedStation = feature => stationById.get(sourceId(feature));
     function routeId(tags) {
@@ -222,6 +241,14 @@
       }
       return ids.length ? [...new Set(ids)] : ['other'];
     }
+    function appendWalkingDetails(box, walk) {
+      const seconds = Math.round(walk.duration_s);
+      box.append(node('div', `20 分鐘內最近的捷運站：${walk.station_name}（${walk.station_code}）`, 'popup-row'),
+        node('div', `步行路徑：${walk.distance_m.toLocaleString()} 公尺`, 'popup-row'),
+        node('div', `步行時間：${Math.floor(seconds / 60)} 分 ${seconds % 60} 秒（每秒 1 公尺）`, 'popup-row'),
+        node('div', '終點為車站位置，尚未指定出口。依可步行道路估算，不含等紅綠燈、點位偏移與站內步行。', 'popup-row'));
+      if (walk.note) box.append(node('div', walk.note, 'popup-row'));
+    }
     function popup(feature, info, station, showWalking) {
       const p = feature.properties || {}, box = node('div');
       box.append(node('div', featureName(feature, info), 'popup-title'), node('div', info.id, 'popup-source'));
@@ -246,17 +273,12 @@
         }
         const walk = walkingById.get(sourceId(feature));
         if (walk) {
-          const seconds = Math.round(walk.duration_s);
-          box.append(node('div', `20 分鐘內最近的捷運站：${walk.station_name}（${walk.station_code}）`, 'popup-row'),
-            node('div', `步行路徑：${walk.distance_m.toLocaleString()} 公尺`, 'popup-row'),
-            node('div', `步行時間：${Math.floor(seconds / 60)} 分 ${seconds % 60} 秒（每秒 1 公尺）`, 'popup-row'),
-            node('div', '依夜市與車站座標附近的可步行道路估算，不含等紅綠燈、點位偏移與站內步行。', 'popup-row'));
-          if (walk.note) box.append(node('div', walk.note, 'popup-row'));
+          appendWalkingDetails(box, walk);
           if (showWalking) {
             const show = node('button', '顯示步行路徑', 'walk-button'); show.type = 'button';
             show.addEventListener('click', () => showWalking(walk));
             const hide = node('button', '隱藏步行路徑', 'walk-button'); hide.type = 'button';
-            hide.addEventListener('click', () => showWalking(null));
+            hide.addEventListener('click', () => showWalking(walk, false));
             box.append(show, hide);
           }
         } else box.append(node('div', walkingStatus || (calculatedWalkingOrigins.has(sourceId(feature))
@@ -327,10 +349,79 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }
+    function setupSidebar(map) {
+      const sidebar = $('sidebar'), handle = $('sidebar-resizer'), toggle = $('sidebar-toggle');
+      const mobile = matchMedia('(max-width: 700px)'), storageKey = 'mrt-map-sidebar';
+      let settings = { width: 290, height: null, collapsed: false }, drag = null;
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey));
+        if (Number.isFinite(saved?.width)) settings.width = saved.width;
+        if (Number.isFinite(saved?.height)) settings.height = saved.height;
+        settings.collapsed = saved?.collapsed === true;
+      } catch (_) { /* 瀏覽器不允許儲存時，仍可調整列表。 */ }
+      const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(settings)); } catch (_) {} };
+      const limits = () => mobile.matches ? [120, Math.max(120, innerHeight - 188)]
+        : [220, Math.max(220, Math.min(600, innerWidth - 328))];
+      function update() {
+        const [min, max] = limits(), axis = mobile.matches ? 'height' : 'width';
+        const requested = settings[axis] ?? innerHeight * .36;
+        const size = Math.round(Math.max(min, Math.min(max, requested)));
+        document.body.style.setProperty(`--sidebar-${axis}`, `${size}px`);
+        document.body.classList.toggle('sidebar-collapsed', settings.collapsed);
+        sidebar.hidden = handle.hidden = settings.collapsed;
+        toggle.textContent = settings.collapsed ? '展開列表' : '收合列表';
+        toggle.setAttribute('aria-expanded', String(!settings.collapsed));
+        handle.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
+        handle.setAttribute('aria-valuemin', min); handle.setAttribute('aria-valuemax', max);
+        handle.setAttribute('aria-valuenow', size);
+        handle.setAttribute('aria-valuetext', `${mobile.matches ? '高度' : '寬度'} ${size} 像素`);
+      }
+      function finishDrag(event) {
+        if (!drag || (event?.pointerId !== undefined && event.pointerId !== drag.id)) return;
+        const id = drag.id; drag = null;
+        if (handle.hasPointerCapture(id)) handle.releasePointerCapture(id);
+        document.body.classList.remove('sidebar-resizing'); save();
+      }
+      handle.addEventListener('pointerdown', event => {
+        if (event.button !== 0) return;
+        event.preventDefault(); handle.focus();
+        const axis = mobile.matches ? 'height' : 'width';
+        drag = { id: event.pointerId, axis, start: mobile.matches ? event.clientY : event.clientX,
+          size: sidebar.getBoundingClientRect()[axis] };
+        handle.setPointerCapture(event.pointerId); document.body.classList.add('sidebar-resizing');
+      });
+      handle.addEventListener('pointermove', event => {
+        if (!drag || event.pointerId !== drag.id) return;
+        const [min, max] = limits(), position = drag.axis === 'height' ? event.clientY : event.clientX;
+        settings[drag.axis] = Math.max(min, Math.min(max, drag.size + position - drag.start)); update();
+      });
+      for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) handle.addEventListener(event, finishDrag);
+      handle.addEventListener('dblclick', () => {
+        settings[mobile.matches ? 'height' : 'width'] = mobile.matches ? null : 290; update(); save();
+      });
+      handle.addEventListener('keydown', event => {
+        const [min, max] = limits(), axis = mobile.matches ? 'height' : 'width';
+        const current = Number(handle.getAttribute('aria-valuenow'));
+        const values = { Home: min, End: max,
+          [mobile.matches ? 'ArrowUp' : 'ArrowLeft']: current - 20,
+          [mobile.matches ? 'ArrowDown' : 'ArrowRight']: current + 20 };
+        if (!(event.key in values)) return;
+        event.preventDefault(); settings[axis] = Math.max(min, Math.min(max, values[event.key])); update(); save();
+      });
+      toggle.addEventListener('click', () => { finishDrag(); settings.collapsed = !settings.collapsed; update(); save(); });
+      window.addEventListener('resize', () => { finishDrag(); update(); });
+      let resizeFrame;
+      new ResizeObserver(() => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => map.invalidateSize({ animate: false, debounceMoveend: true }));
+      }).observe($('map'));
+      update();
+    }
     async function start() {
       if (location.protocol === 'file:') throw new Error('請執行 python mrt_map.py，透過終端機顯示的網址開啟地圖。');
       if (!window.L) throw new Error('無法載入地圖元件，請確認網路連線後重新整理。');
       const map = L.map('map', { zoomControl: false }).setView([25.04, 121.4], 10);
+      setupSidebar(map);
       L.control.zoom({ position: 'topright' }).addTo(map);
       L.control.scale({ imperial: false, position: 'bottomright' }).addTo(map);
       map.createPane('points').style.zIndex = 450;
@@ -338,14 +429,13 @@
       map.createPane('markets').style.zIndex = 480;
       map.createPane('exits').style.zIndex = 490;
       map.createPane('walking').style.zIndex = 460;
-      let walkingLayer = null;
-      function showWalking(walk) {
-        if (walkingLayer) map.removeLayer(walkingLayer);
-        walkingLayer = null;
-        if (!walk) return;
-        walkingLayer = L.geoJSON(walk.geometry, { style: { pane: 'walking', color: '#B42365',
-          weight: 5, opacity: 1, dashArray: '8 6', className: 'walking-route' } }).addTo(map);
-        map.fitBounds(walkingLayer.getBounds(), { padding: [45, 45], maxZoom: 17 });
+      const walkingEntries = new Map();
+      function showWalking(walk, visible = true) {
+        const entry = walkingEntries.get(walk.market_id);
+        if (!entry) return;
+        entry.visible = visible;
+        syncVisibility();
+        if (visible) map.fitBounds(entry.layer.getBounds(), { padding: [45, 45], maxZoom: 17 });
       }
       map.attributionControl.addAttribution('步行路徑：<a href="https://valhalla.github.io/valhalla/">Valhalla</a> / <a href="https://www.fossgis.de/">FOSSGIS</a> · <a href="https://www.openstreetmap.org/">修正地圖</a>');
       map.createPane('routes').style.zIndex = 410;
@@ -445,18 +535,46 @@
         });
         if (group.getBounds().isValid()) allBounds.extend(group.getBounds());
       }
+      const marketById = new Map(loaded.flatMap(({ data }) => (data?.features || [])
+        .filter(feature => nightMarkets.has(feature)).map(feature => [sourceId(feature), feature])));
+      for (const walk of walkingById.values()) {
+        const market = marketById.get(walk.market_id);
+        const marketName = market ? featureName(market) : walk.market_id;
+        const layer = L.geoJSON(walk.geometry, { style: { pane: 'walking', color: walkingColor,
+          weight: 5, opacity: 1, dashArray: '8 6', className: 'walking-route' } });
+        const box = node('div');
+        box.append(node('div', `${marketName} → ${walk.station_name}`, 'popup-title'));
+        appendWalkingDetails(box, walk);
+        const focus = node('button', '查看完整路徑', 'walk-button'); focus.type = 'button';
+        focus.addEventListener('click', () => showWalking(walk)); box.append(focus);
+        layer.bindPopup(box, { maxWidth: 330, maxHeight: 300 });
+        layer.bindTooltip(node('span', `${marketName} → ${walk.station_name} · ${walk.distance_m.toLocaleString()} 公尺`));
+        const entry = { layer, ids: ['walking_routes'], kind: 'routes', visible: true };
+        walkingEntries.set(walk.market_id, entry); entries.push(entry);
+        if (layer.getBounds().isValid()) allBounds.extend(layer.getBounds());
+      }
+      $('walking-hint').textContent = walkingStatus || (walkingEntries.size
+        ? `桃紅色虛線為夜市到捷運站的步行路徑，共 ${walkingEntries.size} 條（20 分鐘內）。點線可看距離與時間，終點尚未指定出口。`
+        : '目前沒有 20 分鐘內的步行路徑可顯示。');
       function syncVisibility() {
-        if (!controls.get('night_markets')?.points.checked) showWalking(null);
         for (const entry of entries) {
-          const visible = entry.ids.some(id => controls.get(id)?.[entry.kind]?.checked);
+          const visible = entry.ids.includes('walking_routes') ? entry.visible
+            : entry.ids.some(id => controls.get(id)?.[entry.kind]?.checked);
           if (visible && !map.hasLayer(entry.layer)) entry.layer.addTo(map);
           else if (!visible && map.hasLayer(entry.layer)) map.removeLayer(entry.layer);
+        }
+        const walkingBox = controls.get('walking_routes')?.routes;
+        if (walkingBox) {
+          const count = [...walkingEntries.values()].filter(entry => entry.visible).length;
+          walkingBox.checked = count > 0 && count === walkingEntries.size;
+          walkingBox.indeterminate = count > 0 && count < walkingEntries.size;
         }
         for (const kind of ['points', 'routes']) {
           const boxes = [...controls.values()].map(row => row[kind]).filter(box => !box.disabled);
           const checked = boxes.filter(box => box.checked).length;
-          masterControls[kind].checked = boxes.length > 0 && checked === boxes.length;
-          masterControls[kind].indeterminate = checked > 0 && checked < boxes.length;
+          const partial = boxes.some(box => box.indeterminate);
+          masterControls[kind].checked = boxes.length > 0 && checked === boxes.length && !partial;
+          masterControls[kind].indeterminate = partial || (checked > 0 && checked < boxes.length);
           masterControls[kind].disabled = !boxes.length;
         }
         syncLabels();
@@ -467,7 +585,8 @@
         if (master) row.className = 'all-row';
         else {
           const swatch = node('span', undefined, 'swatch');
-          swatch.style.background = routeColors[id] || marketColors[id] || exitColors[id] || unknownColor; title.append(swatch);
+          swatch.style.background = id === 'walking_routes' ? walkingColor
+            : routeColors[id] || marketColors[id] || exitColors[id] || unknownColor; title.append(swatch);
         }
         title.append(node('span', name)); heading.append(title); row.append(heading);
         const boxes = {};
@@ -479,6 +598,9 @@
           box.checked = !box.disabled; boxes[kind] = box; cell.append(box); row.append(cell);
           box.addEventListener('change', () => {
             if (master) for (const control of controls.values()) if (!control[kind].disabled) control[kind].checked = box.checked;
+            if (kind === 'routes' && (master || id === 'walking_routes')) {
+              for (const entry of walkingEntries.values()) entry.visible = box.checked;
+            }
             syncVisibility();
           });
         }
@@ -491,6 +613,7 @@
       for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'mrt_exits', 'airport_exits', 'night_markets', 'other']) {
         if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || exitNames[id] || '未分類');
       }
+      addRow('walking_routes', '夜市步行路徑');
       syncVisibility();
       if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30], animate: false });
       syncLabels();
