@@ -1,0 +1,602 @@
+﻿{
+  "UpdateInterval": 86400,
+  "Language": "Zh_tw",
+  "ProviderID": "A15010000H",
+  "Attractions": [
+    {
+      "AttractionID": "Attraction_A13020000G_000048",
+      "AttractionName": "新北：許新旺陶瓷紀念博物館",
+      "PositionLat": 24.9509574576297,
+      "PositionLon": 121.347689626984,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "鶯歌區",
+        "TownCode": "65000080",
+        "ZipCode": "239",
+        "StreetAddress": "尖山埔路81號"
+      },
+      "ServiceTimeInfo": "營業時間 週一：公休週二：公休週三：13：00 ~ 18：00週四：10：00 ~ 18：00週五：10：00 ~ 18：00週六：10：00 ~ 18：00週日：10：00 ~ 18：00",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "DIY活動：  \t* 純導覽(可折抵DIY活動費,另外有95折商品優惠券) \t* 導覽+手拉坏 \t* 導覽+手捏陶 \t* 導覽+彩繪"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000054",
+      "AttractionName": "新北：手信坊創意和菓子文化館",
+      "PositionLat": 24.977821,
+      "PositionLon": 121.466603,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "土城區",
+        "TownCode": "65000130",
+        "ZipCode": "236",
+        "StreetAddress": "國際路55號"
+      },
+      "ServiceTimeInfo": "週一~週日 8：30~17：30",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費入場"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000055",
+      "AttractionName": "新北：玉美人孕婦裝觀光工廠",
+      "PositionLat": 24.997297,
+      "PositionLon": 121.456266,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "板橋區",
+        "TownCode": "65000010",
+        "ZipCode": "220",
+        "StreetAddress": "四川路2段16巷10號5樓"
+      },
+      "ServiceTimeInfo": "週二至週六 10:00~17:30週日、週一與國定例假日休館",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "1.觀光工廠入場券:NT$100元2.觀光工廠入場券+DIY製作:NT$180~350元3.商品展售區歡迎〝免費〞入場選購4.3歲以下兒童免費入場"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000061",
+      "AttractionName": "新北：維格餅家 鳳梨酥夢工場",
+      "PositionLat": 25.068739,
+      "PositionLon": 121.435211,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "五股區",
+        "TownCode": "65000150",
+        "ZipCode": "248",
+        "StreetAddress": "成泰路一段87號"
+      },
+      "ServiceTimeInfo": "周一~周日 8:30-17:30",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "門票：80元/人"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000064",
+      "AttractionName": "新北：吳福洋襪子故事館",
+      "PositionLat": 25.075814,
+      "PositionLon": 121.401296,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "林口區",
+        "TownCode": "65000170",
+        "ZipCode": "244",
+        "StreetAddress": "工二工業區工九路3號"
+      },
+      "ServiceTimeInfo": "週一至週日 9：30 AM ~ 5：30 PM，國定假日照常開放",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "1.每人NT.100/人，送抵用卷NT.100可折抵購物消費(DIY課程及飾品不適用)2.持有身心障礙證明者門票NT.50/人，送抵用券NT.50可折抵購物消費(DIY課程及飾品不適用)*身高100cm以下免費(需大人陪同，幼稚園團體恕不適用) *參觀優惠：30人以上團體及林口區居民憑身分證件可享門票9折優惠"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000097",
+      "AttractionName": "新北：王鼎時間科藝體驗館",
+      "PositionLat": 24.95585,
+      "PositionLon": 121.42359,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "土城區",
+        "TownCode": "65000130",
+        "ZipCode": "236",
+        "StreetAddress": "大暖路136號"
+      },
+      "ServiceTimeInfo": "◆開館時間：週一至週日AM9:00-PM17:00◆導覽時間：上午10:00-12:00或下午14:00-16:00※本館採預約制",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "導覽入場費 100元（三歲以上都須收費）※團體預約另有優惠，需另外詢問"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000175",
+      "AttractionName": "新北：王子創意文具國",
+      "PositionLat": 25.0809347421479,
+      "PositionLon": 121.398118659088,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "林口區",
+        "TownCode": "65000170",
+        "ZipCode": "244",
+        "StreetAddress": "粉寮路一段86號"
+      },
+      "ServiceTimeInfo": "一到五早上9:30至下午5:30六到日（含例假日）早上9:30至下午6:00",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "ＤＩＹ課程及收費: DIY均一價100元全廠區採開放式的空間，時間不限全票200元（內含100元DIY折抵及50元商品折抵）團體票180元（團體來賓超過10（含）人）愛心票100元（持有身心障礙手冊之國民及陪伴親屬一人，可憑身心戰愛手冊購買愛心票）以上票價皆包含100元DIY折抵、50元商品折抵及清潔費50元免費票未滿3歲及65歲以上者（需出示身份證件）（無商品折抵卷、DIY卷）"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000177",
+      "AttractionName": "新北：聖瑪莉丹麥麵包莊園",
+      "PositionLat": 24.96296,
+      "PositionLon": 121.41801,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "土城區",
+        "TownCode": "65000130",
+        "ZipCode": "236",
+        "StreetAddress": "中山路21號"
+      },
+      "ServiceTimeInfo": "*1F 門市&餐飲週二~週日 09:30~18:00*3F三友拉麵週二~週五 11:00~14:00週六~週日 11:00~16:00*2F-4F展區&DIY週六~週日 09:30~18:00",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "門票：150元(可折抵消費)※1F門市展售區及餐飲區歡迎免費入場參觀選購"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000196",
+      "AttractionName": "新北：卡滋爆米花觀光工廠樂園",
+      "PositionLat": 25.16183,
+      "PositionLon": 121.42265,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "八里區",
+        "TownCode": "65000230",
+        "ZipCode": "249",
+        "StreetAddress": "觀海大道171號"
+      },
+      "ServiceTimeInfo": "平日10:30～17:30例假日及國定假日10:30～18:30【週二休館】※若逢農曆春節、國定假日、寒暑假，則為正常營業。",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "收費方式:每人250元(含導覽 + DIY體驗 + TWD50商品券+製程介紹) 身高90公分以下的兒童可免費入場每位付費成人限帶1位兒童免費入場，如需多帶，請購票入場"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000201",
+      "AttractionName": "新北：香帥蛋糕芋製所",
+      "PositionLat": 25.0719,
+      "PositionLon": 121.65117,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "汐止區",
+        "TownCode": "65000110",
+        "ZipCode": "221",
+        "StreetAddress": "汐萬路1段211巷26號"
+      },
+      "ServiceTimeInfo": "周二至周日9:30-17:30，每周一休館",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費入場"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000211",
+      "AttractionName": "新北：豐得好食觀光工廠",
+      "PositionLat": 25.06903,
+      "PositionLon": 121.45351,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "五股區",
+        "TownCode": "65000150",
+        "ZipCode": "248",
+        "StreetAddress": "五權路48 號1 樓"
+      },
+      "ServiceTimeInfo": "詳細參觀訊息請逕洽廠商網站說明",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "詳細參觀訊息請逕洽廠商網站說明"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000002",
+      "AttractionName": "黃金瀑布",
+      "PositionLat": 25.11716,
+      "PositionLon": 121.8615,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "224金水公路距水湳洞1.2公里"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000007",
+      "AttractionName": "南雅奇岩",
+      "PositionLat": 25.12014,
+      "PositionLon": 121.8931,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "台2線81.86K處"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000008",
+      "AttractionName": "新北市立黃金博物館",
+      "PositionLat": 25.10841,
+      "PositionLon": 121.8562,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "金瓜石金光路8號"
+      },
+      "ServiceTimeInfo": "請参閱官方網站",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "依黃金博物館官網公布為準"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000009",
+      "AttractionName": "福隆遊客中心",
+      "PositionLat": 25.01692,
+      "PositionLon": 121.9425,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "福隆里興隆街36號"
+      },
+      "ServiceTimeInfo": "全年開放 09:00-17:00",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000018",
+      "AttractionName": "南子吝步道",
+      "PositionLat": 25.12019,
+      "PositionLon": 121.8875,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "台2線81.25K處。"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000019",
+      "AttractionName": "鼻頭服務區",
+      "PositionLat": 25.12278,
+      "PositionLon": 121.9158,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "鼻頭路115號"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "以現場公告為準"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000020",
+      "AttractionName": "鼻頭龍洞地質公園",
+      "PositionLat": 25.12123,
+      "PositionLon": 121.8871,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "台2線約84~85k"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000021",
+      "AttractionName": "鼻頭角步道",
+      "PositionLat": 25.12528,
+      "PositionLon": 121.9214,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "瑞芳區",
+        "TownCode": "65000120",
+        "ZipCode": "224",
+        "StreetAddress": "鼻頭路臺2線約84K處鼻頭漁港旁"
+      },
+      "ServiceTimeInfo": "鼻頭角步道全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000034",
+      "AttractionName": "舊草嶺自行車隧道",
+      "PositionLat": 25.00535,
+      "PositionLon": 121.9576,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "福隆里外隆林街(北端入口)"
+      },
+      "ServiceTimeInfo": "6/1-9/30開啟時間：早上8:30至下午17:30（17:00清場禁止進入）、10/1-5/31開啟時間：早上8:30至下午17:00（16:30清場禁止進入）",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000035",
+      "AttractionName": "福隆海水浴場",
+      "PositionLat": 25.01758,
+      "PositionLon": 121.9452,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "福隆里福隆街40號"
+      },
+      "ServiceTimeInfo": "依福隆海水浴場官網公布為準",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "依福隆海水浴場官網公布為準"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000055",
+      "AttractionName": "龍洞灣海洋公園",
+      "PositionLat": 25.11819,
+      "PositionLon": 121.9176,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "龍洞街63-8號"
+      },
+      "ServiceTimeInfo": "依龍洞灣海洋公園粉絲專頁或Line官方帳號(ID:@waterplayer)為準。",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "依龍洞灣海洋公園粉絲專頁或Line官方帳號(ID:@waterplayer)為準。"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000056",
+      "AttractionName": "龍洞南口海洋公園(龍洞四季灣)",
+      "PositionLat": 25.10135,
+      "PositionLon": 121.9183,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "和美街48號"
+      },
+      "ServiceTimeInfo": "園區-09:00~18:00 / 水域-每年5月~9月9:00~17:30",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "依龍洞南口海洋公園官網公布為準。"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000057",
+      "AttractionName": "龍洞灣岬步道",
+      "PositionLat": 25.10513,
+      "PositionLon": 121.9211,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "臺2線85K處(北端入口，和美國小旁)或87K處(南端入口，西靈岩寺旁)"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000058",
+      "AttractionName": "龍洞岩場",
+      "PositionLat": 25.11342,
+      "PositionLon": 121.922,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "臺2線85K處(北端入口，和美國小旁)"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000059",
+      "AttractionName": "金沙灣海濱公園",
+      "PositionLat": 25.07513,
+      "PositionLon": 121.916,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "和美街72號"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000061",
+      "AttractionName": "鹽寮海濱公園",
+      "PositionLat": 25.042,
+      "PositionLon": 121.9273,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "研海街45號"
+      },
+      "ServiceTimeInfo": "09:00～17:00",
+      "IsAccessibleForFree": 0,
+      "FeeInfo": "依藍灣海濱休憩園區官網公布為準"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000064",
+      "AttractionName": "遠望坑親水公園",
+      "PositionLat": 25.00253,
+      "PositionLon": 121.93,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "遠望坑，草嶺古道北端入口處"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000065",
+      "AttractionName": "靈鷲山無生道場",
+      "PositionLat": 25.02157,
+      "PositionLon": 121.9832,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "福連里香蘭街7-1號"
+      },
+      "ServiceTimeInfo": "星期二～日，上午8:00至下午18:00時，星期一為「僧眾閉關日」不對外開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000067",
+      "AttractionName": "馬崗潮間帶",
+      "PositionLat": 25.01609,
+      "PositionLon": 122.0003,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "臺2線10835K處馬崗漁村旁"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000068",
+      "AttractionName": "馬崗哨所",
+      "PositionLat": 25.01689,
+      "PositionLon": 121.9976,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "馬崗街2之11號"
+      },
+      "ServiceTimeInfo": "依馬崗哨所Empress Gallery官網公布為準",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "餐飲另計"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000069",
+      "AttractionName": "三貂角燈塔步道",
+      "PositionLat": 25.00755,
+      "PositionLon": 122.0019,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "福連里馬崗街38號"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000070",
+      "AttractionName": "萊萊地質區",
+      "PositionLat": 25.00322,
+      "PositionLon": 122.0036,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "台2線110.4公里處"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_000072",
+      "AttractionName": "四角窟觀景台",
+      "PositionLat": 25.00395,
+      "PositionLon": 122.0023,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "台2線109.4公里處"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    },
+    {
+      "AttractionID": "Attraction_A15011300H_020615",
+      "AttractionName": "極東公園",
+      "PositionLat": 25.01144,
+      "PositionLon": 122.0029,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "貢寮區",
+        "TownCode": "65000260",
+        "ZipCode": "228",
+        "StreetAddress": "臺2線108.5K處"
+      },
+      "ServiceTimeInfo": "全年開放",
+      "IsAccessibleForFree": 1,
+      "FeeInfo": "免費參觀"
+    }
+  ]
+}

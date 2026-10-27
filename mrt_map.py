@@ -1,4 +1,4 @@
-"""讀取 data/ 的 GeoJSON，啟動本機互動地圖；只使用 Python 標準函式庫。"""
+"""讀取 data/ 的 GeoJSON 與景點 JSON，啟動本機互動地圖；只使用 Python 標準函式庫。"""
 import argparse
 from collections import Counter
 from functools import partial
@@ -12,6 +12,7 @@ from calculate_market_walks import fingerprint, MAX_WALK_SECONDS
 
 
 ROOT = Path(__file__).resolve().parent
+ATTRACTION_FILE = 'AttractionList_with_fee_and_hours.json'
 TITLES = {
     'mrt_tracks.geojson': '捷運路線與路線節點',
     'mrt_station.geojson': '捷運車站與站名',
@@ -19,6 +20,7 @@ TITLES = {
     'nightmarket.geojson': '夜市',
     'mrt_exits.geojson': '捷運出入口',
     'airport_mrt_exits.geojson': '機場捷運出入口',
+    ATTRACTION_FILE: '景點',
 }
 COLORS = ('#247a9a', '#8851b0', '#008675', '#b27a1d', '#d1495b')
 LAYER_COLORS = {
@@ -28,6 +30,7 @@ LAYER_COLORS = {
     'nightmarket.geojson': '#B42365',
     'mrt_exits.geojson': '#0075BE',
     'airport_mrt_exits.geojson': '#8851B0',
+    ATTRACTION_FILE: '#0F766E',
 }
 # 衍生出口檔保留供資料作業使用，避免與原始出口在一般地圖重複繪製。
 DERIVED_EXIT_FILES = {'mrt_exits_clean.geojson', 'airport_mrt_exits_clean.geojson',
@@ -68,6 +71,29 @@ def valid_geometry(geometry):
 def load_geojson(path):
     with Path(path).open(encoding='utf-8-sig') as handle:
         source = json.load(handle)
+    return filter_geojson(source)
+
+
+def load_attractions(path):
+    """將景點資料轉成顯示用的點位，保留原欄位，不改寫來源檔。"""
+    with Path(path).open(encoding='utf-8-sig') as handle:
+        source = json.load(handle)
+    if not isinstance(source, dict) or not isinstance(source.get('Attractions'), list):
+        raise ValueError('景點 JSON 需要包含 Attractions 陣列。')
+    features = []
+    for record in source['Attractions']:
+        if not isinstance(record, dict):
+            features.append(None)
+            continue
+        lat, lon = record.get('PositionLat'), record.get('PositionLon')
+        geometry = None if lat is None or lon is None else {
+            'type': 'Point', 'coordinates': [lon, lat]}
+        features.append({'type': 'Feature', 'id': record.get('AttractionID'),
+                         'properties': record, 'geometry': geometry})
+    return filter_geojson({'type': 'FeatureCollection', 'features': features})
+
+
+def filter_geojson(source):
     if (not isinstance(source, dict) or source.get('type') != 'FeatureCollection'
             or not isinstance(source.get('features'), list)):
         raise ValueError('需要 GeoJSON FeatureCollection 格式。')
@@ -103,7 +129,7 @@ def build_resources(data_dir=ROOT / 'data'):
         raise ValueError(f'找不到資料夾：{data_dir}')
     resources, layers = {}, []
     paths = sorted(p for p in data_dir.rglob('*')
-                   if p.is_file() and p.suffix.lower() == '.geojson'
+                   if p.is_file() and (p.suffix.lower() == '.geojson' or p.name == ATTRACTION_FILE)
                    and p.resolve().is_relative_to(data_dir))
     for index, path in enumerate(paths):
         relative = path.relative_to(data_dir).as_posix()
@@ -111,7 +137,8 @@ def build_resources(data_dir=ROOT / 'data'):
                 'url': '/data/' + quote(relative, safe='/'),
                 'color': LAYER_COLORS.get(path.name, COLORS[index % len(COLORS)])}
         try:
-            data, counts = load_geojson(path)
+            loader = load_attractions if path.name == ATTRACTION_FILE else load_geojson
+            data, counts = loader(path)
             resources[info['url']] = json.dumps(data, ensure_ascii=False, allow_nan=False).encode('utf-8')
             info.update(counts, error=None)
         except (OSError, UnicodeError, ValueError, RecursionError) as error:
@@ -177,7 +204,7 @@ def make_server(port=8765, data_dir=ROOT / 'data'):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description='將 data/ 裡的 GeoJSON 顯示在地圖上。')
+    parser = argparse.ArgumentParser(description='將 data/ 裡的 GeoJSON 與景點 JSON 顯示在地圖上。')
     parser.add_argument('--port', type=int, default=8765, help='本機連接埠（預設 8765；0 為自動選擇）')
     parser.add_argument('--no-browser', action='store_true', help='只啟動服務，不自動開啟瀏覽器')
     args = parser.parse_args(argv)
