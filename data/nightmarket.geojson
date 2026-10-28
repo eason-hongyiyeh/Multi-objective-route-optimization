@@ -7,51 +7,11 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "relation/10220395",
-        "amenity": "marketplace",
-        "name": "林口夜市",
-        "type": "multipolygon",
-        "@geometry": "center",
-        "opening_hours_original": "Wd, Su",
-        "opening_hours_text": "每週三、日 17:00–23:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=48372f2d-c979-458b-a32e-b6ef7d775c15&id=69&mid=60&param=pn%3D1%26mid%3D60%26id%3D0"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "We,Su 17:00-23:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3871902,
-          25.0804584
-        ]
-      },
-      "id": "relation/10220395"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "relation/12773846",
-        "amenity": "marketplace",
         "name": "新莊廟街夜市",
-        "name:en": "Xinzhuang Temple Street Night Market",
         "name:zh": "新莊廟街夜市",
-        "type": "site",
         "@geometry": "center",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/107166"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
@@ -69,18 +29,8 @@
         "@id": "relation/17332141",
         "landuse": "retail",
         "name": "蘆洲早夜市",
-        "type": "multipolygon",
         "@geometry": "center",
-        "opening_hours_text": "待確認（缺少確切名稱對照）",
-        "opening_hours_status": "needs_review",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/107424"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "官網的蘆洲廟口夜市列每日 15:00–23:00；原檔名稱為蘆洲早夜市，尚未確認兩者範圍相同，未直接套用時段。"
+        "opening_hours_text": "待確認（缺少確切名稱對照）"
       },
       "geometry": {
         "type": "Point",
@@ -94,85 +44,13 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/188179149",
-        "amenity": "marketplace",
-        "highway": "pedestrian",
-        "name": "興仁夜市(B)",
-        "opening_date": "unknown",
-        "@geometry": "center",
-        "opening_hours_original": "17:00-24:00",
-        "opening_hours_text": "每週二、五、六、日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "桃園觀光導覽網：興仁花園夜市",
-            "url": "https://travel.tycg.gov.tw/zh-tw/travel/attraction/959"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Tu,Fr-Su 17:00-24:00",
-        "opening_hours_note": "八德興仁花園夜市的分區點位，採用整體夜市時段；與樹林分店不同。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.2829565,
-          24.9326474
-        ]
-      },
-      "id": "way/188179149"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/188179187",
-        "amenity": "marketplace",
-        "highway": "pedestrian",
-        "name": "興仁花園夜市 美食A區",
-        "opening_date": "unknown",
-        "@geometry": "center",
-        "opening_hours_original": "17:00-24:00",
-        "opening_hours_text": "每週二、五、六、日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "桃園觀光導覽網：興仁花園夜市",
-            "url": "https://travel.tycg.gov.tw/zh-tw/travel/attraction/959"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Tu,Fr-Su 17:00-24:00",
-        "opening_hours_note": "八德興仁花園夜市的分區點位，採用整體夜市時段；與樹林分店不同。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.2829725,
-          24.9312015
-        ]
-      },
-      "id": "way/188179187"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/233876913",
         "alt_name": "興南觀光夜市",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "興南夜市",
-        "name:en": "Xingnan Night Market",
         "name:zh": "興南夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 18:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/402920"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 18:00-24:00"
       },
       "geometry": {
@@ -188,19 +66,10 @@
       "type": "Feature",
       "properties": {
         "@id": "way/254453771",
-        "amenity": "food_court",
         "name": "遼寧街夜市",
         "outdoor": "yes",
         "@geometry": "center",
         "opening_hours_text": "每日 18:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北市市場處：遼寧夜市",
-            "url": "https://www.tcma.gov.taipei/News_Content.aspx?n=FAC14AD2DE4E01A4&s=378B3348E6FD63C5&sms=32F7BA052C5CA548"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 18:00-24:00"
       },
       "geometry": {
@@ -217,23 +86,12 @@
       "properties": {
         "@id": "way/317584691",
         "alt_name": "南雅夜市;板橋觀光夜市",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "南雅觀光夜市",
-        "name:en": "Nanya Night Market",
         "name:zh": "南雅觀光夜市",
         "wikidata": "Q16267468",
         "@geometry": "center",
-        "opening_hours_original": "Mo-Su 15:00-01:00",
         "opening_hours_text": "每日 17:00–翌日 02:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/109711"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 17:00-02:00"
       },
       "geometry": {
@@ -248,32 +106,9 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/367362476",
-        "landuse": "retail",
-        "name": "早市, 夜市(逢周六)",
-        "@geometry": "center",
-        "opening_hours_text": "原檔名稱記載週六夜市；開始與結束時間未確認",
-        "opening_hours_status": "not_found",
-        "opening_hours_sources": [],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "原檔僅有「早市, 夜市(逢周六)」及座標，未查得能確認同一場址的正式名稱與營業時段。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4687991,
-          24.9987469
-        ]
-      },
-      "id": "way/367362476"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/375486258",
         "landuse": "retail",
         "name": "士林夜市",
-        "name:en": "Shilin Tourist Night Market",
         "name:ja": "士林夜市",
         "name:zh": "士林夜市",
         "tourism": "attraction",
@@ -281,14 +116,6 @@
         "wikipedia": "zh:士林夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1536"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
@@ -304,10 +131,8 @@
       "type": "Feature",
       "properties": {
         "@id": "way/375486272",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "華西街観光夜市",
-        "name:en": "Huaxi Night Market",
         "name:ja": "華西街観光夜市",
         "name:zh": "華西街夜市",
         "tourism": "attraction",
@@ -316,14 +141,6 @@
         "wikipedia:zh": "華西街夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1535"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
@@ -339,19 +156,10 @@
       "type": "Feature",
       "properties": {
         "@id": "way/375486277",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "西昌街夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 15:00–21:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網：西昌街夜市（英文頁）",
-            "url": "https://www.travel.taipei/en/attraction/details/2156"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 15:00-21:00"
       },
       "geometry": {
@@ -367,10 +175,8 @@
       "type": "Feature",
       "properties": {
         "@id": "way/388224261",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "樂華夜市",
-        "name:en": "Lehua Night Market",
         "name:ko": "러화 야시장",
         "name:zh": "樂華夜市",
         "note": "靠近永平路180巷、中山路一段部份屬居民反對部份，但目前依照現狀繪製",
@@ -378,14 +184,6 @@
         "wikidata": "Q11120852",
         "@geometry": "center",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/107161"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
@@ -402,27 +200,16 @@
       "properties": {
         "@id": "way/396410905",
         "alt_name": "寧夏環保夜市",
-        "amenity": "marketplace",
         "full_name": "寧夏路夜市",
         "landuse": "retail",
         "name": "寧夏夜市",
-        "name:en": "Ningxia Night Market",
         "name:zh": "寧夏夜市",
         "tourism": "attraction",
         "website": "https://nx-yes.tw/",
         "wikidata": "Q16926585",
         "wikipedia": "zh:寧夏路夜市",
         "@geometry": "center",
-        "opening_hours_original": "Mo-Su 17:30-01:00",
         "opening_hours_text": "每日 17:00–23:30",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1560"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 17:00-23:30"
       },
       "geometry": {
@@ -441,10 +228,8 @@
         "alt_name": "通化夜市",
         "alt_name:en": "Tonghua Night market",
         "alt_name:zh": "通化夜市",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "臨江街觀光夜市",
-        "name:en": "Linjiang Street Night Market",
         "name:ko": "린장제 관광야시장",
         "name:zh": "臨江街觀光夜市",
         "tourism": "attraction",
@@ -452,14 +237,6 @@
         "wikipedia": "zh:臨江街觀光夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 18:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1562"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 18:00-24:00"
       },
       "geometry": {
@@ -474,49 +251,8 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/458084083",
-        "addr:city": "新北市",
-        "addr:country": "TW",
-        "addr:district": "樹林區",
-        "addr:full": "238新北市樹林區保安街二段70號",
-        "addr:housenumber": "70",
-        "addr:postcode": "238",
-        "addr:street": "保安街二段",
-        "amenity": "marketplace",
-        "area": "yes",
-        "landuse": "retail",
-        "name": "樹林興仁花園夜市",
-        "operator": "興仁花園夜市",
-        "phone": "+886 908-111-333",
-        "website": "http://www.singren168.com/%E9%97%9C%E6%96%BC%E6%88%91%E5%80%91-%E6%A8%B9%E6%9E%97%E5%A4%9C%E5%B8%82.html",
-        "@geometry": "center",
-        "opening_hours_text": "每週三、五、六、日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=a44e35b2-4ab3-4b83-b55f-f3b16a8d59d8&id=64&mid=26&param=pn%3D1%26cid%3D35%26mid%3D26%26id%3D74"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "We,Fr-Su 17:00-24:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4161297,
-          25.0027169
-        ]
-      },
-      "id": "way/458084083"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/516455044",
-        "amenity": "marketplace",
         "name": "饒河街觀光夜市",
-        "name:en": "Raohe Night Market",
         "name:ja": "饒河街観光夜市",
         "name:ko": "라오허제야시장",
         "name:zh": "饒河街觀光夜市",
@@ -524,14 +260,6 @@
         "tourism": "attraction",
         "@geometry": "center",
         "opening_hours_text": "每日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1538"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 17:00-24:00"
       },
       "geometry": {
@@ -547,21 +275,11 @@
       "type": "Feature",
       "properties": {
         "@id": "way/520781824",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "廣州街夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1565"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Mo-Su 16:00-24:00",
-        "opening_hours_note": "原檔有兩筆廣州街夜市點位，兩筆均引用同一夜市時段。"
+        "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
         "type": "Point",
@@ -575,86 +293,9 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/546054452",
-        "landuse": "retail",
-        "name": "桃園觀光夜市",
-        "name:en": "Taoyuan night market",
-        "name:id": "Pasar Malam Turis Taoyuan",
-        "name:ja": "桃園観光夜市",
-        "name:ko": "타오위엔 관광야시장",
-        "name:th": "ตลาดกลางคืนเถาหยวน",
-        "name:vi": "Chợ đêm du lịch Đào Viên",
-        "name:zh": "桃園觀光夜市",
-        "tourism": "attraction",
-        "@geometry": "center",
-        "opening_hours_text": "待確認：景點頁每日 17:00–24:00；消費資訊頁週末至翌日 01:00",
-        "opening_hours_status": "needs_review",
-        "opening_hours_sources": [
-          {
-            "title": "桃園觀光導覽網：桃園觀光夜市景點頁",
-            "url": "https://travel.tycg.gov.tw/zh-tw/travel/attraction/969"
-          },
-          {
-            "title": "桃園觀光導覽網：桃園觀光夜市消費資訊",
-            "url": "https://travel.tycg.gov.tw/zh-tw/Consume/Detail/73?print=1"
-          },
-          {
-            "title": "桃園觀光導覽網：商圈列表",
-            "url": "https://travel.tycg.gov.tw/zh-tw/consume/business-district"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "同一官方網站存在差異：消費資訊頁為週一至五 17:00–24:00、六日 17:00–翌日 01:00；商圈列表另列 17:30–24:00。未合併成單一確定時段。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3072971,
-          25.0032067
-        ]
-      },
-      "id": "way/546054452"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/593801638",
-        "amenity": "marketplace",
-        "landuse": "retail",
-        "name": "南機場夜市",
-        "name:en": "Nanjichang Night Market",
-        "name:ko": "난지창야시장",
-        "name:zh": "南機場夜市",
-        "tourism": "attraction",
-        "@geometry": "center",
-        "opening_hours_text": "每日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1564"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Mo-Su 17:00-24:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.5060228,
-          25.0285116
-        ]
-      },
-      "id": "way/593801638"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/679004546",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "公館夜市",
-        "name:en": "Gongguan Night Market",
         "name:nan": "Kong-koán Iā-chhī-á",
         "name:nan-Hant": "公館夜市仔",
         "name:nan-Latn-pehoeji": "Kong-koán Iā-chhī-á",
@@ -662,16 +303,7 @@
         "name:zh": "公館夜市",
         "@geometry": "center",
         "opening_hours_text": "每日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北市市場處：公館夜市",
-            "url": "https://www.tcma.gov.taipei/News_Content.aspx?n=FAC14AD2DE4E01A4&s=01DFBEEC7B87B051&sms=32F7BA052C5CA548"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Mo-Su 17:00-24:00",
-        "opening_hours_note": "採市場處夜市專頁（2025-05-13 更新），不是整個公館商圈的開放時間。"
+        "opening_hours": "Mo-Su 17:00-24:00"
       },
       "geometry": {
         "type": "Point",
@@ -685,53 +317,14 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/730666401",
-        "amenity": "marketplace",
-        "description": "每周二跟五",
-        "landuse": "retail",
-        "name": "夜市",
-        "@geometry": "center",
-        "opening_hours_text": "原檔說明記載每週二、五；開始與結束時間未確認",
-        "opening_hours_status": "needs_review",
-        "opening_hours_sources": [
-          {
-            "title": "深坑慈聖夜市介紹（待確認是否為同一點位）",
-            "url": "https://carollin.tw/shenkeng-nightmarket/"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "原名只有「夜市」。查到深坑慈聖夜市每週二、五的介紹，但尚未確認與此來源物件相同，未改名或套用時段。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.6235541,
-          25.0050146
-        ]
-      },
-      "id": "way/730666401"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/736385631",
-        "amenity": "marketplace",
         "landuse": "retail",
         "name": "三和夜市",
-        "name:en": "Sanhe Night Market",
         "name:ko": "싼허야시장",
         "name:zh": "三和夜市",
         "tourism": "attraction",
         "@geometry": "center",
         "opening_hours_text": "每日 17:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市觀光旅遊網",
-            "url": "https://newtaipei.travel/zh-tw/attractions/detail/110341"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
         "opening_hours": "Mo-Su 17:00-24:00"
       },
       "geometry": {
@@ -748,26 +341,12 @@
       "properties": {
         "@id": "way/775603768",
         "addr:housename": "台北車站",
-        "amenity": "food_court",
         "indoor": "area",
         "level": "1",
         "manager": "微風台北車站",
         "name": "台灣夜市",
         "@geometry": "center",
-        "opening_hours_text": "分區時段待確認；所在臺北車站商場公布每日 10:00–22:00",
-        "opening_hours_status": "needs_review",
-        "opening_hours_sources": [
-          {
-            "title": "新光三越：臺北車站分店資訊",
-            "url": "https://www.skm.com.tw/branch/16/1112"
-          },
-          {
-            "title": "台視：2026-07-25 商場營運移轉報導",
-            "url": "https://news.ttv.com.tw/wbc/news/Views/11507250011000I"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "原檔標示台北車站內的台灣夜市分區，manager 仍為微風。商場已於 2026-07-25 改由新光三越營運；目前未找到此舊分區名稱的個別時段，不把商場時間當成分區確定時間。"
+        "opening_hours_text": "分區時段待確認；所在臺北車站商場公布每日 10:00–22:00"
       },
       "geometry": {
         "type": "Point",
@@ -781,99 +360,6 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/781490557",
-        "amenity": "marketplace",
-        "branch": "B區",
-        "landuse": "retail",
-        "name": "沙崙夜市",
-        "name:en": "Shalun Night Market",
-        "name:zh": "沙崙夜市",
-        "name:zh-Hant": "沙崙夜市",
-        "@geometry": "center",
-        "opening_hours_text": "每週五、日 17:00–22:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=8e33057f-f05b-47e4-9546-aad2fa14b504&id=71&mid=26&param=pn%3D1%26cid%3D44%26mid%3D26%26id%3D74"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Fr,Su 17:00-22:00",
-        "opening_hours_note": "沙崙夜市 A、B 區採用整體夜市時段。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.424555,
-          25.1849976
-        ]
-      },
-      "id": "way/781490557"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/1271731730",
-        "amenity": "marketplace",
-        "branch": "A區",
-        "landuse": "retail",
-        "name": "沙崙夜市",
-        "name:en": "Shalun Night Market",
-        "name:zh": "沙崙夜市",
-        "name:zh-Hant": "沙崙夜市",
-        "@geometry": "center",
-        "opening_hours_text": "每週五、日 17:00–22:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=8e33057f-f05b-47e4-9546-aad2fa14b504&id=71&mid=26&param=pn%3D1%26cid%3D44%26mid%3D26%26id%3D74"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Fr,Su 17:00-22:00",
-        "opening_hours_note": "沙崙夜市 A、B 區採用整體夜市時段。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4241439,
-          25.1852312
-        ]
-      },
-      "id": "way/1271731730"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/1301435279",
-        "amenity": "marketplace",
-        "name": "樟樹灣夜市",
-        "@geometry": "center",
-        "opening_hours_text": "每週三、六、日 17:00–23:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=0d97d351-1ac1-4585-8e7d-3594e8735fcc&id=61&mid=26&param=pn%3D1%26cid%3D21%26mid%3D26%26id%3D74"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "We,Sa,Su 17:00-23:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.6395082,
-          25.0650718
-        ]
-      },
-      "id": "way/1301435279"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/1313165663",
         "addr:city": "新北市",
         "addr:country": "TW",
@@ -883,23 +369,11 @@
         "addr:housenumber": "2之2",
         "addr:neighbourhood": "012",
         "addr:street": "五工路",
-        "amenity": "marketplace",
         "name": "新莊思源夜市",
-        "name:en": "Xinzhuang Siyuan Night Market",
         "name:zh": "新莊思源夜市",
         "website": "https://www.facebook.com/people/%E6%96%B0%E8%8E%8A%E6%80%9D%E6%BA%90%E5%A4%9C%E5%B8%82-%E5%85%A8%E6%96%B0%E9%96%8B%E5%B9%95/61561217901828/",
         "@geometry": "center",
-        "opening_hours_original": "Fr-Su 16:00-24:00",
-        "opening_hours_text": "曾公告自 2024-10-01 暫停營業；目前是否復業待確認",
-        "opening_hours_status": "suspension_reported",
-        "opening_hours_sources": [
-          {
-            "title": "民視：新莊思源夜市暫停營業報導（2024-09-29）",
-            "url": "https://www.ftvnews.com.tw/news/detail/2024929W0124"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "報導引述夜市粉專公告。本次未查得可確認的復業公告；原檔週五至日 16:00–24:00 移至 opening_hours_original 留存，不作為現行時段。"
+        "opening_hours_text": "曾公告自 2024-10-01 暫停營業；目前是否復業待確認"
       },
       "geometry": {
         "type": "Point",
@@ -917,20 +391,7 @@
         "landuse": "commercial",
         "name": "鶯歌龍鳳夜市",
         "@geometry": "center",
-        "opening_hours_text": "待確認：市府 2024 年頁面列每週二、五、六 16:30–21:30",
-        "opening_hours_status": "needs_review",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=0893b8d8-00f6-492c-b971-a777d0c00b63&id=73&mid=60&param=pn%3D1%26mid%3D60%26id%3D0"
-          },
-          {
-            "title": "TonightMarkets 龍鳳夜市資訊（非官方，與市府有差異）",
-            "url": "https://tonightmarkets.com/night-markets/yinggelongfeng-night-market"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "市府頁面更新於 2024-09-16；另查到非官方資訊列週三、五、六、日，地址與時段也不同。以市府內容作參考，現行場址與時段仍需向業者確認。"
+        "opening_hours_text": "待確認：市府 2024 年頁面列每週二、五、六 16:30–21:30"
       },
       "geometry": {
         "type": "Point",
@@ -944,142 +405,10 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "node/8365952045",
-        "amenity": "marketplace",
-        "name": "樹林夜市",
-        "opening_hours_text": "17:00–22:00（來源未列每週休市日）",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "新北市政府市場處",
-            "url": "https://www.newtaipeimarket.ntpc.gov.tw/tc/mapDetail.aspx?chk=db7c8652-b0d0-4f74-8ec6-0bcd917abc01&id=63&mid=73&param=pn%3D1%26mid%3D73%26id%3D0"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "17:00-22:00",
-        "opening_hours_note": "官網僅列營業時段；未提供例行休市日與臨時休市資訊。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4272363,
-          24.9923688
-        ]
-      },
-      "id": "node/8365952045"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/9276520217",
-        "name": "汐止夜市",
-        "name:en": "Xizhi Night Market",
-        "name:zh": "汐止夜市",
-        "name:zh-Hans": "汐止夜市",
-        "name:zh-Hant": "汐止夜市",
-        "tourism": "attraction",
-        "opening_hours_text": "17:00–23:00（來源未列每週休市日）",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "汐止區公所：汐止觀光夜市",
-            "url": "https://www.xizhi.ntpc.gov.tw/home.jsp?id=0e5a1b2e43639bf0"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "17:00-23:00",
-        "opening_hours_note": "兩筆點位位於同一汐止觀光夜市範圍，採區公所公布時段；來源未列例行休市日。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.6562364,
-          25.065313
-        ]
-      },
-      "id": "node/9276520217"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/9849235453",
-        "name": "汐止觀光夜市",
-        "name:zh": "汐止觀光夜市",
-        "name:zh-Hans": "汐止观光夜市",
-        "name:zh-Hant": "汐止觀光夜市",
-        "operator": "汐止觀光夜市",
-        "tourism": "attraction",
-        "opening_hours_text": "17:00–23:00（來源未列每週休市日）",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "汐止區公所：汐止觀光夜市",
-            "url": "https://www.xizhi.ntpc.gov.tw/home.jsp?id=0e5a1b2e43639bf0"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "17:00-23:00",
-        "opening_hours_note": "兩筆點位位於同一汐止觀光夜市範圍，採區公所公布時段；來源未列例行休市日。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.6573258,
-          25.0657353
-        ]
-      },
-      "id": "node/9849235453"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/12092325283",
-        "amenity": "marketplace",
-        "name": "弘道街夜市 (星期二、五晚上)",
-        "name:zh": "弘道街夜市 (星期二、五晚上)",
-        "name:zh-Hans": "弘道街夜市 (星期二、五晚上)",
-        "name:zh-Hant": "弘道街夜市 (星期二、五晚上)",
-        "opening_hours_text": "每週二、五 17:00–23:00（2022 年報導；遇雨可能取消）",
-        "opening_hours_status": "reported",
-        "opening_hours_sources": [
-          {
-            "title": "鏡週刊：弘道街夜市（2022-07-22）",
-            "url": "https://www.mirrormedia.mg/story/amp/20220722food004"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Tu,Fr 17:00-23:00",
-        "opening_hours_note": "找到具名採訪報導，尚未找到官方營業時間；報導較舊，現況仍待確認。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.6168016,
-          25.0486168
-        ]
-      },
-      "id": "node/12092325283"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "node/12146204001",
-        "amenity": "marketplace",
         "name": "廣州街觀光夜市",
-        "name:en": "Guangzhou Street Night Market",
-        "outdoor_seating": "no",
-        "opening_hours_original": "Mo-Su 16:00-00:00",
         "opening_hours_text": "每日 16:00–24:00",
-        "opening_hours_status": "official",
-        "opening_hours_sources": [
-          {
-            "title": "臺北旅遊網",
-            "url": "https://www.travel.taipei/zh-tw/attraction/details/1565"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours": "Mo-Su 16:00-24:00",
-        "opening_hours_note": "原檔有兩筆廣州街夜市點位，兩筆均引用同一夜市時段。"
+        "opening_hours": "Mo-Su 16:00-24:00"
       },
       "geometry": {
         "type": "Point",
@@ -1089,32 +418,6 @@
         ]
       },
       "id": "node/12146204001"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "node/12531604654",
-        "amenity": "food_court",
-        "name": "桃園夜市美食廣場",
-        "opening_hours_text": "未查得此美食廣場的個別營業時間",
-        "opening_hours_status": "not_found",
-        "opening_hours_sources": [
-          {
-            "title": "桃園觀光導覽網：桃園觀光夜市景點頁",
-            "url": "https://travel.tycg.gov.tw/zh-tw/travel/attraction/969"
-          }
-        ],
-        "opening_hours_checked_on": "2026-10-19",
-        "opening_hours_note": "此筆在原檔為獨立 food_court 點位。查到的是桃園觀光夜市整體時段，不能直接視為這個美食廣場的營業時間。"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.3072667,
-          25.004119
-        ]
-      },
-      "id": "node/12531604654"
     }
   ]
 }
