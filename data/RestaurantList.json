@@ -1,0 +1,330 @@
+﻿{
+  "UpdateInterval": 86400,
+  "Language": "Zh_tw",
+  "ProviderID": "A15010000H",
+  "Restaurants": [
+    {
+      "RestaurantID": "Restaurant_376430000A_000139",
+      "RestaurantName": "桃園酒廠",
+      "PositionLat": 25.05633,
+      "PositionLon": 121.3752,
+      "CuisineClasses": [
+        116
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "龜山區",
+        "TownCode": "68000070",
+        "ZipCode": "333",
+        "StreetAddress": "文化一路55號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000219",
+      "RestaurantName": "三角店客家菜包",
+      "PositionLat": 24.95512,
+      "PositionLon": 121.21911,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中正路272號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000220",
+      "RestaurantName": "劉媽媽菜包店",
+      "PositionLat": 24.95514,
+      "PositionLon": 121.21918,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中正路268號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000223",
+      "RestaurantName": "禪園人文花園餐廳",
+      "PositionLat": 24.95846,
+      "PositionLon": 121.223,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "廣安街32號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000237",
+      "RestaurantName": "老三牛家莊",
+      "PositionLat": 24.95581,
+      "PositionLon": 121.22214,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中平路163號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000579",
+      "RestaurantName": "新珍香餅舖",
+      "PositionLat": 24.95585,
+      "PositionLon": 121.22245,
+      "CuisineClasses": [
+        116
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中平路146號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_000644",
+      "RestaurantName": "陳飛豬腳",
+      "PositionLat": 24.95268,
+      "PositionLon": 121.21538,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "義民路151號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001484",
+      "RestaurantName": "錦家御宴",
+      "PositionLat": 24.95525,
+      "PositionLon": 121.22639,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中山路88號B1"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001486",
+      "RestaurantName": "品傑首烏御膳館",
+      "PositionLat": 24.96611,
+      "PositionLon": 121.22684,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "環北路435號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001501",
+      "RestaurantName": "欣園餐館",
+      "PositionLat": 24.96009,
+      "PositionLon": 121.22064,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中美路二段142號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001595",
+      "RestaurantName": "滿滿客家菜館",
+      "PositionLat": 24.96114,
+      "PositionLon": 121.21974,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中豐路185號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001596",
+      "RestaurantName": "碧園餐館",
+      "PositionLat": 24.95783,
+      "PositionLon": 121.22583,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "中台路10號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001649",
+      "RestaurantName": "妮可設計工作室",
+      "PositionLat": 24.96958,
+      "PositionLon": 121.32671,
+      "CuisineClasses": [
+        116
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "八德區",
+        "TownCode": "68000080",
+        "ZipCode": "334",
+        "StreetAddress": "桃鶯路南僑巷31弄18號13樓"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001837",
+      "RestaurantName": "龍情花生糖(平鎮延平店)",
+      "PositionLat": 24.95183,
+      "PositionLon": 121.21997,
+      "CuisineClasses": [
+        116
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "平鎮區",
+        "TownCode": "68000100",
+        "ZipCode": "324",
+        "StreetAddress": "延平路一段57號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001840",
+      "RestaurantName": "龍情花生糖(中壢環北店)",
+      "PositionLat": 24.96342,
+      "PositionLon": 121.22951,
+      "CuisineClasses": [
+        116
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "延平路124號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001912",
+      "RestaurantName": "中壢觀光夜市-貴子油飯",
+      "PositionLat": 24.95915,
+      "PositionLon": 121.21497,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "中壢區",
+        "TownCode": "68000020",
+        "ZipCode": "320",
+        "StreetAddress": "新明路(攤號:015A)"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    },
+    {
+      "RestaurantID": "Restaurant_376430000A_001933",
+      "RestaurantName": "Q幼鮮生猛活魚海產",
+      "PositionLat": 25.06144,
+      "PositionLon": 121.20316,
+      "CuisineClasses": [
+        2
+      ],
+      "PostalAddress": {
+        "City": "桃園市",
+        "CityCode": "68000",
+        "Town": "大園區",
+        "TownCode": "68000060",
+        "ZipCode": "337",
+        "StreetAddress": "中正東路202號"
+      },
+      "ServiceTimeInfo": "",
+      "PaymentMethods": []
+    }
+  ]
+}

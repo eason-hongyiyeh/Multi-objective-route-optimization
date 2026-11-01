@@ -1,0 +1,4403 @@
+{
+  "UpdateInterval": 86400,
+  "Language": "Zh_tw",
+  "ProviderID": "A15010000H",
+  "Hotels": [
+    {
+      "HotelID": "Hotel_A15010000H_000128",
+      "HotelName": "喬爵旅居",
+      "PositionLat": 24.962231,
+      "PositionLon": 121.227397,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "延平路216號"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000171",
+      "HotelName": "老爺大酒店",
+      "PositionLat": 25.053969,
+      "PositionLon": 121.522847,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路2段37之1號"
+      },
+      "LowestPrice": 11800,
+      "CeilingPrice": 68000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000291",
+      "HotelName": "台北商旅（大安館）",
+      "PositionLat": 25.0387901,
+      "PositionLon": 121.5461556,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "大安路一段135號"
+      },
+      "LowestPrice": 9200,
+      "CeilingPrice": 11500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000339",
+      "HotelName": "龍蝦先生的秘密巢穴",
+      "PositionLat": 25.050448,
+      "PositionLon": 121.513394,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "重慶北路一段22號9樓"
+      },
+      "LowestPrice": 640,
+      "CeilingPrice": 4400
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000350",
+      "HotelName": "愛莉亞汽車旅館",
+      "PositionLat": 24.935946,
+      "PositionLon": 121.363821,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三峽區",
+        "StreetAddress": "中山路169巷10號(代表號)"
+      },
+      "LowestPrice": 1580,
+      "CeilingPrice": 3080
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000431",
+      "HotelName": "芝山璞旅",
+      "PositionLat": 25.102408,
+      "PositionLon": 121.521487,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "士林區",
+        "StreetAddress": "福國路106號1樓,2-6樓之1至7"
+      },
+      "LowestPrice": 5800,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000579",
+      "HotelName": "幸福讚精品飯店",
+      "PositionLat": 25.0509884,
+      "PositionLon": 121.4611437,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "思源路332巷9號1至8樓及11號2至5樓"
+      },
+      "LowestPrice": 3990,
+      "CeilingPrice": 48800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000590",
+      "HotelName": "晶華酒店",
+      "PositionLat": 25.0540668,
+      "PositionLon": 121.5245789,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路2段39巷3號"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 180000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000895",
+      "HotelName": "台北六福萬怡酒店",
+      "PositionLat": 25.052397,
+      "PositionLon": 121.606904,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "南港區",
+        "StreetAddress": "忠孝東路七段359號7-30樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 100000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_000915",
+      "HotelName": "燦路都飯店",
+      "PositionLat": 25.062892,
+      "PositionLon": 121.523337,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "民權東路1段9號地下1樓、2-10樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001036",
+      "HotelName": "賓王大飯店",
+      "PositionLat": 25.0540982,
+      "PositionLon": 121.5131034,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "南京西路163號3至4樓"
+      },
+      "LowestPrice": 5500,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001123",
+      "HotelName": "香奈爾汽車旅館 (新莊店)",
+      "PositionLat": 25.0284124,
+      "PositionLon": 121.4336972,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "後港一路187號"
+      },
+      "LowestPrice": 13800,
+      "CeilingPrice": 17080
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001129",
+      "HotelName": "紅菱閣賓館",
+      "PositionLat": 25.044108,
+      "PositionLon": 121.504114,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "峨嵋街80,82號"
+      },
+      "LowestPrice": 1130,
+      "CeilingPrice": 2380
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001155",
+      "HotelName": "新驛旅店西門捷運店",
+      "PositionLat": 25.0418882,
+      "PositionLon": 121.5092913,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "衡陽路124號1、2、4、6、7樓,寶慶路63號"
+      },
+      "LowestPrice": 2200,
+      "CeilingPrice": 13000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001187",
+      "HotelName": "台北君品大酒店",
+      "PositionLat": 25.0494562,
+      "PositionLon": 121.5168704,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "承德路1段3號(1樓.5樓~16樓及地下1樓.地下3樓)"
+      },
+      "LowestPrice": 15939,
+      "CeilingPrice": 289674
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001197",
+      "HotelName": "南國旅社",
+      "PositionLat": 25.008293,
+      "PositionLon": 121.454078,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "館前西路265巷1號1至5樓"
+      },
+      "LowestPrice": 950,
+      "CeilingPrice": 950
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001199",
+      "HotelName": "米窩飯店-西門",
+      "PositionLat": 25.0432589,
+      "PositionLon": 121.50437,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "成都路101、103號1-6樓"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001437",
+      "HotelName": "沃客伽洲旅社",
+      "PositionLat": 25.051515,
+      "PositionLon": 121.488095,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "成功路97號8至9樓"
+      },
+      "LowestPrice": 16800,
+      "CeilingPrice": 31800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001669",
+      "HotelName": "松林旅社",
+      "PositionLat": 25.0384181,
+      "PositionLon": 121.4972571,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "桂林路174號3至5樓及夾層、176號1至5樓及夾層"
+      },
+      "LowestPrice": 850,
+      "CeilingPrice": 2600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001733",
+      "HotelName": "首都唯客樂飯店",
+      "PositionLat": 25.054857,
+      "PositionLon": 121.537778,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路187號1-9樓"
+      },
+      "LowestPrice": 5800,
+      "CeilingPrice": 13000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001871",
+      "HotelName": "六星旅館(中壢館)",
+      "PositionLat": 24.962803,
+      "PositionLon": 121.219426,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "元化路二段122號"
+      },
+      "LowestPrice": 9600,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_001956",
+      "HotelName": "沃客商旅-西門館",
+      "PositionLat": 25.043161,
+      "PositionLon": 121.508076,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段144號10樓"
+      },
+      "LowestPrice": 980,
+      "CeilingPrice": 19800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002003",
+      "HotelName": "九昱晴美",
+      "PositionLat": 25.064822,
+      "PositionLon": 121.525676,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路568號2至13樓，3樓之1、2、3、5、6至12樓之1、2、3、5、6，13樓之1"
+      },
+      "LowestPrice": 10800,
+      "CeilingPrice": 21800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002201",
+      "HotelName": "綺樂文旅 康定館",
+      "PositionLat": 25.0440008,
+      "PositionLon": 121.5026274,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "康定路32號1至6樓"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 8800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002267",
+      "HotelName": "亞都麗緻大飯店",
+      "PositionLat": 25.062774,
+      "PositionLon": 121.529818,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "民權東路2段41號"
+      },
+      "LowestPrice": 14784,
+      "CeilingPrice": 113190
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002307",
+      "HotelName": "福爾摩莎北驛旅館",
+      "PositionLat": 25.0452642,
+      "PositionLon": 121.5146888,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "漢口街1段45號2、4樓及47號2樓"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002368",
+      "HotelName": "洛碁大飯店林森館",
+      "PositionLat": 25.066754,
+      "PositionLon": 121.525825,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路617號1至10樓"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 17000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002465",
+      "HotelName": "台北西門町意舍酒店",
+      "PositionLat": 25.0451617,
+      "PositionLon": 121.5055717,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "武昌街二段77號5-10樓"
+      },
+      "LowestPrice": 3927,
+      "CeilingPrice": 18249
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002549",
+      "HotelName": "愛玩客旅店",
+      "PositionLat": 25.0385078,
+      "PositionLon": 121.5038915,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路30號12樓"
+      },
+      "LowestPrice": 500,
+      "CeilingPrice": 2000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002666",
+      "HotelName": "雲富大飯店",
+      "PositionLat": 25.05578,
+      "PositionLon": 121.52399,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路24號2樓至8樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 36000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002700",
+      "HotelName": "長榮桂冠酒店 (台北)",
+      "PositionLat": 25.0490267,
+      "PositionLon": 121.5332062,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "松江路63號"
+      },
+      "LowestPrice": 11500,
+      "CeilingPrice": 68000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002782",
+      "HotelName": "苓旅站前",
+      "PositionLat": 25.046336,
+      "PositionLon": 121.514142,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路一段72號4樓"
+      },
+      "LowestPrice": 12880,
+      "CeilingPrice": 15880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002918",
+      "HotelName": "承攜行旅台北重慶館",
+      "PositionLat": 25.0520135,
+      "PositionLon": 121.5138567,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "重慶北路一段62號1、4至10樓"
+      },
+      "LowestPrice": 7200,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_002927",
+      "HotelName": "幸運草輕巧旅店",
+      "PositionLat": 24.960073,
+      "PositionLon": 121.221208,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中美路二段120號"
+      },
+      "LowestPrice": 6880,
+      "CeilingPrice": 16880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003029",
+      "HotelName": "沃客商旅-正義二館",
+      "PositionLat": 25.06068,
+      "PositionLon": 121.497863,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "正義南路55號4樓、4樓之1、4樓之2"
+      },
+      "LowestPrice": 16800,
+      "CeilingPrice": 26800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003045",
+      "HotelName": "太平洋商旅",
+      "PositionLat": 25.032465,
+      "PositionLon": 121.557637,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "光復南路495號11樓之2及13,16,17,19樓"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003121",
+      "HotelName": "米窩飯店-三重館",
+      "PositionLat": 25.051896,
+      "PositionLon": 121.488743,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "集成路11號"
+      },
+      "LowestPrice": 18800,
+      "CeilingPrice": 18800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003148",
+      "HotelName": "互舍商旅台北館",
+      "PositionLat": 25.059433,
+      "PositionLon": 121.513387,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "重慶北路二段172號1至14樓、5樓之1至14樓之1及174號、保安街13、11號4樓"
+      },
+      "LowestPrice": 3600,
+      "CeilingPrice": 36000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003295",
+      "HotelName": "板橋凱撒大飯店",
+      "PositionLat": 25.011778,
+      "PositionLon": 121.462667,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "縣民大道二段8號"
+      },
+      "LowestPrice": 15400,
+      "CeilingPrice": 18700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003369",
+      "HotelName": "天使青旅",
+      "PositionLat": 25.042786,
+      "PositionLon": 121.51219,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "衡陽路51號2樓之2"
+      },
+      "LowestPrice": 63000,
+      "CeilingPrice": 63000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003408",
+      "HotelName": "這一站幸福民宿",
+      "PositionLat": 25.171791,
+      "PositionLon": 121.447711,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "水源街一段151號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 8800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003552",
+      "HotelName": "天成大飯店",
+      "PositionLat": 25.0462839,
+      "PositionLon": 121.518155,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段43號"
+      },
+      "LowestPrice": 11500,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003560",
+      "HotelName": "泉都溫泉會館",
+      "PositionLat": 25.136269,
+      "PositionLon": 121.504616,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "光明路220號"
+      },
+      "LowestPrice": 1800,
+      "CeilingPrice": 7200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_003931",
+      "HotelName": "三重大旅社",
+      "PositionLat": 25.070647,
+      "PositionLon": 121.49513,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "正義北路291號2至4樓"
+      },
+      "LowestPrice": 600,
+      "CeilingPrice": 600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004045",
+      "HotelName": "嘉賓閣旅館",
+      "PositionLat": 25.135874,
+      "PositionLon": 121.506029,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "光明路230號B1-7樓"
+      },
+      "LowestPrice": 9800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004125",
+      "HotelName": "三和旅舍",
+      "PositionLat": 25.067675,
+      "PositionLon": 121.500698,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "三和路2段49號"
+      },
+      "LowestPrice": 2050,
+      "CeilingPrice": 2650
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004216",
+      "HotelName": "帛堯初見輕旅",
+      "PositionLat": 25.048268,
+      "PositionLon": 121.507808,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "忠孝西路2段38號"
+      },
+      "LowestPrice": 1600,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004282",
+      "HotelName": "路境行旅-府前館",
+      "PositionLat": 25.043153,
+      "PositionLon": 121.513062,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路一段86號"
+      },
+      "LowestPrice": 6880,
+      "CeilingPrice": 22880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004328",
+      "HotelName": "東旅",
+      "PositionLat": 25.05174,
+      "PositionLon": 121.560318,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "南京東路五段97號地下1樓、1樓夾層、1至10樓"
+      },
+      "LowestPrice": 5800,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004355",
+      "HotelName": "東驛商務旅館",
+      "PositionLat": 25.045714,
+      "PositionLon": 121.50549,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街76號8-9樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004372",
+      "HotelName": "鼎正國際商務旅館",
+      "PositionLat": 25.0416641,
+      "PositionLon": 121.5514003,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路四段197號12樓、12樓之1、12樓之4、12樓之5、12樓之9"
+      },
+      "LowestPrice": 1000,
+      "CeilingPrice": 13500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004420",
+      "HotelName": "樂頤飯店",
+      "PositionLat": 25.0820839,
+      "PositionLon": 121.4799862,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "蘆洲區",
+        "StreetAddress": "集賢路402號3樓至12樓"
+      },
+      "LowestPrice": 11000,
+      "CeilingPrice": 16100
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004499",
+      "HotelName": "寧夏2號旅店",
+      "PositionLat": 25.0568324,
+      "PositionLon": 121.5109597,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "寧夏路2號"
+      },
+      "LowestPrice": 14880,
+      "CeilingPrice": 16880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004524",
+      "HotelName": "臺北車站智選假日酒店",
+      "PositionLat": 25.0523044,
+      "PositionLon": 121.5142547,
+      "HotelStars": 3,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "重慶北路一段73號1樓至7樓"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004655",
+      "HotelName": "禾順行旅",
+      "PositionLat": 25.036891,
+      "PositionLon": 121.49725,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "廣州街247號及247號2至6樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004722",
+      "HotelName": "首府大旅社",
+      "PositionLat": 25.007451,
+      "PositionLon": 121.462419,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "館前東路96號7樓"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 9600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004733",
+      "HotelName": "長弘時尚旅館大巨蛋2館",
+      "PositionLat": 25.0415533,
+      "PositionLon": 121.5521673,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路四段209號8樓、8樓之1、8樓之2，211號8樓、8樓之1"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_004858",
+      "HotelName": "旅居文旅西門驛站昆明館",
+      "PositionLat": 25.042581,
+      "PositionLon": 121.504639,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街142號7-8樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005180",
+      "HotelName": "皇品時尚旅店",
+      "PositionLat": 25.009211,
+      "PositionLon": 121.462457,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "民族路34巷13號1至5樓"
+      },
+      "LowestPrice": 4700,
+      "CeilingPrice": 4700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005422",
+      "HotelName": "WESTGATE HOTEL 永安棧",
+      "PositionLat": 25.04294,
+      "PositionLon": 121.50808,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段148號1樓、148之1號1樓及150號1至10樓"
+      },
+      "LowestPrice": 4000,
+      "CeilingPrice": 50000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005424",
+      "HotelName": "趣淘漫旅-台北 Hotel Cham Cham Taipei",
+      "PositionLat": 25.011262,
+      "PositionLon": 121.463462,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "新北市板橋區中山路一段139號（1至2層），139號4樓至20樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005718",
+      "HotelName": "儷夏旅館-西寧館",
+      "PositionLat": 25.046239,
+      "PositionLon": 121.50468,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路30號3樓、9樓"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 21000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005738",
+      "HotelName": "馥俐旅店",
+      "PositionLat": 25.0090009,
+      "PositionLon": 121.457892,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "東門街10號2至5樓,12號1至5樓"
+      },
+      "LowestPrice": 9900,
+      "CeilingPrice": 9900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_005967",
+      "HotelName": "富驛時尚酒店",
+      "PositionLat": 25.0521378,
+      "PositionLon": 121.5406655,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "南京東路三段131號10樓至13樓"
+      },
+      "LowestPrice": 7590,
+      "CeilingPrice": 21620
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006018",
+      "HotelName": "家美瑞品 台北",
+      "PositionLat": 25.045977,
+      "PositionLon": 121.524295,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "北平東路12號2至9樓"
+      },
+      "LowestPrice": 7500,
+      "CeilingPrice": 24000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006204",
+      "HotelName": "黎明旅館",
+      "PositionLat": 24.981013,
+      "PositionLon": 121.541418,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "北新路3段51之1號4樓"
+      },
+      "LowestPrice": 1800,
+      "CeilingPrice": 3000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006249",
+      "HotelName": "新加州景觀旅館",
+      "PositionLat": 24.958785,
+      "PositionLon": 121.537422,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "北新路1段1號"
+      },
+      "LowestPrice": 3800,
+      "CeilingPrice": 7500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006338",
+      "HotelName": "景安精品旅館",
+      "PositionLat": 24.9961865,
+      "PositionLon": 121.5044463,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "中和區",
+        "StreetAddress": "明禮街32號2至9樓"
+      },
+      "LowestPrice": 3250,
+      "CeilingPrice": 6000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006351",
+      "HotelName": "馥悅溫泉酒店",
+      "PositionLat": 25.137666,
+      "PositionLon": 121.510421,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "中山路26號1-5樓"
+      },
+      "LowestPrice": 11000,
+      "CeilingPrice": 11000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006382",
+      "HotelName": "漫步1948",
+      "PositionLat": 25.0504125,
+      "PositionLon": 121.5151145,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "太原路40、42、44號(1至4樓)"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 25000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006400",
+      "HotelName": "京都商務旅館",
+      "PositionLat": 25.054645,
+      "PositionLon": 121.5249904,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路38號3-10樓  "
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 11000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006553",
+      "HotelName": "福容大飯店  台北一館",
+      "PositionLat": 25.0228567,
+      "PositionLon": 121.5372832,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "建國南路1段266號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 36080
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006585",
+      "HotelName": "賦樂旅居",
+      "PositionLat": 25.042966,
+      "PositionLon": 121.5459794,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "大安路一段56號、56號4樓"
+      },
+      "LowestPrice": 16170,
+      "CeilingPrice": 24255
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006597",
+      "HotelName": "北投老爺酒店",
+      "PositionLat": 25.137498,
+      "PositionLon": 121.5015353,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "中和街2號1樓及6至12樓"
+      },
+      "LowestPrice": 17600,
+      "CeilingPrice": 33000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006639",
+      "HotelName": "金普頓大安酒店",
+      "PositionLat": 25.0403678,
+      "PositionLon": 121.5453766,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "仁愛路四段27巷23號3樓至11樓、25號、25號3樓至11樓、27號2樓至14樓"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006679",
+      "HotelName": "城市商旅-航空館",
+      "PositionLat": 25.058352,
+      "PositionLon": 121.211814,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "中正東路442號1-10樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 21000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_006973",
+      "HotelName": "中壢大飯店",
+      "PositionLat": 24.953076,
+      "PositionLon": 121.221991,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "延平路645號4-11樓"
+      },
+      "LowestPrice": 2200,
+      "CeilingPrice": 4180
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007058",
+      "HotelName": "仙渡莊旅社",
+      "PositionLat": 25.123669,
+      "PositionLon": 121.465822,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "大度路三段304號"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 3000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007103",
+      "HotelName": "鳳凰閣旅社",
+      "PositionLat": 25.1361329,
+      "PositionLon": 121.5105003,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "溫泉路106之1號"
+      },
+      "LowestPrice": 6000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007122",
+      "HotelName": "意芙旅店",
+      "PositionLat": 25.05928,
+      "PositionLon": 121.511584,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "延平北路二段197號2樓"
+      },
+      "LowestPrice": 5980,
+      "CeilingPrice": 9900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007182",
+      "HotelName": "町記憶旅店",
+      "PositionLat": 25.041897,
+      "PositionLon": 121.504774,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街117號、117之1至之6號及119號、119之1至之6號1至7樓"
+      },
+      "LowestPrice": 16800,
+      "CeilingPrice": 28800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007253",
+      "HotelName": "台北W飯店",
+      "PositionLat": 25.041379,
+      "PositionLon": 121.565563,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "忠孝東路五段10號"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 365000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007294",
+      "HotelName": "綠藤輕旅",
+      "PositionLat": 25.01929,
+      "PositionLon": 121.213994,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "中山南路二段673號及領航北路三段295號"
+      },
+      "LowestPrice": 26800,
+      "CeilingPrice": 29800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007354",
+      "HotelName": "台北君悅酒店",
+      "PositionLat": 25.0356649,
+      "PositionLon": 121.562664,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "松壽路2號"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 120000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007471",
+      "HotelName": "旅居文旅-松山驛站",
+      "PositionLat": 25.0499142,
+      "PositionLon": 121.5741232,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "八德路四段626號3樓"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007516",
+      "HotelName": "維多麗亞酒店",
+      "PositionLat": 25.084325,
+      "PositionLon": 121.558713,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "敬業四路168號"
+      },
+      "LowestPrice": 11550,
+      "CeilingPrice": 23100
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007689",
+      "HotelName": "西門大飯店西寧館",
+      "PositionLat": 25.045593,
+      "PositionLon": 121.506635,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路36號10樓之3"
+      },
+      "LowestPrice": 11000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007691",
+      "HotelName": "美麗海精品汽車旅館",
+      "PositionLat": 25.060504,
+      "PositionLon": 121.4620831,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "新北大道二段231號"
+      },
+      "LowestPrice": 11180,
+      "CeilingPrice": 11180
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007750",
+      "HotelName": "台北星辰旅館",
+      "PositionLat": 25.0364555,
+      "PositionLon": 121.5275665,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "金山南路一段80號1至7樓"
+      },
+      "LowestPrice": 2580,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007890",
+      "HotelName": "台北松山意舍酒店",
+      "PositionLat": 25.0492807,
+      "PositionLon": 121.5805022,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "南港區",
+        "StreetAddress": "市民大道七段8號17樓至21樓"
+      },
+      "LowestPrice": 3465,
+      "CeilingPrice": 135135
+    },
+    {
+      "HotelID": "Hotel_A15010000H_007942",
+      "HotelName": "旅樂序精品旅館五館",
+      "PositionLat": 25.049577,
+      "PositionLon": 121.513627,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路一段20號B1樓至10樓"
+      },
+      "LowestPrice": 5200,
+      "CeilingPrice": 6400
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008125",
+      "HotelName": "正點旅店",
+      "PositionLat": 25.013618,
+      "PositionLon": 121.460759,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "文化路1段55號1至4樓及57號3樓、59號3樓"
+      },
+      "LowestPrice": 2980,
+      "CeilingPrice": 2980
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008128",
+      "HotelName": "富逸旅趣-林森館",
+      "PositionLat": 25.049771,
+      "PositionLon": 121.525798,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路85巷23號1樓至2樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008270",
+      "HotelName": "鴨川旅館",
+      "PositionLat": 25.056591,
+      "PositionLon": 121.524859,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路二段65巷2弄60號1-6樓 "
+      },
+      "LowestPrice": 1500,
+      "CeilingPrice": 4000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008659",
+      "HotelName": "浩室物業1館",
+      "PositionLat": 25.0358188,
+      "PositionLon": 121.5010872,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街316號、318號"
+      },
+      "LowestPrice": 9600,
+      "CeilingPrice": 9600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008696",
+      "HotelName": "矽谷溫泉會館",
+      "PositionLat": 24.982458,
+      "PositionLon": 121.5335311,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "中正路491之1號"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008704",
+      "HotelName": "拾光行旅",
+      "PositionLat": 25.062655,
+      "PositionLon": 121.511353,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "延平北路二段255號2樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 10000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008963",
+      "HotelName": "金都精緻溫泉飯店",
+      "PositionLat": 25.136193,
+      "PositionLon": 121.507685,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "光明路240號1-6樓"
+      },
+      "LowestPrice": 10500,
+      "CeilingPrice": 12800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_008994",
+      "HotelName": "兄弟大飯店",
+      "PositionLat": 25.0519983,
+      "PositionLon": 121.5444777,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "南京東路3段255號"
+      },
+      "LowestPrice": 5830,
+      "CeilingPrice": 7700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009026",
+      "HotelName": "華宮旅社",
+      "PositionLat": 25.0392979,
+      "PositionLon": 121.500768,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西昌街157號"
+      },
+      "LowestPrice": 900,
+      "CeilingPrice": 900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009031",
+      "HotelName": "丹迪旅店-大安森林公園店",
+      "PositionLat": 25.0337179,
+      "PositionLon": 121.534563,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "信義路三段33號3-10樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009266",
+      "HotelName": "府中棧精品商旅",
+      "PositionLat": 25.009502,
+      "PositionLon": 121.459856,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "府中路9號及9號2至7樓"
+      },
+      "LowestPrice": 5500,
+      "CeilingPrice": 9000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009333",
+      "HotelName": "品格子旅店西門館",
+      "PositionLat": 25.045912,
+      "PositionLon": 121.506704,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路30號8樓"
+      },
+      "LowestPrice": 750,
+      "CeilingPrice": 7600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009483",
+      "HotelName": "旅居文旅-板橋驛站2館",
+      "PositionLat": 25.003215,
+      "PositionLon": 121.454328,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "南雅南路2段28號"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009485",
+      "HotelName": "禾寓北車館",
+      "PositionLat": 25.046894,
+      "PositionLon": 121.513402,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路1段1號3樓"
+      },
+      "LowestPrice": 1600,
+      "CeilingPrice": 3600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009769",
+      "HotelName": "北城大飯店",
+      "PositionLat": 25.0547346,
+      "PositionLon": 121.5412306,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路279號B1-12樓"
+      },
+      "LowestPrice": 3200,
+      "CeilingPrice": 3600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_009998",
+      "HotelName": "皇家季節酒店2館",
+      "PositionLat": 25.0538379,
+      "PositionLon": 121.512893,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "南京西路330號1至11樓"
+      },
+      "LowestPrice": 3500,
+      "CeilingPrice": 9000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010079",
+      "HotelName": "東皇大飯店",
+      "PositionLat": 25.136079,
+      "PositionLon": 121.510753,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "溫泉路108號1-6樓"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010121",
+      "HotelName": "台北中山雅樂軒酒店",
+      "PositionLat": 25.063136,
+      "PositionLon": 121.524445,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "雙城街1號"
+      },
+      "LowestPrice": 14000,
+      "CeilingPrice": 17000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010192",
+      "HotelName": "淡水嶘民宿",
+      "PositionLat": 25.171224,
+      "PositionLon": 121.443942,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "長興街31號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 26800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010473",
+      "HotelName": "木文陶喜時尚旅館",
+      "PositionLat": 25.042186,
+      "PositionLon": 121.565413,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "基隆路一段155號2樓之2、2樓之3"
+      },
+      "LowestPrice": 6800,
+      "CeilingPrice": 12800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010480",
+      "HotelName": "享住旅店 Just Live Inn",
+      "PositionLat": 25.0450915,
+      "PositionLon": 121.5146553,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "漢口街一段4,6號2-4樓"
+      },
+      "LowestPrice": 3450,
+      "CeilingPrice": 4650
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010484",
+      "HotelName": "中央環球大飯店",
+      "PositionLat": 24.954573,
+      "PositionLon": 121.224587,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中平路55號2-7樓"
+      },
+      "LowestPrice": 4000,
+      "CeilingPrice": 6600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010571",
+      "HotelName": "台北凱撒大飯店",
+      "PositionLat": 25.0462151,
+      "PositionLon": 121.5165968,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段38號"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 21000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010671",
+      "HotelName": "宜家居商旅",
+      "PositionLat": 25.1381929,
+      "PositionLon": 121.5028006,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "中和街40號3樓及3樓之1"
+      },
+      "LowestPrice": 4900,
+      "CeilingPrice": 4900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010852",
+      "HotelName": "富逸旅趣-板橋府中館",
+      "PositionLat": 25.0085737,
+      "PositionLon": 121.4580935,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "東門街30之2號11樓之1及12樓之1"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_010954",
+      "HotelName": "君帥旅館",
+      "PositionLat": 25.042852,
+      "PositionLon": 121.505151,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "成都路68號8-10樓"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011124",
+      "HotelName": "神旺商務酒店",
+      "PositionLat": 25.0519036,
+      "PositionLon": 121.5271212,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "南京東路一段128號,2至13樓"
+      },
+      "LowestPrice": 13600,
+      "CeilingPrice": 50000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011167",
+      "HotelName": "觀海樓旅店",
+      "PositionLat": 25.159308,
+      "PositionLon": 121.455955,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "中正東路1段129號3至12樓(1樓門廳)"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 28000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011222",
+      "HotelName": "大地酒店",
+      "PositionLat": 25.135067,
+      "PositionLon": 121.506995,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "奇岩路1號"
+      },
+      "LowestPrice": 13800,
+      "CeilingPrice": 60000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011242",
+      "HotelName": "旅居文旅新泰館",
+      "PositionLat": 25.053278,
+      "PositionLon": 121.433046,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "泰山區",
+        "StreetAddress": "中港西路456號"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011300",
+      "HotelName": "謙商旅(谷墨商旅-師大館)",
+      "PositionLat": 25.026639,
+      "PositionLon": 121.530695,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "和平東路一段145號2至4樓、147 號5至6樓、6樓之1、6樓之2"
+      },
+      "LowestPrice": 15880,
+      "CeilingPrice": 20880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011317",
+      "HotelName": "薇閣旅館",
+      "PositionLat": 25.0605639,
+      "PositionLon": 121.5265544,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "錦州街27、29號,31號2-4樓"
+      },
+      "LowestPrice": 4200,
+      "CeilingPrice": 10800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011373",
+      "HotelName": "北投天玥泉溫泉會館",
+      "PositionLat": 25.137437,
+      "PositionLon": 121.505461,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "中山路3號3樓"
+      },
+      "LowestPrice": 12800,
+      "CeilingPrice": 12800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011384",
+      "HotelName": "嶼光那那私旅",
+      "PositionLat": 25.059099,
+      "PositionLon": 121.511621,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "延平北路二段197號3, 4,11樓"
+      },
+      "LowestPrice": 18880,
+      "CeilingPrice": 20880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011560",
+      "HotelName": "密都大飯店",
+      "PositionLat": 25.054569,
+      "PositionLon": 121.538343,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路246號2-9樓"
+      },
+      "LowestPrice": 10800,
+      "CeilingPrice": 16800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011637",
+      "HotelName": "儷客旅店-站前店",
+      "PositionLat": 25.046821,
+      "PositionLon": 121.514056,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路一段72號5樓及5樓之1"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 21000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011647",
+      "HotelName": "新驛旅店",
+      "PositionLat": 25.046231,
+      "PositionLon": 121.514309,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "懷寧街7號"
+      },
+      "LowestPrice": 6000,
+      "CeilingPrice": 11000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011664",
+      "HotelName": "貴都城市商旅",
+      "PositionLat": 24.961639,
+      "PositionLon": 121.226577,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "元化路245-1、245-2號4、5樓"
+      },
+      "LowestPrice": 3800,
+      "CeilingPrice": 5500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011706",
+      "HotelName": "富逸旅趣-大巨蛋館",
+      "PositionLat": 25.041762,
+      "PositionLon": 121.553756,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路四段235號2樓、2樓之1、3樓、3樓之1、4樓之1、5樓之1、6樓之1、7樓、7樓之1及9樓"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 25000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011763",
+      "HotelName": "英倫假期旅店",
+      "PositionLat": 24.955218,
+      "PositionLon": 121.227102,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中山路41號3樓"
+      },
+      "LowestPrice": 10880,
+      "CeilingPrice": 10880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011832",
+      "HotelName": "福爾摩莎壹零壹旅館",
+      "PositionLat": 25.028666,
+      "PositionLon": 121.557168,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "基隆路二段115號5樓、5樓之1及9樓"
+      },
+      "LowestPrice": 1650,
+      "CeilingPrice": 4400
+    },
+    {
+      "HotelID": "Hotel_A15010000H_011982",
+      "HotelName": "新驛旅店復興北路店",
+      "PositionLat": 25.0595347,
+      "PositionLon": 121.5439625,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "復興北路338號"
+      },
+      "LowestPrice": 9600,
+      "CeilingPrice": 15500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012042",
+      "HotelName": "探索汽車旅館南港館",
+      "PositionLat": 25.055584,
+      "PositionLon": 121.59715,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "南港區",
+        "StreetAddress": "重陽路66號1至4樓"
+      },
+      "LowestPrice": 3980,
+      "CeilingPrice": 19980
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012098",
+      "HotelName": "六福居",
+      "PositionLat": 25.051902,
+      "PositionLon": 121.524069,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路138巷35、37號,南京東路一段38號2 樓至14樓、2樓之1至14樓之1、3樓之2至14樓之2、3樓 之3至14樓之3"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 17000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012199",
+      "HotelName": "台北萬豪酒店",
+      "PositionLat": 25.0805104,
+      "PositionLon": 121.5571268,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "樂群二路199號 "
+      },
+      "LowestPrice": 17000,
+      "CeilingPrice": 200000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012386",
+      "HotelName": "花漾旅館",
+      "PositionLat": 24.953559,
+      "PositionLon": 121.224053,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中和路178,178-1,180,180-1號4-7樓"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 6000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012453",
+      "HotelName": "文舺行旅",
+      "PositionLat": 25.037562,
+      "PositionLon": 121.499666,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西園路一段139號1-4樓"
+      },
+      "LowestPrice": 2600,
+      "CeilingPrice": 4800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012514",
+      "HotelName": "帝苑旅店",
+      "PositionLat": 25.020321,
+      "PositionLon": 121.4667039,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "文化路1段218號1樓及3至7樓"
+      },
+      "LowestPrice": 8880,
+      "CeilingPrice": 8888
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012661",
+      "HotelName": "俞美飯店",
+      "PositionLat": 25.045097,
+      "PositionLon": 121.505163,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "武昌街二段106號2-8樓"
+      },
+      "LowestPrice": 1500,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012826",
+      "HotelName": "台北美福大飯店",
+      "PositionLat": 25.0801999,
+      "PositionLon": 121.5536731,
+      "HotelStars": 6,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "樂群二路55號"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 280000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_012976",
+      "HotelName": "丹迪旅店-天津店",
+      "PositionLat": 25.05158,
+      "PositionLon": 121.523277,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路一段135巷13號"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013273",
+      "HotelName": "長弘時尚旅館忠孝館",
+      "PositionLat": 25.041727,
+      "PositionLon": 121.551404,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路4段197號14樓之2、14樓之6、14樓之8"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013399",
+      "HotelName": "拉開門輕旅",
+      "PositionLat": 25.045306025,
+      "PositionLon": 121.525235,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "紹興北街8號4樓之1至4樓之3"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013434",
+      "HotelName": "華夏國際飯店",
+      "PositionLat": 25.060793,
+      "PositionLon": 121.364405,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "龜山區",
+        "StreetAddress": "文化二路28號"
+      },
+      "LowestPrice": 4200,
+      "CeilingPrice": 5600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013569",
+      "HotelName": "台北遠東香格里拉",
+      "PositionLat": 25.026612,
+      "PositionLon": 121.549282,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "敦化南路2段201號"
+      },
+      "LowestPrice": 23678,
+      "CeilingPrice": 300878
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013610",
+      "HotelName": "亞昕福朋喜來登酒店",
+      "PositionLat": 25.06618,
+      "PositionLon": 121.36098,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "林口區",
+        "StreetAddress": "文化三路一段1號，1號2樓，1號3樓"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 200000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013709",
+      "HotelName": "麗雅精品旅館",
+      "PositionLat": 25.0548968,
+      "PositionLon": 121.526131,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路62號8樓之1"
+      },
+      "LowestPrice": 1980,
+      "CeilingPrice": 1980
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013825",
+      "HotelName": "卡樂町旅店",
+      "PositionLat": 25.042993,
+      "PositionLon": 121.505399,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "內江街55巷22號"
+      },
+      "LowestPrice": 2288,
+      "CeilingPrice": 2288
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013838",
+      "HotelName": "美代溫泉飯店",
+      "PositionLat": 25.137077,
+      "PositionLon": 121.510736,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "光明路281號1-3樓"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 5600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013860",
+      "HotelName": "欣欣時尚旅店",
+      "PositionLat": 25.046963,
+      "PositionLon": 121.505833,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街34號4樓"
+      },
+      "LowestPrice": 7000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013871",
+      "HotelName": "三德大飯店",
+      "PositionLat": 25.0648361,
+      "PositionLon": 121.5185308,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "承德路3段49號"
+      },
+      "LowestPrice": 6000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_013988",
+      "HotelName": "皇家季節酒店1館",
+      "PositionLat": 25.0538615,
+      "PositionLon": 121.5127724,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "南京西路326號1樓、2樓、3樓、4樓、5樓，及8樓、9樓"
+      },
+      "LowestPrice": 3300,
+      "CeilingPrice": 4300
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014011",
+      "HotelName": "洛碁大飯店花華分館",
+      "PositionLat": 25.045219,
+      "PositionLon": 121.514068,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "漢口街1段36號1至8樓"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014078",
+      "HotelName": "圓山大飯店",
+      "PositionLat": 25.078575,
+      "PositionLon": 121.5261429,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路4段1巷1號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 480000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014084",
+      "HotelName": "雅莊旅館",
+      "PositionLat": 25.067977,
+      "PositionLon": 121.539437,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "民族東路438號B1至4樓,440號B1至5樓"
+      },
+      "LowestPrice": 2880,
+      "CeilingPrice": 3080
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014110",
+      "HotelName": "豪景大酒店",
+      "PositionLat": 25.044624,
+      "PositionLon": 121.501439,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "環河南路1段77號"
+      },
+      "LowestPrice": 4000,
+      "CeilingPrice": 10000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014225",
+      "HotelName": "火車頭民宿",
+      "PositionLat": 25.169642,
+      "PositionLon": 121.443731,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "中正路34之4號"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 10000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014288",
+      "HotelName": "愛摩兒時尚旅舘",
+      "PositionLat": 25.0078468,
+      "PositionLon": 121.5034069,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "永和區",
+        "StreetAddress": "仁愛路316,318號"
+      },
+      "LowestPrice": 6800,
+      "CeilingPrice": 6800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014359",
+      "HotelName": "台灣柒天精品旅店",
+      "PositionLat": 25.032096,
+      "PositionLon": 121.491184,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "環河南路二段282號1至4樓"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 3000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014433",
+      "HotelName": "板橋旅居文旅",
+      "PositionLat": 25.009271827482177,
+      "PositionLon": 121.46286438132793,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "公園街16號1至6樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014544",
+      "HotelName": "安庭澔思青年旅舍",
+      "PositionLat": 25.0521307,
+      "PositionLon": 121.5149783,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "承德路一段66號12樓"
+      },
+      "LowestPrice": 2500,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014557",
+      "HotelName": "華冠商旅HOTEL",
+      "PositionLat": 25.039812,
+      "PositionLon": 121.500798,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西昌街137\t、139號1-6樓"
+      },
+      "LowestPrice": 1100,
+      "CeilingPrice": 1500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014617",
+      "HotelName": "謙匯普樂室行旅",
+      "PositionLat": 25.033231,
+      "PositionLon": 121.573276,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "信義路5段109號地下1樓"
+      },
+      "LowestPrice": 580,
+      "CeilingPrice": 9900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014676",
+      "HotelName": "家賓大旅社",
+      "PositionLat": 24.991715,
+      "PositionLon": 121.541206,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "文山區",
+        "StreetAddress": "景文街42號6-7樓"
+      },
+      "LowestPrice": 4000,
+      "CeilingPrice": 6000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014686",
+      "HotelName": "汐止福泰大飯店",
+      "PositionLat": 25.0544102,
+      "PositionLon": 121.6286358,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "汐止區",
+        "StreetAddress": "大同路1段128號"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 28000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014776",
+      "HotelName": "謙商旅-東門館",
+      "PositionLat": 25.034237,
+      "PositionLon": 121.528927,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "信義路二段163號"
+      },
+      "LowestPrice": 7880,
+      "CeilingPrice": 20880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_014997",
+      "HotelName": "富粧商務旅店",
+      "PositionLat": 25.045971,
+      "PositionLon": 121.50312,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "康定路6,8號2-5樓"
+      },
+      "LowestPrice": 1680,
+      "CeilingPrice": 8880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015006",
+      "HotelName": "皓林行旅 長安122",
+      "PositionLat": 25.05061,
+      "PositionLon": 121.518124,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "長安西路 122 號、124號 1至4樓"
+      },
+      "LowestPrice": 1000,
+      "CeilingPrice": 5000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015244",
+      "HotelName": "喵喵有約青年旅社",
+      "PositionLat": 25.044354,
+      "PositionLon": 121.507316,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "漢中街42號8樓"
+      },
+      "LowestPrice": 400,
+      "CeilingPrice": 45000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015463",
+      "HotelName": "盟園旅社",
+      "PositionLat": 25.0068729,
+      "PositionLon": 121.457297,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "南雅南路1段1巷15號1至4樓"
+      },
+      "LowestPrice": 700,
+      "CeilingPrice": 700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015633",
+      "HotelName": "寶山旅社",
+      "PositionLat": 24.954153,
+      "PositionLon": 121.22492,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中正路16號2-4樓"
+      },
+      "LowestPrice": 1600,
+      "CeilingPrice": 2480
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015707",
+      "HotelName": "黑熊好眠站",
+      "PositionLat": 25.005939,
+      "PositionLon": 121.4565846,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "重新路2段1號8至9樓"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 60000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015771",
+      "HotelName": "苓旅松山小巨蛋館",
+      "PositionLat": 25.04804,
+      "PositionLon": 121.549372,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "八德路三段2號14樓 "
+      },
+      "LowestPrice": 4500,
+      "CeilingPrice": 28800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015795",
+      "HotelName": "福容大飯店 桃園機場捷運 A8",
+      "PositionLat": 25.0604152,
+      "PositionLon": 121.3699427,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "龜山區",
+        "StreetAddress": "復興一路2號3至9樓"
+      },
+      "LowestPrice": 7800,
+      "CeilingPrice": 32800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_015948",
+      "HotelName": "瑾旅南西",
+      "PositionLat": 25.0541228,
+      "PositionLon": 121.5136051,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "南京西路151號6至12樓"
+      },
+      "LowestPrice": 11880,
+      "CeilingPrice": 16880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016279",
+      "HotelName": "凱達大飯店",
+      "PositionLat": 25.033235,
+      "PositionLon": 121.49973,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "艋舺大道167號"
+      },
+      "LowestPrice": 9800,
+      "CeilingPrice": 68800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016407",
+      "HotelName": "挪威森林精品SPA汽車旅館",
+      "PositionLat": 24.9808276,
+      "PositionLon": 121.5507933,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "新店區",
+        "StreetAddress": "寶橋路235巷15號"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016465",
+      "HotelName": "晴旅府中館",
+      "PositionLat": 25.006623,
+      "PositionLon": 121.455904,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "南雅南路一段8號5樓、5樓之1至5樓之24"
+      },
+      "LowestPrice": 15000,
+      "CeilingPrice": 35000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016487",
+      "HotelName": "福容徠旅 林口",
+      "PositionLat": 25.060993,
+      "PositionLon": 121.362595,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "龜山區",
+        "StreetAddress": "文二一街68號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 22000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016583",
+      "HotelName": "雪瓈花園汽車旅館",
+      "PositionLat": 24.971006,
+      "PositionLon": 121.436956,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "土城區",
+        "StreetAddress": "中華路2段194號"
+      },
+      "LowestPrice": 1580,
+      "CeilingPrice": 2880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016903",
+      "HotelName": "福泰桔子商務旅館西門店",
+      "PositionLat": 25.041805,
+      "PositionLon": 121.507783,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段166之2號1至11樓"
+      },
+      "LowestPrice": 6800,
+      "CeilingPrice": 7800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_016948",
+      "HotelName": "茹曦酒店",
+      "PositionLat": 25.0524298,
+      "PositionLon": 121.5462184,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "敦化北路100號、100號地下之1"
+      },
+      "LowestPrice": 20790,
+      "CeilingPrice": 41580
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017016",
+      "HotelName": "沿寓行旅",
+      "PositionLat": 25.007172,
+      "PositionLon": 121.459878,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "館前東路13號4樓之2"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 22000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017020",
+      "HotelName": "壹零壹艾美琪旅店",
+      "PositionLat": 25.043132,
+      "PositionLon": 121.543195,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "復興南路一段126巷1號4樓"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 28800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017029",
+      "HotelName": "新驛旅店台北車站三館",
+      "PositionLat": 25.0509779,
+      "PositionLon": 121.5167061,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "長安西路77,79號1-7樓"
+      },
+      "LowestPrice": 9500,
+      "CeilingPrice": 12500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017194",
+      "HotelName": "秐朗沐居長春",
+      "PositionLat": 25.054069,
+      "PositionLon": 121.545691,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "慶城街29號1樓、7至12樓及地下1、2樓"
+      },
+      "LowestPrice": 3600,
+      "CeilingPrice": 5200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017238",
+      "HotelName": "皇后旅社",
+      "PositionLat": 25.0513511,
+      "PositionLon": 121.5146621,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "長安西路226號1至4樓"
+      },
+      "LowestPrice": 6800,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017274",
+      "HotelName": "在家行旅西門館",
+      "PositionLat": 25.044787,
+      "PositionLon": 121.504546,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街96巷8號1樓"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017335",
+      "HotelName": "豪爵旅館",
+      "PositionLat": 25.0651925,
+      "PositionLon": 121.5315419,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "德惠街170巷24號1樓、吉林路379巷20號1至7樓及20之1號2樓至7樓"
+      },
+      "LowestPrice": 1780,
+      "CeilingPrice": 6200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017476",
+      "HotelName": "品川商旅",
+      "PositionLat": 25.006011,
+      "PositionLon": 121.460825,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "重慶路37之1號、37之1號2至6樓"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 28000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017828",
+      "HotelName": "復新文旅",
+      "PositionLat": 25.0587849,
+      "PositionLon": 121.543942,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "復興北路282號3,6樓 "
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 6500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_017870",
+      "HotelName": "迪樂商旅",
+      "PositionLat": 25.0528652,
+      "PositionLon": 121.5119681,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "延平北路一段121號1至6樓"
+      },
+      "LowestPrice": 1580,
+      "CeilingPrice": 15800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018076",
+      "HotelName": "信星旅館",
+      "PositionLat": 25.050808,
+      "PositionLon": 121.515226,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "華陰街48號至48之11號4樓、50號至50之11號5樓"
+      },
+      "LowestPrice": 3200,
+      "CeilingPrice": 4200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018125",
+      "HotelName": "香樹花園酒店",
+      "PositionLat": 25.0839574,
+      "PositionLon": 121.5603251,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "堤頂大道二段566號1樓、2樓、4 樓（四層至六層）、7樓（七層至十一層）"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 67500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018386",
+      "HotelName": "米窩飯店-大安",
+      "PositionLat": 25.04176,
+      "PositionLon": 121.54827,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路四段107號7樓、7樓之2"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018409",
+      "HotelName": "詩漫精品旅館",
+      "PositionLat": 25.045804,
+      "PositionLon": 121.514708,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "館前路8號6樓"
+      },
+      "LowestPrice": 9770,
+      "CeilingPrice": 11530
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018413",
+      "HotelName": "凱旋酒店",
+      "PositionLat": 25.0773903,
+      "PositionLon": 121.5777963,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "內湖區",
+        "StreetAddress": "江南街55號3樓至9樓"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 38800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018448",
+      "HotelName": "承攜行旅中壢中正館",
+      "PositionLat": 24.954248,
+      "PositionLon": 121.224043,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中正路51號9-12樓"
+      },
+      "LowestPrice": 9600,
+      "CeilingPrice": 20800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018530",
+      "HotelName": "美麗殿商旅",
+      "PositionLat": 25.0092954,
+      "PositionLon": 121.4580337,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "府中路67號2樓、5至10樓"
+      },
+      "LowestPrice": 4300,
+      "CeilingPrice": 8200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018612",
+      "HotelName": "長弘時尚旅館大巨蛋1館",
+      "PositionLat": 25.041666,
+      "PositionLon": 121.552291,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "忠孝東路四段209號7樓、7樓之1、7樓之2、211號7樓"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018746",
+      "HotelName": "台北花園大酒店",
+      "PositionLat": 25.036599,
+      "PositionLon": 121.506914,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "中華路2段1號"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 32800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_018976",
+      "HotelName": "薆悅酒店",
+      "PositionLat": 25.045054,
+      "PositionLon": 121.506708,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路107號1至10樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019013",
+      "HotelName": "曲水會館",
+      "PositionLat": 25.136413,
+      "PositionLon": 121.512176,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "溫泉路105號1-3樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 19800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019065",
+      "HotelName": "美侖商旅",
+      "PositionLat": 25.0531472,
+      "PositionLon": 121.530352,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "吉林路49號1至8樓"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019227",
+      "HotelName": "美麗信花園酒店",
+      "PositionLat": 25.0450411,
+      "PositionLon": 121.5372269,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "市民大道三段83號"
+      },
+      "LowestPrice": 11000,
+      "CeilingPrice": 99000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019277",
+      "HotelName": "享溫泉",
+      "PositionLat": 25.136455,
+      "PositionLon": 121.509985,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "溫泉路99號1-4樓"
+      },
+      "LowestPrice": 2500,
+      "CeilingPrice": 32800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019310",
+      "HotelName": "院院樂居",
+      "PositionLat": 25.0634499,
+      "PositionLon": 121.5108546,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "延平北路三段4號6樓、6樓之1"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019399",
+      "HotelName": "台北文華東方酒店",
+      "PositionLat": 25.055434,
+      "PositionLon": 121.548378,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "敦化北路158號B3-14樓"
+      },
+      "LowestPrice": 39850,
+      "CeilingPrice": 693000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019501",
+      "HotelName": "以琳商務旅館",
+      "PositionLat": 24.959942,
+      "PositionLon": 121.220934,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "興國里中美路二段117號6樓"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 16000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019551",
+      "HotelName": "函舍旅館",
+      "PositionLat": 25.042848,
+      "PositionLon": 121.505147,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "成都路68號4-5樓"
+      },
+      "LowestPrice": 9880,
+      "CeilingPrice": 15880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019683",
+      "HotelName": "名爵商務汽車旅館",
+      "PositionLat": 25.064789,
+      "PositionLon": 121.49728,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "正義北路73號1,4至7樓"
+      },
+      "LowestPrice": 3620,
+      "CeilingPrice": 4200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019713",
+      "HotelName": "台北宿之酒店．臻品之選",
+      "PositionLat": 25.045535,
+      "PositionLon": 121.502629,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "環河南路一段51號2至14樓"
+      },
+      "LowestPrice": 30000,
+      "CeilingPrice": 80000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019838",
+      "HotelName": "葛瑞絲商旅",
+      "PositionLat": 25.003007,
+      "PositionLon": 121.499102,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "中和區",
+        "StreetAddress": "中山路二段228號5樓"
+      },
+      "LowestPrice": 4800,
+      "CeilingPrice": 7600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019936",
+      "HotelName": "柔美商旅",
+      "PositionLat": 25.05436,
+      "PositionLon": 121.535898,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "建國北路二段64巷9號"
+      },
+      "LowestPrice": 22000,
+      "CeilingPrice": 28000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_019978",
+      "HotelName": "台北薇米商旅",
+      "PositionLat": 25.061757,
+      "PositionLon": 121.497167,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "重新路2段78號16至17樓"
+      },
+      "LowestPrice": 4800,
+      "CeilingPrice": 17800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020016",
+      "HotelName": "中壢米堤大飯店",
+      "PositionLat": 24.958467,
+      "PositionLon": 121.220335,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中央西路一段120號22-27樓"
+      },
+      "LowestPrice": 4800,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020025",
+      "HotelName": "漢普頓酒店",
+      "PositionLat": 25.053218,
+      "PositionLon": 121.537239,
+      "HotelStars": 4,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "建國北路2段7號"
+      },
+      "LowestPrice": 10780,
+      "CeilingPrice": 60000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020034",
+      "HotelName": "SINGLEINN 單人房-台北館",
+      "PositionLat": 25.010383,
+      "PositionLon": 121.458935,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "府後街6號附3樓、附4樓、附5樓、附6樓，明德街1巷12號3樓、4樓、5樓、6樓"
+      },
+      "LowestPrice": 2800,
+      "CeilingPrice": 12900
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020043",
+      "HotelName": "新麗旅店",
+      "PositionLat": 25.04701,
+      "PositionLon": 121.505538,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "開封街二段53號3-5,7-9樓"
+      },
+      "LowestPrice": 5200,
+      "CeilingPrice": 6800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020053",
+      "HotelName": "喜瑞飯店",
+      "PositionLat": 25.047901,
+      "PositionLon": 121.529374,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長安東路一段64號B1-10樓"
+      },
+      "LowestPrice": 10500,
+      "CeilingPrice": 19000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020058",
+      "HotelName": "宏洲旅社",
+      "PositionLat": 25.045974,
+      "PositionLon": 121.507866,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "漢中街4號1-7樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020132",
+      "HotelName": "尚印旅店-二舘",
+      "PositionLat": 25.057543,
+      "PositionLon": 121.523005,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路二段71號10樓"
+      },
+      "LowestPrice": 3380,
+      "CeilingPrice": 15000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020312",
+      "HotelName": "甄美精品商旅",
+      "PositionLat": 25.054575,
+      "PositionLon": 121.526309,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路259巷9號2樓"
+      },
+      "LowestPrice": 18000,
+      "CeilingPrice": 22000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020348",
+      "HotelName": "新驛旅店台北車站二館",
+      "PositionLat": 25.051103,
+      "PositionLon": 121.516561,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "長安西路83號"
+      },
+      "LowestPrice": 9500,
+      "CeilingPrice": 12500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020626",
+      "HotelName": "沃客新舍旅社",
+      "PositionLat": 25.051517,
+      "PositionLon": 121.488093,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "成功路97號6至7樓"
+      },
+      "LowestPrice": 16800,
+      "CeilingPrice": 31800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020664",
+      "HotelName": "華弘怡亨酒店",
+      "PositionLat": 25.033727,
+      "PositionLon": 121.54837,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "敦化南路一段370號"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 38000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020706",
+      "HotelName": "苓旅旅館中山館",
+      "PositionLat": 25.058611,
+      "PositionLon": 121.53758,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "建國北路2段91號1樓,93號1至7樓,2樓-1至7樓-1,95巷2號1樓,4號1樓"
+      },
+      "LowestPrice": 3280,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020802",
+      "HotelName": "馥麗精品旅館",
+      "PositionLat": 25.0822514,
+      "PositionLon": 121.568043,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "內湖區",
+        "StreetAddress": "內湖路1段325、327、327之1號1至5樓"
+      },
+      "LowestPrice": 2180,
+      "CeilingPrice": 5700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_020950",
+      "HotelName": "雀客旅館",
+      "PositionLat": 25.059604,
+      "PositionLon": 121.533422,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "松江路253號1至13樓"
+      },
+      "LowestPrice": 9800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021200",
+      "HotelName": "雀客旅館台北南京",
+      "PositionLat": 25.0517407,
+      "PositionLon": 121.5375999,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "南京東路三段16號"
+      },
+      "LowestPrice": 17600,
+      "CeilingPrice": 35200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021306",
+      "HotelName": "台北新板希爾頓酒店",
+      "PositionLat": 25.0120576,
+      "PositionLon": 121.460801,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "民權路88號、88號(2至31樓)、90號"
+      },
+      "LowestPrice": 4500,
+      "CeilingPrice": 29500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021310",
+      "HotelName": "二十輪旅店",
+      "PositionLat": 25.0447195,
+      "PositionLon": 121.5062571,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "武昌街二段72號5樓、6樓、10樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021510",
+      "HotelName": "米窩飯店-中山",
+      "PositionLat": 25.0636787,
+      "PositionLon": 121.5242396,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路二段183巷30、32號3樓 "
+      },
+      "LowestPrice": 5600,
+      "CeilingPrice": 7200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021680",
+      "HotelName": "背包棧旅店-台北長春店",
+      "PositionLat": 25.054125,
+      "PositionLon": 121.538847,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "長春路258巷6號2樓"
+      },
+      "LowestPrice": 2500,
+      "CeilingPrice": 24000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021718",
+      "HotelName": "桃園國際機場凱悅酒店",
+      "PositionLat": 25.0688829,
+      "PositionLon": 121.2213232,
+      "HotelStars": 5,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "桃園市大園區航站南路1-1號"
+      },
+      "LowestPrice": 8651,
+      "CeilingPrice": 14542
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021780",
+      "HotelName": "洛碁大飯店新仕界",
+      "PositionLat": 25.041049,
+      "PositionLon": 121.504575,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街139號2樓、141號3至9樓、7樓之1至13、8樓之1至8"
+      },
+      "LowestPrice": 3000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021843",
+      "HotelName": "國聯大飯店",
+      "PositionLat": 25.0422007,
+      "PositionLon": 121.5575138,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "光復南路200號"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 120000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021857",
+      "HotelName": "儷夏商旅",
+      "PositionLat": 25.0446881,
+      "PositionLon": 121.5084757,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段90號4樓、5樓、6樓、8樓"
+      },
+      "LowestPrice": 15000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_021955",
+      "HotelName": "玉山居",
+      "PositionLat": 24.9486759,
+      "PositionLon": 121.3520333,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "鶯歌區",
+        "StreetAddress": "南靖里12鄰文化路226巷4號"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 3000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_022120",
+      "HotelName": "雀客快捷",
+      "PositionLat": 25.1692679,
+      "PositionLon": 121.4446987,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "長庚里中山路8號7樓"
+      },
+      "LowestPrice": 22000,
+      "CeilingPrice": 29480
+    },
+    {
+      "HotelID": "Hotel_A15010000H_022621",
+      "HotelName": "雀客旅館新北蘆洲",
+      "PositionLat": 25.081309,
+      "PositionLon": 121.480537,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "蘆洲區",
+        "StreetAddress": "集賢路409號2樓(1層)、3樓至9樓"
+      },
+      "LowestPrice": 7600,
+      "CeilingPrice": 20800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_022706",
+      "HotelName": "小角落旅店",
+      "PositionLat": 25.06876,
+      "PositionLon": 121.51947,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "民族西路33號(1至4樓)"
+      },
+      "LowestPrice": 600,
+      "CeilingPrice": 48000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_022785",
+      "HotelName": "甲山林湯旅JSL hotel",
+      "PositionLat": 25.0560104,
+      "PositionLon": 121.5403549,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "興安街56、58、60號1樓，62號2至9樓"
+      },
+      "LowestPrice": 15000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_023336",
+      "HotelName": "藍水輕旅",
+      "PositionLat": 25.008956,
+      "PositionLon": 121.210105,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "高鐵南路一段126號"
+      },
+      "LowestPrice": 10800,
+      "CeilingPrice": 18800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_023448",
+      "HotelName": "伊甸園旅店",
+      "PositionLat": 24.9598567,
+      "PositionLon": 121.221039,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "中美路二段117號5樓、5樓之1、8樓及8樓之1至之4"
+      },
+      "LowestPrice": 16000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026146",
+      "HotelName": "和逸飯店桃園青埔館",
+      "PositionLat": 25.0177961,
+      "PositionLon": 121.213689,
+      "HotelStars": 4,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "桃園市中壢區春德路101號"
+      },
+      "LowestPrice": 15000,
+      "CeilingPrice": 130000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026181",
+      "HotelName": "MVSA 慕舍酒店",
+      "PositionLat": 25.050739,
+      "PositionLon": 121.5371413,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "建國北路一段61號"
+      },
+      "LowestPrice": 18800,
+      "CeilingPrice": 36800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026194",
+      "HotelName": "町  草休行館",
+      "PositionLat": 25.0796514,
+      "PositionLon": 121.234217,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "航站南路9號5樓南側"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 50000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026221",
+      "HotelName": "瀚寓酒店",
+      "PositionLat": 25.0397795,
+      "PositionLon": 121.563133,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "基隆路一段206號1至12樓"
+      },
+      "LowestPrice": 25000,
+      "CeilingPrice": 88000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026269",
+      "HotelName": "台北大直英迪格酒店",
+      "PositionLat": 25.0831889,
+      "PositionLon": 121.559828,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "植福路200號（地上1樓部分）、200號5樓（地上5層至10層）"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 309600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026884",
+      "HotelName": "捷絲旅台北中山館",
+      "PositionLat": 25.051205,
+      "PositionLon": 121.524896,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "中山北路1段135巷39號(地上1層至7層)"
+      },
+      "LowestPrice": 4400,
+      "CeilingPrice": 8800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_026991",
+      "HotelName": "悅徠舘",
+      "PositionLat": 25.0538863,
+      "PositionLon": 121.3658467,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "龜山區",
+        "StreetAddress": "興華三街18號2樓之1"
+      },
+      "LowestPrice": 10800,
+      "CeilingPrice": 12800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_027376",
+      "HotelName": "所在行旅",
+      "PositionLat": 25.0459596,
+      "PositionLon": 121.5158568,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路一段50號 24樓之6"
+      },
+      "LowestPrice": 800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_027661",
+      "HotelName": "JR東日本大飯店台北",
+      "PositionLat": 25.0523025,
+      "PositionLon": 121.5413286,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "臺北市中山區南京東路三段133號"
+      },
+      "LowestPrice": 17325,
+      "CeilingPrice": 103950
+    },
+    {
+      "HotelID": "Hotel_A15010000H_028172",
+      "HotelName": "路徒PLUS行旅-主題館",
+      "PositionLat": 25.04714290146107,
+      "PositionLon": 121.51456223156119,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路一段80號5至12樓"
+      },
+      "LowestPrice": 18880,
+      "CeilingPrice": 43880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_028176",
+      "HotelName": "台北時代寓所",
+      "PositionLat": 25.043961,
+      "PositionLon": 121.523318,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "林森南路7號1至14樓、7-1號1樓"
+      },
+      "LowestPrice": 22000,
+      "CeilingPrice": 35000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_028320",
+      "HotelName": "大湖璞旅",
+      "PositionLat": 25.0733914,
+      "PositionLon": 121.6064016,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "內湖區",
+        "StreetAddress": "成功路五段462號1樓、3樓至14樓、3樓之1至3樓之6、4樓之1至4樓之13、5樓之2至5樓之13、6樓之2至6樓之13、7樓之2至7樓之12、8樓之1至8樓之13、 9樓之1至9樓之13、10樓之"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 30000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_028514",
+      "HotelName": "青埔商務旅館",
+      "PositionLat": 25.0046181,
+      "PositionLon": 121.2109347,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "公園路一段82號"
+      },
+      "LowestPrice": 9800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_029780",
+      "HotelName": "趣西門武昌一館",
+      "PositionLat": 25.0446879,
+      "PositionLon": 121.50614,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "武昌街二段72號11樓"
+      },
+      "LowestPrice": 25000,
+      "CeilingPrice": 25000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_029974",
+      "HotelName": "路徒PLUS行旅-站前館",
+      "PositionLat": 25.0469491,
+      "PositionLon": 121.5137679,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路一段80號4樓、24至35樓"
+      },
+      "LowestPrice": 33888,
+      "CeilingPrice": 48888
+    },
+    {
+      "HotelID": "Hotel_A15010000H_030176",
+      "HotelName": "格拉斯麗台北飯店",
+      "PositionLat": 25.0431012,
+      "PositionLon": 121.5306957,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝東路2段89號3至19樓"
+      },
+      "LowestPrice": 13000,
+      "CeilingPrice": 13000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_031110",
+      "HotelName": "雀客藏居新北三重水漾",
+      "PositionLat": 25.0556913,
+      "PositionLon": 121.4832322,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "三重區",
+        "StreetAddress": "新北市三重區捷運路77號2至17樓"
+      },
+      "LowestPrice": 25080,
+      "CeilingPrice": 50600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_032244",
+      "HotelName": "米窩飯店-站前",
+      "PositionLat": 25.0460292,
+      "PositionLon": 121.5189853,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段50號7樓、7樓之1、之2、之3、8樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 13200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_032517",
+      "HotelName": "苓旅旅館萬年館",
+      "PositionLat": 25.0435135,
+      "PositionLon": 121.5058942,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路70號7樓"
+      },
+      "LowestPrice": 11880,
+      "CeilingPrice": 15880
+    },
+    {
+      "HotelID": "Hotel_A15010000H_032622",
+      "HotelName": "珂曼旅館",
+      "PositionLat": 25.0459303,
+      "PositionLon": 121.506986,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路77號1-15樓、2樓之1-15樓之1、3樓之2-14樓之2、12樓之3-13樓之3、12樓之5"
+      },
+      "LowestPrice": 7000,
+      "CeilingPrice": 22000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_032944",
+      "HotelName": "天母之星商務會館",
+      "PositionLat": 25.1136195,
+      "PositionLon": 121.5139942,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "石牌路一段166巷46號,2樓至7樓、2樓之1至5樓之1、2樓之2至5樓之2"
+      },
+      "LowestPrice": 6000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_033183",
+      "HotelName": "陸號行旅西門館",
+      "PositionLat": 25.042735,
+      "PositionLon": 121.5079902,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段152號5樓、5樓之1、9樓、10樓；成都路1號9樓、10樓"
+      },
+      "LowestPrice": 12800,
+      "CeilingPrice": 14800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_033230",
+      "HotelName": "映町光旅西門",
+      "PositionLat": 25.0456733,
+      "PositionLon": 121.5057925,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "漢口街二段54號10樓"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 40000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_033655",
+      "HotelName": "台灣西鐵國際旅館",
+      "PositionLat": 25.0450651,
+      "PositionLon": 121.50852,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段88號1樓、6樓至28樓"
+      },
+      "LowestPrice": 11700,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_033748",
+      "HotelName": "西門雲町旅店",
+      "PositionLat": 25.0438011,
+      "PositionLon": 121.5071905,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "漢中街52號12樓至13樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034048",
+      "HotelName": "青逸居",
+      "PositionLat": 24.9861127,
+      "PositionLon": 121.2115689,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "中壢區",
+        "StreetAddress": "芝芭里東芝路一段361巷16號"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 10000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034089",
+      "HotelName": "新北林口爵怡溫德姆酒店",
+      "PositionLat": 25.0655261,
+      "PositionLon": 121.3604842,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "林口區",
+        "StreetAddress": "八德路339號"
+      },
+      "LowestPrice": 11800,
+      "CeilingPrice": 28800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034285",
+      "HotelName": "福華國際文教會館",
+      "PositionLat": 25.0237499,
+      "PositionLon": 121.5337443,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "新生南路3段30號(住宿棟1 樓及5樓至14樓)"
+      },
+      "LowestPrice": 32000,
+      "CeilingPrice": 120000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034470",
+      "HotelName": "相鐵飯店台北西門",
+      "PositionLat": 25.0416743,
+      "PositionLon": 121.5085894,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "中華路一段57號"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 35000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034578",
+      "HotelName": "客憩旅宿",
+      "PositionLat": 25.044507,
+      "PositionLon": 121.5133576,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路一段63號2樓"
+      },
+      "LowestPrice": 1000,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034620",
+      "HotelName": "日光樂居",
+      "PositionLat": 25.043239,
+      "PositionLon": 121.5059649,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "西寧南路72之1號5樓、6樓、6樓之1"
+      },
+      "LowestPrice": 2800,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034646",
+      "HotelName": "瀚寓夏天",
+      "PositionLat": 25.0155573,
+      "PositionLon": 121.5313862,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "汀州路三段62號、3樓、6樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 12700
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034759",
+      "HotelName": "和陽行館",
+      "PositionLat": 25.0205997,
+      "PositionLon": 121.2244152,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "領航南路四段303號"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 12500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034822",
+      "HotelName": "歐法行旅",
+      "PositionLat": 25.044717,
+      "PositionLon": 121.5086117,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "中華路一段90號5樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 22000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_034960",
+      "HotelName": "藝築文旅昆明館",
+      "PositionLat": 25.042855,
+      "PositionLon": 121.504849,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "昆明街79號10樓"
+      },
+      "LowestPrice": 45800,
+      "CeilingPrice": 49800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035370",
+      "HotelName": "日初青旅",
+      "PositionLat": 25.04475,
+      "PositionLon": 121.5133542,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路一段49號9樓"
+      },
+      "LowestPrice": 1000,
+      "CeilingPrice": 5500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035403",
+      "HotelName": "金通商旅",
+      "PositionLat": 25.049577,
+      "PositionLon": 121.513627,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大同區",
+        "StreetAddress": "重慶北路一段1號10樓之1"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 40000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035435",
+      "HotelName": "美好行旅",
+      "PositionLat": 25.0458208,
+      "PositionLon": 121.514517,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "開封街一段2號12樓、12樓之1"
+      },
+      "LowestPrice": 37000,
+      "CeilingPrice": 37000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035631",
+      "HotelName": "梧邸酒店台北杭州",
+      "PositionLat": 25.0401193,
+      "PositionLon": 121.52565,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "杭州南路一段12號"
+      },
+      "LowestPrice": 9800,
+      "CeilingPrice": 23800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035684",
+      "HotelName": "頭等艙飯店西門館",
+      "PositionLat": 25.0413445,
+      "PositionLon": 121.5085332,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "中華路一段59號4樓、4樓之1、8樓之1、9樓之1、11樓至13樓"
+      },
+      "LowestPrice": 1200,
+      "CeilingPrice": 16000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035692",
+      "HotelName": "日光樂居成都館",
+      "PositionLat": 25.043242,
+      "PositionLon": 121.504438,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "成都路99號2樓至4樓"
+      },
+      "LowestPrice": 2800,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_035926",
+      "HotelName": "大光瀛商旅",
+      "PositionLat": 25.0421407,
+      "PositionLon": 121.5198716,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段50號地下3層"
+      },
+      "LowestPrice": 3280,
+      "CeilingPrice": 3680
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036000",
+      "HotelName": "享住青旅",
+      "PositionLat": 25.0459235,
+      "PositionLon": 121.5147033,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "館前路8號地下1層"
+      },
+      "LowestPrice": 600,
+      "CeilingPrice": 3600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036231",
+      "HotelName": "錸捷行旅",
+      "PositionLat": 25.1693408,
+      "PositionLon": 121.4438729,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "中正路34之1號2樓"
+      },
+      "LowestPrice": 11000,
+      "CeilingPrice": 11000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036258",
+      "HotelName": "北投晶泉丰旅",
+      "PositionLat": 25.1382859,
+      "PositionLon": 121.504675,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "北投區",
+        "StreetAddress": "泉源路19號、19之1號（地上1層至地上14層）"
+      },
+      "LowestPrice": 22000,
+      "CeilingPrice": 66000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036572",
+      "HotelName": "天雲旅棧台北開封",
+      "PositionLat": 25.0460985,
+      "PositionLon": 121.5148152,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "開封街1段33號1至8樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 18000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036656",
+      "HotelName": "捷絲旅臺大尊賢館",
+      "PositionLat": 25.0133813,
+      "PositionLon": 121.5363519,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "羅斯福路4段83號1-10樓"
+      },
+      "LowestPrice": 12100,
+      "CeilingPrice": 17600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_036896",
+      "HotelName": "古奈堡精品旅館",
+      "PositionLat": 25.0435762,
+      "PositionLon": 121.5078544,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "峨眉街28號5樓之1"
+      },
+      "LowestPrice": 2000,
+      "CeilingPrice": 24000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037174",
+      "HotelName": "太子文旅-修齊館",
+      "PositionLat": 25.0141707,
+      "PositionLon": 121.5304492,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "思源街16、16之1號"
+      },
+      "LowestPrice": 6600,
+      "CeilingPrice": 17600
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037524",
+      "HotelName": "鉑泊客2館",
+      "PositionLat": 25.0468814,
+      "PositionLon": 121.5134147,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "重慶南路1段37號"
+      },
+      "LowestPrice": 900,
+      "CeilingPrice": 6000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037681",
+      "HotelName": "合洋背包客棧",
+      "PositionLat": 25.0631951,
+      "PositionLon": 121.5151076,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段23號2、3、4樓"
+      },
+      "LowestPrice": 19200,
+      "CeilingPrice": 19200
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037705",
+      "HotelName": "茶色部屋行旅 站前館",
+      "PositionLat": 25.0631951,
+      "PositionLon": 121.5151076,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "忠孝西路1段50號26樓"
+      },
+      "LowestPrice": 2800,
+      "CeilingPrice": 50000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037884",
+      "HotelName": "米室民宿",
+      "PositionLat": 25.17005,
+      "PositionLon": 121.440729,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "淡水區",
+        "StreetAddress": "中正路10巷7號、8號"
+      },
+      "LowestPrice": 4800,
+      "CeilingPrice": 4800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_037896",
+      "HotelName": "日慕行旅",
+      "PositionLat": 25.045556,
+      "PositionLon": 121.5174338,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "公園路13號7樓"
+      },
+      "LowestPrice": 8000,
+      "CeilingPrice": 8000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038055",
+      "HotelName": "日曜居",
+      "PositionLat": 25.0607309,
+      "PositionLon": 121.2064644,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "平安路32號"
+      },
+      "LowestPrice": 10000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038279",
+      "HotelName": "漫步綠洲旅店",
+      "PositionLat": 25.041814,
+      "PositionLon": 121.509385,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "寶慶路69號、69號3至7樓及69號等共有部分"
+      },
+      "LowestPrice": 7000,
+      "CeilingPrice": 80000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038495",
+      "HotelName": "嵨開安旅Hotel Uketamo",
+      "PositionLat": 25.040346,
+      "PositionLon": 121.543994,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "大安區",
+        "StreetAddress": "復興南路一段191號1樓、4~16樓"
+      },
+      "LowestPrice": 6600,
+      "CeilingPrice": 43890
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038630",
+      "HotelName": "亞士都酒店",
+      "PositionLat": 25.05052406859457,
+      "PositionLon": 121.52471121239999,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中山區",
+        "StreetAddress": "林森北路98號2樓、中山北路1段105巷26號3樓、3樓之1、之2、之3、之5、之6"
+      },
+      "LowestPrice": 15000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038723",
+      "HotelName": "宿時代民宿",
+      "PositionLat": 25.06068,
+      "PositionLon": 121.20913,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "平安路28號"
+      },
+      "LowestPrice": 5000,
+      "CeilingPrice": 20000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038852",
+      "HotelName": "玩行旅西門分館",
+      "PositionLat": 25.043139791148885,
+      "PositionLon": 121.50530976485875,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "萬華區",
+        "StreetAddress": "成都路81號5樓、6樓"
+      },
+      "LowestPrice": 12000,
+      "CeilingPrice": 12000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_038954",
+      "HotelName": "初食旅館(1館)",
+      "PositionLat": 25.1051,
+      "PositionLon": 121.5259,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "士林區",
+        "StreetAddress": "建業路4、6、8號"
+      },
+      "LowestPrice": 60000,
+      "CeilingPrice": 104500
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039052",
+      "HotelName": "台北板橋馥華艾美酒店",
+      "PositionLat": 25.01224,
+      "PositionLon": 121.46554,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "新北市板橋區中山路1段220號地下一層及220號（1至4層、18至31層）"
+      },
+      "LowestPrice": 30000,
+      "CeilingPrice": 300000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039149",
+      "HotelName": "板城璞旅",
+      "PositionLat": 25.010975696535127,
+      "PositionLon": 121.45738420397079,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "新北市",
+        "Town": "板橋區",
+        "StreetAddress": "北門街11號7樓(7樓至9樓)"
+      },
+      "LowestPrice": 20000,
+      "CeilingPrice": 36000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039209",
+      "HotelName": "日日居民宿",
+      "PositionLat": 25.0634,
+      "PositionLon": 121.2136,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "平安路20號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 8800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039214",
+      "HotelName": "月月豬民宿",
+      "PositionLat": 24.9827,
+      "PositionLon": 121.2136,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "桃園市",
+        "Town": "大園區",
+        "StreetAddress": "平安路22號"
+      },
+      "LowestPrice": 8800,
+      "CeilingPrice": 8800
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039495",
+      "HotelName": "梧邸酒店 台北敦北",
+      "PositionLat": 25.054780883026673,
+      "PositionLon": 121.54848498174374,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "松山區",
+        "StreetAddress": "敦化北路150號B1-12樓"
+      },
+      "LowestPrice": 21800,
+      "CeilingPrice": 80000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039631",
+      "HotelName": "臺北洲際酒店",
+      "PositionLat": 25.03899,
+      "PositionLon": 121.56135,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "信義區",
+        "StreetAddress": "忠孝東路4段535號（地上1層及地上6至20層）"
+      },
+      "LowestPrice": 60000,
+      "CeilingPrice": 588000
+    },
+    {
+      "HotelID": "Hotel_A15010000H_039705",
+      "HotelName": "立詳商旅",
+      "PositionLat": 25.044665,
+      "PositionLon": 121.5149,
+      "HotelStars": 0,
+      "PostalAddress": {
+        "City": "臺北市",
+        "Town": "中正區",
+        "StreetAddress": "館前路34號11樓"
+      },
+      "LowestPrice": 1000,
+      "CeilingPrice": 30000
+    }
+  ]
+}
