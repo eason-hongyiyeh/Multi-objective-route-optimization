@@ -1,4 +1,4 @@
-﻿{
+{
   "UpdateInterval": 86400,
   "Language": "Zh_tw",
   "ProviderID": "A15010000H",
@@ -16,9 +16,7 @@
         "ZipCode": "239",
         "StreetAddress": "尖山埔路81號"
       },
-      "ServiceTimeInfo": "營業時間 週一：公休週二：公休週三：13：00 ~ 18：00週四：10：00 ~ 18：00週五：10：00 ~ 18：00週六：10：00 ~ 18：00週日：10：00 ~ 18：00",
-      "IsAccessibleForFree": 1,
-      "FeeInfo": "DIY活動：  \t* 純導覽(可折抵DIY活動費,另外有95折商品優惠券) \t* 導覽+手拉坏 \t* 導覽+手捏陶 \t* 導覽+彩繪"
+      "ServiceTimeInfo": "營業時間 週一、週二：公休週三：13：00 ~ 18：00週四、週五、週六、日：10：00 ~ 18：00"
     },
     {
       "AttractionID": "Attraction_A13020000G_000055",
@@ -34,25 +32,7 @@
         "StreetAddress": "四川路2段16巷10號5樓"
       },
       "ServiceTimeInfo": "週二至週六 10:00~17:30週日、週一與國定例假日休館",
-      "IsAccessibleForFree": 0,
       "FeeInfo": "1.觀光工廠入場券:NT$100元2.觀光工廠入場券+DIY製作:NT$180~350元3.商品展售區歡迎〝免費〞入場選購4.3歲以下兒童免費入場"
-    },
-    {
-      "AttractionID": "Attraction_A13020000G_000061",
-      "AttractionName": "新北：維格餅家 鳳梨酥夢工場",
-      "PositionLat": 25.068739,
-      "PositionLon": 121.435211,
-      "PostalAddress": {
-        "City": "新北市",
-        "CityCode": "65000",
-        "Town": "五股區",
-        "TownCode": "65000150",
-        "ZipCode": "248",
-        "StreetAddress": "成泰路一段87號"
-      },
-      "ServiceTimeInfo": "周一~周日 8:30-17:30",
-      "IsAccessibleForFree": 0,
-      "FeeInfo": "門票：80元/人"
     },
     {
       "AttractionID": "Attraction_A13020000G_000097",
@@ -66,10 +46,7 @@
         "TownCode": "65000130",
         "ZipCode": "236",
         "StreetAddress": "大暖路136號"
-      },
-      "ServiceTimeInfo": "◆開館時間：週一至週日AM9:00-PM17:00◆導覽時間：上午10:00-12:00或下午14:00-16:00※本館採預約制",
-      "IsAccessibleForFree": 0,
-      "FeeInfo": "導覽入場費 100元（三歲以上都須收費）※團體預約另有優惠，需另外詢問"
+      }
     },
     {
       "AttractionID": "Attraction_A13020000G_000177",
@@ -83,27 +60,169 @@
         "TownCode": "65000130",
         "ZipCode": "236",
         "StreetAddress": "中山路21號"
-      },
-      "ServiceTimeInfo": "*1F 門市&餐飲週二~週日 09:30~18:00*3F三友拉麵週二~週五 11:00~14:00週六~週日 11:00~16:00*2F-4F展區&DIY週六~週日 09:30~18:00",
-      "IsAccessibleForFree": 0,
-      "FeeInfo": "門票：150元(可折抵消費)※1F門市展售區及餐飲區歡迎免費入場參觀選購"
+      }
     },
     {
-      "AttractionID": "Attraction_A13020000G_000211",
-      "AttractionName": "新北：豐得好食觀光工廠",
-      "PositionLat": 25.06903,
-      "PositionLon": 121.45351,
-      "PostalAddress": {
-        "City": "新北市",
-        "CityCode": "65000",
-        "Town": "五股區",
-        "TownCode": "65000150",
-        "ZipCode": "248",
-        "StreetAddress": "五權路48 號1 樓"
-      },
-      "ServiceTimeInfo": "詳細參觀訊息請逕洽廠商網站說明",
-      "IsAccessibleForFree": 1,
-      "FeeInfo": "詳細參觀訊息請逕洽廠商網站說明"
+      "AttractionID": "Attraction_OSM_way_126868437",
+      "AttractionName": "漁人碼頭",
+      "PositionLat": 25.1833454,
+      "PositionLon": 121.4097192
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_256190306",
+      "AttractionName": "北投分館",
+      "PositionLat": 25.1364543,
+      "PositionLon": 121.5062625
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_256190307",
+      "AttractionName": "北投溫泉博物館",
+      "PositionLat": 25.1365919,
+      "PositionLon": 121.5071457
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1248749181",
+      "AttractionName": "北投地熱谷公園",
+      "PositionLat": 25.1379926,
+      "PositionLon": 121.5117818
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_375327747",
+      "AttractionName": "北投市場",
+      "PositionLat": 25.1322416,
+      "PositionLon": 121.5023588
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_6171020",
+      "AttractionName": "士林官邸公園",
+      "PositionLat": 25.0927981,
+      "PositionLon": 121.530519
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_315852781",
+      "AttractionName": "臺北市立天文科學教育館",
+      "PositionLat": 25.0959802,
+      "PositionLon": 121.5185087
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_11736180",
+      "AttractionName": "臺北市立美術館",
+      "PositionLat": 25.0719992,
+      "PositionLon": 121.5246411
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_206817",
+      "AttractionName": "中華民國總統府",
+      "PositionLat": 25.0399814,
+      "PositionLon": 121.5119821
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_4638980",
+      "AttractionName": "二二八和平公園",
+      "PositionLat": 25.0417546,
+      "PositionLon": 121.5150935
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1050624691",
+      "AttractionName": "國立臺灣博物館",
+      "PositionLat": 25.0427464,
+      "PositionLon": 121.5150023
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_222080307",
+      "AttractionName": "西門紅樓",
+      "PositionLat": 25.0420802,
+      "PositionLon": 121.5065049
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_198401479",
+      "AttractionName": "艋舺龍山寺",
+      "PositionLat": 25.0372759,
+      "PositionLon": 121.4998814
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_4601743",
+      "AttractionName": "台北植物園",
+      "PositionLat": 25.0322555,
+      "PositionLon": 121.5095083
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1052759757",
+      "AttractionName": "中正紀念堂",
+      "PositionLat": 25.0346549,
+      "PositionLon": 121.5217806
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_4007738",
+      "AttractionName": "國立臺灣大學",
+      "PositionLat": 25.0173181,
+      "PositionLon": 121.5399934
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1226116241",
+      "AttractionName": "自來水博物館",
+      "PositionLat": 25.0125518,
+      "PositionLon": 121.5300543
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5425991",
+      "AttractionName": "行天宮",
+      "PositionLat": 25.0630816,
+      "PositionLon": 121.5339061
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2566814443",
+      "AttractionName": "袖珍博物館",
+      "PositionLat": 25.0502862,
+      "PositionLon": 121.5361672
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_189788192",
+      "AttractionName": "國父紀念館",
+      "PositionLat": 25.04001,
+      "PositionLon": 121.560292
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_229061328",
+      "AttractionName": "松山文創園區",
+      "PositionLat": 25.0439945,
+      "PositionLon": 121.5608355
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_155816458",
+      "AttractionName": "美麗華百樂園",
+      "PositionLat": 25.0832688,
+      "PositionLon": 121.5574723
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_420689856",
+      "AttractionName": "文間山平台",
+      "PositionLat": 25.0899172,
+      "PositionLon": 121.5498523
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_189784276",
+      "AttractionName": "大湖公園",
+      "PositionLat": 25.0812777,
+      "PositionLon": 121.6046976
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_378623049",
+      "AttractionName": "大溝溪生態治水園區",
+      "PositionLat": 25.0900679,
+      "PositionLon": 121.5974463
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_135913533",
+      "AttractionName": "臺北市立動物園",
+      "PositionLat": 24.9955954,
+      "PositionLon": 121.5857472
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_776135735",
+      "AttractionName": "碧潭風景區",
+      "PositionLat": 24.9546844,
+      "PositionLon": 121.5354228
     }
   ]
 }

@@ -10,11 +10,12 @@
 | `map.html` | 地圖畫面、圖層勾選表、各地點資訊、夜市步行路徑，以及景點開放時間和費用。 |
 | `calculate_market_walks.py` | 查詢步行路網，計算夜市到 20 分鐘內最近捷運站的路徑；資料更新後需重新執行。 |
 | `walking/market_stations.json` | 夜市到最近捷運站的距離、時間及路線座標，供地圖使用。 |
+| `walking/attraction_exit_filter.json` | 2026-11-11 景點步行篩選紀錄：原有 52 筆，移除超過 1,200 公尺的 21 筆，保留 30 筆符合條件及 1 筆待確認。包含查詢條件、距離、出口與移除的原始紀錄，供查核或復原；不額外顯示在地圖上。 |
 | `data/mrt_station.geojson` | 158 筆具站名的車站位置，以及站碼、路網等來源欄位。 |
 | `data/mrt_tracks.geojson` | 256 筆捷運資料：31 筆路線、225 筆路線節點（224 筆有停靠用途、1 筆未提供用途）。 |
 | `data/airportmrt.geojson` | 117 筆機捷資料：70 筆軌道、3 筆普通車方向路線、44 筆停靠點。 |
 | `data/nightmarket.geojson` | 19 筆夜市位置、名稱、營業時間或待確認文字；查詢來源另見 `nightmarket_hours.md`。 |
-| `data/AttractionList_with_fee_and_hours.json` | 從暫存資料夾同步的 6 筆景點；已排除貢寮、瑞芳、林口、八里區，包含名稱、座標、地址、開放時間、免費入場標記與費用說明。 |
+| `data/AttractionList_with_fee_and_hours.json` | 31 筆景點：4 筆觀光工廠／體驗館，以及 27 筆 OSM 景點。其中 30 筆有 1,200 公尺內的捷運出口步行路線；漁人碼頭因缺淡海輕軌資料保留待確認。各筆原有欄位維持不變。 |
 | `data/HotelList.json` | 314 筆旅宿，依既有步行路網結果篩選到捷運站不超過 1,200 公尺的資料，已移除逐筆 `UpdateTime` 為 2025 年的紀錄；目前不載入地圖。 |
 | `data/RestaurantList.json` | 17 筆餐廳，符合相同步行距離門檻，並依人工確認刪除 13 筆；目前只剩單一分類為中式料理或伴手禮／禮盒的資料。 |
 | `nightmarket_hours.md` | 全部夜市的營業時間查詢表，包含來源連結與尚未確認的項目。 |
@@ -75,7 +76,7 @@ python mrt_map.py
 - 夜市的 `properties.type` 已移除；GeoJSON 結構必需的 `type`（`FeatureCollection`、`Feature`、`Point`）保留，供地圖辨識。
 - `nightmarket.geojson` 只保留 19 筆夜市資料（臺北市 11 筆、新北市 8 筆），程式直接顯示檔案中的點位。筆數是來源紀錄數，同一夜市的分區或不同物件可能重疊；不自動合併，也不讀取舊夜市 CSV。
 
-車站與軌道三份檔案共 531 筆，全部具有效座標：158 筆車站、269 筆路線節點、94 筆線段及 10 筆多線幾何。加上 19 筆夜市、兩份出口資料、6 筆景點與 17 筆餐廳，八份檔案共 1,119 筆，全部具有效座標可顯示。314 筆旅宿未列入地圖。其中路線節點有 268 筆具停靠用途、1 筆用途未提供。不同檔案可能有重疊資料，筆數不等於不重複的車站數。圖資可能包含施工路段或不同更新時間的資料，不代表即時營運狀態。
+車站與軌道三份檔案共 531 筆，全部具有效座標：158 筆車站、269 筆路線節點、94 筆線段及 10 筆多線幾何。加上 19 筆夜市、兩份出口資料、31 筆景點與 17 筆餐廳，這八份檔案共 1,144 筆，全部具有效座標可顯示；此統計不含旅宿。其中路線節點有 268 筆具停靠用途、1 筆用途未提供。不同檔案可能有重疊資料，筆數不等於不重複的車站數。圖資可能包含施工路段或不同更新時間的資料，不代表即時營運狀態。
 
 捷運與機捷圖層支援 `LineString`、`MultiLineString` 路線及 `@relations` 成員資訊。線段、站點、資訊視窗色標及左側色標一律使用 `map.html` 的 `routeColors`，依提供的路網圖設定近似配色，不宣稱為官方精確色碼。文湖線棕色、淡水信義線紅色、松山新店線綠色、中和新蘆線橘黃色、板南線藍色、環狀線亮黃色、三鶯線淺藍色、機場捷運淡紫色、新北投支線粉紅色、小碧潭支線黃綠色。線條不透明，避免重疊造成深淺差異；原始 `colour` 欄位保留但不控制顯示。轉乘站採深灰色，未分類採灰色。街道底圖由 OpenStreetMap 提供，底圖配色不受此設定影響。
 
@@ -107,7 +108,13 @@ python calculate_market_walks.py
 
 資料需為 GeoJSON `FeatureCollection`，使用 WGS84 經緯度（經度在前、緯度在後）。支援點、線、面及其複合幾何。車站點依 `public_transport=station` 或 `railway=station` 辨識。缺少或無效座標會略過，檔案讀取失敗會顯示原因，原始檔不會被修改。
 
-景點另外支援 `data/AttractionList_with_fee_and_hours.json`：讀取 `Attractions` 陣列，以 `AttractionID` 識別地點，將 `PositionLon`、`PositionLat` 轉成顯示用的 GeoJSON 點位，保留所有原始欄位。缺少或無效座標會略過並提示。這份檔案是獨立副本；修改暫存資料夾的來源後，需重新複製至 `data/`，再重啟程式、重新整理網頁。
+景點另外支援 `data/AttractionList_with_fee_and_hours.json`：讀取 `Attractions` 陣列，以 `AttractionID` 識別地點，將 `PositionLon`、`PositionLat` 轉成顯示用的 GeoJSON 點位，保留所有原始欄位。缺少或無效座標會略過並提示。這份檔案已加入 OSM 景點並經人工刪減，更新時請依 ID 合併，不要直接用暫存資料夾的舊副本覆蓋。修改後重啟 `python mrt_map.py`，再重新整理網頁。
+
+OSM 景點使用來源物件名稱。識別碼如 `Attraction_OSM_way_126868437` 可對照 `https://www.openstreetmap.org/way/126868437`；`node`、`relation` 同理。點物件採原座標，建築／園區範圍採幾何中心（中心不在範圍內時改取內部代表點），步道／吊橋採來源線段沿線的中間位置。這些座標供地圖標記，並非已確認的入口。新增資料沒有補填營業時間或費用，資訊視窗會顯示「未提供」。
+
+2026-11-11 已按現有景點點位到捷運出口的步行路網篩選，終點使用 `mrt_exits.geojson` 與 `airport_mrt_exits.geojson`，一般出口站名以 `mrt_exits_with_station.geojson` 對照。依 [Valhalla 路由參數](https://valhalla.github.io/valhalla/api/route/api-reference/)使用 `pedestrian`、`shortest=true`、`disable_hierarchy_pruning=true`，另檢查回傳路線不含渡輪或非步行交通。距離不超過 1,200 公尺（含）者保留，時間以每秒 1 公尺換算。邊界值另查 OSRM 格式的精細距離：豐得好食觀光工廠雖顯示為 1.200 km，回傳值實為 1,200.278 m，因此移除。距離不含兩端座標至路網的偏移與站內步行，偏移各不得超過 150 公尺；此結果不是已核對景點入口的精確距離。直線距離僅作保守下限，用於排除不可能符合門檻的候選，不當成步行距離。
+
+目前 30 筆已找到符合門檻的步行路線，另保留漁人碼頭 1 筆待確認：現有車站／出口資料未收錄淡海輕軌，不能據此認定它超過門檻。詳細結果及移除的 21 筆紀錄見 `walking/attraction_exit_filter.json`；報告中的出口是已驗證符合條件的終點，不宣稱為所有出口中的絕對最近者。部分名稱採來源名稱，例如「劍南山夜景」使用「文間山平台」。
 
 餐廳讀取 `data/RestaurantList.json` 的 `Restaurants` 陣列，以 `RestaurantID` 識別地點，座標轉換與檢查方式同景點。`data/HotelList.json` 保留供統計，透過 `mrt_map.py` 的 `HIDDEN_DATA_FILES` 暫停載入地圖。網站只使用本資料夾的副本，不會自動從外面的暫存資料夾補回已刪除紀錄；如需同步，須保留本資料夾已人工篩選的結果。步行距離採先前到捷運站座標的計算結果，開啟地圖時不會重新計算。
 

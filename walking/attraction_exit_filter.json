@@ -1,0 +1,1299 @@
+{
+  "checked_on": "2026-11-11",
+  "mode": "exits",
+  "max_distance_m": 1200,
+  "speed_mps": 1,
+  "routing_service": "https://valhalla1.openstreetmap.de/",
+  "costing_options": {
+    "costing": "pedestrian",
+    "costing_options": {
+      "pedestrian": {
+        "shortest": true,
+        "walking_speed": 3.6,
+        "use_ferry": 0,
+        "disable_hierarchy_pruning": true
+      }
+    },
+    "units": "kilometers"
+  },
+  "target_count": 539,
+  "source_sha256": "5474a07c74b0cce393d6d0b67b803a5af72d134e64e4c3d6c3afdbeb47cf3cd0",
+  "target_sha256": {
+    "mrt_exits.geojson": "c8ffc66b80f8347e88e04a175ccfe2aafecb88c0b3f2df97b6cc103b2a076bcf",
+    "mrt_exits_with_station.geojson": "ec4dd76d67635e055a3a00c5ce682c00bc5da841ed096f774f21aceb1cddb6e7",
+    "airport_mrt_exits.geojson": "5eb6eae928d76c69488bf8c7cd086e58954b08a4433b7624e6597866e3b529f6",
+    "mrt_station.geojson": "195103f1fbf2b550e0fc3de2d1dc36a1a8001d1205326106ee76518ee7dec9d3"
+  },
+  "summary": {
+    "before": 52,
+    "removed_over_1200m": 21,
+    "within_1200m": 30,
+    "review": 1,
+    "after": 31
+  },
+  "notes": [
+    "依景點現有座標到正式出口資料的步行路網篩選，不是景點入口到車站中心。",
+    "使用 Valhalla pedestrian、shortest=true、disable_hierarchy_pruning=true；排除含渡輪或非步行交通的結果。",
+    "先比較所有可能符合門檻的出口路網距離，再驗證符合門檻的路線；保留的出口是已驗證可達的終點，不宣稱是所有出口中的絕對最近者。",
+    "距離不含兩端點位至路網的吸附偏移及站內步行；吸附偏移各限 150 公尺，另列 snap_offsets_m。",
+    "distance_lower_bound 表示保守距離下限已超過門檻；此欄不是步行路線長度。",
+    "漁人碼頭因現有資料未收錄淡海輕軌而保留待確認，不列入已符合 1,200 公尺的 31 筆。",
+    "removed_records 保存此次移出地圖的原始紀錄，方便日後核對入口或資料後重新評估。",
+    "豐得好食觀光工廠的公里輸出四捨五入為 1.200 km；另查 OSRM 格式精細距離，兩個候選出口均為 1,200.278 m，依嚴格門檻移除。"
+  ],
+  "results": [
+    {
+      "attraction_id": "Attraction_A13020000G_000048",
+      "attraction_name": "新北：許新旺陶瓷紀念博物館",
+      "coordinates": [
+        121.347689626984,
+        24.9509574576297
+      ],
+      "candidate_count": 9,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/13977010760",
+      "station_name": "陶瓷老街",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 464.0,
+      "duration_s": 464.0,
+      "snap_offsets_m": [
+        5.92,
+        14.91
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 463.0
+    },
+    {
+      "attraction_id": "Attraction_A13020000G_000055",
+      "attraction_name": "新北：玉美人孕婦裝觀光工廠",
+      "coordinates": [
+        121.456266,
+        24.997297
+      ],
+      "candidate_count": 8,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/4085141468",
+      "station_name": "亞東醫院",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 679.0,
+      "duration_s": 679.0,
+      "snap_offsets_m": [
+        34.69,
+        6.76
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 678.0
+    },
+    {
+      "attraction_id": "Attraction_A13020000G_000061",
+      "attraction_name": "新北：維格餅家 鳳梨酥夢工場",
+      "coordinates": [
+        121.435211,
+        25.068739
+      ],
+      "candidate_count": 2,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "A4-E1",
+      "station_name": "新莊副都心站",
+      "station_code": "A4",
+      "exit_ref": "出口1",
+      "distance_m": 1990.0,
+      "duration_s": 1990.0,
+      "snap_offsets_m": [
+        7.22,
+        19.04
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1990.0
+    },
+    {
+      "attraction_id": "Attraction_A13020000G_000097",
+      "attraction_name": "新北：王鼎時間科藝體驗館",
+      "coordinates": [
+        121.42359,
+        24.95585
+      ],
+      "candidate_count": 6,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3636598299",
+      "station_name": "頂埔",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 743.0,
+      "duration_s": 743.0,
+      "snap_offsets_m": [
+        15.13,
+        29.89
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 743.0
+    },
+    {
+      "attraction_id": "Attraction_A13020000G_000177",
+      "attraction_name": "新北：聖瑪莉丹麥麵包莊園",
+      "coordinates": [
+        121.41801,
+        24.96296
+      ],
+      "candidate_count": 6,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/8794571808",
+      "station_name": "頂埔",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 656.0,
+      "duration_s": 656.0,
+      "snap_offsets_m": [
+        72.64,
+        9.18
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 656.0
+    },
+    {
+      "attraction_id": "Attraction_A13020000G_000211",
+      "attraction_name": "新北：豐得好食觀光工廠",
+      "coordinates": [
+        121.45351,
+        25.06903
+      ],
+      "candidate_count": 5,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "A3-E1",
+      "station_name": "新北產業園區站",
+      "station_code": "A3",
+      "exit_ref": "出口1",
+      "distance_m": 1200.278,
+      "duration_s": 1200.278,
+      "snap_offsets_m": [
+        6.02,
+        7.18
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1199.0,
+      "precision_check": [
+        {
+          "exit_id": "A3-E1",
+          "coordinates": [
+            121.459,
+            25.062
+          ],
+          "distance_m": 1200.278
+        },
+        {
+          "exit_id": "A3-E2",
+          "coordinates": [
+            121.459,
+            25.062
+          ],
+          "distance_m": 1200.278
+        }
+      ]
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_296123001",
+      "attraction_name": "臺北兒童新樂園",
+      "coordinates": [
+        121.514969,
+        25.0972488
+      ],
+      "candidate_count": 8,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/3859737803",
+      "station_name": "芝山",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1290.0,
+      "duration_s": 1290.0,
+      "snap_offsets_m": [
+        70.88,
+        0.01
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1291.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_3986680",
+      "attraction_name": "淡水紅毛城",
+      "coordinates": [
+        121.4329219,
+        25.1753809
+      ],
+      "candidate_count": 1,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/7417629545",
+      "station_name": "淡水",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1651.0,
+      "duration_s": 1651.0,
+      "snap_offsets_m": [
+        13.14,
+        36.23
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1651.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_126868437",
+      "attraction_name": "漁人碼頭",
+      "coordinates": [
+        121.4097192,
+        25.1833454
+      ],
+      "candidate_count": 0,
+      "status": "review",
+      "reason": "missing_target_coverage",
+      "lower_bound_m": 3631.71,
+      "missing_station_data": [
+        "淡海輕軌（現有資料未收錄）"
+      ]
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_290506100",
+      "attraction_name": "小白宮",
+      "coordinates": [
+        121.4362313,
+        25.1741181
+      ],
+      "candidate_count": 3,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/7417629545",
+      "station_name": "淡水",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1335.0,
+      "duration_s": 1335.0,
+      "snap_offsets_m": [
+        24.55,
+        36.23
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1334.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_256190306",
+      "attraction_name": "北投分館",
+      "coordinates": [
+        121.5062625,
+        25.1364543
+      ],
+      "candidate_count": 7,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/6618003408",
+      "station_name": "新北投",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 329.0,
+      "duration_s": 329.0,
+      "snap_offsets_m": [
+        14.03,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 329.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_256190307",
+      "attraction_name": "北投溫泉博物館",
+      "coordinates": [
+        121.5071457,
+        25.1365919
+      ],
+      "candidate_count": 7,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/6618003408",
+      "station_name": "新北投",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 399.0,
+      "duration_s": 399.0,
+      "snap_offsets_m": [
+        18.7,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 399.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_1248749181",
+      "attraction_name": "北投地熱谷公園",
+      "coordinates": [
+        121.5117818,
+        25.1379926
+      ],
+      "candidate_count": 4,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/6618003408",
+      "station_name": "新北投",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 898.0,
+      "duration_s": 898.0,
+      "snap_offsets_m": [
+        12.51,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 898.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_5304921921",
+      "attraction_name": "硫磺谷",
+      "coordinates": [
+        121.5234841,
+        25.143663
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 1822.02
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_281081715",
+      "attraction_name": "北投社三層崎公園",
+      "coordinates": [
+        121.4913965,
+        25.1456698
+      ],
+      "candidate_count": 3,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/4330704425",
+      "station_name": "復興崗",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1483.0,
+      "duration_s": 1483.0,
+      "snap_offsets_m": [
+        39.71,
+        11.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1483.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_375327747",
+      "attraction_name": "北投市場",
+      "coordinates": [
+        121.5023588,
+        25.1322416
+      ],
+      "candidate_count": 9,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/9853258083",
+      "station_name": "北投",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 466.0,
+      "duration_s": 466.0,
+      "snap_offsets_m": [
+        6.14,
+        2.28
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 466.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_2300575562",
+      "attraction_name": "軍艦岩",
+      "coordinates": [
+        121.5187189,
+        25.1273081
+      ],
+      "candidate_count": 3,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/2622769196",
+      "station_name": "石牌",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1953.0,
+      "duration_s": 1953.0,
+      "snap_offsets_m": [
+        3.79,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1953.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_6171020",
+      "attraction_name": "士林官邸公園",
+      "coordinates": [
+        121.530519,
+        25.0927981
+      ],
+      "candidate_count": 8,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3273605595",
+      "station_name": "士林",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 751.0,
+      "duration_s": 751.0,
+      "snap_offsets_m": [
+        3.66,
+        12.23
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 751.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_827791918",
+      "attraction_name": "國立故宮博物院",
+      "coordinates": [
+        121.5488059,
+        25.1013146
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 1581.27
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_327088319",
+      "attraction_name": "國立臺灣科學教育館",
+      "coordinates": [
+        121.5167087,
+        25.0961203
+      ],
+      "candidate_count": 7,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/3273605596",
+      "station_name": "士林",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1213.0,
+      "duration_s": 1213.0,
+      "snap_offsets_m": [
+        17.54,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1213.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_315852781",
+      "attraction_name": "臺北市立天文科學教育館",
+      "coordinates": [
+        121.5185087,
+        25.0959802
+      ],
+      "candidate_count": 8,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3273605596",
+      "station_name": "士林",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1068.0,
+      "duration_s": 1068.0,
+      "snap_offsets_m": [
+        29.78,
+        0.02
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1068.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_16794569",
+      "attraction_name": "擎天崗大草原",
+      "coordinates": [
+        121.5770825,
+        25.16356
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 7593.57
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_12996927264",
+      "attraction_name": "冷水坑",
+      "coordinates": [
+        121.5645963,
+        25.1660463
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 6577.01
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_697170201",
+      "attraction_name": "小油坑",
+      "coordinates": [
+        121.5476114,
+        25.1753902
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 5799.33
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_235179609",
+      "attraction_name": "二子坪步道",
+      "coordinates": [
+        121.5143284,
+        25.1778945
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 4333.53
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_12468295320",
+      "attraction_name": "大屯山",
+      "coordinates": [
+        121.521964,
+        25.176667
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 4442.08
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_11736180",
+      "attraction_name": "臺北市立美術館",
+      "coordinates": [
+        121.5246411,
+        25.0719992
+      ],
+      "candidate_count": 23,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3699440334",
+      "station_name": "圓山",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 578.0,
+      "duration_s": 578.0,
+      "snap_offsets_m": [
+        57.41,
+        10.87
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 578.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_11791159",
+      "attraction_name": "大佳河濱公園",
+      "coordinates": [
+        121.5365087,
+        25.0748877
+      ],
+      "candidate_count": 4,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/3273605591",
+      "station_name": "大直",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 2022.0,
+      "duration_s": 2022.0,
+      "snap_offsets_m": [
+        19.51,
+        11.4
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 2021.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_6710338",
+      "attraction_name": "林安泰古厝",
+      "coordinates": [
+        121.53046,
+        25.0724334
+      ],
+      "candidate_count": 17,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/3273605582",
+      "station_name": "中山國小",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 1296.0,
+      "duration_s": 1296.0,
+      "snap_offsets_m": [
+        69.97,
+        5.36
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1296.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_206817",
+      "attraction_name": "中華民國總統府",
+      "coordinates": [
+        121.5119821,
+        25.0399814
+      ],
+      "candidate_count": 86,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2652063385",
+      "station_name": "臺大醫院",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 492.0,
+      "duration_s": 492.0,
+      "snap_offsets_m": [
+        42.94,
+        4.39
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 492.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_4638980",
+      "attraction_name": "二二八和平公園",
+      "coordinates": [
+        121.5150935,
+        25.0417546
+      ],
+      "candidate_count": 91,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/12397933012",
+      "station_name": "臺大醫院",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 127.0,
+      "duration_s": 127.0,
+      "snap_offsets_m": [
+        1.09,
+        0.01
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 127.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_1050624691",
+      "attraction_name": "國立臺灣博物館",
+      "coordinates": [
+        121.5150023,
+        25.0427464
+      ],
+      "candidate_count": 90,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2652063392",
+      "station_name": "臺大醫院",
+      "station_code": "",
+      "exit_ref": "4",
+      "distance_m": 167.0,
+      "duration_s": 167.0,
+      "snap_offsets_m": [
+        15.97,
+        4.8
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 168.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_222080307",
+      "attraction_name": "西門紅樓",
+      "coordinates": [
+        121.5065049,
+        25.0420802
+      ],
+      "candidate_count": 77,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2406854847",
+      "station_name": "西門",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 162.0,
+      "duration_s": 162.0,
+      "snap_offsets_m": [
+        17.39,
+        1.24
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 162.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_198401479",
+      "attraction_name": "艋舺龍山寺",
+      "coordinates": [
+        121.4998814,
+        25.0372759
+      ],
+      "candidate_count": 18,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2075746454",
+      "station_name": "龍山寺",
+      "station_code": "",
+      "exit_ref": null,
+      "distance_m": 291.0,
+      "duration_s": 291.0,
+      "snap_offsets_m": [
+        9.67,
+        7.95
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 291.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_4601743",
+      "attraction_name": "台北植物園",
+      "coordinates": [
+        121.5095083,
+        25.0322555
+      ],
+      "candidate_count": 39,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2618719363",
+      "station_name": "小南門",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 413.0,
+      "duration_s": 413.0,
+      "snap_offsets_m": [
+        1.95,
+        1.3
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 413.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_1052759757",
+      "attraction_name": "中正紀念堂",
+      "coordinates": [
+        121.5217806,
+        25.0346549
+      ],
+      "candidate_count": 64,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2793283548",
+      "station_name": "中正紀念堂",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 581.0,
+      "duration_s": 581.0,
+      "snap_offsets_m": [
+        19.99,
+        4.19
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 582.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_4007738",
+      "attraction_name": "國立臺灣大學",
+      "coordinates": [
+        121.5399934,
+        25.0173181
+      ],
+      "candidate_count": 15,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/8013101848",
+      "station_name": "公館",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 701.0,
+      "duration_s": 701.0,
+      "snap_offsets_m": [
+        17.36,
+        0.04
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 701.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_1226116241",
+      "attraction_name": "自來水博物館",
+      "coordinates": [
+        121.5300543,
+        25.0125518
+      ],
+      "candidate_count": 17,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3055733038",
+      "station_name": "公館",
+      "station_code": "",
+      "exit_ref": "4",
+      "distance_m": 579.0,
+      "duration_s": 579.0,
+      "snap_offsets_m": [
+        5.93,
+        0.04
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 579.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_relation_5425991",
+      "attraction_name": "行天宮",
+      "coordinates": [
+        121.5339061,
+        25.0630816
+      ],
+      "candidate_count": 34,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3160677373",
+      "station_name": "行天宮",
+      "station_code": "",
+      "exit_ref": "4",
+      "distance_m": 419.0,
+      "duration_s": 419.0,
+      "snap_offsets_m": [
+        37.08,
+        0.06
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 419.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_node_2566814443",
+      "attraction_name": "袖珍博物館",
+      "coordinates": [
+        121.5361672,
+        25.0502862
+      ],
+      "candidate_count": 42,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3182588061",
+      "station_name": "松江南京",
+      "station_code": "",
+      "exit_ref": "5",
+      "distance_m": 390.0,
+      "duration_s": 390.0,
+      "snap_offsets_m": [
+        15.03,
+        1.68
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 389.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_189788192",
+      "attraction_name": "國父紀念館",
+      "coordinates": [
+        121.560292,
+        25.04001
+      ],
+      "candidate_count": 41,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/1336186435",
+      "station_name": "國父紀念館",
+      "station_code": "",
+      "exit_ref": "4",
+      "distance_m": 397.0,
+      "duration_s": 397.0,
+      "snap_offsets_m": [
+        51.28,
+        4.9
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 397.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_229061328",
+      "attraction_name": "松山文創園區",
+      "coordinates": [
+        121.5608355,
+        25.0439945
+      ],
+      "candidate_count": 41,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/1336186434",
+      "station_name": "國父紀念館",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 636.0,
+      "duration_s": 636.0,
+      "snap_offsets_m": [
+        19.29,
+        3.42
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 636.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_136977259",
+      "attraction_name": "虎山自然步道",
+      "coordinates": [
+        121.5891109,
+        25.0309252
+      ],
+      "candidate_count": 2,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/14134499629",
+      "station_name": "廣慈/奉天宮",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 1506.0,
+      "duration_s": 1506.0,
+      "snap_offsets_m": [
+        0.09,
+        27.77
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1506.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_155816458",
+      "attraction_name": "美麗華百樂園",
+      "coordinates": [
+        121.5574723,
+        25.0832688
+      ],
+      "candidate_count": 10,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/2511203020",
+      "station_name": "劍南路",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 238.0,
+      "duration_s": 238.0,
+      "snap_offsets_m": [
+        29.35,
+        0.04
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 238.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_420689856",
+      "attraction_name": "文間山平台",
+      "coordinates": [
+        121.5498523,
+        25.0899172
+      ],
+      "candidate_count": 8,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/5250007549",
+      "station_name": "劍南路",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1002.0,
+      "duration_s": 1002.0,
+      "snap_offsets_m": [
+        2.94,
+        0.03
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1002.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_206134516",
+      "attraction_name": "碧山巖開漳聖王廟",
+      "coordinates": [
+        121.5876312,
+        25.0970831
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 1315.31
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_1274570684",
+      "attraction_name": "白石湖吊橋",
+      "coordinates": [
+        121.5874594,
+        25.099843
+      ],
+      "candidate_count": 0,
+      "status": "over_limit",
+      "reason": "distance_lower_bound",
+      "lower_bound_m": 1602.18
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_189784276",
+      "attraction_name": "大湖公園",
+      "coordinates": [
+        121.6046976,
+        25.0812777
+      ],
+      "candidate_count": 7,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3689390421",
+      "station_name": "大湖公園",
+      "station_code": "",
+      "exit_ref": "2",
+      "distance_m": 393.0,
+      "duration_s": 393.0,
+      "snap_offsets_m": [
+        66.87,
+        8.64
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 393.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_378623049",
+      "attraction_name": "大溝溪生態治水園區",
+      "coordinates": [
+        121.5974463,
+        25.0900679
+      ],
+      "candidate_count": 5,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3689390420",
+      "station_name": "大湖公園",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 1041.0,
+      "duration_s": 1041.0,
+      "snap_offsets_m": [
+        15.04,
+        10.23
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1040.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_421573191",
+      "attraction_name": "六巨石101觀景平台",
+      "coordinates": [
+        121.5741709,
+        25.0268717
+      ],
+      "candidate_count": 11,
+      "status": "over_limit",
+      "reason": "walking_routes_over_limit",
+      "target_id": "node/4325694147",
+      "station_name": "象山",
+      "station_code": "",
+      "exit_ref": "3",
+      "distance_m": 1497.0,
+      "duration_s": 1497.0,
+      "snap_offsets_m": [
+        2.03,
+        0.03
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 1497.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_135913533",
+      "attraction_name": "臺北市立動物園",
+      "coordinates": [
+        121.5857472,
+        24.9955954
+      ],
+      "candidate_count": 3,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3125988496",
+      "station_name": "動物園",
+      "station_code": "",
+      "exit_ref": "1",
+      "distance_m": 874.0,
+      "duration_s": 874.0,
+      "snap_offsets_m": [
+        10.72,
+        7.99
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 873.0
+    },
+    {
+      "attraction_id": "Attraction_OSM_way_776135735",
+      "attraction_name": "碧潭風景區",
+      "coordinates": [
+        121.5354228,
+        24.9546844
+      ],
+      "candidate_count": 1,
+      "status": "kept",
+      "reason": "walking_route_within_limit",
+      "target_id": "node/3229482482",
+      "station_name": "新店",
+      "station_code": "",
+      "exit_ref": null,
+      "distance_m": 658.0,
+      "duration_s": 658.0,
+      "snap_offsets_m": [
+        53.64,
+        0.01
+      ],
+      "has_time_restrictions": false,
+      "minimum_matrix_distance_m": 658.0
+    }
+  ],
+  "removed_records": [
+    {
+      "AttractionID": "Attraction_A13020000G_000061",
+      "AttractionName": "新北：維格餅家 鳳梨酥夢工場",
+      "PositionLat": 25.068739,
+      "PositionLon": 121.435211,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "五股區",
+        "TownCode": "65000150",
+        "ZipCode": "248",
+        "StreetAddress": "成泰路一段87號"
+      },
+      "ServiceTimeInfo": "周一~周日 8:30-17:30",
+      "FeeInfo": "門票：80元/人"
+    },
+    {
+      "AttractionID": "Attraction_A13020000G_000211",
+      "AttractionName": "新北：豐得好食觀光工廠",
+      "PositionLat": 25.06903,
+      "PositionLon": 121.45351,
+      "PostalAddress": {
+        "City": "新北市",
+        "CityCode": "65000",
+        "Town": "五股區",
+        "TownCode": "65000150",
+        "ZipCode": "248",
+        "StreetAddress": "五權路48 號1 樓"
+      }
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_296123001",
+      "AttractionName": "臺北兒童新樂園",
+      "PositionLat": 25.0972488,
+      "PositionLon": 121.514969
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_3986680",
+      "AttractionName": "淡水紅毛城",
+      "PositionLat": 25.1753809,
+      "PositionLon": 121.4329219
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_290506100",
+      "AttractionName": "小白宮",
+      "PositionLat": 25.1741181,
+      "PositionLon": 121.4362313
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5304921921",
+      "AttractionName": "硫磺谷",
+      "PositionLat": 25.143663,
+      "PositionLon": 121.5234841
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_281081715",
+      "AttractionName": "北投社三層崎公園",
+      "PositionLat": 25.1456698,
+      "PositionLon": 121.4913965
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2300575562",
+      "AttractionName": "軍艦岩",
+      "PositionLat": 25.1273081,
+      "PositionLon": 121.5187189
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_827791918",
+      "AttractionName": "國立故宮博物院",
+      "PositionLat": 25.1013146,
+      "PositionLon": 121.5488059
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_327088319",
+      "AttractionName": "國立臺灣科學教育館",
+      "PositionLat": 25.0961203,
+      "PositionLon": 121.5167087
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_16794569",
+      "AttractionName": "擎天崗大草原",
+      "PositionLat": 25.16356,
+      "PositionLon": 121.5770825
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12996927264",
+      "AttractionName": "冷水坑",
+      "PositionLat": 25.1660463,
+      "PositionLon": 121.5645963
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_697170201",
+      "AttractionName": "小油坑",
+      "PositionLat": 25.1753902,
+      "PositionLon": 121.5476114
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_235179609",
+      "AttractionName": "二子坪步道",
+      "PositionLat": 25.1778945,
+      "PositionLon": 121.5143284
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12468295320",
+      "AttractionName": "大屯山",
+      "PositionLat": 25.176667,
+      "PositionLon": 121.521964
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_11791159",
+      "AttractionName": "大佳河濱公園",
+      "PositionLat": 25.0748877,
+      "PositionLon": 121.5365087
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_6710338",
+      "AttractionName": "林安泰古厝",
+      "PositionLat": 25.0724334,
+      "PositionLon": 121.53046
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_136977259",
+      "AttractionName": "虎山自然步道",
+      "PositionLat": 25.0309252,
+      "PositionLon": 121.5891109
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_206134516",
+      "AttractionName": "碧山巖開漳聖王廟",
+      "PositionLat": 25.0970831,
+      "PositionLon": 121.5876312
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1274570684",
+      "AttractionName": "白石湖吊橋",
+      "PositionLat": 25.099843,
+      "PositionLon": 121.5874594
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_421573191",
+      "AttractionName": "六巨石101觀景平台",
+      "PositionLat": 25.0268717,
+      "PositionLon": 121.5741709
+    }
+  ]
+}
