@@ -18,8 +18,10 @@
     #sidebar-resizer:focus-visible { outline: 2px solid #236a58; outline-offset: -2px; }
     body.sidebar-resizing { cursor: col-resize; user-select: none; }
     .sidebar-resizing #map { pointer-events: none; }
-    #sidebar-toggle { position: absolute; z-index: 1000; top: 12px; left: 12px; padding: 8px 12px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 5px #173b4520; }
-    #sidebar-toggle:focus-visible { outline: 3px solid #77b6aa; outline-offset: 2px; }
+    .map-toolbar { position: absolute; z-index: 1000; top: 12px; left: 12px; display: flex; flex-wrap: wrap; gap: 8px; max-width: calc(100% - 76px); }
+    .map-toolbar button { padding: 8px 12px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 5px #173b4520; }
+    .map-toolbar button:focus-visible { outline: 3px solid #77b6aa; outline-offset: 2px; }
+    .map-toolbar button:disabled { cursor: wait; opacity: .6; }
     h1 { margin: 0 0 24px; font-size: 22px; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th, td { border-bottom: 1px solid #dbe5e1; height: 48px; }
@@ -72,7 +74,10 @@
     aria-controls="sidebar" aria-orientation="vertical" title="拖曳調整列表大小，連按兩下恢復預設"></div>
   <main aria-label="互動捷運地圖">
     <div id="map"></div>
-    <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true">收合列表</button>
+    <div class="map-toolbar" role="group" aria-label="地圖顯示控制">
+      <button id="sidebar-toggle" type="button" aria-controls="sidebar" aria-expanded="true">收合列表</button>
+      <button id="labels-toggle" type="button" aria-controls="map" aria-label="放大地圖時顯示地點名稱" aria-pressed="true" disabled>隱藏名稱</button>
+    </div>
     <div id="notice" role="status">正在載入地圖資料…</div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -528,12 +533,35 @@
       }
       const entries = [], stationMarkers = [], allBounds = L.latLngBounds();
       const controls = new Map(), masterControls = {};
+      const labelsToggle = $('labels-toggle'), labelsStorageKey = 'mrt-map-point-labels';
+      let showPointLabels = true;
+      try { showPointLabels = localStorage.getItem(labelsStorageKey) !== 'false'; }
+      catch (_) { /* 無法讀取設定時，沿用放大後顯示名稱。 */ }
       function syncLabels() {
+        const permanent = showPointLabels && map.getZoom() >= 14;
         for (const marker of stationMarkers) {
-          if (map.getZoom() >= 14 && map.hasLayer(marker)) marker.openTooltip();
+          const tooltip = marker.getTooltip();
+          if (tooltip.options.permanent !== permanent) {
+            // 重新綁定，讓 Leaflet 同步切換常駐與滑鼠移入／移出事件。
+            const content = tooltip.getContent(), options = { ...tooltip.options, permanent };
+            marker.unbindTooltip();
+            marker.bindTooltip(content, options);
+          }
+          if (permanent && map.hasLayer(marker)) marker.openTooltip();
           else marker.closeTooltip();
         }
+        labelsToggle.textContent = showPointLabels ? '隱藏名稱' : '顯示名稱';
+        labelsToggle.setAttribute('aria-pressed', String(showPointLabels));
+        labelsToggle.title = showPointLabels ? '隱藏常駐名稱，滑鼠移到點上仍可查看'
+          : '恢復放大地圖時顯示車站、夜市與景點名稱';
       }
+      labelsToggle.addEventListener('click', () => {
+        showPointLabels = !showPointLabels;
+        syncLabels();
+        try { localStorage.setItem(labelsStorageKey, String(showPointLabels)); }
+        catch (_) { /* 無法儲存設定時，本次切換仍有效。 */ }
+      });
+      labelsToggle.disabled = false;
       map.on('zoomend', syncLabels);
       for (const { info, data } of loaded) {
         if (!data) continue;
@@ -584,7 +612,7 @@
               { direction: 'top', offset: [0, -6] });
             if (isStation(feature) || nightMarkets.has(feature) || attractions.has(feature)) {
               layer.bindTooltip(node('span', [featureName(feature, info), feature.properties.ref].filter(Boolean).join(' · ')),
-                { permanent: true, direction: 'right', offset: [10, 0], className: 'station-label' });
+                { permanent: false, direction: 'right', offset: [10, 0], className: 'station-label' });
               stationMarkers.push(layer);
             }
             entries.push({ layer, ids: displayLineIds(feature),

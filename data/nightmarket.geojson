@@ -91,8 +91,8 @@
         "name:zh": "南雅觀光夜市",
         "wikidata": "Q16267468",
         "@geometry": "center",
-        "opening_hours_text": "每日 17:00–翌日 02:00",
-        "opening_hours": "Mo-Su 17:00-02:00"
+        "opening_hours_text": "每日 17:00–24:00",
+        "opening_hours": "Mo-Su 17:00-24:00"
       },
       "geometry": {
         "type": "Point",
@@ -339,59 +339,12 @@
     {
       "type": "Feature",
       "properties": {
-        "@id": "way/775603768",
-        "addr:housename": "台北車站",
-        "indoor": "area",
-        "level": "1",
-        "manager": "微風台北車站",
-        "name": "台灣夜市",
-        "@geometry": "center",
-        "opening_hours_text": "分區時段待確認；所在臺北車站商場公布每日 10:00–22:00"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.5165036,
-          25.0475781
-        ]
-      },
-      "id": "way/775603768"
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "@id": "way/1313165663",
-        "addr:city": "新北市",
-        "addr:country": "TW",
-        "addr:district": "新莊區",
-        "addr:full": "新北市新莊區福基里012鄰五工路2之2號",
-        "addr:hamlet": "福基里",
-        "addr:housenumber": "2之2",
-        "addr:neighbourhood": "012",
-        "addr:street": "五工路",
-        "name": "新莊思源夜市",
-        "name:zh": "新莊思源夜市",
-        "website": "https://www.facebook.com/people/%E6%96%B0%E8%8E%8A%E6%80%9D%E6%BA%90%E5%A4%9C%E5%B8%82-%E5%85%A8%E6%96%B0%E9%96%8B%E5%B9%95/61561217901828/",
-        "@geometry": "center",
-        "opening_hours_text": "曾公告自 2024-10-01 暫停營業；目前是否復業待確認"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          121.4590766,
-          25.0611507
-        ]
-      },
-      "id": "way/1313165663"
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "@id": "way/1336425254",
         "landuse": "commercial",
         "name": "鶯歌龍鳳夜市",
         "@geometry": "center",
-        "opening_hours_text": "待確認：市府 2024 年頁面列每週二、五、六 16:30–21:30"
+        "opening_hours_text": "每週三、五、六、日 17:00–22:30",
+        "opening_hours": "We,Fr,Sa,Su 17:00-22:30"
       },
       "geometry": {
         "type": "Point",
