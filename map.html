@@ -50,6 +50,25 @@
     .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
     details { margin-top: 12px; } summary { cursor: pointer; color: #236a58; }
     .properties { max-height: 220px; overflow: auto; }
+    .route-panel { margin-bottom: 22px; padding-bottom: 20px; border-bottom: 1px solid #c9d9d2; }
+    .route-panel h2 { font-size: 17px; margin: 0 0 12px; }
+    .route-panel label.field-label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 5px; }
+    .route-panel input[type=text], .route-panel input[type=datetime-local] { width: 100%; min-width: 0; padding: 9px 8px; border: 1px solid #b7c9c2; border-radius: 5px; font: inherit; font-size: 13px; color: #173b45; background: #fff; }
+    .route-panel .holiday-option { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 12px 0; }
+    .route-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .route-actions button, .route-panel .route-focus { padding: 8px 10px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; cursor: pointer; font: inherit; font-size: 13px; }
+    .route-actions button[type=submit] { flex: 1; background: #236a58; color: white; border-color: #236a58; }
+    .route-actions button:disabled { opacity: .5; cursor: wait; }
+    .route-note { font-size: 12px; line-height: 1.65; color: #607477; margin: 8px 0; }
+    #route-feedback { font-size: 13px; line-height: 1.6; margin-top: 12px; overflow-wrap: anywhere; }
+    #route-feedback.error { color: #a52727; }
+    .route-summary { border-radius: 6px; background: #e7efeb; padding: 12px; margin-top: 12px; font-size: 13px; line-height: 1.8; }
+    .route-summary strong { display: block; font-size: 18px; }
+    .route-itinerary { padding-left: 22px; font-size: 13px; line-height: 1.6; }
+    .route-itinerary li { margin: 14px 0; padding-left: 2px; }
+    .route-itinerary .ride-heading { border-left: 4px solid var(--route-color); padding-left: 7px; font-weight: 600; }
+    .route-warnings { padding-left: 18px; font-size: 12px; line-height: 1.7; color: #795619; }
+    .route-point-label { color: #173b45; font-weight: 700; }
     @media (max-width: 700px) {
       body { grid-template-columns: minmax(0, 1fr); grid-template-rows: var(--sidebar-height, 36dvh) 8px minmax(0, 1fr); }
       body.sidebar-collapsed { grid-template-rows: minmax(0, 1fr); }
@@ -64,6 +83,27 @@
 <body>
   <aside id="sidebar" aria-label="地圖顯示選項">
     <h1>捷運與周邊地點地圖</h1>
+    <section class="route-panel" aria-labelledby="route-heading">
+      <h2 id="route-heading">捷運起終點查詢</h2>
+      <form id="route-form">
+        <label class="field-label" for="route-origin">起點</label>
+        <input id="route-origin" type="text" list="route-stations" placeholder="站名或站碼，例如 BL12" autocomplete="off" required maxlength="100">
+        <label class="field-label" for="route-destination">終點</label>
+        <input id="route-destination" type="text" list="route-stations" placeholder="站名或站碼，例如 南港" autocomplete="off" required maxlength="100">
+        <datalist id="route-stations"></datalist>
+        <label class="field-label" for="route-departure">出發日期與時間（臺灣時間）</label>
+        <input id="route-departure" type="datetime-local" required>
+        <label class="holiday-option"><input id="route-holiday" type="checkbox">出發日期為國定假日</label>
+        <p class="route-note">平日、週六、週日依日期套用；國定假日請勾選。同名車站請選擇搭乘路線。</p>
+        <div class="route-actions">
+          <button id="route-submit" type="submit" disabled>查詢路線</button>
+          <button id="route-swap" type="button" title="交換起終點">交換</button>
+          <button id="route-clear" type="button">清除結果</button>
+        </div>
+      </form>
+      <div id="route-feedback" role="status" aria-live="polite">正在讀取捷運資料…</div>
+      <div id="route-results" hidden></div>
+    </section>
     <table aria-label="各路線的站點與路線顯示開關">
       <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
       <tbody id="visibility-controls"></tbody>
@@ -81,6 +121,7 @@
     <div id="notice" role="status">正在載入地圖資料…</div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/route_query.js"></script>
   <script>
     const $ = id => document.getElementById(id);
     const node = (tag, text, className) => {
@@ -715,6 +756,10 @@
         $('notice').textContent = skipped.map(({ info }) =>
           `${info.name}：${info.missing_geometry} 筆缺少座標、${info.invalid_geometry} 筆資料無效，未顯示。`).join('；');
       } else if (!tileFailed) $('notice').hidden = true;
+      window.setupRouteQuery(map, loaded, routeColors).catch(error => {
+        $('route-feedback').textContent = `捷運查詢載入失敗：${error.message}`;
+        $('route-feedback').className = 'error';
+      });
       document.body.dataset.ready = 'true';
     }
     start().catch(error => { $('notice').hidden = false; $('notice').textContent = `地圖載入失敗：${error.message}`; });

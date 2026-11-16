@@ -6,9 +6,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import math
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import parse_qs, quote, urlsplit
 import webbrowser
 from calculate_market_walks import fingerprint, MAX_WALK_SECONDS
+from route_planner import QueryError, RoutePlanner
 
 
 ROOT = Path(__file__).resolve().parent
@@ -182,20 +183,48 @@ def build_resources(data_dir=ROOT / 'data'):
 
 
 class MapHandler(BaseHTTPRequestHandler):
-    def __init__(self, *args, resources, **kwargs):
+    def __init__(self, *args, resources, planner=None, **kwargs):
         self.resources = resources
+        self.planner = planner
         super().__init__(*args, **kwargs)
 
     def do_GET(self):
-        path = self.path.split('?', 1)[0]
+        request = urlsplit(self.path)
+        path = request.path
+        if path == '/api/route':
+            if self.planner is None:
+                self.send_json({'error': '捷運 CSV 尚未成功載入，請檢查查詢區的資料訊息。'}, 503)
+                return
+            try:
+                if len(self.path) > 2048:
+                    raise QueryError('查詢內容過長。')
+                params = parse_qs(request.query, keep_blank_values=True, max_num_fields=10)
+                if any(len(values) != 1 for values in params.values()):
+                    raise QueryError('查詢參數不得重複。')
+                values = {key: rows[0] for key, rows in params.items()}
+                if values.get('holiday', '0') not in ('0', '1'):
+                    raise QueryError('假日設定無效。')
+                result = self.planner.query(values.get('origin', ''), values.get('destination', ''),
+                                            values.get('departure_at', ''), values.get('holiday') == '1')
+            except (QueryError, ValueError) as error:
+                self.send_json({'error': str(error)}, 400)
+            else:
+                self.send_json(result)
+            return
         if path in ('/', '/map.html'):
             content, mime = (ROOT / 'map.html').read_bytes(), 'text/html; charset=utf-8'
+        elif path == '/route_query.js':
+            content, mime = (ROOT / 'route_query.js').read_bytes(), 'text/javascript; charset=utf-8'
         elif path in self.resources:
             content, mime = self.resources[path], 'application/json; charset=utf-8'
         else:
             self.send_error(404)
             return
         self.send_content(content, mime)
+
+    def send_json(self, value, status=200):
+        self.send_content(json.dumps(value, ensure_ascii=False, allow_nan=False).encode('utf-8'),
+                          'application/json; charset=utf-8', status)
 
     def send_content(self, content, mime, status=200):
         self.send_response(status)
@@ -210,10 +239,17 @@ class MapHandler(BaseHTTPRequestHandler):
         pass
 
 
-def make_server(port=8765, data_dir=ROOT / 'data'):
+def make_server(port=8765, data_dir=ROOT / 'data', csv_dir=ROOT / 'mrt_excel'):
     resources = build_resources(data_dir)
+    planner = None
+    try:
+        planner = RoutePlanner(csv_dir)
+        catalog = planner.catalog()
+    except (OSError, ValueError, KeyError) as error:
+        catalog = {'error': f'捷運 CSV 讀取失敗：{error}'}
+    resources['/api/stations'] = json.dumps(catalog, ensure_ascii=False).encode('utf-8')
     return ThreadingHTTPServer(('127.0.0.1', port),
-                              partial(MapHandler, resources=resources))
+                              partial(MapHandler, resources=resources, planner=planner))
 
 
 def main(argv=None):
@@ -230,7 +266,7 @@ def main(argv=None):
         return 1
     url = f'http://127.0.0.1:{server.server_port}/'
     print(f'捷運資料地圖：{url}', flush=True)
-    print('資料來自 data/；新增或修改資料後請重新啟動。', flush=True)
+    print('地圖資料來自 data/，捷運查詢來自 mrt_excel/；修改資料後請重新啟動。', flush=True)
     print('保持此終端機開啟；按 Ctrl+C 結束。地圖元件與街道底圖需要網路連線。', flush=True)
     if not args.no_browser:
         webbrowser.open(url)
