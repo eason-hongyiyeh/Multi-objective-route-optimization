@@ -1,0 +1,4013 @@
+{
+  "source": "OpenStreetMap contributors",
+  "source_url": "https://www.openstreetmap.org",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "processed_at": "2026-11-23T17:08:08+08:00",
+  "downloaded_at": "2026-11-23T17:08:08+08:00",
+  "osm_base_timestamp": "2026-11-23T09:06:21Z",
+  "center": {
+    "lat": 25.04631,
+    "lon": 121.517415
+  },
+  "radius_m": 2000,
+  "walking_status": "not_calculated",
+  "opening_hours_status": "unverified_osm",
+  "raw_element_count": 3536,
+  "summary": {
+    "restaurant": {
+      "count": 2540,
+      "issue_counts": {
+        "missing_name": 0,
+        "missing_opening_hours": 1933,
+        "representative_coordinate": 31,
+        "representative_point_outside_radius": 0,
+        "possible_duplicate": 6,
+        "existing_project_record": 0,
+        "possible_existing_project_record": 0
+      }
+    },
+    "attraction": {
+      "count": 341,
+      "issue_counts": {
+        "missing_name": 0,
+        "missing_opening_hours": 277,
+        "representative_coordinate": 222,
+        "representative_point_outside_radius": 6,
+        "possible_duplicate": 0,
+        "existing_project_record": 0,
+        "possible_existing_project_record": 0
+      }
+    }
+  },
+  "excluded_count": 655,
+  "excluded_records": [
+    {
+      "osm_id": "node/5301474421",
+      "reason": "restricted_or_inactive"
+    },
+    {
+      "osm_id": "way/1050624645",
+      "reason": "restricted_or_inactive"
+    },
+    {
+      "osm_id": "way/1154453371",
+      "reason": "restricted_or_inactive"
+    },
+    {
+      "osm_id": "way/1530969363",
+      "reason": "restricted_or_inactive"
+    },
+    {
+      "osm_id": "way/548623142",
+      "reason": "restricted_or_inactive"
+    },
+    {
+      "osm_id": "way/869761091",
+      "reason": "restricted_or_inactive"
+    }
+  ],
+  "issue_meanings": {
+    "missing_name": "缺名稱",
+    "missing_opening_hours": "缺營業／開放時間",
+    "representative_coordinate": "座標為物件外框中心，非已確認入口",
+    "representative_point_outside_radius": "代表點在搜尋半徑外，需核對物件範圍",
+    "possible_duplicate": "疑似與其他 OSM 點重複",
+    "existing_project_record": "與專案現有資料 ID 相同",
+    "possible_existing_project_record": "疑似與專案現有資料重複"
+  },
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query": "[out:json][timeout:40];\n(\n  nwr[\"amenity\"~\"^(fast_food|food_court|restaurant)$\"](around:2000,25.0463100,121.5174150);\n  nwr[\"tourism\"~\"^(aquarium|attraction|gallery|museum|theme_park|viewpoint|zoo)$\"](around:2000,25.0463100,121.5174150);\n  nwr[\"leisure\"~\"^(park|garden)$\"](around:2000,25.0463100,121.5174150);\n  nwr[\"historic\"~\"^(archaeological_site|building|castle|memorial|monument|ruins)$\"](around:2000,25.0463100,121.5174150);\n  nwr[\"amenity\"=\"place_of_worship\"][\"religion\"~\"^(buddhist|taoist|chinese_folk)$\"](around:2000,25.0463100,121.5174150);\n);\nout body center qt;",
+  "input_file": null,
+  "notes": [
+    "這是餐廳與景點候選資料，未匯入地圖、未驗證營業狀態、未計算步行路徑。",
+    "營業時間原樣取自 OSM；空值保持空值，不以 LLM 補造。",
+    "way / relation 座標是外框中心，可能不在物件內，也不是已確認的入口。",
+    "去重只移除相同 OSM ID；同名且相距 25 公尺內的不同物件保留並標示供核對。",
+    "依 ID 或同名且 75 公尺內的座標比對專案既有資料；不覆寫也不自動重新加入。",
+    "搜尋半徑用於取得候選，不代表沿道路走路不超過 1200 公尺。",
+    "使用 --input 時只重新整理原始回應，不代表重新抓取或更改原始搜尋範圍。"
+  ],
+  "cleaning_history": [
+    {
+      "statistics": {
+        "restaurant": {
+          "before": 2672,
+          "after": 2540,
+          "removed": {
+            "missing_name": 126,
+            "duplicate_nearby_name": 6
+          }
+        },
+        "attraction": {
+          "before": 858,
+          "after": 341,
+          "removed": {
+            "duplicate_existing_id": 6,
+            "missing_name": 511
+          }
+        }
+      },
+      "removed_records": [
+        {
+          "id": "Restaurant_OSM_node_4279163489",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_5334987625",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6720844003",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_4838087678",
+          "name": "Mister Donut",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_node_14078695892"
+        },
+        {
+          "id": "Restaurant_OSM_node_2142307110",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6720844023",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_4325693441",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_8280854478",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_13608660037",
+          "name": "永和豆漿大王",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_node_4986160928"
+        },
+        {
+          "id": "Restaurant_OSM_node_9375568415",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579541",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_relation_11518710",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_way_647957756",
+          "name": "大樹先生的家",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_way_1346858456"
+        },
+        {
+          "id": "Restaurant_OSM_node_13341601999",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6924533501",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_8280854473",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9275549278",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579531",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579536",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_14144889309",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_14144891001",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_7765187831",
+          "name": "廖家牛肉麵",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_node_5110490276"
+        },
+        {
+          "id": "Restaurant_OSM_node_7786748172",
+          "name": "天祥豬腳飯",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_node_7749782414"
+        },
+        {
+          "id": "Restaurant_OSM_node_8145680548",
+          "name": "樂麵屋",
+          "reason": "duplicate_nearby_name",
+          "kept_id": "Restaurant_OSM_node_2653879921"
+        },
+        {
+          "id": "Restaurant_OSM_node_9222869783",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9222869784",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9223605660",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9223605663",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9260166348",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9260166349",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9275288546",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9275288547",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9275549277",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9275549279",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175676",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175677",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175678",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175679",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175680",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175684",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9352175685",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541256",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541258",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541262",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541263",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541264",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541265",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541266",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560800",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560801",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560813",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560814",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560815",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560816",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565017",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565021",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565023",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565024",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565025",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565026",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565027",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565028",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565029",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565032",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565033",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565034",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565036",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375568416",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575770",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575771",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575772",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575775",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575776",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575779",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575780",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575781",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575783",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575789",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575790",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575791",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375575792",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579533",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579534",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579535",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579545",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579546",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579547",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579548",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579553",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579556",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375579562",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375696095",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375696098",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375696099",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526604",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526605",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526606",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526607",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526608",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526609",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526610",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526611",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526612",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526613",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526614",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526615",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9379526616",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_11311415380",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_12841122936",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_13844479988",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_2755478360",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_2755478362",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_2755478363",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_2755478364",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_2755478365",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_3811440915",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_3811440926",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_3811446943",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_4787216822",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6499848151",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6499848158",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6720844000",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6720844039",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6924514567",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6924533512",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_6936432806",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541254",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375541259",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560791",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560798",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375560811",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Restaurant_OSM_node_9375565031",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_4601743",
+          "name": "台北植物園",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_206817",
+          "name": "中華民國總統府",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_4638980",
+          "name": "二二八和平公園",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624691",
+          "name": "國立臺灣博物館",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759757",
+          "name": "中正紀念堂",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_2566814443",
+          "name": "袖珍博物館",
+          "reason": "duplicate_existing_id",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229846856",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_16131196",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759759",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453307",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453356",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453360",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453361",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453367",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_13477090798",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_4432198226",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_6720844008",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453311",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453336",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453337",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453338",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453349",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453351",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453359",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453364",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453365",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229848325",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_462484374",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_462488961",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_616078997",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_616078998",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449209",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449210",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_14041125027",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_4428345119",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_15602188",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_18451224",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_18485680",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_5340487",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_relation_5646792",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1003317441",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759754",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1307728115",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1307728116",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175519",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_462484375",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11404862191",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449204",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449205",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449206",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449207",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449208",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_11405449211",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_13539891377",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_2543217899",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_3811447090",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_4428345120",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_4838086719",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_node_5408879647",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1001993544",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1001998953",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1002007334",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1002248746",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1005238681",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1049816977",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481224",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481225",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481226",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481227",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481228",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481229",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481230",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481231",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481232",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481233",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481235",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050481248",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050482690",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050482691",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050482692",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624553",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624554",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624555",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624556",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624560",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624566",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624576",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624577",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624583",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624589",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624591",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624601",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624603",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624605",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624606",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624611",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624612",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624613",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624614",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624616",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624617",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624618",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624619",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624620",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624621",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624622",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624623",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624624",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624625",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624626",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624627",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624628",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624629",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624630",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624631",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624632",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624633",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624634",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624635",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624636",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624637",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624638",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624639",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624640",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624641",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624647",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624648",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624661",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624662",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624668",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050624683",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800220",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800244",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800245",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800246",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800247",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800248",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800249",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800250",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800251",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800252",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800253",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800254",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800255",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800256",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800257",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800258",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800259",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800260",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800261",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800262",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800267",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800268",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800269",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800270",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800271",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800272",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800273",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800274",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800275",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800276",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800277",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800278",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800279",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1050800280",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081730",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081741",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081750",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081751",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081755",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081757",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081762",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081769",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081770",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081771",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081772",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081773",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081774",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081775",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081776",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081777",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081779",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081780",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081781",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051081782",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097544",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097545",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097546",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097547",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097548",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097564",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097571",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097574",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097576",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097577",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097581",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051097582",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242888",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242889",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242890",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242891",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242892",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242893",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242894",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242895",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1051242897",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759741",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759742",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759743",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759770",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759778",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759779",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759780",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1052759781",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359157",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359175",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359190",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359191",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359192",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359214",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359238",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359243",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359252",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359276",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359289",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359295",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359296",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359297",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359298",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359304",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359308",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359309",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359310",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359311",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359312",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359313",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359317",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053359318",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053396969",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053396970",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053396971",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1053396972",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1068394674",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1106744883",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453143",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453144",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453145",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453147",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453159",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453165",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453172",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453173",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453222",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453223",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453229",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453233",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453236",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453237",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453238",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453239",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453242",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453243",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453244",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453245",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453247",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453251",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453252",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453253",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453254",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453255",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453256",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453257",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453294",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453312",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453327",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453328",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1154453329",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1208691855",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229837800",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229841989",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229841990",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229841991",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229841992",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229842701",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229843981",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229843982",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229847897",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229847898",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229847899",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229848318",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1229904332",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1307728114",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1343939979",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345168866",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170812",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170813",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170814",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170815",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170816",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170817",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170818",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170819",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170820",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170821",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170822",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170823",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170824",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170825",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170826",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170827",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170828",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170829",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170830",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170831",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170832",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170833",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170834",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170835",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170836",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170837",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170838",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170840",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345170841",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173315",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173316",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173317",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173318",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173319",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173320",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173321",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173322",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173324",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173325",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173326",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173327",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173328",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173329",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173330",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173331",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173332",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173333",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173334",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345173335",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175503",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175508",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175509",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175510",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175511",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175512",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175513",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175514",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175515",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175516",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175517",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175518",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175520",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175524",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175525",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175526",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175527",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175528",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175529",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345175530",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345179710",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345179711",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345179712",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1345179713",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346020353",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346124866",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346353101",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878227",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878228",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878270",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878271",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878700",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346878701",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1346882579",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347250433",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347250442",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252044",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252045",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252046",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252047",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252048",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252049",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252050",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252060",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252061",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252062",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252063",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252064",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252065",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347252071",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347371954",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347371955",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347371956",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347371957",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347371958",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347520304",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347520305",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347520306",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347520307",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347520308",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529919",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529920",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529921",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529922",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529923",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529924",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529925",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529926",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529934",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529940",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529941",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529942",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529943",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529944",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529945",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529946",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529951",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529955",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529956",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529957",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529958",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529961",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529963",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529964",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529965",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529966",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1347529967",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435672",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435673",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435677",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435678",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435679",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435681",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435682",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435685",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435687",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435688",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435689",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435690",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435692",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435698",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348435700",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439150",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439153",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439154",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439156",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439157",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439161",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439166",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439167",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439168",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439169",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439170",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439171",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439172",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439173",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439174",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439175",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439177",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439178",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439179",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439182",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439183",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439184",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439186",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439190",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439191",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439192",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439193",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439194",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439204",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439205",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439211",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439216",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439218",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439219",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439220",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439574",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1348439575",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1391507229",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1432536731",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1434031459",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1473592571",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1481774593",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1481774595",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1491470671",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1543182252",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1545482754",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1545631697",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_1545632649",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_192668232",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_247685961",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_247685963",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_255061710",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_267170893",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_267170894",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_270519275",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_271407846",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_300655793",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_306275224",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_350353039",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_350353040",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_425265877",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_455330017",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_467789489",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_552281466",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_560865751",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_560865942",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_567653823",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_618225508",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_655154947",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_760583207",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_869761097",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        },
+        {
+          "id": "Attraction_OSM_way_963940039",
+          "name": "",
+          "reason": "missing_name",
+          "kept_id": null
+        }
+      ],
+      "rule": "移除缺名稱、無效座標、相同 ID；同類同名且 25 公尺內、分店／樓層／街道／門牌無衝突時保留一筆。地址衝突者保留供核對。",
+      "cleaned_at": "2026-11-23T20:20:17+08:00"
+    }
+  ],
+  "download_excluded_count": 6,
+  "current_record_count": 2881
+}

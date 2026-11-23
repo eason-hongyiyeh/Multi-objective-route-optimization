@@ -45,6 +45,8 @@
     .attraction-popup .popup-row, .business-popup .popup-row { white-space: pre-line; }
     .walk-button { border: 1px solid #B42365; border-radius: 4px; padding: 6px 9px; margin: 6px 6px 4px 0; background: white; color: #95144f; cursor: pointer; }
     .walking-hint { color: #5f777c; font-size: 12px; line-height: 1.7; }
+    #candidate-panel { margin-top: 16px; padding-top: 12px; border-top: 1px solid #dbe5e1; }
+    #candidate-focus { padding: 7px 10px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; cursor: pointer; font: inherit; font-size: 13px; }
     .line-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
     .line-badge { padding: 4px 8px; border: 1px solid #dbe5e1; border-left: 5px solid var(--line-color); border-radius: 4px; font-size: 12px; color: #173b45; background: #f4f7f6; }
     .station-label { font-family: inherit; font-weight: 600; color: #173b45; background: #ffffffed; border: 1px solid #cfdbd6; box-shadow: 0 1px 4px #173b4520; }
@@ -54,19 +56,22 @@
     .route-panel h2 { font-size: 17px; margin: 0 0 12px; }
     .route-panel label.field-label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 5px; }
     .route-panel input[type=text], .route-panel input[type=datetime-local] { width: 100%; min-width: 0; padding: 9px 8px; border: 1px solid #b7c9c2; border-radius: 5px; font: inherit; font-size: 13px; color: #173b45; background: #fff; }
+    .route-panel select, .route-panel input[type=number] { width: 100%; min-width: 0; padding: 8px; border: 1px solid #b7c9c2; border-radius: 5px; font: inherit; font-size: 13px; background: white; color: #173b45; }
+    .itinerary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .itinerary-card { padding: 12px; margin: 10px 0; border: 1px solid #cfdbd6; border-radius: 6px; background: white; font-size: 13px; line-height: 1.7; }
+    .itinerary-card h3 { font-size: 15px; margin: 0 0 5px; }
+    #itinerary-feedback { font-size: 13px; line-height: 1.6; margin-top: 10px; }
+    #itinerary-feedback.error { color: #a52727; }
     .route-panel .holiday-option { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 12px 0; }
     .route-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
     .route-actions button, .route-panel .route-focus { padding: 8px 10px; border: 1px solid #b7c9c2; border-radius: 5px; background: white; color: #173b45; cursor: pointer; font: inherit; font-size: 13px; }
     .route-actions button[type=submit] { flex: 1; background: #236a58; color: white; border-color: #236a58; }
     .route-actions button:disabled { opacity: .5; cursor: wait; }
     .route-note { font-size: 12px; line-height: 1.65; color: #607477; margin: 8px 0; }
-    #route-feedback { font-size: 13px; line-height: 1.6; margin-top: 12px; overflow-wrap: anywhere; }
-    #route-feedback.error { color: #a52727; }
     .route-summary { border-radius: 6px; background: #e7efeb; padding: 12px; margin-top: 12px; font-size: 13px; line-height: 1.8; }
     .route-summary strong { display: block; font-size: 18px; }
     .route-itinerary { padding-left: 22px; font-size: 13px; line-height: 1.6; }
     .route-itinerary li { margin: 14px 0; padding-left: 2px; }
-    .route-itinerary .ride-heading { border-left: 4px solid var(--route-color); padding-left: 7px; font-weight: 600; }
     .route-warnings { padding-left: 18px; font-size: 12px; line-height: 1.7; color: #795619; }
     .route-point-label { color: #173b45; font-weight: 700; }
     @media (max-width: 700px) {
@@ -83,32 +88,43 @@
 <body>
   <aside id="sidebar" aria-label="地圖顯示選項">
     <h1>捷運與周邊地點地圖</h1>
-    <section class="route-panel" aria-labelledby="route-heading">
-      <h2 id="route-heading">捷運起終點查詢</h2>
-      <form id="route-form">
-        <label class="field-label" for="route-origin">起點</label>
-        <input id="route-origin" type="text" list="route-stations" placeholder="站名或站碼，例如 BL12" autocomplete="off" required maxlength="100">
-        <label class="field-label" for="route-destination">終點</label>
-        <input id="route-destination" type="text" list="route-stations" placeholder="站名或站碼，例如 南港" autocomplete="off" required maxlength="100">
-        <datalist id="route-stations"></datalist>
-        <label class="field-label" for="route-departure">出發日期與時間（臺灣時間）</label>
-        <input id="route-departure" type="datetime-local" required>
-        <label class="holiday-option"><input id="route-holiday" type="checkbox">出發日期為國定假日</label>
-        <p class="route-note">平日、週六、週日依日期套用；國定假日請勾選。同名車站請選擇搭乘路線。</p>
-        <div class="route-actions">
-          <button id="route-submit" type="submit" disabled>查詢路線</button>
-          <button id="route-swap" type="button" title="交換起終點">交換</button>
-          <button id="route-clear" type="button">清除結果</button>
-        </div>
+    <section class="route-panel" aria-labelledby="itinerary-heading">
+      <h2 id="itinerary-heading">遊玩行程推薦</h2>
+      <p class="route-note">台北車站周邊 · 1 個景點＋1 間餐廳<br>目前使用本機條件推薦，尚未連接學校 LLM。</p>
+      <form id="itinerary-form">
+        <label class="field-label" for="itinerary-origin">出發捷運站</label>
+        <input id="itinerary-origin" type="text" list="itinerary-stations" required maxlength="100" placeholder="例如 板橋 · BL07" autocomplete="off">
+        <datalist id="itinerary-stations"></datalist>
+        <label class="field-label" for="itinerary-departure">出發日期與時間（臺灣時間）</label>
+        <input id="itinerary-departure" type="datetime-local" required>
+        <label class="holiday-option"><input id="itinerary-holiday" type="checkbox">出發日期為國定假日</label>
+        <label class="field-label" for="itinerary-preference">想逛什麼？</label>
+        <select id="itinerary-preference"><option value="any">不限</option><option value="museum">博物館／藝廊</option><option value="park">公園／庭園</option><option value="temple">寺廟</option></select>
+        <label class="field-label" for="itinerary-food">餐廳關鍵字（可留空）</label>
+        <input id="itinerary-food" type="text" maxlength="40" placeholder="例如 牛肉麵、拉麵、店名">
+        <label class="field-label" for="itinerary-budget">可用總時間（分鐘，包含交通與停留）</label>
+        <input id="itinerary-budget" type="number" min="30" max="720" value="240" required>
+        <details><summary>停留與出站時間</summary>
+          <div class="itinerary-grid">
+            <div><label class="field-label" for="itinerary-visit">逛景點（分鐘）</label><input id="itinerary-visit" type="number" min="10" max="180" value="60" required></div>
+            <div><label class="field-label" for="itinerary-meal">用餐（分鐘）</label><input id="itinerary-meal" type="number" min="10" max="180" value="60" required></div>
+          </div>
+          <label class="field-label" for="itinerary-exit">出站預留（分鐘，估計值）</label><input id="itinerary-exit" type="number" min="0" max="30" value="5" required>
+        </details>
+        <div class="route-actions"><button id="itinerary-submit" type="submit" disabled>推薦遊玩行程</button><button id="itinerary-clear" type="button">清除</button></div>
       </form>
-      <div id="route-feedback" role="status" aria-live="polite">正在讀取捷運資料…</div>
-      <div id="route-results" hidden></div>
+      <div id="itinerary-feedback" role="status" aria-live="polite">正在讀取推薦資料…</div>
+      <div id="itinerary-results" hidden></div>
     </section>
     <table aria-label="各路線的站點與路線顯示開關">
       <thead><tr><th scope="col">圖層／路線</th><th scope="col">站點</th><th scope="col">路線</th></tr></thead>
       <tbody id="visibility-controls"></tbody>
     </table>
     <p id="walking-hint" class="walking-hint" role="status"></p>
+    <section id="candidate-panel" hidden aria-label="下載地點資料">
+      <p id="candidate-hint" class="walking-hint"></p>
+      <button id="candidate-focus" type="button">查看下載範圍</button>
+    </section>
   </aside>
   <div id="sidebar-resizer" role="separator" tabindex="0" aria-label="調整列表大小"
     aria-controls="sidebar" aria-orientation="vertical" title="拖曳調整列表大小，連按兩下恢復預設"></div>
@@ -122,6 +138,7 @@
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="/route_query.js"></script>
+  <script src="/itinerary_query.js"></script>
   <script>
     const $ = id => document.getElementById(id);
     const node = (tag, text, className) => {
@@ -144,6 +161,22 @@
     const businesses = new WeakMap();
     const businessNames = { hotels: '飯店／旅宿', restaurants: '餐廳' };
     const businessColors = { hotels: '#4F46E5', restaurants: '#EA580C' };
+    const candidates = new WeakMap();
+    const candidateNames = { import_attractions: '下載景點', import_restaurants: '下載餐廳' };
+    const candidateColors = { import_attractions: '#0F766E', import_restaurants: '#EA580C' };
+    const candidateCategories = { 'amenity=restaurant': '餐廳', 'amenity=fast_food': '速食',
+      'amenity=food_court': '美食街', 'amenity=place_of_worship': '寺廟／宗教場所',
+      'tourism=attraction': '景點', 'tourism=museum': '博物館', 'tourism=gallery': '藝廊',
+      'tourism=viewpoint': '觀景點', 'tourism=zoo': '動物園', 'tourism=theme_park': '主題樂園',
+      'tourism=aquarium': '水族館', 'leisure=park': '公園', 'leisure=garden': '庭園',
+      'historic=monument': '紀念碑', 'historic=memorial': '紀念物', 'historic=ruins': '遺跡',
+      'historic=archaeological_site': '考古遺址', 'historic=castle': '城堡', 'historic=building': '歷史建物' };
+    const candidateIssues = { missing_name: '缺少名稱', missing_opening_hours: '缺少營業／開放時間',
+      representative_coordinate: '物件外框中心，並非已確認入口',
+      representative_point_outside_radius: '代表點在下載範圍外，需核對物件範圍',
+      possible_duplicate: '疑似與其他下載地點重複',
+      existing_project_record: '與既有地點 ID 相同',
+      possible_existing_project_record: '疑似與既有地點重複' };
     const cuisineNames = { 2: '中式料理', 99: '其他異國料理', 100: '夜市小吃', 116: '伴手禮／禮盒', 254: '其他' };
     const exitGroups = new WeakMap();
     const exitNames = { mrt_exits: '捷運出入口', airport_exits: '機場捷運出入口' };
@@ -239,6 +272,8 @@
     }
     const featureName = (feature, info) => {
       const p = feature.properties || {};
+      if (candidates.has(feature)) return p.RestaurantName || p.AttractionName
+        || `未提供名稱的${candidates.get(feature) === 'import_restaurants' ? '餐廳' : '景點'} · ${sourceId(feature)}`;
       if (businesses.get(feature) === 'hotels') return p.HotelName || '未提供名稱的旅宿';
       if (businesses.get(feature) === 'restaurants') return p.RestaurantName || '未提供名稱的餐廳';
       if (attractions.has(feature)) return p.AttractionName || '未提供名稱的景點';
@@ -288,6 +323,7 @@
         lines: ids.filter(id => routeNames[id]).map(id => ({ id, name: routeNames[id] })) };
     }
     function displayLineIds(feature) {
+      if (candidates.has(feature)) return [candidates.get(feature)];
       if (businesses.has(feature)) return [businesses.get(feature)];
       if (attractions.has(feature)) return ['attractions'];
       if (nightMarkets.has(feature)) return ['night_markets'];
@@ -313,7 +349,24 @@
       box.append(node('div', featureName(feature, info), 'popup-title'), node('div', info.id, 'popup-source'));
       if (sourceId(feature)) box.append(node('div', `來源物件：${sourceId(feature)}`, 'popup-row'));
       if (station.name) box.append(node('div', `車站：${station.name}`, 'popup-row'));
-      if (businesses.has(feature)) {
+      if (candidates.has(feature)) {
+        box.classList.add('business-popup');
+        box.append(node('div', `分類：${candidateCategories[p.Category] || p.Category || '未提供'}`, 'popup-row'),
+          node('div', '資料狀態：下載候選，營業狀態與時間尚未核對。', 'popup-row'),
+          node('div', `營業／開放時間（OSM 原文）：${p.ServiceTimeInfo || '未提供'}`, 'popup-row'),
+          node('div', '步行距離：尚未計算，不代表符合捷運出口 1,200 公尺內的條件。', 'popup-row'),
+          node('div', `座標：${p.CoordinateType === 'osm_bbox_center' ? '物件外框中心，並非已確認入口。' : 'OSM 節點位置，入口與可步行抵達位置仍待核對。'}`, 'popup-row'));
+        if (p.Cuisine) box.append(node('div', `料理標籤（OSM 原文）：${p.Cuisine}`, 'popup-row'));
+        for (const issue of p.DataIssues || []) {
+          if (issue === 'representative_coordinate') continue;
+          box.append(node('div', `待核對：${candidateIssues[issue] || issue}`, 'popup-row'));
+        }
+        if (/^https:\/\/www\.openstreetmap\.org\/(node|way|relation)\/\d+$/.test(p.SourceURL || '')) {
+          const link = node('a', '查看 OpenStreetMap 原始物件');
+          link.href = p.SourceURL; link.target = '_blank'; link.rel = 'noopener noreferrer';
+          box.append(link);
+        }
+      } else if (businesses.has(feature)) {
         box.classList.add('business-popup');
         const kind = businesses.get(feature), address = p.PostalAddress || {};
         const addressText = [address.City, address.Town, address.StreetAddress]
@@ -517,6 +570,7 @@
       map.createPane('markets').style.zIndex = 480;
       map.createPane('attractions').style.zIndex = 485;
       map.createPane('businesses').style.zIndex = 440;
+      map.createPane('candidates').style.zIndex = 430;
       map.createPane('exits').style.zIndex = 490;
       map.createPane('walking').style.zIndex = 460;
       const walkingEntries = new Map();
@@ -553,6 +607,9 @@
       const stationFeatures = loaded.flatMap(({ data }) => (data?.features || []).filter(isStation));
       for (const { info, data } of loaded) {
         const filename = info.id.split('/').pop().toLowerCase();
+        if (info.candidate_group) {
+          for (const feature of data?.features || []) candidates.set(feature, info.candidate_group);
+        }
         const group = { 'mrt_exits.geojson': 'mrt_exits', 'airport_mrt_exits.geojson': 'airport_exits' }[filename];
         if (group) for (const feature of data?.features || []) {
           exitGroups.set(feature, feature.properties?.transit_system === 'airport_mrt' ? 'airport_exits' : group);
@@ -572,7 +629,7 @@
           if (isStation(feature) && sourceId(feature)) stationById.set(sourceId(feature), stationDetails(feature));
         }
       }
-      const entries = [], stationMarkers = [], allBounds = L.latLngBounds();
+      const entries = [], stationMarkers = [], allBounds = L.latLngBounds(), candidateBounds = L.latLngBounds();
       const controls = new Map(), masterControls = {};
       const labelsToggle = $('labels-toggle'), labelsStorageKey = 'mrt-map-point-labels';
       let showPointLabels = true;
@@ -618,6 +675,9 @@
               opacity: 1, fillOpacity: .17, dashArray: p.service ? '5 5' : null, className: 'data-shape' };
           },
           pointToLayer: (feature, latlng) => {
+            if (candidates.has(feature)) return L.circleMarker(latlng, { pane: 'candidates',
+              radius: 5, color: candidateColors[candidates.get(feature)], weight: 2,
+              fillColor: '#fff', fillOpacity: .9, className: `candidate-point ${candidates.get(feature)}-point` });
             if (businesses.has(feature)) return L.circleMarker(latlng, { pane: 'businesses',
               radius: 6, color: '#fff', weight: 1.5,
               fillColor: businessColors[businesses.get(feature)], fillOpacity: 1,
@@ -645,8 +705,10 @@
               const geometry = trimRouteGeometry(feature, stationFeatures);
               layer.setLatLngs(L.GeoJSON.coordsToLatLngs(geometry.coordinates, geometry.type === 'MultiLineString' ? 1 : 0));
             }
-            layer.bindPopup(popup(feature, info, stationInfo(feature), showWalking),
+            layer.bindPopup(() => popup(feature, info, stationInfo(feature), showWalking),
               { maxWidth: 330, maxHeight: 300, keepInView: true });
+            if (candidates.has(feature)) layer.bindTooltip(node('span', featureName(feature, info)),
+              { direction: 'top', offset: [0, -6] });
             if (exitGroup(feature)) layer.bindTooltip(node('span', featureName(feature, info)),
               { direction: 'top', offset: [0, -5] });
             if (businesses.has(feature)) layer.bindTooltip(node('span', featureName(feature, info)),
@@ -661,6 +723,7 @@
           }
         });
         if (group.getBounds().isValid()) allBounds.extend(group.getBounds());
+        if (info.candidate_group && group.getBounds().isValid()) candidateBounds.extend(group.getBounds());
       }
       const marketById = new Map(loaded.flatMap(({ data }) => (data?.features || [])
         .filter(feature => nightMarkets.has(feature)).map(feature => [sourceId(feature), feature])));
@@ -713,7 +776,7 @@
         else {
           const swatch = node('span', undefined, 'swatch');
           swatch.style.background = id === 'walking_routes' ? walkingColor
-            : routeColors[id] || marketColors[id] || attractionColors[id] || businessColors[id] || exitColors[id] || unknownColor; title.append(swatch);
+            : routeColors[id] || marketColors[id] || attractionColors[id] || businessColors[id] || candidateColors[id] || exitColors[id] || unknownColor; title.append(swatch);
         }
         title.append(node('span', name)); heading.append(title); row.append(heading);
         const boxes = {};
@@ -737,10 +800,27 @@
       }
       addRow('all', '全部', true);
       const present = new Set(entries.flatMap(entry => entry.ids));
-      for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'mrt_exits', 'airport_exits', 'night_markets', 'attractions', 'hotels', 'restaurants', 'other']) {
-        if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || attractionNames[id] || businessNames[id] || exitNames[id] || '未分類');
+      for (const id of ['BR', 'R', 'R22A', 'G', 'G03A', 'O', 'BL', 'Y', 'LB', 'A', 'mrt_exits', 'airport_exits', 'night_markets', 'attractions', 'hotels', 'restaurants', 'import_attractions', 'import_restaurants', 'other']) {
+        if (present.has(id)) addRow(id, routeNames[id] || marketNames[id] || attractionNames[id] || businessNames[id] || candidateNames[id] || exitNames[id] || '未分類');
       }
       addRow('walking_routes', '夜市步行路徑');
+      const candidateLayers = loaded.filter(({ info, data }) => info.candidate_group && data);
+      if (candidateLayers.length) {
+        $('candidate-panel').hidden = false;
+        const counts = candidateLayers.map(({ info }) => `${candidateNames[info.candidate_group]} ${info.displayed.toLocaleString()} 筆`).join('、');
+        const duplicates = candidateLayers.reduce((total, { info }) => total + (info.duplicate_existing || 0), 0);
+        $('candidate-hint').textContent = `${counts}。空心點為待核對資料；移到點上查看名稱，點擊查看時間與來源。尚未篩選步行距離。`
+          + (duplicates ? ` ${duplicates} 筆相同 ID 的地點已使用既有標記。` : '');
+        $('candidate-focus').disabled = !candidateBounds.isValid();
+        $('candidate-focus').addEventListener('click', () => {
+          for (const { info } of candidateLayers) {
+            const control = controls.get(info.candidate_group)?.points;
+            if (control) control.checked = true;
+          }
+          syncVisibility();
+          if (candidateBounds.isValid()) map.fitBounds(candidateBounds, { padding: [40, 40], maxZoom: 16 });
+        });
+      }
       syncVisibility();
       if (allBounds.isValid()) map.fitBounds(allBounds, { padding: [30, 30], animate: false });
       syncLabels();
@@ -756,9 +836,9 @@
         $('notice').textContent = skipped.map(({ info }) =>
           `${info.name}：${info.missing_geometry} 筆缺少座標、${info.invalid_geometry} 筆資料無效，未顯示。`).join('；');
       } else if (!tileFailed) $('notice').hidden = true;
-      window.setupRouteQuery(map, loaded, routeColors).catch(error => {
-        $('route-feedback').textContent = `捷運查詢載入失敗：${error.message}`;
-        $('route-feedback').className = 'error';
+      const transitOverlay = window.createTransitOverlay(map, loaded, routeColors);
+      window.setupItineraryQuery(map, transitOverlay).catch(error => {
+        $('itinerary-feedback').textContent = `推薦介面載入失敗：${error.message}`;
       });
       document.body.dataset.ready = 'true';
     }

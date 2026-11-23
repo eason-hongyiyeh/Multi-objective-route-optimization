@@ -1,4 +1,4 @@
-"""讀取 data/ 的 GeoJSON、景點與餐廳 JSON，啟動本機互動地圖。"""
+"""讀取 data/ 與 imports/ 最新候選資料，啟動本機互動地圖。"""
 import argparse
 from collections import Counter
 from functools import partial
@@ -10,6 +10,7 @@ from urllib.parse import parse_qs, quote, urlsplit
 import webbrowser
 from calculate_market_walks import fingerprint, MAX_WALK_SECONDS
 from route_planner import QueryError, RoutePlanner
+from itinerary_planner import ItineraryPlanner
 
 
 ROOT = Path(__file__).resolve().parent
@@ -18,6 +19,12 @@ POINT_LIST_FILES = {
     ATTRACTION_FILE: ('Attractions', 'AttractionID'),
     'HotelList.json': ('Hotels', 'HotelID'),
     'RestaurantList.json': ('Restaurants', 'RestaurantID'),
+    'AttractionCandidates.json': ('Attractions', 'AttractionID'),
+    'RestaurantCandidates.json': ('Restaurants', 'RestaurantID'),
+}
+CANDIDATE_GROUPS = {
+    'AttractionCandidates.json': 'import_attractions',
+    'RestaurantCandidates.json': 'import_restaurants',
 }
 HIDDEN_DATA_FILES = set()
 TITLES = {
@@ -30,6 +37,8 @@ TITLES = {
     ATTRACTION_FILE: '景點',
     'HotelList.json': '飯店／旅宿',
     'RestaurantList.json': '餐廳',
+    'AttractionCandidates.json': '下載景點（待核對）',
+    'RestaurantCandidates.json': '下載餐廳（待核對）',
 }
 COLORS = ('#247a9a', '#8851b0', '#008675', '#b27a1d', '#d1495b')
 LAYER_COLORS = {
@@ -42,6 +51,8 @@ LAYER_COLORS = {
     ATTRACTION_FILE: '#0F766E',
     'HotelList.json': '#4F46E5',
     'RestaurantList.json': '#EA580C',
+    'AttractionCandidates.json': '#0F766E',
+    'RestaurantCandidates.json': '#EA580C',
 }
 # 衍生出口檔保留供資料作業使用，避免與原始出口在一般地圖重複繪製。
 DERIVED_EXIT_FILES = {'mrt_exits_clean.geojson', 'airport_mrt_exits_clean.geojson',
@@ -136,7 +147,16 @@ def filter_geojson(source):
     return {**source, 'features': kept}, counts
 
 
-def build_resources(data_dir=ROOT / 'data'):
+def latest_candidate_paths(imports_dir):
+    imports_dir = Path(imports_dir).resolve()
+    for folder in sorted(imports_dir.glob('taipei_places_*'), reverse=True):
+        paths = [folder / filename for filename in CANDIDATE_GROUPS]
+        if folder.is_dir() and all(p.is_file() and p.resolve().is_relative_to(imports_dir) for p in paths):
+            return paths
+    return []
+
+
+def build_resources(data_dir=ROOT / 'data', imports_dir=ROOT / 'imports'):
     data_dir = Path(data_dir).resolve()
     if not data_dir.is_dir():
         raise ValueError(f'找不到資料夾：{data_dir}')
@@ -145,14 +165,35 @@ def build_resources(data_dir=ROOT / 'data'):
                    if p.is_file() and (p.suffix.lower() == '.geojson' or p.name in POINT_LIST_FILES)
                    and p.name not in HIDDEN_DATA_FILES
                    and p.resolve().is_relative_to(data_dir))
-    for index, path in enumerate(paths):
-        relative = path.relative_to(data_dir).as_posix()
-        info = {'id': relative, 'name': TITLES.get(path.name, path.stem),
-                'url': '/data/' + quote(relative, safe='/'),
+    sources = [(path, data_dir, '/data/') for path in paths]
+    sources.extend((path, Path(imports_dir).resolve(), '/imports/')
+                   for path in latest_candidate_paths(imports_dir))
+    point_ids = set()
+    for index, (path, base, prefix) in enumerate(sources):
+        relative = path.relative_to(base).as_posix()
+        info = {'id': ('imports/' if prefix == '/imports/' else '') + relative,
+                'name': TITLES.get(path.name, path.stem),
+                'url': prefix + quote(relative, safe='/'),
                 'color': LAYER_COLORS.get(path.name, COLORS[index % len(COLORS)])}
+        if path.name in CANDIDATE_GROUPS:
+            info['candidate_group'] = CANDIDATE_GROUPS[path.name]
         try:
             loader = load_point_list if path.name in POINT_LIST_FILES else load_geojson
             data, counts = loader(path)
+            if info.get('candidate_group'):
+                unique = []
+                for feature in data['features']:
+                    if feature.get('id') and feature['id'] in point_ids:
+                        continue
+                    unique.append(feature)
+                    if feature.get('id'):
+                        point_ids.add(feature['id'])
+                counts['duplicate_existing'] = len(data['features']) - len(unique)
+                data['features'] = unique
+                counts['displayed'] = len(unique)
+                counts['geometry_types'] = dict(Counter(f['geometry']['type'] for f in unique))
+            elif path.name in POINT_LIST_FILES:
+                point_ids.update(f['id'] for f in data['features'] if f.get('id'))
             resources[info['url']] = json.dumps(data, ensure_ascii=False, allow_nan=False).encode('utf-8')
             info.update(counts, error=None)
         except (OSError, UnicodeError, ValueError, RecursionError) as error:
@@ -183,14 +224,31 @@ def build_resources(data_dir=ROOT / 'data'):
 
 
 class MapHandler(BaseHTTPRequestHandler):
-    def __init__(self, *args, resources, planner=None, **kwargs):
+    def __init__(self, *args, resources, planner=None, recommender=None, **kwargs):
         self.resources = resources
         self.planner = planner
+        self.recommender = recommender
         super().__init__(*args, **kwargs)
 
     def do_GET(self):
         request = urlsplit(self.path)
         path = request.path
+        if path == '/api/itinerary':
+            if self.recommender is None:
+                self.send_json({'error': '推薦資料尚未成功載入。'}, 503)
+                return
+            try:
+                if len(self.path) > 4096:
+                    raise QueryError('查詢內容過長。')
+                params = parse_qs(request.query, keep_blank_values=True, max_num_fields=12)
+                if any(len(values) != 1 for values in params.values()):
+                    raise QueryError('查詢參數不得重複。')
+                result = self.recommender.recommend({key: values[0] for key, values in params.items()})
+            except (QueryError, ValueError) as error:
+                self.send_json({'error': str(error)}, 400)
+            else:
+                self.send_json(result)
+            return
         if path == '/api/route':
             if self.planner is None:
                 self.send_json({'error': '捷運 CSV 尚未成功載入，請檢查查詢區的資料訊息。'}, 503)
@@ -215,6 +273,8 @@ class MapHandler(BaseHTTPRequestHandler):
             content, mime = (ROOT / 'map.html').read_bytes(), 'text/html; charset=utf-8'
         elif path == '/route_query.js':
             content, mime = (ROOT / 'route_query.js').read_bytes(), 'text/javascript; charset=utf-8'
+        elif path == '/itinerary_query.js':
+            content, mime = (ROOT / 'itinerary_query.js').read_bytes(), 'text/javascript; charset=utf-8'
         elif path in self.resources:
             content, mime = self.resources[path], 'application/json; charset=utf-8'
         else:
@@ -248,8 +308,16 @@ def make_server(port=8765, data_dir=ROOT / 'data', csv_dir=ROOT / 'mrt_excel'):
     except (OSError, ValueError, KeyError) as error:
         catalog = {'error': f'捷運 CSV 讀取失敗：{error}'}
     resources['/api/stations'] = json.dumps(catalog, ensure_ascii=False).encode('utf-8')
+    recommender = None
+    try:
+        if planner is not None:
+            recommender = ItineraryPlanner(planner, resources)
+        recommendation_catalog = recommender.catalog() if recommender else {'error': '捷運 CSV 尚未成功載入。'}
+    except (OSError, ValueError, KeyError) as error:
+        recommendation_catalog = {'error': f'推薦資料讀取失敗：{error}'}
+    resources['/api/itinerary-options'] = json.dumps(recommendation_catalog, ensure_ascii=False).encode('utf-8')
     return ThreadingHTTPServer(('127.0.0.1', port),
-                              partial(MapHandler, resources=resources, planner=planner))
+                              partial(MapHandler, resources=resources, planner=planner, recommender=recommender))
 
 
 def main(argv=None):
@@ -266,7 +334,7 @@ def main(argv=None):
         return 1
     url = f'http://127.0.0.1:{server.server_port}/'
     print(f'捷運資料地圖：{url}', flush=True)
-    print('地圖資料來自 data/，捷運查詢來自 mrt_excel/；修改資料後請重新啟動。', flush=True)
+    print('地圖資料來自 data/ 與 imports/ 最新候選，捷運查詢來自 mrt_excel/；修改資料後請重新啟動。', flush=True)
     print('保持此終端機開啟；按 Ctrl+C 結束。地圖元件與街道底圖需要網路連線。', flush=True)
     if not args.no_browser:
         webbrowser.open(url)

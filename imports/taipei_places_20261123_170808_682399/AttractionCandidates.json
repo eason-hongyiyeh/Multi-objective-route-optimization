@@ -1,0 +1,4601 @@
+{
+  "source": "OpenStreetMap contributors",
+  "source_url": "https://www.openstreetmap.org",
+  "license": "ODbL-1.0",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "processed_at": "2026-11-23T17:08:08+08:00",
+  "downloaded_at": "2026-11-23T17:08:08+08:00",
+  "osm_base_timestamp": "2026-11-23T09:06:21Z",
+  "center": {
+    "lat": 25.04631,
+    "lon": 121.517415
+  },
+  "radius_m": 2000,
+  "walking_status": "not_calculated",
+  "opening_hours_status": "unverified_osm",
+  "Attractions": [
+    {
+      "AttractionID": "Attraction_OSM_way_689503074",
+      "AttractionName": "91號綠地",
+      "PositionLat": 25.0410907,
+      "PositionLon": 121.5033012,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/689503074",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453370",
+      "AttractionName": "MRI及LA機房",
+      "PositionLat": 25.0415739,
+      "PositionLon": 121.5165697,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453370",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_880457847",
+      "AttractionName": "NTUB Garden",
+      "PositionLat": 25.042475,
+      "PositionLon": 121.5257225,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/880457847",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6924514559",
+      "AttractionName": "Soleil Gallery",
+      "PositionLat": 25.03845,
+      "PositionLon": 121.5293519,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6924514559",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12438027159",
+      "AttractionName": "d/art gallery",
+      "PositionLat": 25.0443214,
+      "PositionLon": 121.5081434,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/12438027159",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258534752",
+      "AttractionName": "一江公園",
+      "PositionLat": 25.0532881,
+      "PositionLon": 121.531287,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258534752",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3421627293",
+      "AttractionName": "一江山殉難紀念",
+      "PositionLat": 25.0533602,
+      "PositionLon": 121.531202,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3421627293",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_589683660",
+      "AttractionName": "三井物產株式會社舊倉庫",
+      "PositionLat": 25.0477559,
+      "PositionLon": 121.5124905,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/589683660",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258765826",
+      "AttractionName": "三井物產株式會社舊廈",
+      "PositionLat": 25.0437065,
+      "PositionLon": 121.5147886,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258765826",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453368",
+      "AttractionName": "三東西大樓",
+      "PositionLat": 25.0423254,
+      "PositionLon": 121.5174377,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453368",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6939523056",
+      "AttractionName": "三聖堂",
+      "PositionLat": 25.0578199,
+      "PositionLon": 121.5186879,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6939523056",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11801696421",
+      "AttractionName": "不義遺址",
+      "PositionLat": 25.0459096,
+      "PositionLon": 121.5201971,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11801696421",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_304601212",
+      "AttractionName": "中原公園",
+      "PositionLat": 25.0558654,
+      "PositionLon": 121.5285405,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/304601212",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_304601213",
+      "AttractionName": "中吉公園",
+      "PositionLat": 25.0564132,
+      "PositionLon": 121.5318226,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/304601213",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_268396850",
+      "AttractionName": "中國佛教會",
+      "PositionLat": 25.0449853,
+      "PositionLon": 121.5250735,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/268396850",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_106335624",
+      "AttractionName": "中央藝文公園",
+      "PositionLat": 25.0462325,
+      "PositionLon": 121.5279788,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/106335624",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_494737325",
+      "AttractionName": "中安公園",
+      "PositionLat": 25.0565035,
+      "PositionLon": 121.5240355,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/494737325",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_232326529",
+      "AttractionName": "中山堂",
+      "PositionLat": 25.0433265,
+      "PositionLon": 121.5096015,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "Mo-Su 09:30-17:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/232326529",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_197114667",
+      "AttractionName": "中山堂廣場",
+      "PositionLat": 25.0431915,
+      "PositionLon": 121.5102004,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/197114667",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11220248685",
+      "AttractionName": "中山藝文廊",
+      "PositionLat": 25.0518522,
+      "PositionLon": 121.5204036,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11220248685",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110490265",
+      "AttractionName": "中庒仔福德宮",
+      "PositionLat": 25.059485,
+      "PositionLon": 121.5291228,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110490265",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1089081174",
+      "AttractionName": "中正區運動中心",
+      "PositionLat": 25.0384687,
+      "PositionLon": 121.5193994,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1089081174",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_13697381798",
+      "AttractionName": "中正堂迴廊展覽空間",
+      "PositionLat": 25.0357648,
+      "PositionLon": 121.514258,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/13697381798",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_1506269",
+      "AttractionName": "中正紀念公園",
+      "PositionLat": 25.0354221,
+      "PositionLon": 121.5204567,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/1506269",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12450882608",
+      "AttractionName": "中正藝文廊",
+      "PositionLat": 25.0348453,
+      "PositionLon": 121.5172212,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/12450882608",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_494749369",
+      "AttractionName": "九府先師廟",
+      "PositionLat": 25.0614938,
+      "PositionLon": 121.5202182,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/494749369",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110488923",
+      "AttractionName": "九府先師普惠堂",
+      "PositionLat": 25.060617,
+      "PositionLon": 121.5206065,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110488923",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453316",
+      "AttractionName": "九西大樓",
+      "PositionLat": 25.0437229,
+      "PositionLon": 121.5176394,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453316",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4524864136",
+      "AttractionName": "二二八事件引爆地紀念碑",
+      "PositionLat": 25.0539611,
+      "PositionLon": 121.5124561,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4524864136",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_350363360",
+      "AttractionName": "二二八公園福德宮",
+      "PositionLat": 25.0411279,
+      "PositionLon": 121.5141654,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/350363360",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_197611923",
+      "AttractionName": "二二八國家紀念館",
+      "PositionLat": 25.0314824,
+      "PositionLon": 121.5140327,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 10:00-17:00; Mo off",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/197611923",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_350328266",
+      "AttractionName": "二二八紀念碑",
+      "PositionLat": 25.0412931,
+      "PositionLon": 121.5150035,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/350328266",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453358",
+      "AttractionName": "五東西大樓",
+      "PositionLat": 25.0429655,
+      "PositionLon": 121.5176183,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453358",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_498068378",
+      "AttractionName": "五福財神爺廟",
+      "PositionLat": 25.0478257,
+      "PositionLon": 121.5348547,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/498068378",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_616079021",
+      "AttractionName": "交通8號廣場",
+      "PositionLat": 25.0478467,
+      "PositionLon": 121.5124147,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/616079021",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_764242775",
+      "AttractionName": "京倫會所",
+      "PositionLat": 25.0365749,
+      "PositionLon": 121.5283929,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/764242775",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_322589839",
+      "AttractionName": "仁德公園",
+      "PositionLat": 25.0531443,
+      "PositionLon": 121.5290749,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/322589839",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_131457251",
+      "AttractionName": "介壽公園",
+      "PositionLat": 25.0391276,
+      "PositionLon": 121.5145793,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/131457251",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5485431",
+      "AttractionName": "伊通公園",
+      "PositionLat": 25.0501686,
+      "PositionLon": 121.5347464,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5485431",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668164",
+      "AttractionName": "佛教植物區",
+      "PositionLat": 25.0326555,
+      "PositionLon": 121.5107574,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668164",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3778312615",
+      "AttractionName": "保霞宮",
+      "PositionLat": 25.0585281,
+      "PositionLon": 121.5312853,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3778312615",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_360364153",
+      "AttractionName": "信愛公園",
+      "PositionLat": 25.0349384,
+      "PositionLon": 121.5287674,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/360364153",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5761755274",
+      "AttractionName": "健康歩道",
+      "PositionLat": 25.0334127,
+      "PositionLon": 121.5208149,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5761755274",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453357",
+      "AttractionName": "六東西大樓",
+      "PositionLat": 25.0431191,
+      "PositionLon": 121.5176838,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453357",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462224796",
+      "AttractionName": "凝香園",
+      "PositionLat": 25.0637274,
+      "PositionLon": 121.5148934,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462224796",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462225166",
+      "AttractionName": "前庭花園",
+      "PositionLat": 25.0610835,
+      "PositionLon": 121.5115564,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462225166",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462225167",
+      "AttractionName": "前庭花園",
+      "PositionLat": 25.0616436,
+      "PositionLon": 121.5114894,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462225167",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_207840",
+      "AttractionName": "剝皮寮歷史街區",
+      "PositionLat": 25.036867,
+      "PositionLon": 121.5025306,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/207840",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777696",
+      "AttractionName": "創作坊",
+      "PositionLat": 25.0415385,
+      "PositionLon": 121.5281861,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777696",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110489755",
+      "AttractionName": "創價學會",
+      "PositionLat": 25.0612996,
+      "PositionLon": 121.5248183,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110489755",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2441149448",
+      "AttractionName": "勝大莊",
+      "PositionLat": 25.041961,
+      "PositionLon": 121.513289,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2441149448",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2651256488",
+      "AttractionName": "北玄宮",
+      "PositionLat": 25.0562692,
+      "PositionLon": 121.5200883,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2651256488",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_39239022",
+      "AttractionName": "北苑",
+      "PositionLat": 25.0402543,
+      "PositionLon": 121.5120117,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/39239022",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_7850141",
+      "AttractionName": "北門廣場",
+      "PositionLat": 25.0476409,
+      "PositionLon": 121.5110292,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/7850141",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4435305744",
+      "AttractionName": "十二生肖植物區",
+      "PositionLat": 25.0323984,
+      "PositionLon": 121.5089035,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4435305744",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_39239025",
+      "AttractionName": "南苑",
+      "PositionLat": 25.0397352,
+      "PositionLon": 121.5119572,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/39239025",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_396108250",
+      "AttractionName": "南門町三二三",
+      "PositionLat": 25.03258,
+      "PositionLon": 121.5111165,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "We-Su 09:30-16:30",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/396108250",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5551867524",
+      "AttractionName": "原住民族文化產業推展中心",
+      "PositionLat": 25.0315586,
+      "PositionLon": 121.5194258,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5551867524",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_270079860",
+      "AttractionName": "原臺北信用組合（合作金庫城內支庫大樓）",
+      "PositionLat": 25.0423967,
+      "PositionLon": 121.5105827,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/270079860",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_255247885",
+      "AttractionName": "原臺灣總督府電話交換局",
+      "PositionLat": 25.0392462,
+      "PositionLon": 121.5106418,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/255247885",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110489739",
+      "AttractionName": "台北協天殿",
+      "PositionLat": 25.0619775,
+      "PositionLon": 121.5247702,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110489739",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_527996174",
+      "AttractionName": "台北天后宮",
+      "PositionLat": 25.0430271,
+      "PositionLon": 121.5063902,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/527996174",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_396410878",
+      "AttractionName": "台北好好看",
+      "PositionLat": 25.0542239,
+      "PositionLon": 121.5149817,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/396410878",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_232563663",
+      "AttractionName": "台北好好看系列二",
+      "PositionLat": 25.0383477,
+      "PositionLon": 121.5226316,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/232563663",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1561871900",
+      "AttractionName": "台北新福宮",
+      "PositionLat": 25.0562975,
+      "PositionLon": 121.5261433,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1561871900",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_544384949",
+      "AttractionName": "台北晶華時尚廣場",
+      "PositionLat": 25.054229,
+      "PositionLon": 121.523061,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/544384949",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_663757064",
+      "AttractionName": "台北書畫院",
+      "PositionLat": 25.0418945,
+      "PositionLon": 121.5286517,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/663757064",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_217690234",
+      "AttractionName": "台北當代藝術館",
+      "PositionLat": 25.050783,
+      "PositionLon": 121.5190265,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 10:00-18:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/217690234",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5299977576",
+      "AttractionName": "台北西站A棟",
+      "PositionLat": 25.0472012,
+      "PositionLon": 121.514504,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5299977576",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5299977575",
+      "AttractionName": "台北西站B棟",
+      "PositionLat": 25.0475609,
+      "PositionLon": 121.5136611,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5299977575",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_413827311",
+      "AttractionName": "台博小客廳",
+      "PositionLat": 25.0428145,
+      "PositionLon": 121.5134681,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/413827311",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5088903127",
+      "AttractionName": "台大醫學院附設醫院",
+      "PositionLat": 25.0400539,
+      "PositionLon": 121.5182879,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5088903127",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6681320988",
+      "AttractionName": "台灣國家婦女館",
+      "PositionLat": 25.0430712,
+      "PositionLon": 121.5269228,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Fr 09:00-18:00; PH off",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6681320988",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_746060239",
+      "AttractionName": "台灣文學基地",
+      "PositionLat": 25.0413892,
+      "PositionLon": 121.5283572,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/746060239",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_13064678136",
+      "AttractionName": "台疆樂善壇",
+      "PositionLat": 25.0521192,
+      "PositionLon": 121.5108844,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/13064678136",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_2609653",
+      "AttractionName": "司法大廈",
+      "PositionLat": 25.0379841,
+      "PositionLon": 121.5120052,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/2609653",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11404972355",
+      "AttractionName": "合瓣花區",
+      "PositionLat": 25.0320984,
+      "PositionLon": 121.5091673,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11404972355",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_304601211",
+      "AttractionName": "吉林公園",
+      "PositionLat": 25.0508124,
+      "PositionLon": 121.5289566,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/304601211",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5052921360",
+      "AttractionName": "吉祥四面佛",
+      "PositionLat": 25.0582172,
+      "PositionLon": 121.5243261,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5052921360",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6924533485",
+      "AttractionName": "名山藝術",
+      "PositionLat": 25.0380353,
+      "PositionLon": 121.5285912,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "Mo-Su 10:00-18:30",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6924533485",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2446576189",
+      "AttractionName": "周連玉書畫大師台北藝術館",
+      "PositionLat": 25.0437703,
+      "PositionLon": 121.5129781,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2446576189",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6144634003",
+      "AttractionName": "唐山帆船造景",
+      "PositionLat": 25.0569726,
+      "PositionLon": 121.5076962,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6144634003",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5280755",
+      "AttractionName": "善導寺",
+      "PositionLat": 25.0449805,
+      "PositionLon": 121.524681,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5280755",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_7229469313",
+      "AttractionName": "嚴家淦植樹碑",
+      "PositionLat": 25.0388602,
+      "PositionLon": 121.5144268,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/7229469313",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_209575976",
+      "AttractionName": "四平公園",
+      "PositionLat": 25.0531026,
+      "PositionLon": 121.5345511,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/209575976",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_422832334",
+      "AttractionName": "四平商圈",
+      "PositionLat": 25.0536296,
+      "PositionLon": 121.5339908,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/422832334",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453362",
+      "AttractionName": "四東西大樓",
+      "PositionLat": 25.0426943,
+      "PositionLon": 121.5175506,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453362",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5318080610",
+      "AttractionName": "國史館展場",
+      "PositionLat": 25.0398684,
+      "PositionLon": 121.5108938,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Fr 09:30-16:30; PH off",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5318080610",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_271367088",
+      "AttractionName": "國家攝影文化中心（原大阪商船株式會社臺北支店）",
+      "PositionLat": 25.0466337,
+      "PositionLon": 121.5144585,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/271367088",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2543218079",
+      "AttractionName": "國師院百年紀念碑",
+      "PositionLat": 25.0356937,
+      "PositionLon": 121.5131467,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2543218079",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2543217932",
+      "AttractionName": "國父銅像",
+      "PositionLat": 25.0361409,
+      "PositionLon": 121.5129209,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2543217932",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_7875303",
+      "AttractionName": "國立台灣藝術教育館",
+      "PositionLat": 25.0322533,
+      "PositionLon": 121.5119513,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/7875303",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_553687451",
+      "AttractionName": "國立歷史博物館",
+      "PositionLat": 25.0315412,
+      "PositionLon": 121.5111696,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 10:00-18:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/553687451",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5721857",
+      "AttractionName": "國立臺灣博物館南門園區",
+      "PositionLat": 25.0335191,
+      "PositionLon": 121.5160459,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Su 06:00-22:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5721857",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_253142536",
+      "AttractionName": "國立臺灣博物館土銀展示館",
+      "PositionLat": 25.0436749,
+      "PositionLon": 121.5143916,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:30-17:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/253142536",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5299858017",
+      "AttractionName": "國立臺灣大學醫學人文博物館",
+      "PositionLat": 25.0395961,
+      "PositionLon": 121.5185329,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Fr 09:30-12:00,13:30-16:30; Sa-Su off",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5299858017",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_364730022",
+      "AttractionName": "圓通學苑",
+      "PositionLat": 25.0291719,
+      "PositionLon": 121.5236429,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/364730022",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10033745514",
+      "AttractionName": "土地公廟",
+      "PositionLat": 25.0324736,
+      "PositionLon": 121.506837,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10033745514",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6996841743",
+      "AttractionName": "土地公廟",
+      "PositionLat": 25.0601223,
+      "PositionLon": 121.5271179,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6996841743",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12438301818",
+      "AttractionName": "地理絡記碑",
+      "PositionLat": 25.0531734,
+      "PositionLon": 121.5244699,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/12438301818",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_7832374",
+      "AttractionName": "塔城公園",
+      "PositionLat": 25.0507991,
+      "PositionLon": 121.5108903,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/7832374",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453343",
+      "AttractionName": "外科部門診",
+      "PositionLat": 25.0418118,
+      "PositionLon": 121.5180117,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453343",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668161",
+      "AttractionName": "多肉植物區",
+      "PositionLat": 25.033163,
+      "PositionLon": 121.5085721,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668161",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462935590",
+      "AttractionName": "大同16號廣場",
+      "PositionLat": 25.0566406,
+      "PositionLon": 121.5083238,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462935590",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2652063273",
+      "AttractionName": "大天后宮舊址",
+      "PositionLat": 25.0428924,
+      "PositionLon": 121.5152443,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2652063273",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1053359198",
+      "AttractionName": "大孝門",
+      "PositionLat": 25.033307,
+      "PositionLon": 121.5210317,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1053359198",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5359264",
+      "AttractionName": "大安125號綠地",
+      "PositionLat": 25.0443903,
+      "PositionLon": 121.5336147,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5359264",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1053359203",
+      "AttractionName": "大忠門",
+      "PositionLat": 25.035963,
+      "PositionLon": 121.5226069,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1053359203",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_259084320",
+      "AttractionName": "大稻埕公園",
+      "PositionLat": 25.0587213,
+      "PositionLon": 121.5103977,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/259084320",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_853340751",
+      "AttractionName": "大稻埕圓環防空蓄水池",
+      "PositionLat": 25.0539142,
+      "PositionLon": 121.5146882,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/853340751",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201280859",
+      "AttractionName": "大稻埕慈聖宮",
+      "PositionLat": 25.0602397,
+      "PositionLon": 121.5123959,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201280859",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_360087201",
+      "AttractionName": "大稻埕辜宅",
+      "PositionLat": 25.0587697,
+      "PositionLon": 121.5087966,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/360087201",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3488100820",
+      "AttractionName": "大鳥居",
+      "PositionLat": 25.0533768,
+      "PositionLon": 121.5258141,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3488100820",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462935601",
+      "AttractionName": "天水宮",
+      "PositionLat": 25.0578678,
+      "PositionLon": 121.5081912,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462935601",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_922810409",
+      "AttractionName": "天皇宮",
+      "PositionLat": 25.0615912,
+      "PositionLon": 121.5249462,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/922810409",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6996841744",
+      "AttractionName": "姓氏聯合宗祠",
+      "PositionLat": 25.0600871,
+      "PositionLon": 121.5271595,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6996841744",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_270079834",
+      "AttractionName": "婦聯總會舊址",
+      "PositionLat": 25.0407196,
+      "PositionLon": 121.509875,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/270079834",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4524863840",
+      "AttractionName": "孫中山像",
+      "PositionLat": 25.041988,
+      "PositionLon": 121.5196575,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4524863840",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3200945581",
+      "AttractionName": "孫運璿科技．人文紀念館",
+      "PositionLat": 25.0335779,
+      "PositionLon": 121.5115224,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 10:00-17:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3200945581",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3646862037",
+      "AttractionName": "安西街周宅",
+      "PositionLat": 25.0591983,
+      "PositionLon": 121.5102809,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3646862037",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_396410905",
+      "AttractionName": "寧夏夜市",
+      "PositionLat": 25.0555973,
+      "PositionLon": 121.5151334,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "Mo-Su 17:30-01:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/396410905",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5359263",
+      "AttractionName": "寧馨公園",
+      "PositionLat": 25.0441472,
+      "PositionLon": 121.5350721,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5359263",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3263490570",
+      "AttractionName": "寶成門舊址碑",
+      "PositionLat": 25.0420308,
+      "PositionLon": 121.5088734,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3263490570",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_299946168",
+      "AttractionName": "小白宮展演廳",
+      "PositionLat": 25.0334784,
+      "PositionLon": 121.5161526,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/299946168",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1054321398",
+      "AttractionName": "小綠地",
+      "PositionLat": 25.0329793,
+      "PositionLon": 121.5067559,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1054321398",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3488100733",
+      "AttractionName": "小鳥居",
+      "PositionLat": 25.0533716,
+      "PositionLon": 121.5258979,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3488100733",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_769898316",
+      "AttractionName": "尾辻國吉宅",
+      "PositionLat": 25.0296803,
+      "PositionLon": 121.5196974,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/769898316",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777697",
+      "AttractionName": "展覽廳",
+      "PositionLat": 25.0415057,
+      "PositionLon": 121.5283158,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777697",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777698",
+      "AttractionName": "平安京",
+      "PositionLat": 25.0414741,
+      "PositionLon": 121.528469,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777698",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4837986440",
+      "AttractionName": "幸安福德宮",
+      "PositionLat": 25.0402262,
+      "PositionLon": 121.5307081,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4837986440",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_271117848",
+      "AttractionName": "幸市里城市花園",
+      "PositionLat": 25.042461,
+      "PositionLon": 121.5307647,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/271117848",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1333850984",
+      "AttractionName": "幸市里快樂花園",
+      "PositionLat": 25.0425684,
+      "PositionLon": 121.5309354,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1333850984",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_400582366",
+      "AttractionName": "幸市里社區花園",
+      "PositionLat": 25.0403957,
+      "PositionLon": 121.5318103,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/400582366",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_378341740",
+      "AttractionName": "幸福園地",
+      "PositionLat": 25.0428382,
+      "PositionLon": 121.5281823,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/378341740",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1453335722",
+      "AttractionName": "幸福草地",
+      "PositionLat": 25.0413968,
+      "PositionLon": 121.5287216,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1453335722",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_203547781",
+      "AttractionName": "康樂公園",
+      "PositionLat": 25.0530723,
+      "PositionLon": 121.5248613,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/203547781",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_888791835",
+      "AttractionName": "廣澤宮",
+      "PositionLat": 25.0620869,
+      "PositionLon": 121.5083423,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/888791835",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_259084321",
+      "AttractionName": "延平宮",
+      "PositionLat": 25.0536573,
+      "PositionLon": 121.5070682,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/259084321",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_349570048",
+      "AttractionName": "延平河濱公園",
+      "PositionLat": 25.0720143,
+      "PositionLon": 121.5021861,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/349570048",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2543218082",
+      "AttractionName": "建國作人碑",
+      "PositionLat": 25.0357739,
+      "PositionLon": 121.513847,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2543218082",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_247163508",
+      "AttractionName": "建成公園",
+      "PositionLat": 25.0543027,
+      "PositionLon": 121.5187993,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/247163508",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_243906145",
+      "AttractionName": "建成圓環公園",
+      "PositionLat": 25.0538065,
+      "PositionLon": 121.5147063,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/243906145",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1051081794",
+      "AttractionName": "弄春池",
+      "PositionLat": 25.0408354,
+      "PositionLon": 121.5250868,
+      "Category": "tourism=viewpoint",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1051081794",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3219715871",
+      "AttractionName": "彩繪階梯",
+      "PositionLat": 25.0429157,
+      "PositionLon": 121.5332533,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3219715871",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_385433688",
+      "AttractionName": "彰化商業銀行",
+      "PositionLat": 25.0455853,
+      "PositionLon": 121.5133995,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "Mo-Fr 09:00-15:30",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/385433688",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453352",
+      "AttractionName": "復健部大樓",
+      "PositionLat": 25.0426606,
+      "PositionLon": 121.5168616,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453352",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453353",
+      "AttractionName": "復健部研究室",
+      "PositionLat": 25.0424204,
+      "PositionLon": 121.5180824,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453353",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_420989277",
+      "AttractionName": "德鄰公園",
+      "PositionLat": 25.0619473,
+      "PositionLon": 121.5147526,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/420989277",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1002559386",
+      "AttractionName": "心中山線形公園",
+      "PositionLat": 25.0551429,
+      "PositionLon": 121.520537,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1002559386",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462935586",
+      "AttractionName": "忠和公園",
+      "PositionLat": 25.0579168,
+      "PositionLon": 121.5087132,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462935586",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_207614903",
+      "AttractionName": "忠孝公園",
+      "PositionLat": 25.0420252,
+      "PositionLon": 121.5320365,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/207614903",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_929021102",
+      "AttractionName": "急公好義牌坊",
+      "PositionLat": 25.041085,
+      "PositionLon": 121.5142824,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/929021102",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777693",
+      "AttractionName": "悅讀館",
+      "PositionLat": 25.0411892,
+      "PositionLon": 121.5285027,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777693",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_739126534",
+      "AttractionName": "慈濟潮州街靜思堂",
+      "PositionLat": 25.0299981,
+      "PositionLon": 121.5208543,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/739126534",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_386897076",
+      "AttractionName": "慈濟精舍",
+      "PositionLat": 25.045765,
+      "PositionLon": 121.5370811,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/386897076",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2168537989",
+      "AttractionName": "成功高中昆蟲館",
+      "PositionLat": 25.0433917,
+      "PositionLon": 121.5232306,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2168537989",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668163",
+      "AttractionName": "成語植物區",
+      "PositionLat": 25.0329236,
+      "PositionLon": 121.5088732,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668163",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453374",
+      "AttractionName": "手術大樓",
+      "PositionLat": 25.0422501,
+      "PositionLon": 121.5168459,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453374",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5173476023",
+      "AttractionName": "抗日戰爭勝利暨臺灣光復紀念碑",
+      "PositionLat": 25.0429787,
+      "PositionLon": 121.5106636,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5173476023",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462816761",
+      "AttractionName": "撫臺街洋樓",
+      "PositionLat": 25.0467251,
+      "PositionLon": 121.5108269,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Sa 10:00-18:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462816761",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_350363353",
+      "AttractionName": "攝影平台",
+      "PositionLat": 25.0395405,
+      "PositionLon": 121.5131431,
+      "Category": "tourism=viewpoint",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/350363353",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_207614905",
+      "AttractionName": "文光公園",
+      "PositionLat": 25.0390915,
+      "PositionLon": 121.5308166,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/207614905",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777695",
+      "AttractionName": "文學厝",
+      "PositionLat": 25.0415654,
+      "PositionLon": 121.5280273,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777695",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668165",
+      "AttractionName": "文學植物區",
+      "PositionLat": 25.0320794,
+      "PositionLon": 121.5115349,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668165",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1038696137",
+      "AttractionName": "文房Chapter",
+      "PositionLat": 25.0412555,
+      "PositionLon": 121.5304381,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1038696137",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_247419612",
+      "AttractionName": "文昌宮",
+      "PositionLat": 25.0591945,
+      "PositionLon": 121.5210086,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/247419612",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5867919499",
+      "AttractionName": "文殊哥薩耶佛學講堂",
+      "PositionLat": 25.0389644,
+      "PositionLon": 121.5263987,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5867919499",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1087629543",
+      "AttractionName": "新營榕苑市外桃源",
+      "PositionLat": 25.0294821,
+      "PositionLon": 121.5217135,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1087629543",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_441613216",
+      "AttractionName": "新興公園",
+      "PositionLat": 25.061537,
+      "PositionLon": 121.5247109,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/441613216",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_431551577",
+      "AttractionName": "新興宮",
+      "PositionLat": 25.0615447,
+      "PositionLon": 121.5273313,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/431551577",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_7130046505",
+      "AttractionName": "新芳春",
+      "PositionLat": 25.0571057,
+      "PositionLon": 121.5126071,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Fr, Su 10:00-19:00; Sa 10:00-21:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/7130046505",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1164881546",
+      "AttractionName": "日光詣SPACIA",
+      "PositionLat": 25.0476926,
+      "PositionLon": 121.5179873,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1164881546",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_263473859",
+      "AttractionName": "明輝公園",
+      "PositionLat": 25.039531,
+      "PositionLon": 121.5350753,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/263473859",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3561552106",
+      "AttractionName": "明道書院舊址碑",
+      "PositionLat": 25.0442226,
+      "PositionLon": 121.5189424,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3561552106",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_435786862",
+      "AttractionName": "晉德宮",
+      "PositionLat": 25.0458894,
+      "PositionLon": 121.5033921,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/435786862",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453366",
+      "AttractionName": "景福通道連通道",
+      "PositionLat": 25.042046,
+      "PositionLon": 121.5176932,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453366",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453308",
+      "AttractionName": "景福館",
+      "PositionLat": 25.0440153,
+      "PositionLon": 121.5172151,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453308",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_269169658",
+      "AttractionName": "曹洞宗大本山臺灣別院鐘樓",
+      "PositionLat": 25.0392651,
+      "PositionLon": 121.5220409,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/269169658",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201280861",
+      "AttractionName": "朝陽茶葉公園",
+      "PositionLat": 25.055934,
+      "PositionLon": 121.5131688,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201280861",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1387553095",
+      "AttractionName": "朱園公園",
+      "PositionLat": 25.0454894,
+      "PositionLon": 121.5334672,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1387553095",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_507045179",
+      "AttractionName": "李國鼎故居",
+      "PositionLat": 25.0406553,
+      "PositionLon": 121.5276772,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/507045179",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_7330891682",
+      "AttractionName": "李登輝台灣省博物館紀念",
+      "PositionLat": 25.042895,
+      "PositionLon": 121.5147737,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/7330891682",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1347029106",
+      "AttractionName": "李鎮源故居",
+      "PositionLat": 25.0377437,
+      "PositionLon": 121.5228925,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1347029106",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1266691895",
+      "AttractionName": "杭園",
+      "PositionLat": 25.0335073,
+      "PositionLon": 121.5064122,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1266691895",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_269169659",
+      "AttractionName": "東和禪寺",
+      "PositionLat": 25.039453,
+      "PositionLon": 121.5226682,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/269169659",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_645982704",
+      "AttractionName": "東門里銀髮族公園",
+      "PositionLat": 25.0403957,
+      "PositionLon": 121.5226258,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/645982704",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_303826475",
+      "AttractionName": "松江公園",
+      "PositionLat": 25.0503902,
+      "PositionLon": 121.5324661,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/303826475",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_106335689",
+      "AttractionName": "林森公園",
+      "PositionLat": 25.0530429,
+      "PositionLon": 121.5264546,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/106335689",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3139402013",
+      "AttractionName": "林森北路四面佛",
+      "PositionLat": 25.0594437,
+      "PositionLon": 121.5257048,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3139402013",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12844151311",
+      "AttractionName": "林森紀念堂",
+      "PositionLat": 25.0299064,
+      "PositionLon": 121.5149541,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/12844151311",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_618428889",
+      "AttractionName": "林森銅像",
+      "PositionLat": 25.0390445,
+      "PositionLon": 121.5149705,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/618428889",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4435305741",
+      "AttractionName": "棕櫚區",
+      "PositionLat": 25.0310579,
+      "PositionLon": 121.5090797,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4435305741",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11404972352",
+      "AttractionName": "植物分類園區",
+      "PositionLat": 25.0328251,
+      "PositionLon": 121.5096246,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11404972352",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4043621277",
+      "AttractionName": "植物園遺址",
+      "PositionLat": 25.0307692,
+      "PositionLon": 121.5092002,
+      "Category": "historic=archaeological_site",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4043621277",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_13844479989",
+      "AttractionName": "樟腦製造所遺構",
+      "PositionLat": 25.0338398,
+      "PositionLon": 121.5159735,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/13844479989",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_674019579",
+      "AttractionName": "樹火紀念紙博物館",
+      "PositionLat": 25.0482597,
+      "PositionLon": 121.533629,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Sa 09:30-16:30",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/674019579",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6341235216",
+      "AttractionName": "機車瀑布",
+      "PositionLat": 25.0627235,
+      "PositionLon": 121.5110945,
+      "Category": "tourism=viewpoint",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6341235216",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_4601744",
+      "AttractionName": "欽差行臺",
+      "PositionLat": 25.0320898,
+      "PositionLon": 121.5086246,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/4601744",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_312725558",
+      "AttractionName": "正守公園",
+      "PositionLat": 25.0479725,
+      "PositionLon": 121.5287403,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/312725558",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3649178927",
+      "AttractionName": "正德宮",
+      "PositionLat": 25.0349972,
+      "PositionLon": 121.5287731,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3649178927",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_333290667",
+      "AttractionName": "歸綏戲曲公園",
+      "PositionLat": 25.0579901,
+      "PositionLon": 121.5131568,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/333290667",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1053396976",
+      "AttractionName": "民主大道",
+      "PositionLat": 25.0354708,
+      "PositionLon": 121.5201399,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1053396976",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_247419611",
+      "AttractionName": "民享公園",
+      "PositionLat": 25.0592729,
+      "PositionLon": 121.5210915,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/247419611",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4432198243",
+      "AttractionName": "民族植物區",
+      "PositionLat": 25.0314041,
+      "PositionLon": 121.5085191,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4432198243",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11404972354",
+      "AttractionName": "民生植物區",
+      "PositionLat": 25.0330912,
+      "PositionLon": 121.5094623,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11404972354",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4435305743",
+      "AttractionName": "水生植物區",
+      "PositionLat": 25.0317935,
+      "PositionLon": 121.5083419,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4435305743",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_55259184",
+      "AttractionName": "永康公園",
+      "PositionLat": 25.0317664,
+      "PositionLon": 121.5298045,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/55259184",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_203799178",
+      "AttractionName": "永盛公園",
+      "PositionLat": 25.0589795,
+      "PositionLon": 121.5248802,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/203799178",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_379354217",
+      "AttractionName": "永靜公園",
+      "PositionLat": 25.061582,
+      "PositionLon": 121.5218518,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/379354217",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110488922",
+      "AttractionName": "永靜廟",
+      "PositionLat": 25.0605434,
+      "PositionLon": 121.5214165,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110488922",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201280862",
+      "AttractionName": "法主公廟",
+      "PositionLat": 25.0538095,
+      "PositionLon": 121.5121728,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201280862",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1362263128",
+      "AttractionName": "法華寺",
+      "PositionLat": 25.0387661,
+      "PositionLon": 121.5058946,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1362263128",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5299604451",
+      "AttractionName": "海關博物館",
+      "PositionLat": 25.0509158,
+      "PositionLon": 121.5113667,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo-Fr 09:00-17:00 \"group only, by appointment\"",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5299604451",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_471260837",
+      "AttractionName": "清代布政使司衙門遺址碑",
+      "PositionLat": 25.0428649,
+      "PositionLon": 121.5099431,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/471260837",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2088271892",
+      "AttractionName": "清代營盤遺址",
+      "PositionLat": 25.0357701,
+      "PositionLon": 121.5065838,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2088271892",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3076882985",
+      "AttractionName": "清城隍廟舊址",
+      "PositionLat": 25.0452348,
+      "PositionLon": 121.5094599,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3076882985",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3263840811",
+      "AttractionName": "清大稻埕商埠",
+      "PositionLat": 25.0518027,
+      "PositionLon": 121.5084345,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3263840811",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201413879",
+      "AttractionName": "清水巖祖師廟",
+      "PositionLat": 25.0402074,
+      "PositionLon": 121.5027978,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201413879",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2678711635",
+      "AttractionName": "清臺北府文廟舊址",
+      "PositionLat": 25.0368515,
+      "PositionLon": 121.5127373,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2678711635",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2678711634",
+      "AttractionName": "清臺北府武廟舊址",
+      "PositionLat": 25.0371531,
+      "PositionLon": 121.5124968,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2678711634",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3263490568",
+      "AttractionName": "清臺灣巡撫衙門舊址",
+      "PositionLat": 25.0440668,
+      "PositionLon": 121.5104032,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3263490568",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4838086683",
+      "AttractionName": "玄天宮",
+      "PositionLat": 25.0624405,
+      "PositionLon": 121.5148111,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4838086683",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_60730698",
+      "AttractionName": "玉泉公園",
+      "PositionLat": 25.0496687,
+      "PositionLon": 121.507199,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/60730698",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258432689",
+      "AttractionName": "玫瑰古蹟-蔡瑞月舞蹈社",
+      "PositionLat": 25.0557217,
+      "PositionLon": 121.5219924,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258432689",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_6410362",
+      "AttractionName": "瑠公圳公園",
+      "PositionLat": 25.0436366,
+      "PositionLon": 121.5402888,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/6410362",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2192098006",
+      "AttractionName": "登瀛書院舊址碑",
+      "PositionLat": 25.0402598,
+      "PositionLon": 121.51017,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2192098006",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2751310889",
+      "AttractionName": "白色恐怖政治受難者紀念碑",
+      "PositionLat": 25.0394721,
+      "PositionLon": 121.5140348,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2751310889",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_225875957",
+      "AttractionName": "監察院廳舍",
+      "PositionLat": 25.0449505,
+      "PositionLon": 121.5204873,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/225875957",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1346189078",
+      "AttractionName": "監察院議事廳",
+      "PositionLat": 25.0445682,
+      "PositionLon": 121.5199975,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1346189078",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453315",
+      "AttractionName": "研究大樓",
+      "PositionLat": 25.0435402,
+      "PositionLon": 121.5173037,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453315",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_491638034",
+      "AttractionName": "福星公園",
+      "PositionLat": 25.0461269,
+      "PositionLon": 121.5059439,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/491638034",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258432690",
+      "AttractionName": "福民宮",
+      "PositionLat": 25.0536288,
+      "PositionLon": 121.5180893,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258432690",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_509937404",
+      "AttractionName": "福聚宮",
+      "PositionLat": 25.0516517,
+      "PositionLon": 121.5117633,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/509937404",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201280835",
+      "AttractionName": "福興宮",
+      "PositionLat": 25.0557898,
+      "PositionLon": 121.5126413,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201280835",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_267256457",
+      "AttractionName": "立法院青島第二會館",
+      "PositionLat": 25.0434285,
+      "PositionLon": 121.5224048,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/267256457",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4435305742",
+      "AttractionName": "竹區",
+      "PositionLat": 25.0316403,
+      "PositionLon": 121.5081356,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4435305742",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4335684520",
+      "AttractionName": "第一銀行行史館",
+      "PositionLat": 25.0492659,
+      "PositionLon": 121.5250272,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4335684520",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453344",
+      "AttractionName": "第七講堂",
+      "PositionLat": 25.0415038,
+      "PositionLon": 121.5180216,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453344",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4838087637",
+      "AttractionName": "第九號蒸汽車頭",
+      "PositionLat": 25.0431969,
+      "PositionLon": 121.5144472,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4838087637",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453347",
+      "AttractionName": "精神部大樓",
+      "PositionLat": 25.0411715,
+      "PositionLon": 121.517797,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453347",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777694",
+      "AttractionName": "繆思苑",
+      "PositionLat": 25.0415986,
+      "PositionLon": 121.5278866,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777694",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1050624649",
+      "AttractionName": "翠亨閣",
+      "PositionLat": 25.0420781,
+      "PositionLon": 121.515738,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1050624649",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_232674053",
+      "AttractionName": "老松公園",
+      "PositionLat": 25.0385453,
+      "PositionLon": 121.5027601,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/232674053",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6404790259",
+      "AttractionName": "聖安宮",
+      "PositionLat": 25.0451021,
+      "PositionLon": 121.5323013,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6404790259",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_9258856301",
+      "AttractionName": "聖觀寺",
+      "PositionLat": 25.0542734,
+      "PositionLon": 121.5195345,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/9258856301",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_922810411",
+      "AttractionName": "聚葉公園",
+      "PositionLat": 25.0605221,
+      "PositionLon": 121.5272043,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/922810411",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1577685498",
+      "AttractionName": "腊葉館",
+      "PositionLat": 25.0317797,
+      "PositionLon": 121.5088825,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "We-Su 09:30-16:30; Mo, Tu 00:00-24:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1577685498",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1053359244",
+      "AttractionName": "自由廣場",
+      "PositionLat": 25.0361609,
+      "PositionLon": 121.5187198,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1053359244",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1052759782",
+      "AttractionName": "自由廣場門",
+      "PositionLat": 25.0366528,
+      "PositionLon": 121.5177174,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1052759782",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_197316117",
+      "AttractionName": "臺北好好看",
+      "PositionLat": 25.0348619,
+      "PositionLon": 121.5018309,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/197316117",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_419824448",
+      "AttractionName": "臺北好好看",
+      "PositionLat": 25.0474381,
+      "PositionLon": 121.530845,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/419824448",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_434899244",
+      "AttractionName": "臺北好好看",
+      "PositionLat": 25.0528211,
+      "PositionLon": 121.5319816,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/434899244",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_296208076",
+      "AttractionName": "臺北好好看公園2",
+      "PositionLat": 25.045682,
+      "PositionLon": 121.5035484,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/296208076",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1418236366",
+      "AttractionName": "臺北市中正區幸市里如意花園",
+      "PositionLat": 25.039972,
+      "PositionLon": 121.53141,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1418236366",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_754342598",
+      "AttractionName": "臺北市鄉土教育中心",
+      "PositionLat": 25.0366992,
+      "PositionLon": 121.5031295,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:00-17:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/754342598",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_296208077",
+      "AttractionName": "臺北市電影主題公園",
+      "PositionLat": 25.0449524,
+      "PositionLon": 121.503337,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/296208077",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5173474719",
+      "AttractionName": "臺北府城西門（寶成門）原址",
+      "PositionLat": 25.0421085,
+      "PositionLon": 121.5085396,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5173474719",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11405485007",
+      "AttractionName": "臺北植物園苗圃",
+      "PositionLat": 25.0330997,
+      "PositionLon": 121.5081815,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11405485007",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_252994060",
+      "AttractionName": "臺北當代工藝設計分館",
+      "PositionLat": 25.0319082,
+      "PositionLon": 121.5122993,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/252994060",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_361112199",
+      "AttractionName": "臺北監獄圍牆遺跡(古蹟)",
+      "PositionLat": 25.0329774,
+      "PositionLon": 121.5255997,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/361112199",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_204616539",
+      "AttractionName": "臺北行旅廣場",
+      "PositionLat": 25.0475493,
+      "PositionLon": 121.5142414,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/204616539",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_271754072",
+      "AttractionName": "臺北郵局",
+      "PositionLat": 25.0470841,
+      "PositionLon": 121.5117708,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "Mo-Fr 08:30-21:00; Sa 09:00-12:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/271754072",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11873796938",
+      "AttractionName": "臺北關帝堂",
+      "PositionLat": 25.0528789,
+      "PositionLon": 121.5306759,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11873796938",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6886599776",
+      "AttractionName": "臺大地藏庵",
+      "PositionLat": 25.0431738,
+      "PositionLon": 121.5167659,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6886599776",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453314",
+      "AttractionName": "臺大牙醫學系",
+      "PositionLat": 25.043682,
+      "PositionLon": 121.5169293,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453314",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453346",
+      "AttractionName": "臺大醫院倫理中心",
+      "PositionLat": 25.0410331,
+      "PositionLon": 121.5176285,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453346",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3144930943",
+      "AttractionName": "臺灣公路原點",
+      "PositionLat": 25.0454442,
+      "PositionLon": 121.5198276,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3144930943",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4107744990",
+      "AttractionName": "臺灣噶舉佛學院 民生中心",
+      "PositionLat": 25.058192,
+      "PositionLon": 121.525792,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "Mo-Su 10:00-22:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4107744990",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_376521772",
+      "AttractionName": "臺灣文學館臺北分館",
+      "PositionLat": 25.045247,
+      "PositionLon": 121.5266652,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/376521772",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_544366061",
+      "AttractionName": "臺灣新文化運動紀念館",
+      "PositionLat": 25.0591205,
+      "PositionLon": 121.5152276,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/544366061",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5457100814",
+      "AttractionName": "臺灣民眾黨本部舊址",
+      "PositionLat": 25.0528615,
+      "PositionLon": 121.5129166,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5457100814",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6292776085",
+      "AttractionName": "臺灣漫畫基地",
+      "PositionLat": 25.0500053,
+      "PositionLon": 121.5160797,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 10:00-21:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6292776085",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_552620589",
+      "AttractionName": "臺灣省城隍廟",
+      "PositionLat": 25.0437925,
+      "PositionLon": 121.5126805,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/552620589",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_270025390",
+      "AttractionName": "臺灣菸酒公司",
+      "PositionLat": 25.033843,
+      "PositionLon": 121.5148411,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/270025390",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_9785004774",
+      "AttractionName": "臺灣銀行文物館",
+      "PositionLat": 25.0414149,
+      "PositionLon": 121.5112589,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Fr 09:30-12:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/9785004774",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_270035802",
+      "AttractionName": "臺灣電力株式會社社長宿舍",
+      "PositionLat": 25.040002,
+      "PositionLon": 121.5093581,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/270035802",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_260882324",
+      "AttractionName": "興亞公園",
+      "PositionLat": 25.0473648,
+      "PositionLon": 121.5316264,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/260882324",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_545805290",
+      "AttractionName": "艋舺青山宮",
+      "PositionLat": 25.0398182,
+      "PositionLon": 121.4994997,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/545805290",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462460495",
+      "AttractionName": "花圃",
+      "PositionLat": 25.0583274,
+      "PositionLon": 121.5160431,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462460495",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2645583717",
+      "AttractionName": "荷風閣",
+      "PositionLat": 25.0316361,
+      "PositionLon": 121.5111447,
+      "Category": "tourism=viewpoint",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2645583717",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_14041146838",
+      "AttractionName": "菩提樹紀念碑",
+      "PositionLat": 25.0361321,
+      "PositionLon": 121.5140478,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/14041146838",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_204211742",
+      "AttractionName": "菩提講堂",
+      "PositionLat": 25.0522054,
+      "PositionLon": 121.5200621,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/204211742",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5177809",
+      "AttractionName": "華山1914文化創意產業園區",
+      "PositionLat": 25.0445809,
+      "PositionLon": 121.5287938,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5177809",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5286459",
+      "AttractionName": "華山公園",
+      "PositionLat": 25.0478556,
+      "PositionLon": 121.524526,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5286459",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_435671644",
+      "AttractionName": "華山公園",
+      "PositionLat": 25.0471142,
+      "PositionLon": 121.5231924,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/435671644",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_288321664",
+      "AttractionName": "萬華266號綠地",
+      "PositionLat": 25.0402984,
+      "PositionLon": 121.5018577,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/288321664",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_268533343",
+      "AttractionName": "蒲添生雕塑紀念館",
+      "PositionLat": 25.0454353,
+      "PositionLon": 121.524682,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/268533343",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4838086684",
+      "AttractionName": "蓬萊廟",
+      "PositionLat": 25.0623823,
+      "PositionLon": 121.5145513,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4838086684",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258432691",
+      "AttractionName": "蔡瑞月舞蹈研究社",
+      "PositionLat": 25.0556305,
+      "PositionLon": 121.5220444,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258432691",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_258534756",
+      "AttractionName": "蔣渭水紀念公園",
+      "PositionLat": 25.0597599,
+      "PositionLon": 121.5167961,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/258534756",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668162",
+      "AttractionName": "蕨類植物區",
+      "PositionLat": 25.0329425,
+      "PositionLon": 121.50857,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668162",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11404972348",
+      "AttractionName": "薑區",
+      "PositionLat": 25.0314593,
+      "PositionLon": 121.5092061,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11404972348",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_13697381797",
+      "AttractionName": "藝術館展示中心一",
+      "PositionLat": 25.0364392,
+      "PositionLon": 121.5144766,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/13697381797",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_420989278",
+      "AttractionName": "蘭州公園",
+      "PositionLat": 25.0639707,
+      "PositionLon": 121.5153594,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/420989278",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_7814100",
+      "AttractionName": "行政院中央大廈",
+      "PositionLat": 25.0463222,
+      "PositionLon": 121.5209612,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/7814100",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668160",
+      "AttractionName": "裸子植物區",
+      "PositionLat": 25.0332022,
+      "PositionLon": 121.5102386,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668160",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_232563225",
+      "AttractionName": "西本願寺廣場",
+      "PositionLat": 25.0400643,
+      "PositionLon": 121.5068974,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/232563225",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_552415095",
+      "AttractionName": "西本願寺鐘樓",
+      "PositionLat": 25.0400171,
+      "PositionLon": 121.5071647,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/552415095",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_12462530129",
+      "AttractionName": "警政署警察史蹟館",
+      "PositionLat": 25.0454126,
+      "PositionLon": 121.5227109,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Mo 09:30-11:30; Mo 14:30-17:00; Th 09:30-11:30; Th 14:30-17:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/12462530129",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453363",
+      "AttractionName": "車道",
+      "PositionLat": 25.0415727,
+      "PositionLon": 121.5163335,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453363",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4828117121",
+      "AttractionName": "迪化207博物館",
+      "PositionLat": 25.0595142,
+      "PositionLon": 121.5095244,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "We-Su 10:00-17:30",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4828117121",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_7362354",
+      "AttractionName": "迪化街商圈",
+      "PositionLat": 25.0559803,
+      "PositionLon": 121.5102149,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/7362354",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1050624567",
+      "AttractionName": "追思懷念區",
+      "PositionLat": 25.0403008,
+      "PositionLon": 121.5152136,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1050624567",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_261638492",
+      "AttractionName": "連雲公園",
+      "PositionLat": 25.0352599,
+      "PositionLon": 121.5317932,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/261638492",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_245747756",
+      "AttractionName": "進安公園",
+      "PositionLat": 25.0459509,
+      "PositionLon": 121.5375054,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/245747756",
+      "DataIssues": [
+        "representative_coordinate",
+        "representative_point_outside_radius"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_205578322",
+      "AttractionName": "逸仙公園",
+      "PositionLat": 25.0477246,
+      "PositionLon": 121.5200379,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/205578322",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777700",
+      "AttractionName": "遊客中心",
+      "PositionLat": 25.0412968,
+      "PositionLon": 121.5284526,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777700",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_197611922",
+      "AttractionName": "郵政博物館",
+      "PositionLat": 25.0316999,
+      "PositionLon": 121.5148559,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:00-17:00; Mo off",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/197611922",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5310769995",
+      "AttractionName": "郵政博物館臺北館",
+      "PositionLat": 25.0470084,
+      "PositionLon": 121.5115003,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:00-17:00; Mo, PH off",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5310769995",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_3738520752",
+      "AttractionName": "醒心宮",
+      "PositionLat": 25.0621042,
+      "PositionLon": 121.5095356,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/3738520752",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_192642999",
+      "AttractionName": "醫學人文館",
+      "PositionLat": 25.0396525,
+      "PositionLon": 121.5187273,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/192642999",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_18180678",
+      "AttractionName": "醫學院區藥圃",
+      "PositionLat": 25.0391854,
+      "PositionLon": 121.5213265,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/18180678",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453293",
+      "AttractionName": "醫護大樓",
+      "PositionLat": 25.0443552,
+      "PositionLon": 121.5173563,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453293",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_9926398",
+      "AttractionName": "金山公園",
+      "PositionLat": 25.0308932,
+      "PositionLon": 121.5248714,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/9926398",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_relation_5376058",
+      "AttractionName": "金杭公園",
+      "PositionLat": 25.0330904,
+      "PositionLon": 121.5256377,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/relation/5376058",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4107743197",
+      "AttractionName": "金法林利生佛學中心",
+      "PositionLat": 25.0473674,
+      "PositionLon": 121.5223992,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "Mo-Sa 10:00-22:00",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4107743197",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_216617725",
+      "AttractionName": "錦州公園",
+      "PositionLat": 25.0605937,
+      "PositionLon": 121.5293669,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/216617725",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_343713285",
+      "AttractionName": "鐵路警察局",
+      "PositionLat": 25.0479205,
+      "PositionLon": 121.512993,
+      "Category": "historic=ruins",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/343713285",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_277518268",
+      "AttractionName": "鐵道部園區",
+      "PositionLat": 25.049139,
+      "PositionLon": 121.5110285,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:30-17:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/277518268",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4462180839",
+      "AttractionName": "長春路狐仙廟",
+      "PositionLat": 25.0550377,
+      "PositionLon": 121.5261921,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4462180839",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2613505723",
+      "AttractionName": "長榮海事博物館",
+      "PositionLat": 25.038662,
+      "PositionLon": 121.5187561,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:00-17:00; Mo off",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2613505723",
+      "DataIssues": []
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_272080099",
+      "AttractionName": "長沙公園",
+      "PositionLat": 25.0415692,
+      "PositionLon": 121.4999945,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/272080099",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_360086992",
+      "AttractionName": "陳天來故居",
+      "PositionLat": 25.0560342,
+      "PositionLon": 121.5085028,
+      "Category": "historic=monument",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/360086992",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_772038385",
+      "AttractionName": "陳德星堂",
+      "PositionLat": 25.0556262,
+      "PositionLon": 121.5161675,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/772038385",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_10047668159",
+      "AttractionName": "雙子葉植物區",
+      "PositionLat": 25.0319214,
+      "PositionLon": 121.5099825,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/10047668159",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_2880039485",
+      "AttractionName": "雙年碑",
+      "PositionLat": 25.0361142,
+      "PositionLon": 121.5141252,
+      "Category": "historic=memorial",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/2880039485",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6939523049",
+      "AttractionName": "雙福宮",
+      "PositionLat": 25.058775,
+      "PositionLon": 121.5191129,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6939523049",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6939523047",
+      "AttractionName": "雷達壇",
+      "PositionLat": 25.05895,
+      "PositionLon": 121.5188956,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6939523047",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1154453345",
+      "AttractionName": "電腦斷層室",
+      "PositionLat": 25.0415248,
+      "PositionLon": 121.5178184,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1154453345",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_201280869",
+      "AttractionName": "霞海城隍廟",
+      "PositionLat": 25.0555972,
+      "PositionLon": 121.5102156,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/201280869",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_6924533515",
+      "AttractionName": "靠邊走藝術空間",
+      "PositionLat": 25.0432102,
+      "PositionLon": 121.5287757,
+      "Category": "tourism=gallery",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/6924533515",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_948948333",
+      "AttractionName": "順益台灣原住民博物館美術分館",
+      "PositionLat": 25.0463757,
+      "PositionLon": 121.5109748,
+      "Category": "tourism=museum",
+      "ServiceTimeInfo": "Tu-Su 09:00-17:00",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/948948333",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_11404972353",
+      "AttractionName": "食物森林",
+      "PositionLat": 25.0330086,
+      "PositionLon": 121.5098472,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/11404972353",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_5110490268",
+      "AttractionName": "養興堂",
+      "PositionLat": 25.0556712,
+      "PositionLon": 121.5265809,
+      "Category": "amenity=place_of_worship",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/5110490268",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_4838087638",
+      "AttractionName": "騰雲號",
+      "PositionLat": 25.0431973,
+      "PositionLon": 121.5143844,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/4838087638",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_462221468",
+      "AttractionName": "魔法小森林",
+      "PositionLat": 25.0617547,
+      "PositionLon": 121.5099819,
+      "Category": "leisure=garden",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/462221468",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_node_929021085",
+      "AttractionName": "黃氏節孝坊",
+      "PositionLat": 25.0429124,
+      "PositionLon": 121.5154958,
+      "Category": "tourism=attraction",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_node",
+      "SourceURL": "https://www.openstreetmap.org/node/929021085",
+      "DataIssues": [
+        "missing_opening_hours"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_259080316",
+      "AttractionName": "黎明公園",
+      "PositionLat": 25.044165,
+      "PositionLon": 121.515558,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/259080316",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_551005773",
+      "AttractionName": "齊東公園",
+      "PositionLat": 25.0418137,
+      "PositionLon": 121.5282857,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/551005773",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_1130777692",
+      "AttractionName": "齊東舍",
+      "PositionLat": 25.041262,
+      "PositionLon": 121.5282708,
+      "Category": "historic=building",
+      "ServiceTimeInfo": "",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/1130777692",
+      "DataIssues": [
+        "missing_opening_hours",
+        "representative_coordinate"
+      ]
+    },
+    {
+      "AttractionID": "Attraction_OSM_way_349570064",
+      "AttractionName": "龍山河濱公園",
+      "PositionLat": 25.0449543,
+      "PositionLon": 121.5016335,
+      "Category": "leisure=park",
+      "ServiceTimeInfo": "24/7",
+      "CoordinateType": "osm_bbox_center",
+      "SourceURL": "https://www.openstreetmap.org/way/349570064",
+      "DataIssues": [
+        "representative_coordinate"
+      ]
+    }
+  ],
+  "cleaned_at": "2026-11-23T20:20:17+08:00"
+}

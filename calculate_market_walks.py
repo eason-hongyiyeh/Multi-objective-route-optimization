@@ -80,19 +80,21 @@ def decode_shape(encoded):
 
 
 class Router:
-    def __init__(self, refresh=False):
+    def __init__(self, refresh=False, timeout=40, snap_limit_m=SNAP_LIMIT_M):
         self.cache_dir = OUTPUT / '.cache'
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.refresh = refresh
         self.last_request = 0
         self.requests = 0
+        self.timeout = timeout
+        self.snap_limit_m = snap_limit_m
 
     def route(self, origin, target):
         if not routing_target_allowed(target):
             raise ValueError('終點座標無效，或出口尚無已確認的正式座標資料。')
         a, b = origin['geometry']['coordinates'], target['geometry']['coordinates']
         payload = {
-            'locations': [{'lat':c[1], 'lon':c[0], 'search_cutoff':SNAP_LIMIT_M} for c in (a,b)],
+            'locations': [{'lat':c[1], 'lon':c[0], 'search_cutoff':self.snap_limit_m} for c in (a,b)],
             'costing':'pedestrian',
             'costing_options':{'pedestrian':{'shortest':True, 'walking_speed':3.6, 'use_ferry':0}},
             'units':'kilometers',
@@ -108,7 +110,7 @@ class Router:
             request = Request(ENDPOINT + '?json=' + quote(encoded, safe=''),
                               headers={'User-Agent':'MrtNightMarketWalking/1.0 (local educational map)'})
             try:
-                with urlopen(request, timeout=40) as response:
+                with urlopen(request, timeout=self.timeout) as response:
                     data = json.load(response)
             except HTTPError as error:
                 raise RuntimeError(f'路由服務 HTTP {error.code}: {error.read().decode()}') from error
@@ -123,12 +125,13 @@ class Router:
             raise ValueError(f'{feature_name(origin)} → {feature_name(target)} 路線包含渡輪，不能當作純步行')
         coordinates = decode_shape(trip['legs'][0]['shape'])
         offsets = [distance(a, coordinates[0]), distance(b, coordinates[-1])]
-        if max(offsets) > SNAP_LIMIT_M:
+        if max(offsets) > self.snap_limit_m:
             raise ValueError(f'路網吸附距離過大：{offsets}')
         if any(m['travel_mode'] != 'pedestrian' for leg in trip['legs'] for m in leg['maneuvers']):
             raise ValueError('回傳路線包含非步行交通方式')
         meters = round(trip['summary']['length'] * 1000)
         result = {'distance_m':meters, 'duration_s':meters / SPEED_MPS,
+                  'snap_offsets_m': [round(value, 1) for value in offsets],
                   'geometry':{'type':'LineString', 'coordinates':coordinates}}
         if trip['summary'].get('has_time_restrictions'):
             result['note'] = '路徑含有時段限制的路段，請留意現場通行狀況。'
