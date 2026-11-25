@@ -29,12 +29,14 @@ window.setupItineraryQuery = async function (map, routeUI) {
     results.replaceChildren(); results.hidden = false;
     const summary = node('div', undefined, 'route-summary');
     summary.append(node('strong', `全程預估 ${minutes(result.total_s)}`),
+      node('div', `遊玩區域：${result.destination.name}周邊`),
       node('div', `交通 ${minutes(result.transit.total_s + result.exit_buffer_s + result.walk_s)} · 景點 ${minutes(result.visit_s)} · 用餐 ${minutes(result.meal_s)}`),
       node('div', `預估結束：${clock(result.end_at)}`),
       node('div', result.transit.fare.total_twd === null ? '捷運票價：資料待補' : `捷運票價：NT$ ${result.transit.fare.total_twd}（不含餐費、門票）`));
+    if (result.transit.timetable_estimated) summary.append(node('div', '交通時間包含文湖線班距估算，非官方逐班時刻。'));
     results.append(summary, node('p', result.reason, 'route-note'));
     const transit = node('details'); transit.open = true;
-    transit.append(node('summary', `${result.transit.origin.name} → 台北車站：搭乘方式`));
+    transit.append(node('summary', `${result.transit.origin.name} → ${result.transit.destination.name}：搭乘方式`));
     const steps = node('ol', undefined, 'route-itinerary');
     for (const step of result.transit.steps) {
       const item = node('li');
@@ -42,7 +44,7 @@ window.setupItineraryQuery = async function (map, routeUI) {
         item.append(node('div', `${step.from_stop.name} ${step.from_id} → ${step.to_stop.name} ${step.to_id}`),
           node('div', `轉乘步行 ${minutes(step.duration_s)}`));
       } else {
-        item.append(node('div', `${step.line_name} · 往 ${step.direction_name}`),
+        item.append(node('div', `${step.line_name}${step.timetable_estimated ? '（班距估算）' : ''} · 往 ${step.direction_name}`),
           node('div', `${step.from_stop.name} 上車 → ${step.to_stop.name} 下車`),
           node('div', `${clock(step.departure_at)} 發車 · ${clock(step.arrival_at)} 抵達`),
           node('div', `候車 ${minutes(step.wait_s)} · 搭車 ${minutes(step.ride_s)}`));
@@ -50,8 +52,11 @@ window.setupItineraryQuery = async function (map, routeUI) {
       }
       steps.append(item);
     }
-    if (!result.transit.steps.length) steps.append(node('li', '已在台北車站，不需搭乘捷運。'));
+    if (!result.transit.steps.length) steps.append(node('li', `已在${result.transit.destination.name}，不需搭乘捷運。`));
     transit.append(steps, node('p', `由 ${result.exit.name} 開始地面步行；出站預留 ${minutes(result.exit_buffer_s)}（估計）。`, 'route-note'));
+    if (result.exit.station_match_method === 'nearest_station') {
+      transit.append(node('p', `出口所屬站依座標配對（距站點 ${result.exit.station_distance_m} 公尺），尚非官方歸屬確認。`, 'route-note'));
+    }
     results.append(transit);
     const places = [result.exit, result.attraction, result.restaurant];
     const labels = [result.exit.name, `① ${result.attraction.name}`, `② ${result.restaurant.name}`];
@@ -113,6 +118,29 @@ window.setupItineraryQuery = async function (map, routeUI) {
     }
     const origin = catalog.stops.find(s => s.id === 'BL07') || catalog.stops[0];
     el('itinerary-origin').value = `${origin.name} · ${origin.id} · ${origin.line_name}`;
+    const destinations = new Map(options.destinations.map(s => [s.id, s]));
+    const destination = destinations.get(options.default_destination) || options.destinations[0];
+    el('itinerary-destination').value = `${destination.name} · ${destination.id} · ${destination.line_name}`;
+    const normalize = value => value.trim().replaceAll('臺', '台').toUpperCase();
+    function updateArea() {
+      const value = el('itinerary-destination').value.trim();
+      let stop = destinations.get(labels.get(value) || normalize(value));
+      if (!stop) {
+        const matches = options.destinations.filter(s => normalize(s.name) === normalize(value));
+        if (matches.length && new Set(matches.map(s => s.station_codes.join('/'))).size === 1) stop = matches[0];
+      }
+      const hint = el('itinerary-area');
+      if (!stop) {
+        hint.textContent = '請輸入站名或站碼，也可以從清單選擇。機捷與一般捷運同名時，請指定站碼。';
+        return;
+      }
+      const counts = `出口 ${stop.exit_count} 個、景點 ${stop.attraction_count} 個、餐廳 ${stop.restaurant_count} 間`;
+      const missing = [!stop.exit_count && '可用出口', !stop.attraction_count && '景點', !stop.restaurant_count && '餐廳'].filter(Boolean);
+      hint.textContent = `${stop.name}周邊候選：${counts}。${missing.length
+        ? `目前缺少${missing.join('、')}資料，尚無法安排完整行程。`
+        : '實際步行距離與營業時間會在查詢時檢查。'}`;
+    }
+    updateArea();
     const timeParts = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Taipei', year: 'numeric',
       month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
     const current = Object.fromEntries(timeParts.map(part => [part.type, part.value]));
@@ -120,7 +148,7 @@ window.setupItineraryQuery = async function (map, routeUI) {
     feedback.textContent = `可開始推薦。每段道路步行上限 ${options.max_walk_m.toLocaleString()} 公尺，時段缺漏會標示待確認。`;
     submit.disabled = false; form.dataset.ready = 'true';
     el('itinerary-clear').addEventListener('click', () => clear());
-    form.addEventListener('input', () => clear());
+    form.addEventListener('input', () => { clear(); updateArea(); });
     form.addEventListener('submit', async event => {
       event.preventDefault(); clear();
       const current = ++number, request = new AbortController(); controller = request;
@@ -128,6 +156,7 @@ window.setupItineraryQuery = async function (map, routeUI) {
       submit.disabled = true; feedback.textContent = '正在比對景點、餐廳、捷運班表與道路步行路徑，首次查詢可能需要約 40 秒…';
       try {
         const params = new URLSearchParams({ origin: labels.get(el('itinerary-origin').value.trim()) || el('itinerary-origin').value.trim(),
+          destination: labels.get(el('itinerary-destination').value.trim()) || el('itinerary-destination').value.trim(),
           departure_at: el('itinerary-departure').value, holiday: el('itinerary-holiday').checked ? '1' : '0',
           preference: el('itinerary-preference').value, food: el('itinerary-food').value,
           budget_min: el('itinerary-budget').value, visit_min: el('itinerary-visit').value,
@@ -135,7 +164,7 @@ window.setupItineraryQuery = async function (map, routeUI) {
         const response = await fetch(`/api/itinerary?${params}`, { signal: request.signal }); const data = await response.json();
         if (current !== number) return;
         if (!response.ok || data.error) throw new Error(data.error || '推薦失敗');
-        render(data); feedback.textContent = '已推薦 1 個景點＋1 間餐廳，藍色虛線為道路步行路徑。';
+        render(data); feedback.textContent = `已推薦${data.destination.name}周邊 1 個景點＋1 間餐廳，藍色虛線為道路步行路徑。`;
       } catch (error) {
         if (current !== number) return;
         feedback.textContent = error.name === 'AbortError' ? '查詢逾時，請稍後重試。' : error.message; feedback.className = 'error';

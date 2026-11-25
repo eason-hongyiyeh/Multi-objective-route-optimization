@@ -90,11 +90,14 @@
     <h1>捷運與周邊地點地圖</h1>
     <section class="route-panel" aria-labelledby="itinerary-heading">
       <h2 id="itinerary-heading">遊玩行程推薦</h2>
-      <p class="route-note">台北車站周邊 · 1 個景點＋1 間餐廳<br>目前使用本機條件推薦，尚未連接學校 LLM。</p>
+      <p class="route-note">選擇想去的捷運站，安排附近 1 個景點＋1 間餐廳。<br>目前使用本機條件推薦，尚未連接學校 LLM。</p>
       <form id="itinerary-form">
         <label class="field-label" for="itinerary-origin">出發捷運站</label>
         <input id="itinerary-origin" type="text" list="itinerary-stations" required maxlength="100" placeholder="例如 板橋 · BL07" autocomplete="off">
         <datalist id="itinerary-stations"></datalist>
+        <label class="field-label" for="itinerary-destination">目的地捷運站（想在哪裡玩？）</label>
+        <input id="itinerary-destination" type="text" list="itinerary-stations" required maxlength="100" placeholder="例如 中山 · R11" autocomplete="off" aria-describedby="itinerary-area">
+        <p id="itinerary-area" class="route-note" role="status">正在讀取目的地資料…</p>
         <label class="field-label" for="itinerary-departure">出發日期與時間（臺灣時間）</label>
         <input id="itinerary-departure" type="datetime-local" required>
         <label class="holiday-option"><input id="itinerary-holiday" type="checkbox">出發日期為國定假日</label>

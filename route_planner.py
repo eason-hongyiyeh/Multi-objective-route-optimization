@@ -358,6 +358,7 @@ class RoutePlanner:
             status = 'schedule_incomplete' if missing else 'no_departure'
         steps, base = result
         rides = [s for s in steps if s['type'] == 'ride']
+        timetable_estimated = any(s['route_id'].startswith('BR-EST-') for s in rides)
         ride_s = sum(s['ride_s'] for s in rides)
         walk_s = sum(s['duration_s'] for s in steps if s['type'] == 'walk') + sum(s['branch_walk_s'] for s in rides)
         wait_s = sum(s['wait_s'] or 0 for s in rides) if status == 'ok' else None
@@ -373,10 +374,13 @@ class RoutePlanner:
             item['arrival_at'] = iso(step['end_s']) if status == 'ok' else None
             if step['type'] == 'ride':
                 item['line_name'] = {'R-3': '新北投支線', 'G-3': '小碧潭支線'}.get(step['family'], self.lines[step['line_id']])
+                item['timetable_estimated'] = step['route_id'].startswith('BR-EST-')
                 item['direction_name'] = self.stops[step['direction_id']]['name']
                 item['stops'] = [self.stops[code] for code in step['path']]
             output.append(item)
         warnings = []
+        if timetable_estimated:
+            warnings.append('文湖線班次依使用者提供的班距及兩端首末班推算：平日尖峰 3 分鐘、離峰與假日 7 分鐘、23:00 後 12 分鐘；不是官方逐班時刻。沿途時刻按行駛秒數向上取整至分鐘，未含途中停站或中途站始發列車。')
         if status == 'schedule_incomplete':
             warnings.append('路線包含尚未提供班表的車站，目前只能提供行駛＋轉乘時間，候車及抵達時間待補。')
         elif status == 'no_departure':
@@ -389,6 +393,7 @@ class RoutePlanner:
             warnings.append('依各站發車表及路段秒數估算，未含資料未提供的途中停站時間、進出站步行；非即時列車資訊。')
         arrival = output[-1]['arrival_at'] if output else start_time.isoformat(timespec='seconds')
         return {'status': status, 'origin': self.stops[origin], 'destination': self.stops[destination],
+                'timetable_estimated': timetable_estimated,
                 'departure_at': start_time.isoformat(timespec='seconds'), 'arrival_at': arrival if status == 'ok' else None,
                 'ride_s': ride_s, 'walk_s': walk_s, 'wait_s': wait_s,
                 # 加總行駛＋步行＋候車時間
