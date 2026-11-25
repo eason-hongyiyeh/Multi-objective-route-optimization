@@ -9,6 +9,7 @@ import time
 from calculate_market_walks import Router, distance
 from fetch_recommendation_data import valid_coordinate
 from route_planner import QueryError, normalize
+from fare_calculator import FARE_MODES
 
 
 ROOT = Path(__file__).resolve().parent
@@ -262,6 +263,9 @@ class ItineraryPlanner:
             self.lock.release()
 
     def _recommend(self, values):
+        fare_mode = values.get('fare_mode', 'full_fare')
+        if not isinstance(fare_mode, str) or fare_mode not in FARE_MODES:
+            raise QueryError('票價模式須為 full_fare 或 stored_value。')
         destination = self._destination(values.get('destination', ''))
         exits, area_places = self._area(destination)
         area_name = destination['name']
@@ -301,7 +305,7 @@ class ItineraryPlanner:
         transit_options, route_errors = [], []
         for code in self.group_by_code[destination['id']]:
             try:
-                route = self.planner.query(origin, code, departure, holiday == '1')
+                route = self.planner.query(origin, code, departure, holiday == '1', fare_mode=fare_mode)
             except QueryError as error:
                 route_errors.append(str(error))
                 continue

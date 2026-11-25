@@ -101,6 +101,12 @@
         <label class="field-label" for="itinerary-departure">出發日期與時間（臺灣時間）</label>
         <input id="itinerary-departure" type="datetime-local" required>
         <label class="holiday-option"><input id="itinerary-holiday" type="checkbox">出發日期為國定假日</label>
+        <label class="field-label" for="itinerary-fare-mode">票卡與轉乘優惠</label>
+        <select id="itinerary-fare-mode" aria-describedby="itinerary-fare-hint">
+          <option value="stored_value" selected>一般電子票證（含符合條件的轉乘優惠）</option>
+          <option value="full_fare">一般全票（不套用轉乘優惠）</option>
+        </select>
+        <p id="itinerary-fare-hint" class="route-note">電子票證指同一張悠遊卡／一卡通／icash 一般卡；北捷與三鶯線須於 1 小時內直接轉乘。機捷不適用此 8 元優惠。</p>
         <label class="field-label" for="itinerary-preference">想逛什麼？</label>
         <select id="itinerary-preference"><option value="any">不限</option><option value="museum">博物館／藝廊</option><option value="park">公園／庭園</option><option value="temple">寺廟</option></select>
         <label class="field-label" for="itinerary-food">餐廳關鍵字（可留空）</label>

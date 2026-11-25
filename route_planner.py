@@ -9,6 +9,8 @@ import itertools
 import math
 from pathlib import Path
 
+from fare_calculator import FARE_MODES, FareCalculator
+
 
 ROOT = Path(__file__).resolve().parent
 SERVICE_TYPES = {'weekday', 'weekend_holiday', 'saturday', 'sunday_holiday', 'daily', 'unspecified'}
@@ -309,36 +311,13 @@ class RoutePlanner:
         steps.reverse()
         return steps, base
 
-    def _fare(self, steps):
-        rides = [s for s in steps if s['type'] == 'ride']
-        if not rides:
-            return {'status': 'ok', 'total_twd': 0, 'parts': [], 'note': '沒有搭乘區段，票價為 0 元。'}
-        segments = []
-        for step in rides:
-            system = 'airport' if step['line_id'] == 'A' else 'metro'
-            if segments and segments[-1]['system'] == system:
-                segments[-1]['to_id'] = step['to_id']
-            else:
-                segments.append({'system': system, 'from_id': step['from_id'], 'to_id': step['to_id']})
-        complete = True
-        for segment in segments:
-            a, b = segment['from_id'], segment['to_id']
-            fare = self.fares.get((a, b))
-            if fare is None:
-                reason = '票價表未收錄這組起訖。'
-            elif fare == 0 and self.stops[a]['name'] != self.stops[b]['name']:
-                fare = None
-                reason = '不同車站的來源票價為 0，需核對。'
-            else:
-                reason = ''
-            segment.update(fare_twd=fare, reason=reason,
-                           from_name=self.stops[a]['name'], to_name=self.stops[b]['name'])
-            complete &= fare is not None
-        return {'status': 'ok' if complete else 'missing',
-                'total_twd': sum(s['fare_twd'] for s in segments) if complete else None,
-                'parts': segments, 'note': '依 CSV 票價；跨機捷按各系統搭乘區段加總，未套用跨系統優惠。'}
+    def _fare(self, steps, fare_mode='full_fare'):
+        transfer_pairs = ((a, b) for a, targets in self.transfers.items() for b, _ in targets)
+        return FareCalculator(self.fares, self.stops, transfer_pairs).calculate(steps, fare_mode)
 
-    def query(self, origin, destination, departure_at, holiday=False):
+    def query(self, origin, destination, departure_at, holiday=False, fare_mode='full_fare'):
+        if not isinstance(fare_mode, str) or fare_mode not in FARE_MODES:
+            raise QueryError('票價模式須為 full_fare 或 stored_value。')
         origin, destination = self.resolve(origin), self.resolve(destination)
         try:
             if not isinstance(departure_at, str) or len(departure_at) != 16:
@@ -400,4 +379,4 @@ class RoutePlanner:
                 'total_s': ride_s + walk_s + wait_s if wait_s is not None else None,
                 'known_duration_s': ride_s + walk_s, 'transfer_count': max(0, len(rides) - 1),
                 'stop_count': sum(len(s['path']) - 1 for s in rides), 'steps': output,
-                'fare': self._fare(steps), 'warnings': warnings}
+                'fare': self._fare(steps, fare_mode), 'warnings': warnings}

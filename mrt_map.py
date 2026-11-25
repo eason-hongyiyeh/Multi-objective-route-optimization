@@ -263,7 +263,8 @@ class MapHandler(BaseHTTPRequestHandler):
                 if values.get('holiday', '0') not in ('0', '1'):
                     raise QueryError('假日設定無效。')
                 result = self.planner.query(values.get('origin', ''), values.get('destination', ''),
-                                            values.get('departure_at', ''), values.get('holiday') == '1')
+                                            values.get('departure_at', ''), values.get('holiday') == '1',
+                                            fare_mode=values.get('fare_mode', 'full_fare'))
             except (QueryError, ValueError) as error:
                 self.send_json({'error': str(error)}, 400)
             else:

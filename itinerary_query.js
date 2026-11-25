@@ -27,14 +27,34 @@ window.setupItineraryQuery = async function (map, routeUI) {
     routeUI.clearRoute();
     const schematic = routeUI.drawRoute(result.transit, false);
     results.replaceChildren(); results.hidden = false;
+    const fare = result.transit.fare;
+    const fareLabel = fare.ticket_type === 'stored_value' ? '捷運票價（一般電子票證）' : '捷運全票';
     const summary = node('div', undefined, 'route-summary');
     summary.append(node('strong', `全程預估 ${minutes(result.total_s)}`),
       node('div', `遊玩區域：${result.destination.name}周邊`),
       node('div', `交通 ${minutes(result.transit.total_s + result.exit_buffer_s + result.walk_s)} · 景點 ${minutes(result.visit_s)} · 用餐 ${minutes(result.meal_s)}`),
       node('div', `預估結束：${clock(result.end_at)}`),
-      node('div', result.transit.fare.total_twd === null ? '捷運票價：資料待補' : `捷運票價：NT$ ${result.transit.fare.total_twd}（不含餐費、門票）`));
+      node('div', fare.total_twd === null ? `${fareLabel}：資料／轉乘條件待確認` : `${fareLabel}：NT$ ${fare.total_twd}（不含餐費、門票）`));
+    if (fare.ticket_type === 'stored_value') {
+      summary.append(node('div', `全票合計：${fare.base_total_twd === null ? '待補' : `NT$ ${fare.base_total_twd}`} · 轉乘優惠：${fare.discount_twd === null ? '待確認' : `減 NT$ ${fare.discount_twd}`}`));
+    }
     if (result.transit.timetable_estimated) summary.append(node('div', '交通時間包含文湖線班距估算，非官方逐班時刻。'));
     results.append(summary, node('p', result.reason, 'route-note'));
+    const fareDetails = node('details');
+    fareDetails.append(node('summary', fare.ticket_type === 'stored_value' ? '票價與轉乘優惠明細' : '全票計算明細'));
+    for (const part of fare.parts) {
+      fareDetails.append(node('div', `${part.system_name}：${part.from_name} ${part.from_id} → ${part.to_name} ${part.to_id}：${part.fare_twd === null ? part.reason : `NT$ ${part.fare_twd}`}`, 'route-note'));
+    }
+    for (const transfer of fare.transfers || []) {
+      if (transfer.rule === 'in_station') continue;
+      fareDetails.append(node('div', `${transfer.from_id} → ${transfer.to_id}：${transfer.reason}`, 'route-note'));
+    }
+    for (const discount of fare.discounts || []) {
+      fareDetails.append(node('div', `${discount.from_id} → ${discount.to_id}：${discount.reason}${discount.status === 'applied' ? `（減 NT$ ${discount.amount_twd}）` : ''}`, 'route-note'));
+    }
+    fareDetails.append(node('p', fare.note, 'route-note'));
+    results.append(fareDetails);
+    for (const assumption of fare.assumptions || []) results.append(node('p', assumption, 'route-note'));
     const transit = node('details'); transit.open = true;
     transit.append(node('summary', `${result.transit.origin.name} → ${result.transit.destination.name}：搭乘方式`));
     const steps = node('ol', undefined, 'route-itinerary');
@@ -158,6 +178,7 @@ window.setupItineraryQuery = async function (map, routeUI) {
         const params = new URLSearchParams({ origin: labels.get(el('itinerary-origin').value.trim()) || el('itinerary-origin').value.trim(),
           destination: labels.get(el('itinerary-destination').value.trim()) || el('itinerary-destination').value.trim(),
           departure_at: el('itinerary-departure').value, holiday: el('itinerary-holiday').checked ? '1' : '0',
+          fare_mode: el('itinerary-fare-mode').value,
           preference: el('itinerary-preference').value, food: el('itinerary-food').value,
           budget_min: el('itinerary-budget').value, visit_min: el('itinerary-visit').value,
           meal_min: el('itinerary-meal').value, exit_min: el('itinerary-exit').value });
